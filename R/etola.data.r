@@ -1,4 +1,4 @@
-#' Filter spectra data for Rosco #226 "UV" filter
+#' Filter spectra data for a clear (non-UV protected) polythene film (0.05 mm thick)
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different filters.
@@ -15,13 +15,13 @@
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name uv.226.new.data
+#' @name polythene.new.data
 NULL
-#' Filter spectra data for Rosco Rosco #226 "UV" filter
+#' Filter spectra data for a clear (non-UV protected) polythene film (0.05 mm thick)
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different filters.
-#' Exposed to sun for xxx days (old).
+#' exposed for xxx days outdoors.
 #' 
 #' The variables are as follows:
 #' 
@@ -34,5 +34,5 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name uv.226.old.data
+#' @name polythene.used.data
 NULL

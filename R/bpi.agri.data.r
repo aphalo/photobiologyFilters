@@ -1,4 +1,4 @@
-#' Filter spectra data for Rosco "Canary yellow" filter
+#' Filter spectra data for "Solatrol" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different filters.
@@ -11,17 +11,22 @@
 #'   \item transmittance (\%) 
 #' }
 #' 
+#' \url{http://www.bpivisqueenhort.com}
+#' 
+#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' Co. Ltd, China) equiped with an integrating sphere.
+#' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name canary.yellow.new.data
+#' @name solatrol.new.data
 NULL
-#' Filter spectra data for Rosco "Canary yellow" filter
+#' Filter spectra data for "Luminance" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different filters.
-#' Exposed to sun for xxx days (old).
+#' Unused (new).
 #' 
 #' The variables are as follows:
 #' 
@@ -30,9 +35,14 @@ NULL
 #'   \item transmittance (\%) 
 #' }
 #' 
+#' \url{http://www.bpivisqueenhort.com}
+#' 
+#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' Co. Ltd, China) equiped with an integrating sphere.
+#' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name canary.yellow.old.data
+#' @name luminance.new.data
 NULL
