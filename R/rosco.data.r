@@ -64,6 +64,9 @@ NULL
 #' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
+#' @note WARNING! The manufacturer has changed this filter specifications. Currently
+#' available material has a different spectrum and absorbs strongly in UV-A region.
+#'  
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
