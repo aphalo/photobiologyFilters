@@ -1,0 +1,108 @@
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of BSWFs}
+%\VignetteDepends{knitr, photobiology, photobiologyUV}
+%\VignetteKeyword{misc}
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{abbrev}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{breakurl}
+
+\newcommand{\PB}{\textsf{photobiology}\xspace}
+\newcommand{\PBVIS}{\textsf{photobiologyVIS}\xspace}
+\newcommand{\PBUV}{\textsf{photobiologyUV}\xspace}
+\newcommand{\PBPHY}{\textsf{photobiologyPhy}\xspace}
+\newcommand{\PBCRY}{\textsf{photobiologyCry}\xspace}
+\newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
+ 
+\begin{document}
+
+\title{\PBFil Version 0.1.2\\ Catalogue of filters}
+\author{Pedro J. Aphalo}
+
+\maketitle
+
+\section{Introduction}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=4, fig.height=4, out.width='.47\\textwidth', dev='cairo_pdf')
+@
+
+<<example-0, eval=TRUE>>=
+library(ggplot2)
+library(photobiologyFilters)
+@
+
+<<setup-function>>=
+filter.plotter <- function(filter_name, w.low=280, w.high=800, 
+                           ylab=paste("Spectral transmittance of", filter_name)){
+  spectrum.data <- data.frame(w.length=seq(280, 800, length.out=300))
+spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name)
+fig_linear <- ggplot(aes(x=w.length, y=transmittance), data=spectrum.data) +
+  labs(x="Wavelength (nm)", y=ylab) + ylim(0,1) +
+  geom_line()
+# fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
+print(fig_linear)
+# print(fig_log)
+}
+@
+
+\newpage
+\section{Clear filter}
+<<plot-clear>>=
+filter.plotter("clear")
+@
+
+\section{Cellulose diacetate}
+<<plot-acetate>>=
+for (filter in c("acetate.115um.new", "acetate.250um.new", "acetate.480um.new")) {
+  filter.plotter(filter)
+}
+@
+
+<<plot-acetate-age>>=
+for (filter in c("acetate.ageing0", "acetate.ageing20", "acetate.ageing30", "acetate.ageing60", "acetate.ageing100", "acetate.ageing180", "acetate.ageing300")) {
+  filter.plotter(filter)
+}
+@
+
+\newpage
+\section{Polyester}
+<<plot-polyester>>=
+filter.plotter("polyester.new")
+@
+
+\section{Polythene}
+<<plot-polythene>>=
+filter.plotter("polythene.new")
+filter.plotter("polythene.used")
+@
+
+\newpage
+\section{Rosco filters}
+<<plot-rosco>>=
+for (filter in c("clear.00.new", "uv.226.new", "uv.226.used", "canary.yellow.new", 
+                 "canary.yellow.used", "rose.pink.new", "neon.pink.used", 
+                 "moss.green.new", "moss.green.used")) {
+  filter.plotter(filter)
+}
+@
+
+\newpage
+\section{BPI AGri Visqueen}
+<<plot-bpi>>=
+for (filter in c("solatrol.new", "luminance.new")) {
+  filter.plotter(filter)
+}
+@
+
+
+\end{document}
