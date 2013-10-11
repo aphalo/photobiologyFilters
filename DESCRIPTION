@@ -1,8 +1,8 @@
 Package: photobiologyFilters
 Type: Package
 Title: Spectral transmittance data for filters
-Version: 0.1.1
-Date: 2013-09-20
+Version: 0.1.2
+Date: 2013-10-10
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides pre-defined functions for different wavebands used 
@@ -10,7 +10,7 @@ Description: This package provides pre-defined functions for different wavebands
 License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends: R (>= 3.0.0), photobiology (>= 0.2.0)
-Suggests: knitr
+Suggests: knitr, ggplot2
 LazyLoad: yes
 LazyData: yes
 ByteCompile: true

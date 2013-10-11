@@ -5,14 +5,14 @@
 #' 
 #' @docType package
 #' @keywords misc
-#' @name photobiologyVIS-package
+#' @name photobiologyFilters-package
 #' @author Pedro J. Apahalo
 #' @details
 #' \tabular{ll}{
-#' Package: \tab photobiologyUV\cr
+#' Package: \tab photobiologyFilters\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.1\cr
-#' Date: \tab 2013-09-20\cr
+#' Version: \tab 0.1.2\cr
+#' Date: \tab 2013-10-10\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
 #' @references

@@ -1,0 +1,91 @@
+%\VignetteEngine{knitr}
+%\VignetteIndexEntry{Phytochrome state quantification with R}
+%\VignetteDepends{knitr, photobiology, photobiologyCry, photobiologyVIS, ggplot2}
+%\VignetteKeyword{misc}
+
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{abbrev}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{breakurl}
+
+\newcommand{\PB}{\textsf{photobiology}\xspace}
+\newcommand{\PBVIS}{\textsf{photobiologyVIS}\xspace}
+\newcommand{\PBUV}{\textsf{photobiologyUV}\xspace}
+\newcommand{\PBPHY}{\textsf{photobiologyPhy}\xspace}
+\newcommand{\PBCRY}{\textsf{photobiologyCry}\xspace}
+\newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
+ 
+\begin{document}
+
+\title{\PBFil Version 0.1.2\\ User Guide}
+\author{Pedro J. Aphalo}
+
+\maketitle
+
+\section{Introduction}
+
+We have developed a set of packages to
+facilitate the calculation of many different quantities that can be derived from spectral irradiance data. The basic package is called \PB, and the package described here adds transmittance data for some frequently used filters, and a function for interpolating.
+
+\section{Installation and use}
+
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", dev='cairo_pdf')
+options(replace.assign=TRUE,width=55)
+@
+
+The functions in the package \PBFil are
+made available by installing the packages \verb!photobiologyFilter! (once) and
+loading it from the library when needed.
+
+To load the package into the workspace we use \verb!library(photobiologyFilter)!.
+
+<<example-0, eval=TRUE>>=
+library(photobiologyFilters)
+library(ggplot2)
+@
+
+\section{Plotting the transmittance spectrum of a filter}
+
+<<example-1>>=
+w.length <- 250:800
+s.transmittance <- calc_filter_multipliers(w.length, "uv.226.new")
+uv.226.data <- data.frame(w.length, s.transmittance)
+rm(w.length, s.transmittance)
+@
+
+<<example-1-fig>>=
+ggplot(data=uv.226.data, aes(x=w.length, y=s.transmittance)) + geom_line()
+@
+
+\section{Convoluting spectral irradiance with filter transmittace}
+
+<<example-2-data, eval=TRUE>>=
+data(sun.data)
+attach(sun.data)
+@
+
+
+<<example-2-convolution, eval=TRUE>>=
+canary.s.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "canary.yellow.new")
+polyester.s.e.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "polyester.new")
+uv.226.s.e.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "uv.226.new")
+filtered.sun.data <- data.frame(w.length=rep(w.length, 4), 
+                                s.e.irrad=c(s.e.irrad, canary.s.irrad, polyester.s.e.irrad, uv.226.s.e.irrad),
+                                filter=factor(rep(c("none", "Canary", "Polyester", "#226"), 
+                                                  rep(length(w.length), 4))))
+@
+
+<<example-4>>=
+ggplot(data=filtered.sun.data, aes(x=w.length, y=s.e.irrad, colour=filter)) + geom_line()
+@
+
+\end{document}
