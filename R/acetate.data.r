@@ -1,9 +1,12 @@
+#' @title
 #' Filter spectra data for ageing cellulose di-acetate films (0.115 mm thick)
 #'
+#' @description
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different filters.
 #' Unused (new).
 #' 
+#' @details
 #' The variables are as follows:
 #' 
 #' \itemize{
