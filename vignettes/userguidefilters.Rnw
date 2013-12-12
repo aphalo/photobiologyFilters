@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{Phytochrome state quantification with R}
-%\VignetteDepends{knitr, photobiology, photobiologyCry, photobiologyVIS, ggplot2}
+%\VignetteDepends{knitr, ggplot2}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
