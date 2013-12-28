@@ -20,8 +20,8 @@
 #' @keywords datasets
 #' @format A data frame with 551 rows and 2 variables
 #' @name acetate.ageing.data
-#' @aliases acetate.ageing0.data, acetate.ageing20.data, acetate.ageing30.data, acetate.ageing60.data,
-#' acetate.ageing100.data, acetate.ageing180.data, acetate.ageing300.data
+#' @aliases acetate.ageing0.data acetate.ageing20.data acetate.ageing30.data acetate.ageing60.data
+#' acetate.ageing100.data acetate.ageing180.data acetate.ageing300.data
 NULL
 #' Filter spectra data for cellulose di-acetate films different thicknesses
 #'
@@ -42,5 +42,5 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 911 rows and 2 variables
 #' @name acetate.thickness.data
-#' @aliases acetate.115um.new.data, acetate.250um.new.data, acetate.480um.new.data
+#' @aliases acetate.115um.new.data acetate.250um.new.data acetate.480um.new.data
 NULL
