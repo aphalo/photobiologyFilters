@@ -21,6 +21,8 @@
 \newcommand{\PBPHY}{\textsf{photobiologyPhy}\xspace}
 \newcommand{\PBCRY}{\textsf{photobiologyCry}\xspace}
 \newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
+\newcommand{\PBLam}{\textsf{photobiologyLamps}\xspace}
+\newcommand{\PBSen}{\textsf{photobiologySensors}\xspace}
  
 \begin{document}
 
