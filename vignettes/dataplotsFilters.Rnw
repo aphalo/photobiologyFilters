@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.3\\ Catalogue of filters}
+\title{\PBFil Version 0.1.4\\ Catalogue of filters}
 \author{Pedro J. Aphalo}
 
 \maketitle

@@ -11,8 +11,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyFilters\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.3\cr
-#' Date: \tab 2013-12-28\cr
+#' Version: \tab 0.1.4\cr
+#' Date: \tab 2014-04-10\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
 #' @references
@@ -23,5 +23,7 @@
 #' Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF), 
 #' 978-952-10-8362-4 (paperback). Open access PDF download available at 
 #' http://hdl.handle.net/10138/37558
+#' 
+#' @import photobiology
 #' 
 NULL

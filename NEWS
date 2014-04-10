@@ -1,3 +1,8 @@
+photobiologyFilters 0.1.4
+=========================
+
+Added missing import directive.
+
 photobiologyFilters 0.1.3
 =========================
 
@@ -11,8 +16,7 @@ Fixed documentation.
 photobiologyFilters 0.1.1
 =========================
 
-Added warning to documentation as the spectral transmittance for Rosco #00 is not that of
-the filters currently being sold.
+Added warning to documentation as the spectral transmittance for Rosco #00 is not that of the filters currently being sold.
 
 photobiologyFilters 0.1.0
 =========================
