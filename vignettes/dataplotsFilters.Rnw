@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.4\\ Catalogue of filters}
+\title{\PBFil Version 0.1.5\\ Catalogue of filters}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -45,11 +45,11 @@ library(photobiologyFilters)
 
 <<setup-function>>=
 filter.plotter <- function(filter_name, w.low=280, w.high=800, 
-                           ylab="Spectral transmittance"){
+                           ylab="Spectral transmittance (%)"){
   spectrum.data <- data.frame(w.length=seq(280, 800, length.out=300))
-spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name)
+spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name, pc=TRUE)
 fig_linear <- ggplot(aes(x=w.length, y=transmittance), data=spectrum.data) +
-  labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,1) +
+  labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,100) +
   geom_line()
 # fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
 print(fig_linear)
