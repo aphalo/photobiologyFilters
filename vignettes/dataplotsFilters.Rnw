@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.5\\ Catalogue of filters}
+\title{\PBFil Version 0.1.6\\ Catalogue of filters}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -41,6 +41,7 @@ opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size
 <<example-0, eval=TRUE>>=
 library(ggplot2)
 library(photobiologyFilters)
+library(photobiologygg)
 @
 
 <<setup-function>>=
@@ -52,7 +53,7 @@ fig_linear <- ggplot(aes(x=w.length, y=transmittance), data=spectrum.data) +
   labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,100) +
   geom_line()
 # fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
-print(fig_linear)
+print(fig_linear + stat_peaks(span=71, ignore_threshold=0.25, colour="red", hjust=0, angle=90) + stat_valleys(span=51, ignore_threshold=-0.5, colour="blue", hjust=0, angle=90))
 # print(fig_log)
 }
 @
@@ -106,5 +107,12 @@ for (filter in c("solatrol.new", "luminance.new")) {
 }
 @
 
+\newpage
+\section{Schott optical glass filters}
+<<plot-schott>>=
+for (filter in c("UG1", "UG11")) {
+  filter.plotter(filter)
+}
+@
 
 \end{document}

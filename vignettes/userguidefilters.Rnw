@@ -24,7 +24,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.5\\ User Guide}
+\title{\PBFil Version 0.1.6\\ User Guide}
 \author{Pedro J. Aphalo}
 
 \maketitle
