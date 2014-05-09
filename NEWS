@@ -1,3 +1,8 @@
+photobiologyFilters 0.1.7
+=========================
+
+Function calc_filter_multipliers() was moved to package photobiology. However, this should be mostly invisible because the whole photobiology package is imported.
+
 photobiologyFilters 0.1.6
 =========================
 
