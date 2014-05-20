@@ -8,7 +8,8 @@
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.bpivisqueenhort.com}
@@ -20,7 +21,7 @@
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name solatrol.new.data
+#' @name solatrol.new.dt
 NULL
 #' Filter spectra data for "Luminance" filter
 #'
@@ -32,7 +33,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.bpivisqueenhort.com}
@@ -44,5 +46,5 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name luminance.new.data
+#' @name luminance.new.dt
 NULL

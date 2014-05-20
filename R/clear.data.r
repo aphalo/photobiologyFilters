@@ -8,12 +8,13 @@
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 4 rows and 2 variables
 #' 
-#' @name clear.data
+#' @name clear.dt
 NULL

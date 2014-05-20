@@ -1,0 +1,4 @@
+for filterr in *.r
+do
+sed "s/item transmittance/item Tpc/g" $filterr > ./edited/$filterr
+done

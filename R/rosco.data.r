@@ -8,7 +8,8 @@
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -20,7 +21,7 @@
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name uv.226.new.data
+#' @name uv.226.new.dt
 NULL
 #' Filter spectra data for Rosco Rosco #226 "UV" filter
 #'
@@ -32,7 +33,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -44,7 +46,7 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name uv.226.used.data
+#' @name uv.226.used.dt
 NULL
 #' Filter spectra data for Rosco #00 "Clear" filter
 #'
@@ -56,7 +58,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -71,7 +74,7 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name clear.00.new.data
+#' @name clear.00.new.dt
 NULL
 #' Filter spectra data for Rosco #312 "Canary" yellow filter
 #'
@@ -83,7 +86,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -95,7 +99,7 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name canary.yellow.new.data
+#' @name canary.yellow.new.dt
 NULL
 #' Filter spectra data for Rosco #312 "Canary" yellow filter
 #'
@@ -107,7 +111,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -119,7 +124,7 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name canary.yellow.used.data
+#' @name canary.yellow.used.dt
 NULL
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
@@ -131,7 +136,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -143,7 +149,7 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name moss.green.new.data
+#' @name moss.green.new.dt
 NULL
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
@@ -155,7 +161,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -167,7 +174,7 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name moss.green.used.data
+#' @name moss.green.used.dt
 NULL
 #' Filter spectra data for Rosco #343 "Neon pink" filter
 #'
@@ -179,7 +186,8 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
@@ -191,5 +199,5 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name neon.pink.used.data
+#' @name neon.pink.used.dt
 NULL

@@ -8,7 +8,8 @@
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' \url{http://www.macdermidautotype.com/}
 #' 
@@ -19,5 +20,5 @@
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name polyester.new.data
+#' @name polyester.new.dt
 NULL

@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of BSWFs}
-%\VignetteDepends{knitr, ggplot2}
+%\VignetteDepends{knitr, ggplot2, photobiologygg}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.7\\ Catalogue of filters}
+\title{\PBFil Version 0.1.8\\ Catalogue of filters}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -111,7 +111,7 @@ for (filter in c("solatrol.new", "luminance.new")) {
 \newpage
 \section{Schott optical glass filters}
 <<plot-schott>>=
-for (filter in c("UG1", "UG11")) {
+for (filter in c("ug1", "ug11")) {
   filter.plotter(filter)
 }
 @

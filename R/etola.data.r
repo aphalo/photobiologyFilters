@@ -8,14 +8,15 @@
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name polythene.new.data
+#' @name polythene.new.dt
 NULL
 #' Filter spectra data for a clear (non-UV protected) polythene film (0.05 mm thick)
 #'
@@ -27,12 +28,13 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item transmittance (\%) 
+#'   \item Tpc (\%) 
+#'   \item Tfr (fraction) 
 #' }
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name polythene.used.data
+#' @name polythene.used.dt
 NULL
