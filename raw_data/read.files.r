@@ -28,7 +28,7 @@ for (file.name in file.list) {
     tmp.df$Tpc <- tmp.df$transmittance
     tmp.df$transmittance <- NULL
     tmp.df$Tfr <- tmp.df$Tpc / 100
-    class(tmp.df) <- c("filter.spectrum", "generic.spectrum", class(tmp.df))
+    class(tmp.df) <- c("filter.spct", "generic.spct", class(tmp.df))
     setDT(tmp.df)
     assign(df.name, tmp.df)
     save(list=df.name, file=paste("../data/", df.name, ".rda", sep=""))
