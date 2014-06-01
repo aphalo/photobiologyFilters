@@ -4,8 +4,8 @@ photobiologyFilters 0.1.8
 Added data for many Schott optical filters.
 Now data is in data.table format (compatible with data.frame), added class attributes preparing for future improvements.
 Data is now in S3 objects of class "filter.spc" but no class methods are yet defined.
-The names of the variables in the "filter.spc" variables has changed and now they contain the data both as percentages
-and fractions. This makes use easier, but wastes some storage space. Now photobiology 0.2.25 or later is required.
+The names of the variables in the "filter.spc" objects has changed and now they contain the data both as percentages
+and fractions. This makes use easier, but wastes some storage space. Now photobiology 0.3.0 or later is required.
 
 photobiologyFilters 0.1.7
 =========================

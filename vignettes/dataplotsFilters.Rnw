@@ -48,7 +48,7 @@ library(photobiologygg)
 filter.plotter <- function(filter_name, w.low=280, w.high=800, 
                            ylab="Spectral transmittance (%)"){
   spectrum.data <- data.frame(w.length=seq(280, 800, length.out=300))
-spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name, pc=TRUE)
+spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name, pc.out=TRUE)
 fig_linear <- ggplot(aes(x=w.length, y=transmittance), data=spectrum.data) +
   labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,100) +
   geom_line()
