@@ -1,5 +1,5 @@
 %\VignetteEngine{knitr}
-%\VignetteIndexEntry{Phytochrome state quantification with R}
+%\VignetteIndexEntry{User Guide}
 %\VignetteDepends{knitr, ggplot2}
 %\VignetteKeyword{misc}
 
@@ -24,7 +24,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.8\\ User Guide}
+\title{\PBFil Version 0.1.9\\ User Guide}
 \author{Pedro J. Aphalo}
 
 \maketitle

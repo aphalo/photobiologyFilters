@@ -1,5 +1,5 @@
 %\VignetteEngine{knitr}
-%\VignetteIndexEntry{UV-radiation quantification with R: Catalogue of BSWFs}
+%\VignetteIndexEntry{Catalogue of filter transmittance spectra}
 %\VignetteDepends{knitr, ggplot2, photobiologygg}
 %\VignetteKeyword{misc}
 
@@ -26,7 +26,7 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.8\\ Catalogue of filters}
+\title{\PBFil Version 0.1.9\\ Catalogue of filters}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -60,12 +60,16 @@ print(fig_linear + stat_peaks(span=71, ignore_threshold=0.25, colour="red", hjus
 @
 
 \newpage
-\section{Clear filter}
+\section{Dummy filters}
+
+\subsection{Perfectly clear filter}
 <<plot-clear>>=
 filter.plotter("clear")
 @
 
-\section{Cellulose diacetate}
+\section{Plastic films}
+
+\subsection{Cellulose diacetate}
 <<plot-acetate>>=
 for (filter in c("acetate.115um.new", "acetate.250um.new", "acetate.480um.new")) {
   filter.plotter(filter)
@@ -79,19 +83,19 @@ for (filter in c("acetate.ageing0", "acetate.ageing20", "acetate.ageing30", "ace
 @
 
 \newpage
-\section{Polyester}
+\subsection{Polyester}
 <<plot-polyester>>=
 filter.plotter("polyester.new")
 @
 
-\section{Polythene}
+\subsection{Polythene}
 <<plot-polythene>>=
 filter.plotter("polythene.new")
 filter.plotter("polythene.used")
 @
 
 \newpage
-\section{Rosco filters}
+\subsection{Rosco theatrical filters}
 <<plot-rosco>>=
 for (filter in c("clear.00.new", "uv.226.new", "uv.226.used", "canary.yellow.new", 
                  "canary.yellow.used", "rose.pink.new", "neon.pink.used", 
@@ -101,7 +105,7 @@ for (filter in c("clear.00.new", "uv.226.new", "uv.226.used", "canary.yellow.new
 @
 
 \newpage
-\section{BPI AGri Visqueen}
+\subsection{Commercial greenhouse films from BPI Agri Visqueen}
 <<plot-bpi>>=
 for (filter in c("solatrol.new", "luminance.new")) {
   filter.plotter(filter)
@@ -109,8 +113,36 @@ for (filter in c("solatrol.new", "luminance.new")) {
 @
 
 \newpage
-\section{Schott optical glass filters}
-<<plot-schott>>=
+\section{Plastic sheets}
+
+\subsection{Plexiglas}
+
+<<plot-evonik1>>=
+for (filter in c("PLX0A000_XT", "PLX0A570_GT", "PLX0F00_GT", "PLX0Z023_GT")) {
+  filter.plotter(filter)
+}
+@
+
+<<plot-evonik2>>=
+for (filter in c("PLX1C33_GT", "PLX2C04_GT", "PLX3C01_GT", "PLX5C01_GT")) {
+  filter.plotter(filter)
+}
+@
+
+\newpage
+\section{Optical glass filters}
+
+\subsection{Schott long-pass filters}
+
+<<plot-schott1>>=
+for (filter in c("gg395", "gg400", "gg435", "gg455", "gg475", "gg495")) {
+  filter.plotter(filter)
+}
+@
+
+\subsection{Schott band-pass filters}
+
+<<plot-schott2>>=
 for (filter in c("ug1", "ug11")) {
   filter.plotter(filter)
 }
