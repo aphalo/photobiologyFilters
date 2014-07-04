@@ -19,8 +19,8 @@
 #' @keywords datasets
 #' @format A data frame with 911 rows and 3 variables
 #' 
-#' @name Evonik_PC
-#' @aliases UV100.dt PLXUV1.dt PLXUV2.dt PLXUV3.dt PLXUV4.dt PLXUV5.dt
+#' @name Plexiglas_clear
+#' @aliases PLX0A000_XT.dt PLX0A570_GT.dt PLX0F00_GT.dt PLX0Z023_GT.dt
 #' 
 NULL
 
