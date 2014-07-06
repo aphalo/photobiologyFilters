@@ -45,12 +45,12 @@ library(photobiologygg)
 @
 
 <<setup-function>>=
-filter.plotter <- function(filter_name, w.low=280, w.high=800, 
+filter.plotter <- function(filter_name, w.low=280, w.high=1100, 
                            ylab="Spectral transmittance (%)"){
-  spectrum.data <- data.frame(w.length=seq(280, 800, length.out=300))
-spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name, pc.out=TRUE)
+  spectrum.data <- data.frame(w.length=seq(w.low, w.high, length.out=300))
+spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name, pc.out=FALSE)
 fig_linear <- ggplot(aes(x=w.length, y=transmittance), data=spectrum.data) +
-  labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,100) +
+  labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,1) +
   geom_line()
 # fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
 print(fig_linear + stat_peaks(span=71, ignore_threshold=0.25, colour="red", hjust=0, angle=90) + 
@@ -140,10 +140,40 @@ for (filter in c("gg395", "gg400", "gg435", "gg455", "gg475", "gg495")) {
 }
 @
 
+<<plot-schott2>>=
+for (filter in c("bg25", "bg3", "bg7")) {
+  filter.plotter(filter)
+}
+@
+
+<<plot-schott3>>=
+for (filter in c("kg2", "kg3", "kg5")) {
+  filter.plotter(filter)
+}
+@
+
+<<plot-schott4>>=
+for (filter in c("n_wg280", "n_wg295", "n_wg305", "n_wg320")) {
+  filter.plotter(filter)
+}
+@
+
+<<plot-schott5>>=
+for (filter in c("og515", "og530", "og550", "og570", "og590")) {
+  filter.plotter(filter)
+}
+@
+
+<<plot-schott6>>=
+for (filter in c("rg610", "rg630", "rg645", "rg665", "rg695", "rg715", "rg780", "rg830", "rg850", "rg9")) {
+  filter.plotter(filter)
+}
+@
+
 \subsection{Schott band-pass filters}
 
-<<plot-schott2>>=
-for (filter in c("ug1", "ug11")) {
+<<plot-schott8>>=
+for (filter in c("ug1", "ug5", "ug11")) {
   filter.plotter(filter)
 }
 @

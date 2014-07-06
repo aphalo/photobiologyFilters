@@ -95,9 +95,8 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name Schott.N-WG.short.pass
-#' @aliases n-wg280.dt n-wg295.dt n-wg305.dt n-wg320.dt 
+#' @aliases n_wg280.dt n_wg295.dt n_wg305.dt n_wg320.dt 
 #' 
-NULL
 NULL
 #' Internal transmittance for Schott RG long pass filters
 #'
