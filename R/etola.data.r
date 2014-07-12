@@ -16,7 +16,7 @@
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name polythene.new.dt
+#' @name polythene.new.spct
 NULL
 #' Filter spectra data for a clear (non-UV protected) polythene film (0.05 mm thick)
 #'
@@ -36,5 +36,5 @@ NULL
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name polythene.used.dt
+#' @name polythene.used.spct
 NULL

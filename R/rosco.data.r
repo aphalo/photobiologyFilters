@@ -14,14 +14,14 @@
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name uv.226.new.dt
+#' @name uv.226.new.spct
 NULL
 #' Filter spectra data for Rosco Rosco #226 "UV" filter
 #'
@@ -39,14 +39,14 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name uv.226.used.dt
+#' @name uv.226.used.spct
 NULL
 #' Filter spectra data for Rosco #00 "Clear" filter
 #'
@@ -64,17 +64,16 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
-#' Co. Ltd, China) equiped with an integrating sphere.
-#' 
 #' @note WARNING! The manufacturer has changed this filter specifications. Currently
 #' available material has a different spectrum and absorbs strongly in UV-A region.
+#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' Co. Ltd, China) equiped with an integrating sphere.
 #'  
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name clear.00.new.dt
+#' @name clear.00.new.spct
 NULL
 #' Filter spectra data for Rosco #312 "Canary" yellow filter
 #'
@@ -92,14 +91,14 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name canary.yellow.new.dt
+#' @name canary.yellow.new.spct
 NULL
 #' Filter spectra data for Rosco #312 "Canary" yellow filter
 #'
@@ -117,14 +116,14 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name canary.yellow.used.dt
+#' @name canary.yellow.used.spct
 NULL
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
@@ -142,14 +141,14 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name moss.green.new.dt
+#' @name moss.green.new.spct
 NULL
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
@@ -167,14 +166,14 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name moss.green.used.dt
+#' @name moss.green.used.spct
 NULL
 #' Filter spectra data for Rosco #343 "Neon pink" filter
 #'
@@ -192,12 +191,12 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
+#' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name neon.pink.used.dt
+#' @name neon.pink.used.spct
 NULL

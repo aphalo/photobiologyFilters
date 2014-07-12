@@ -11,7 +11,7 @@ rm(list = ls())
 setwd("raw_data/Foiltek/")
 file.list <- shell('ls *.CSV', intern=TRUE)
 for (file.name in file.list) {
-  dt.name <- paste(sub(pattern=".CSV", replacement="", x=file.name), "dt", sep=".")
+  dt.name <- paste(sub(pattern=".CSV", replacement="", x=file.name), "spct", sep=".")
   tmp.df <- read.csv(file.name, skip=1, header=FALSE, col.names=c("w.length", "Tpc", "sd_Tpc"), 
                      colClasses = c("numeric", "numeric", "NULL"))
   class(tmp.df) <- c("filter.spct", "generic.spct", class(tmp.df))
