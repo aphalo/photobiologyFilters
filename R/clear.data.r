@@ -16,5 +16,7 @@
 #' @keywords datasets
 #' @format A data frame with 4 rows and 2 variables
 #' 
-#' @name clear.dt
+#' @note 'Artificial spectral data' with transmittance equal to one (100\%) accross the spectrum.
+#' 
+#' @name clear.spct
 NULL

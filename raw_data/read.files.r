@@ -11,7 +11,7 @@ rm(list = ls())
 setwd("raw_data")
 file.list <- system('ls *.txt', intern=TRUE)
 for (file.name in file.list) {
-  df.name <- paste(sub(pattern=".txt", replacement="", x=file.name), "dt", sep=".")
+  df.name <- paste(sub(pattern=".txt", replacement="", x=file.name), "spct", sep=".")
   tmp.df <- read.table(file.name, header=TRUE)
   if (ncol(tmp.df) == 4) {
     tmp.df <- transform(tmp.df, 

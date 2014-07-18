@@ -20,9 +20,9 @@
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 551 rows and 2 variables
-#' @name acetate.ageing.dt
-#' @aliases acetate.ageing0.dt acetate.ageing20.dt acetate.ageing30.dt acetate.ageing60.dt
-#' acetate.ageing100.dt acetate.ageing180.dt acetate.ageing300.dt
+#' @name acetate.ageing.spct
+#' @aliases acetate.ageing0.spct acetate.ageing20.spct acetate.ageing30.spct acetate.ageing60.spct
+#' acetate.ageing100.spct acetate.ageing180.spct acetate.ageing300.spct
 NULL
 #' Filter spectra data for cellulose di-acetate films different thicknesses
 #'
@@ -38,11 +38,11 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Instrument used: Hewlett-Packard 8453 diode array spectrophotometer without an integrating sphere.
+#' @note Instrument used: Hewlett-Packard 8453 diode array spectrophotometer without an integrating sphere.
 #' 
 #' @docType data
 #' @keywords datasets
 #' @format A data frame with 911 rows and 2 variables
-#' @name acetate.thickness.dt
-#' @aliases acetate.115um.new.dt acetate.250um.new.dt acetate.480um.new.dt
+#' @name acetate.thickness.spct
+#' @aliases acetate.115um.new.spct acetate.250um.new.spct acetate.480um.new.spct
 NULL

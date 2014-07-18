@@ -12,7 +12,7 @@
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -20,7 +20,7 @@
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name Schott.BG.short.pass
-#' @aliases bg25.dt bg3.dt bg7.dt 
+#' @aliases bg25.spct bg3.spct bg7.spct 
 #' 
 NULL
 #' Internal transmittance for Schott GG long pass filters
@@ -37,7 +37,7 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -45,7 +45,7 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name Schott.GG.long.pass
-#' @aliases gg395.dt gg400.dt gg435.dt gg455.dt gg475.dt gg495.dt 
+#' @aliases gg395.spct gg400.spct gg435.spct gg455.spct gg475.spct gg495.spct 
 #' 
 NULL
 #' Internal transmittance for Schott KG short pass filters
@@ -62,7 +62,7 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -70,7 +70,7 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name Schott.KG.short.pass
-#' @aliases kg2.dt kg3.dt kg5.dt 
+#' @aliases kg2.spct kg3.spct kg5.spct 
 #' 
 NULL
 #' Internal transmittance for Schott N-WG long pass filters
@@ -87,7 +87,7 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -95,7 +95,7 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name Schott.N-WG.short.pass
-#' @aliases n_wg280.dt n_wg295.dt n_wg305.dt n_wg320.dt 
+#' @aliases n_wg280.spct n_wg295.spct n_wg305.spct n_wg320.spct 
 #' 
 NULL
 #' Internal transmittance for Schott RG long pass filters
@@ -114,7 +114,7 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -122,7 +122,7 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name  Schott.RG.long.pass"
-#' @aliases rg610.dt rg630.dt rg645.dt rg665.dt rg695.dt rg715.dt rg780.dt rg830.dt rg850.dt rg9.dt
+#' @aliases rg610.spct rg630.spct rg645.spct rg665.spct rg695.spct rg715.spct rg780.spct rg830.spct rg850.spct rg9.spct
 NULL
 #' Internal transmittance for Schott OG long pass filters
 #'
@@ -140,7 +140,7 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -148,7 +148,7 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name  Schott.OG.long.pass"
-#' @aliases og515.dt og530.dt og550.dt og570.dt og590.dt
+#' @aliases og515.spct og530.spct og550.spct og570.spct og590.spct
 NULL
 #' Internal transmittance for Schott UG UV-band pass filters
 #'
@@ -166,7 +166,7 @@ NULL
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' Datasheets downloaded from manufacturers website on 24.04.2014 at
+#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
 #' \url{http://www.us.schott.com/advanced_optics/english/download/}
 #' 
 #' @docType data
@@ -174,5 +174,5 @@ NULL
 #' @format A data frame with 180 rows and 3 variables
 #' 
 #' @name Schott.UG.band.pass
-#' @aliases ug1.dt ug11.dt ug5.dt
+#' @aliases ug1.spct ug11.spct ug5.spct
 NULL

@@ -13,7 +13,7 @@
  {hyperref}
 \usepackage{listings}
 \usepackage{booktabs}
-\usepackage{breakurl}
+%\usepackage{breakurl}
 
 \newcommand{\PB}{\textsf{photobiology}\xspace}
 \newcommand{\PBVIS}{\textsf{photobiologyVIS}\xspace}

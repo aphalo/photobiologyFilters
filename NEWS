@@ -1,3 +1,8 @@
+photobiologyFilters 0.1.10
+==========================
+
+Renamed all filter spectra objects from '.dt' to '.spct'.
+
 photobiologyFilters 0.1.9
 =========================
 
