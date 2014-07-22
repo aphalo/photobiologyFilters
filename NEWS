@@ -1,3 +1,8 @@
+photobiologyFilters 0.1.11
+==========================
+
+Cleaned up the scripts I use for building the data objects. Decided so save storage space and to only include spectral transmittances expressed as fractions of one, now that the design of the code in the photobiology package is getting stable. Revised the 'catalogue of filters' vignette to solve some plotting problems, and to simplify the code used.
+
 photobiologyFilters 0.1.10
 ==========================
 

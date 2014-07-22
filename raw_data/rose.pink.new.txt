@@ -1,5 +1,5 @@
 # Rose pink new Formatt		
-w.length.1 transmittance.1	W.length.2	transmittance.2
+w.length.1 transmittance.1	w.length.2	transmittance.2
 190	0.5	190	-0.2
 191	0.2	191	0.1
 192	0	192	0.2

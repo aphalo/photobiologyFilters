@@ -26,19 +26,30 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.9\\ Catalogue of filters}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf')
+options(replace.assign=TRUE,width=55)
+@
+
+<<example-0-hiden, eval=TRUE, include=FALSE>>=
+library(ggplot2)
+library(photobiologyFilters)
+library(photobiologygg)
+@
+
+<<own-set-up, echo=FALSE, include=FALSE>>=
+my_version <- packageVersion("photobiologyFilters")
+@
+
+\title{\PBFil Version \Sexpr{my_version}\\ Catalogue of filters}
 \author{Pedro J. Aphalo}
 
 \maketitle
 
 \section{Introduction}
 
-<<setup, include=FALSE, cache=FALSE>>=
-library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize",            fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf')
-@
-
-<<example-0, eval=TRUE>>=
+<<example-0, eval=FALSE>>=
 library(ggplot2)
 library(photobiologyFilters)
 library(photobiologygg)
@@ -47,9 +58,7 @@ library(photobiologygg)
 <<setup-function>>=
 filter.plotter <- function(filter_name, w.low=280, w.high=1100, 
                            ylab="Spectral transmittance (%)"){
-  spectrum.data <- data.frame(w.length=seq(w.low, w.high, length.out=300))
-spectrum.data$transmittance <- calc_filter_multipliers(spectrum.data$w.length, filter_name, pc.out=FALSE)
-fig_linear <- ggplot(aes(x=w.length, y=transmittance), data=spectrum.data) +
+fig_linear <- ggplot(aes(x=w.length, y=Tfr), data=get(paste(filter_name, ".spct", sep=""))) +
   labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,1) +
   geom_line()
 # fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))

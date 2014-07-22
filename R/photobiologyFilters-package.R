@@ -11,8 +11,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyFilters\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.10\cr
-#' Date: \tab 2014-07-12\cr
+#' Version: \tab 0.1.11\cr
+#' Date: \tab 2014-07-22\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
 #' @references
@@ -24,6 +24,6 @@
 #' 978-952-10-8362-4 (paperback). Open access PDF download available at 
 #' http://hdl.handle.net/10138/37558
 #' 
-#' @import photobiology data.table
+#' @import photobiology
 #' 
 NULL

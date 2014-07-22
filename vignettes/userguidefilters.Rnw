@@ -24,7 +24,23 @@
  
 \begin{document}
 
-\title{\PBFil Version 0.1.9\\ User Guide}
+<<setup, include=FALSE, cache=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf')
+options(replace.assign=TRUE,width=55)
+@
+
+<<example-0-hiden, eval=TRUE, include=FALSE>>=
+library(photobiology)
+library(photobiologyFilters)
+library(ggplot2)
+@
+
+<<own-set-up, echo=FALSE, include=FALSE>>=
+my_version <- packageVersion("photobiologyFilters")
+@
+
+\title{\PBFil Version \Sexpr{my_version}\\ User Guide}
 \author{Pedro J. Aphalo}
 
 \maketitle
@@ -36,19 +52,14 @@ facilitate the calculation of many different quantities that can be derived from
 
 \section{Installation and use}
 
-<<setup, include=FALSE, cache=FALSE>>=
-library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf')
-options(replace.assign=TRUE,width=55)
-@
-
 The functions in the package \PBFil are
 made available by installing the packages \verb!photobiologyFilter! (once) and
 loading it from the library when needed.
 
 To load the package into the workspace we use \verb!library(photobiologyFilter)!.
 
-<<example-0, eval=TRUE>>=
+<<example-0-visible, eval=FALSE>>=
+library(photobiology)
 library(photobiologyFilters)
 library(ggplot2)
 @
