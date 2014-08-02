@@ -47,6 +47,8 @@ my_version <- packageVersion("photobiologyFilters")
 
 \maketitle
 
+\tableofcontents
+
 \section{Introduction}
 
 <<example-0, eval=FALSE>>=
@@ -57,13 +59,15 @@ library(photobiologygg)
 
 <<setup-function>>=
 filter.plotter <- function(filter_name, w.low=280, w.high=1100, 
-                           ylab="Spectral transmittance (%)"){
-fig_linear <- ggplot(aes(x=w.length, y=Tfr), data=get(paste(filter_name, ".spct", sep=""))) +
+                           ylab="Spectral transmittance (0 to 1)"){
+fig_linear <- 
+  ggplot(aes(x=w.length, y=Tfr), data=get(paste(filter_name, ".spct", sep=""))) +
   labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,1) +
   geom_line()
 # fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
-print(fig_linear + stat_peaks(span=71, ignore_threshold=0.25, colour="red", hjust=0, angle=90) + 
-        stat_valleys(span=51, ignore_threshold=-0.5, colour="blue", hjust=0, angle=90))
+print(fig_linear + 
+      stat_peaks(span=71, ignore_threshold=0.25, colour="red", hjust=0, angle=90) + 
+      stat_valleys(span=51, ignore_threshold=-0.5, colour="blue", hjust=0, angle=90))
 # print(fig_log)
 }
 @
@@ -86,24 +90,27 @@ for (filter in c("acetate.115um.new", "acetate.250um.new", "acetate.480um.new"))
 @
 
 <<plot-acetate-age>>=
-for (filter in c("acetate.ageing0", "acetate.ageing20", "acetate.ageing30", "acetate.ageing60", "acetate.ageing100", "acetate.ageing180", "acetate.ageing300")) {
+for (filter in c("acetate.ageing0", "acetate.ageing20", "acetate.ageing30", 
+                 "acetate.ageing60", "acetate.ageing100", "acetate.ageing180", 
+                 "acetate.ageing300")) {
   filter.plotter(filter)
 }
 @
 
-\newpage
+%\newpage
 \subsection{Polyester}
 <<plot-polyester>>=
 filter.plotter("polyester.new")
 @
 
+\newpage
 \subsection{Polythene}
 <<plot-polythene>>=
 filter.plotter("polythene.new")
 filter.plotter("polythene.used")
 @
 
-\newpage
+%\newpage
 \subsection{Rosco theatrical filters}
 <<plot-rosco>>=
 for (filter in c("clear.00.new", "uv.226.new", "uv.226.used", "canary.yellow.new", 
@@ -113,7 +120,7 @@ for (filter in c("clear.00.new", "uv.226.new", "uv.226.used", "canary.yellow.new
 }
 @
 
-\newpage
+%\newpage
 \subsection{Commercial greenhouse films from BPI Agri Visqueen}
 <<plot-bpi>>=
 for (filter in c("solatrol.new", "luminance.new")) {
@@ -134,6 +141,38 @@ for (filter in c("PLX0A000_XT", "PLX0A570_GT", "PLX0F00_GT", "PLX0Z023_GT")) {
 
 <<plot-evonik2>>=
 for (filter in c("PLX1C33_GT", "PLX2C04_GT", "PLX3C01_GT", "PLX5C01_GT")) {
+  filter.plotter(filter)
+}
+@
+
+\subsection{Polycarbonate}
+
+<<plot-foiltek1>>=
+for (filter in c("PC", "PC_UV")) {
+  filter.plotter(filter)
+}
+@
+
+\subsection{Polyestyrene}
+
+<<plot-foiltek2>>=
+for (filter in c("PS")) {
+  filter.plotter(filter)
+}
+@
+
+\subsection{Polyester}
+
+<<plot-foiltek3>>=
+for (filter in c("Pet_G")) {
+  filter.plotter(filter)
+}
+@
+
+\subsection{Polyvinilchloride}
+
+<<plot-foiltek4>>=
+for (filter in c("PVC")) {
   filter.plotter(filter)
 }
 @
@@ -174,7 +213,8 @@ for (filter in c("og515", "og530", "og550", "og570", "og590")) {
 @
 
 <<plot-schott6>>=
-for (filter in c("rg610", "rg630", "rg645", "rg665", "rg695", "rg715", "rg780", "rg830", "rg850", "rg9")) {
+for (filter in c("rg610", "rg630", "rg645", "rg665", "rg695", "rg715", 
+                 "rg780", "rg830", "rg850", "rg9")) {
   filter.plotter(filter)
 }
 @

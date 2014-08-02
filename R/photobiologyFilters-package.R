@@ -11,8 +11,8 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyFilters\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.1.11\cr
-#' Date: \tab 2014-07-22\cr
+#' Version: \tab 0.1.12\cr
+#' Date: \tab 2014-08-02\cr
 #' License: \tab GPL (>2.0)\cr
 #' }
 #' @references
