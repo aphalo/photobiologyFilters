@@ -28,7 +28,7 @@
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf')
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf', warning=FALSE)
 options(replace.assign=TRUE,width=55)
 @
 
@@ -58,17 +58,11 @@ library(photobiologygg)
 @
 
 <<setup-function>>=
-filter.plotter <- function(filter_name, w.low=280, w.high=1100, 
-                           ylab="Spectral transmittance (0 to 1)"){
-fig_linear <- 
-  ggplot(aes(x=w.length, y=Tfr), data=get(paste(filter_name, ".spct", sep=""))) +
-  labs(x="Wavelength (nm)", y=ylab, title=filter_name) + ylim(0,1) +
-  geom_line()
-# fig_log <- fig_linear + scale_y_log10(limits=c(1e-5,30))
-print(fig_linear + 
-      stat_peaks(span=71, ignore_threshold=0.25, colour="red", hjust=0, angle=90) + 
-      stat_valleys(span=51, ignore_threshold=-0.5, colour="blue", hjust=0, angle=90))
-# print(fig_log)
+filter.plotter <- function(filter_name, w.low=280, w.high=1100){
+  obj.name <- paste(filter_name, ".spct", sep="")
+  spct <- get(obj.name)
+  trim_spct(spct, waveband(c(w.low, w.high)), fill=NULL)
+  print(plot(spct) + labs(title=obj.name) + theme_bw(10))
 }
 @
 

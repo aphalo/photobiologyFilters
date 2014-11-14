@@ -15,7 +15,7 @@ for (file.name in file.list) {
   tmp.df <- read.csv(file.name, header=FALSE, col.names=c("w.length", "Tfr"))
   setDT(tmp.df)
   setkey(tmp.df, w.length)
-  setFilterSpct(tmp.df)
+  setFilterSpct(tmp.df, "internal")
   assign(dt.name, tmp.df)
   save(list=dt.name, file=paste("../../../data/", dt.name, ".rda", sep=""))
 }

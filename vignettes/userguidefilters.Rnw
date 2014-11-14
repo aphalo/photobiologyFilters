@@ -32,6 +32,7 @@ options(replace.assign=TRUE,width=55)
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
 library(photobiology)
+library(photobiologygg)
 library(photobiologyFilters)
 library(ggplot2)
 @
@@ -60,30 +61,65 @@ To load the package into the workspace we use \verb!library(photobiologyFilter)!
 
 <<example-0-visible, eval=FALSE>>=
 library(photobiology)
+library(photobiologygg)
 library(photobiologyFilters)
 library(ggplot2)
 @
 
 \section{Plotting the transmittance spectrum of a filter}
 
-<<example-1>>=
-w.length <- 250:800
-s.transmittance <- calc_filter_multipliers(w.length, "uv.226.new")
-uv.226.data <- data.frame(w.length, s.transmittance)
-rm(w.length, s.transmittance)
+We can plot the data as is, accepting all defaults. As the returned value is a ggplot object, we can modify and add to it as needed.
+
+<<warning=FALSE>>=
+plot(uv.226.new.spct) + theme_bw(10)
 @
 
+We can also use ggplot (or lattice or base graphics functions) to plot the spectrum.
+
 <<example-1-fig>>=
-ggplot(data=uv.226.data, aes(x=w.length, y=s.transmittance)) + geom_line()
+ggplot(data=uv.226.new.spct, aes(x=w.length, y=Tfr)) + geom_line()
+@
+
+If we would like to use a different set of wavelengths, then we can build a new filter.spct from scratch.
+
+<<example-1>>=
+wl <- 350:450
+my.uv.226.spct <- 
+  filter.spct(w.length = wl, Tfr = calc_filter_multipliers(wl, "uv.226.new"))
+plot(my.uv.226.spct)
 @
 
 \section{Convoluting spectral irradiance with filter transmittace}
 
-<<example-2-data, eval=TRUE>>=
-data(sun.data)
-attach(sun.data)
+The easy way.
+
+<<>>=
+plot(sun.spct * canary.yellow.new.spct)
 @
 
+<<echo=TRUE>>=
+canary.spct <- sun.spct * canary.yellow.new.spct
+canary.spct[ , filter := "canary"]
+polyester.spct <- sun.spct * polyester.new.spct
+polyester.spct[ , filter := "polyester"]
+no.226.spct <- sun.spct * uv.226.new.spct
+no.226.spct[ , filter := "no226"]
+my.sun.spct <- copy(sun.spct)
+my.sun.spct[ , filter := "none"]
+all.spct <- rbindspct(list(canary.spct, polyester.spct, no.226.spct, my.sun.spct))
+setTimeUnit(all.spct)
+@
+
+<<>>=
+ggplot(data=all.spct, aes(x=w.length, y=s.e.irrad, colour=filter)) + geom_line()
+@
+
+The difficult way, which could execute faster.
+
+<<example-2-data, eval=TRUE>>=
+data(sun.spct)
+attach(sun.spct)
+@
 
 <<example-2-convolution, eval=TRUE>>=
 canary.s.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "canary.yellow.new")
@@ -97,6 +133,10 @@ filtered.sun.data <- data.frame(w.length=rep(w.length, 4),
 
 <<example-4>>=
 ggplot(data=filtered.sun.data, aes(x=w.length, y=s.e.irrad, colour=filter)) + geom_line()
+@
+
+<<>>=
+detach(sun.spct)
 @
 
 \end{document}
