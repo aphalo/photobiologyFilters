@@ -80,12 +80,18 @@ We can also use ggplot (or lattice or base graphics functions) to plot the spect
 ggplot(data=uv.226.new.spct, aes(x=w.length, y=Tfr)) + geom_line()
 @
 
-If we would like to use a different set of wavelengths, then we can build a new filter.spct from scratch.
+If we would like to use a different range of wavelengths, then we can build a new filter.spct by trimming.
 
-<<example-1>>=
-wl <- 350:450
+<<example-trim>>=
+cp.uv.226.spct <- copy(uv.226.new.spct)
 my.uv.226.spct <- 
-  filter.spct(w.length = wl, Tfr = calc_filter_multipliers(wl, "uv.226.new"))
+  trim_spct(cp.uv.226.spct, range = c(350,450))
+plot(my.uv.226.spct)
+@
+
+<<example-interpol>>=
+my.uv.226.spct <- 
+  interpolate_spct(cp.uv.226.spct, w.length.out = c(350,450), length=201)
 plot(my.uv.226.spct)
 @
 
