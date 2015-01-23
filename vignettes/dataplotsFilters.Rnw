@@ -28,7 +28,7 @@
 
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
-opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf', warning=FALSE)
+opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', warning=FALSE)
 options(replace.assign=TRUE,width=55)
 @
 
@@ -71,55 +71,60 @@ filter.plotter <- function(filter_name, w.low=280, w.high=1100){
 
 \subsection{Perfectly clear filter}
 <<plot-clear>>=
-filter.plotter("clear")
+plot(clear.spct)
 @
 
 \section{Plastic films}
 
 \subsection{Cellulose diacetate}
 <<plot-acetate>>=
-for (filter in c("acetate.115um.new", "acetate.250um.new", "acetate.480um.new")) {
-  filter.plotter(filter)
-}
+plot(acetate.115um.new.spct)
+plot(acetate.250um.new.spct)
+plot(acetate.480um.new.spct)
 @
 
 <<plot-acetate-age>>=
-for (filter in c("acetate.ageing0", "acetate.ageing20", "acetate.ageing30", 
-                 "acetate.ageing60", "acetate.ageing100", "acetate.ageing180", 
-                 "acetate.ageing300")) {
-  filter.plotter(filter)
-}
+plot(acetate.ageing0.spct)
+plot(acetate.ageing20.spct)
+plot(acetate.ageing30.spct)
+plot(acetate.ageing60.spct)
+plot(acetate.ageing100.spct)
+plot(acetate.ageing180.spct)
+plot(acetate.ageing300.spct)
 @
 
 %\newpage
 \subsection{Polyester}
 <<plot-polyester>>=
-filter.plotter("polyester.new")
+plot(polyester.new.spct)
 @
 
 \newpage
 \subsection{Polythene}
 <<plot-polythene>>=
-filter.plotter("polythene.new")
-filter.plotter("polythene.used")
+plot(polythene.new.spct)
+plot(polythene.used.spct)
 @
 
 %\newpage
 \subsection{Rosco theatrical filters}
 <<plot-rosco>>=
-for (filter in c("clear.00.new", "uv.226.new", "uv.226.used", "canary.yellow.new", 
-                 "canary.yellow.used", "rose.pink.new", "neon.pink.used", 
-                 "moss.green.new", "moss.green.used")) {
-  filter.plotter(filter)
-}
+plot(clear.00.new.spct)
+plot(uv.226.new.spct)
+plot(uv.226.used.spct)
+plot(canary.yellow.new.spct)
+plot(canary.yellow.used.spct)
+plot(moss.green.new.spct)
+plot(moss.green.used.spct)
+plot(rose.pink.new.spct)
+plot(neon.pink.used.spct)
 @
 
 %\newpage
 \subsection{Commercial greenhouse films from BPI Agri Visqueen}
 <<plot-bpi>>=
-for (filter in c("solatrol.new", "luminance.new")) {
-  filter.plotter(filter)
-}
+plot(solatrol.new.spct)
+plot(luminance.new.spct)
 @
 
 \newpage
@@ -128,47 +133,42 @@ for (filter in c("solatrol.new", "luminance.new")) {
 \subsection{Plexiglas}
 
 <<plot-evonik1>>=
-for (filter in c("PLX0A000_XT", "PLX0A570_GT", "PLX0F00_GT", "PLX0Z023_GT")) {
-  filter.plotter(filter)
-}
+plot(PLX0A000_XT.spct)
+plot(PLX0A570_GT.spct)
+plot(PLX0F00_GT.spct)
+plot(PLX0Z023_GT.spct)
 @
 
 <<plot-evonik2>>=
-for (filter in c("PLX1C33_GT", "PLX2C04_GT", "PLX3C01_GT", "PLX5C01_GT")) {
-  filter.plotter(filter)
-}
+plot(PLX1C33_GT.spct)
+plot(PLX2C04_GT.spct)
+plot(PLX3C01_GT.spct)
+plot(PLX5C01_GT.spct)
 @
 
 \subsection{Polycarbonate}
 
 <<plot-foiltek1>>=
-for (filter in c("PC", "PC_UV")) {
-  filter.plotter(filter)
-}
+plot(PC.spct)
+plot(PC_UV.spct)
 @
 
 \subsection{Polyestyrene}
 
 <<plot-foiltek2>>=
-for (filter in c("PS")) {
-  filter.plotter(filter)
-}
+plot(PS.spct)
 @
 
 \subsection{Polyester}
 
 <<plot-foiltek3>>=
-for (filter in c("Pet_G")) {
-  filter.plotter(filter)
-}
+plot(Pet_G.spct)
 @
 
 \subsection{Polyvinilchloride}
 
 <<plot-foiltek4>>=
-for (filter in c("PVC")) {
-  filter.plotter(filter)
-}
+plot(PVC.spct)
 @
 
 \newpage
@@ -177,48 +177,58 @@ for (filter in c("PVC")) {
 \subsection{Schott long-pass filters}
 
 <<plot-schott1>>=
-for (filter in c("gg395", "gg400", "gg435", "gg455", "gg475", "gg495")) {
-  filter.plotter(filter)
-}
+plot(gg395.spct)
+plot(gg400.spct)
+plot(gg435.spct)
+plot(gg455.spct)
+plot(gg475.spct)
+plot(gg495.spct)
 @
 
 <<plot-schott2>>=
-for (filter in c("bg25", "bg3", "bg7")) {
-  filter.plotter(filter)
-}
+plot(bg25.spct)
+plot(bg3.spct)
+plot(bg7.spct)
 @
 
 <<plot-schott3>>=
-for (filter in c("kg2", "kg3", "kg5")) {
-  filter.plotter(filter)
-}
+plot(kg2.spct)
+plot(kg3.spct)
+plot(kg5.spct)
 @
 
 <<plot-schott4>>=
-for (filter in c("n_wg280", "n_wg295", "n_wg305", "n_wg320")) {
-  filter.plotter(filter)
-}
+plot(n_wg280.spct)
+plot(n_wg295.spct)
+plot(n_wg305.spct)
+plot(n_wg320.spct)
 @
 
 <<plot-schott5>>=
-for (filter in c("og515", "og530", "og550", "og570", "og590")) {
-  filter.plotter(filter)
-}
+plot(og515.spct)
+plot(og550.spct)
+plot(og570.spct)
+plot(og590.spct)
 @
 
 <<plot-schott6>>=
-for (filter in c("rg610", "rg630", "rg645", "rg665", "rg695", "rg715", 
-                 "rg780", "rg830", "rg850", "rg9")) {
-  filter.plotter(filter)
-}
+plot(rg610.spct)
+plot(rg630.spct)
+plot(rg645.spct)
+plot(rg695.spct)
+plot(rg715.spct)
+plot(rg780.spct)
+plot(rg830.spct)
+plot(rg850.spct)
+plot(rg9.spct)
 @
 
 \subsection{Schott band-pass filters}
 
 <<plot-schott8>>=
-for (filter in c("ug1", "ug5", "ug11")) {
-  filter.plotter(filter)
-}
+plot(ug1.spct)
+plot(ug5.spct)
+plot(ug11.spct)
 @
 
 \end{document}

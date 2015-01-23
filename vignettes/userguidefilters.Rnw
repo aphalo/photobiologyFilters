@@ -66,7 +66,21 @@ library(photobiologyFilters)
 library(ggplot2)
 @
 
-\section{Plotting the transmittance spectrum of a filter}
+\section{Calculating average transmittance}
+
+<<>>=
+transmittance(uv.226.new.spct, UV_bands())
+@
+
+<<>>=
+transmittance(uv.226.new.spct, PAR())
+@
+
+<<>>=
+absorbance(uv.226.new.spct, PAR())
+@
+
+\section{Plotting the transmittance spectrum of filters}
 
 We can plot the data as is, accepting all defaults. As the returned value is a ggplot object, we can modify and add to it as needed.
 
@@ -74,13 +88,29 @@ We can plot the data as is, accepting all defaults. As the returned value is a g
 plot(uv.226.new.spct) + theme_bw(10)
 @
 
+We can also row-bind several spectra and plot them in panels.
+
+<<echo=TRUE>>=
+filters.spct <- 
+  rbindspct(list(canary = canary.yellow.new.spct,
+                 polyester = polyester.new.spct,
+                 no226 = uv.226.new.spct),
+            add.factor = TRUE,
+            factor.name = "filter")
+@
+
+<<fig.height=8>>=
+plot(filters.spct, annotations = "colour.guide") + facet_grid(filter~.)
+@
+
+\newpage
 We can also use ggplot (or lattice or base graphics functions) to plot the spectrum.
 
 <<example-1-fig>>=
 ggplot(data=uv.226.new.spct, aes(x=w.length, y=Tfr)) + geom_line()
 @
 
-If we would like to use a different range of wavelengths, then we can build a new filter.spct by trimming.
+If we would like to use a different range of wavelengths for several calculations, then we can build a new filter.spct by trimming.
 
 <<example-trim>>=
 cp.uv.226.spct <- copy(uv.226.new.spct)
@@ -89,60 +119,42 @@ my.uv.226.spct <-
 plot(my.uv.226.spct)
 @
 
-<<example-interpol>>=
-my.uv.226.spct <- 
-  interpolate_spct(cp.uv.226.spct, w.length.out = c(350,450), length=201)
-plot(my.uv.226.spct)
+\newpage
+However, if we only would like to limit the range of wavelengths in the plot, it is even easier to use the \texttt{range} formal argument of function \texttt{plot} to obtain the same plot.
+
+<<warning=FALSE>>=
+plot(uv.226.new.spct, range = c(350, 450))
 @
 
-\section{Convoluting spectral irradiance with filter transmittace}
+\section[]{Convoluting spectral irradiance with\\ filter transmittance}
 
-The easy way.
+To simulate the spectral irradiance of a filtered light source we convolute the bare source's irradiance spectrum with the filter transmittance spectrum.
 
 <<>>=
 plot(sun.spct * canary.yellow.new.spct)
 @
 
+\newpage
+If we want to compare the effect of several filters on the spectrum of a light source we can create a combined spectral object by row-binding the source.spct objects obtained as a result of the convolutions.
+
 <<echo=TRUE>>=
-canary.spct <- sun.spct * canary.yellow.new.spct
-canary.spct[ , filter := "canary"]
-polyester.spct <- sun.spct * polyester.new.spct
-polyester.spct[ , filter := "polyester"]
-no.226.spct <- sun.spct * uv.226.new.spct
-no.226.spct[ , filter := "no226"]
-my.sun.spct <- copy(sun.spct)
-my.sun.spct[ , filter := "none"]
-all.spct <- rbindspct(list(canary.spct, polyester.spct, no.226.spct, my.sun.spct))
-setTimeUnit(all.spct)
+all.spct <- 
+  rbindspct(list(canary = sun.spct * canary.yellow.new.spct,
+                 polyester = sun.spct * polyester.new.spct,
+                 no226 = sun.spct * uv.226.new.spct),
+            add.factor = TRUE,
+            factor.name = "filter")
 @
+
+<<fig.height=8>>=
+plot(all.spct, annotations = c("colour.guide", "boxes", "labels")) + facet_grid(filter~.)
+@
+
+\newpage
+If we would like the different spectra plotted on a single panel, we can use, for example, package \texttt{ggplot2}.
 
 <<>>=
 ggplot(data=all.spct, aes(x=w.length, y=s.e.irrad, colour=filter)) + geom_line()
-@
-
-The difficult way, which could execute faster.
-
-<<example-2-data, eval=TRUE>>=
-data(sun.spct)
-attach(sun.spct)
-@
-
-<<example-2-convolution, eval=TRUE>>=
-canary.s.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "canary.yellow.new")
-polyester.s.e.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "polyester.new")
-uv.226.s.e.irrad <- s.e.irrad * calc_filter_multipliers(w.length, "uv.226.new")
-filtered.sun.data <- data.frame(w.length=rep(w.length, 4), 
-                                s.e.irrad=c(s.e.irrad, canary.s.irrad, polyester.s.e.irrad, uv.226.s.e.irrad),
-                                filter=factor(rep(c("none", "Canary", "Polyester", "#226"), 
-                                                  rep(length(w.length), 4))))
-@
-
-<<example-4>>=
-ggplot(data=filtered.sun.data, aes(x=w.length, y=s.e.irrad, colour=filter)) + geom_line()
-@
-
-<<>>=
-detach(sun.spct)
 @
 
 \end{document}

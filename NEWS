@@ -1,3 +1,9 @@
+photobiologyFilters 0.2.1
+=========================
+
+Rebuilt with photobiology 0.5.7, which is now required.
+The User Guide was updated to use simpler code as allowed by photobiologygg 0.2.5.
+
 photobiologyFilters 0.2.0
 =========================
 
