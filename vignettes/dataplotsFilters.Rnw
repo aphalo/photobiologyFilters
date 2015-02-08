@@ -133,6 +133,7 @@ plot(luminance.new.spct)
 \subsection{Plexiglas}
 
 <<plot-evonik1>>=
+plot(PLX2458_GT.spct)
 plot(PLX0A000_XT.spct)
 plot(PLX0A570_GT.spct)
 plot(PLX0F00_GT.spct)

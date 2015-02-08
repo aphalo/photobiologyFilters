@@ -21,7 +21,7 @@
 #' @note Data measured with an Agilent~8453 spectrophotometer (based on diode array).
 #' 
 #' @name Plexiglas.clear
-#' @aliases PLX0A000_XT.spct PLX0A570_GT.spct PLX0F00_GT.spct PLX0Z023_GT.spct
+#' @aliases PLX0A000_XT.spct PLX0A570_GT.spct PLX0F00_GT.spct PLX0Z023_GT.spct PLX2458_GT.spct
 #' 
 NULL
 #' Total transmittance for colour PMMA sheets (Plexiglas) by Evonik

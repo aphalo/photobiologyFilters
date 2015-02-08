@@ -8,7 +8,7 @@
 # 3) save all the data.frames created into a single Rda file in data folder
 library(photobiology)
 rm(list = ls())
-setwd("raw_data/Foiltek/")
+setwd("raw.data/Foiltek/")
 file.list <- shell('ls *.CSV', intern=TRUE)
 for (file.name in file.list) {
   dt.name <- paste(sub(pattern=".CSV", replacement="", x=file.name), "spct", sep=".")
