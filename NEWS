@@ -1,3 +1,13 @@
+photobiologyFilters 0.2.3
+=========================
+
+Revised script used for creating filter data objects. To avoid problems with 
+conversions to absorbance and taking into account that what can be really
+measured is that transmittance is below the detection limit of the
+instrument used, the minimum value of fractional transmittance has been
+forced to be 1 E-5, with the meaning of < 1 E-5, consistently with the
+earlier encoding used for Schott optical glass filters.
+
 photobiologyFilters 0.2.2
 =========================
 

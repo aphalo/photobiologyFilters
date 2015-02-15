@@ -1,8 +1,8 @@
 Package: photobiologyFilters
 Type: Package
 Title: Spectral transmittance data for filters
-Version: 0.2.2
-Date: 2015-02-05
+Version: 0.2.3
+Date: 2015-02-15
 Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
 Description: This package provides spectral transmittance data for frequently used filters.
