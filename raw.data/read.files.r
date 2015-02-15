@@ -8,7 +8,7 @@
 # 3) save all the data.frames created into a single Rda file in data folder
 library(photobiology)
 rm(list = ls())
-setwd("raw_data")
+setwd("raw.data")
 file.list <- system('ls *.txt', intern=TRUE)
 for (file.name in file.list) {
   df.name <- paste(sub(pattern=".txt", replacement="", x=file.name), "spct", sep=".")
@@ -27,8 +27,8 @@ for (file.name in file.list) {
   } else { 
     stop("ncol != 2 || ncol!=4")
   }
+  tmp.df[ Tfr < 1e-5, Tfr := 1e-5]
   setFilterSpct(tmp.df)
-  setkey(tmp.df, w.length)
   assign(df.name, tmp.df)
   save(list=df.name, file=paste("../data/", df.name, ".rda", sep=""))
 }
