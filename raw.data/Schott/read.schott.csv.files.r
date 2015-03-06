@@ -8,7 +8,7 @@
 # 3) save all the data.frames created into a single Rda file in data folder
 library(photobiology)
 rm(list = ls())
-setwd("raw_data/Schott/done/")
+setwd("raw.data/Schott/done/")
 file.list <- system('ls *.csv', intern=TRUE)
 for (file.name in file.list) {
   dt.name <- paste(sub(pattern=".csv", replacement="", x=file.name), "spct", sep=".")

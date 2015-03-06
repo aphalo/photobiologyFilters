@@ -95,8 +95,7 @@ filters.spct <-
   rbindspct(list(canary = canary.yellow.new.spct,
                  polyester = polyester.new.spct,
                  no226 = uv.226.new.spct),
-            add.factor = TRUE,
-            factor.name = "filter")
+            idfactor = "filter")
 @
 
 <<fig.height=8>>=
@@ -142,8 +141,7 @@ all.spct <-
   rbindspct(list(canary = sun.spct * canary.yellow.new.spct,
                  polyester = sun.spct * polyester.new.spct,
                  no226 = sun.spct * uv.226.new.spct),
-            add.factor = TRUE,
-            factor.name = "filter")
+            idfactor = "filter")
 @
 
 <<fig.height=8>>=
