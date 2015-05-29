@@ -8,7 +8,6 @@
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
@@ -33,7 +32,6 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
@@ -58,7 +56,6 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
@@ -83,7 +80,6 @@ NULL
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
@@ -102,15 +98,12 @@ NULL
 #'
 #' Internal transmittance for Schott optical glass filters.
 #' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source. Converted
-#' to percent transmittance for consitency with other data
-#' sets but original fractional data mantained in variable \code{Ti}.
+#' described as "reference values only" in the source.
 #' 
 #' The variables are as follows:
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
@@ -128,15 +121,12 @@ NULL
 #'
 #' Internal transmittance for Schott optical glass filters.
 #' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source. Converted
-#' to percent transmittance for consitency with other data
-#' sets but original fractional data mantained in variable \code{Ti}.
+#' described as "reference values only" in the source.
 #' 
 #' The variables are as follows:
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
@@ -154,15 +144,12 @@ NULL
 #'
 #' Internal transmittance for Schott optical glass filters.
 #' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source. Converted
-#' to percent transmittance for consitency with other data
-#' sets but original fractional data mantained in variable \code{Ti}.
+#' described as "reference values only" in the source. 
 #' 
 #' The variables are as follows:
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%)
 #'   \item Tfr (fraction) 
 #' }
 #' 
