@@ -1,7 +1,13 @@
 photobiologyFilters 0.3.0
 =========================
 
-Rebuilt data and package with photobiology 0.6.0.
+Rebuid data and package with photobiology 0.8.0 and remove dependency
+on package data.table.
+
+photobiologyFilters 0.3.0
+=========================
+
+Rebuid data and package with photobiology 0.6.0.
 
 photobiologyFilters 0.2.4
 =========================

@@ -59,11 +59,7 @@ loading it from the library when needed.
 
 To load the package into the workspace we use \verb!library(photobiologyFilter)!.
 
-<<example-0-visible, eval=FALSE>>=
-library(photobiology)
-library(photobiologygg)
-library(photobiologyFilters)
-library(ggplot2)
+<<example-0-hiden, eval=FALSE>>=
 @
 
 \section{Calculating average transmittance}
@@ -112,9 +108,8 @@ ggplot(data=uv.226.new.spct, aes(x=w.length, y=Tfr)) + geom_line()
 If we would like to use a different range of wavelengths for several calculations, then we can build a new filter.spct by trimming.
 
 <<example-trim>>=
-cp.uv.226.spct <- copy(uv.226.new.spct)
 my.uv.226.spct <- 
-  trim_spct(cp.uv.226.spct, range = c(350,450))
+  trim_spct(uv.226.new.spct, range = c(350,450), byref = FALSE)
 plot(my.uv.226.spct)
 @
 
