@@ -141,6 +141,11 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
+#' @setion Warning!
+#' Rosco sells two different filters under "this name and code."Moss Green #89". 
+#' One in the Roscolux series and another in the E-Colour + (or European series).
+#' The two types have differences in spectral transmittance, which are very
+#' 
 #' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
 #' 
