@@ -11,6 +11,7 @@ for (file.name in file.list) {
                    "spct", sep = ".")
   tmp.spct <- read_csv(file.name, col_names = c("w.length", "Tfr"), 
                      col_types = "dd")
+  tmp.spct <- mutate(tmp.spct, Tfr = ifelse(Tfr < 0, 0, Tfr))
   setFilterSpct(tmp.spct)
   tmp.spct <- interpolate_spct(tmp.spct, w.length.out = 403:698, fill = 0)
   assign(spct.name, tmp.spct)

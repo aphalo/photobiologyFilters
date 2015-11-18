@@ -16,7 +16,8 @@
 #' @keywords datasets
 #' @format A data frame with 297 rows and 2 variables
 #' 
-"Lee_101_Yellow.spct"
+#' @name Lee_101_Yellow.spct
+NULL
 
 #' Filter spectra data for Lee #105 "Orange" filter
 #'
@@ -36,7 +37,8 @@
 #' @keywords datasets
 #' @format A data frame with 297 rows and 2 variables
 #' 
-"Lee_105_Orange.spct"
+#' @name Lee_105_Orange.spct
+NULL
 
 #' Filter spectra data for Lee #119 "Dark Blue" filter
 #'
@@ -56,7 +58,8 @@
 #' @keywords datasets
 #' @format A data frame with 296 rows and 2 variables
 #' 
-"Lee_119_Dark_Blue.spct"
+#' @name Lee_119_Dark_Blue.spct
+NULL
 
 #' Filter spectra data for Lee #199 "Regal Blue" filter
 #'
@@ -76,7 +79,8 @@
 #' @keywords datasets
 #' @format A data frame with 296 rows and 2 variables
 #' 
-"Lee_199_Regal_Blue.spct"
+#' @name Lee_199_Regal_Blue.spct
+NULL
 
 #' Filter spectra data for Lee #210 "0.6ND" filter
 #'
@@ -96,7 +100,8 @@
 #' @keywords datasets
 #' @format A data frame with 296 rows and 2 variables
 #' 
-"Lee_210_0.6ND.spct"
+#' @name Lee_210_0.6ND.spct
+NULL
 
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
@@ -122,7 +127,8 @@
 #' @keywords datasets
 #' @format A data frame with 296 rows and 2 variables
 #' 
-"Lee_298_0.15ND.spct"
+#' @name Lee_298_0.15ND.spct
+NULL
 
 #' Filter spectra data for Lee #298 "1.2ND.spct" filter
 #'
@@ -143,5 +149,7 @@
 #' @keywords datasets
 #' @format A data frame with 296 rows and 2 variables
 #' 
-"Lee_299_1.2ND.spct"
+#' @name Lee_299_1.2ND.spct
+NULL
+
 

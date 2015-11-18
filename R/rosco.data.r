@@ -23,6 +23,7 @@
 #' 
 #' @name uv.226.new.spct
 NULL
+
 #' Filter spectra data for Rosco Rosco #226 "UV" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
@@ -48,6 +49,7 @@ NULL
 #' 
 #' @name uv.226.used.spct
 NULL
+
 #' Filter spectra data for Rosco #00 "Clear" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
@@ -75,6 +77,7 @@ NULL
 #' 
 #' @name clear.00.new.spct
 NULL
+
 #' Filter spectra data for Rosco #312 "Canary" yellow filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
@@ -100,6 +103,7 @@ NULL
 #' 
 #' @name canary.yellow.new.spct
 NULL
+
 #' Filter spectra data for Rosco #312 "Canary" yellow filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
@@ -125,6 +129,7 @@ NULL
 #' 
 #' @name canary.yellow.used.spct
 NULL
+
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
@@ -141,7 +146,7 @@ NULL
 #' 
 #' \url{http://www.rosco.com/filters/index.cfm}
 #' 
-#' @setion Warning!
+#' @section Warning!:
 #' Rosco sells two different filters under "this name and code."Moss Green #89". 
 #' One in the Roscolux series and another in the E-Colour + (or European series).
 #' The two types have differences in spectral transmittance, which are very
@@ -155,6 +160,7 @@ NULL
 #' 
 #' @name moss.green.new.spct
 NULL
+
 #' Filter spectra data for Rosco #89 "Moss green" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
@@ -180,6 +186,7 @@ NULL
 #' 
 #' @name moss.green.used.spct
 NULL
+
 #' Filter spectra data for Rosco #343 "Neon pink" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and

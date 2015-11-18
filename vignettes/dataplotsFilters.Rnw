@@ -116,6 +116,18 @@ plot(neon.pink.used.spct)
 @
 
 %\newpage
+\subsection{Lee theatrical filters}
+<<plot-lee>>=
+plot(Lee_101_Yellow.spct)
+plot(Lee_105_Orange.spct)
+plot(Lee_119_Dark_Blue.spct)
+plot(Lee_199_Regal_Blue.spct)
+plot(Lee_210_0.6ND.spct)
+plot(Lee_298_0.15ND.spct)
+plot(Lee_299_1.2ND.spct)
+@
+
+%\newpage
 \subsection{Commercial greenhouse films from BPI Agri Visqueen}
 <<plot-bpi>>=
 plot(solatrol.new.spct)
