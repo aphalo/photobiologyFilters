@@ -14,11 +14,10 @@ for (file.name in file.list) {
   dt.name <- paste(sub(pattern=".CSV", replacement="", x=file.name), "spct", sep=".")
   tmp.df <- read.csv(file.name, skip=1, header=FALSE, col.names=c("w.length", "Tpc", "sd_Tpc"), 
                      colClasses = c("numeric", "numeric", "NULL"))
-  tmp.df <- setDT(tmp.df)
-  setkey(tmp.df, w.length)
-  tmp.df[ , Tfr := Tpc / 100]
-  tmp.df[ , Tpc := NULL]
-  setFilterSpct(tmp.df)
+  tmp.df[["Tfr"]] <- tmp.df[["Tpc"]] / 100
+  tmp.df[["Tpc"]] <- NULL
+  setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- clean(tmp.df)
   assign(dt.name, tmp.df)
   save(list=dt.name, file=paste("../../data/", dt.name, ".rda", sep=""))
 }

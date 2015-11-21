@@ -2,6 +2,8 @@ photobiologyFilters 0.3.2
 =========================
 
 Add spectra for some Lee filters (data digitized from data sheets).
+Remove all references to data.table from data object build scripts.
+Rebuild all data objects with photobiology (0.8.11). 
 
 photobiologyFilters 0.3.1
 =========================
