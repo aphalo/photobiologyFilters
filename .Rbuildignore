@@ -2,4 +2,4 @@
 ^\.Rproj\.user$
 ^raw\.data/*
 ^\.git/*
-vignette/figure
+vignettes/figure
