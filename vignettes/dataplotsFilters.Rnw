@@ -64,9 +64,27 @@ options(photobiology.plot.annotations = c("boxes", "labels", "colour.guide", "ti
 \newpage
 \section{Dummy filters}
 
-\subsection{Perfectly clear filter}
+\subsection{Flat transmittance filters}
+
+Perfectly clear filter.
+
 <<plot-clear>>=
-plot(clear.spct)
+plot(clear.spct, annotations = "colour.guide")
+@
+
+Perfectly apaque filter.
+<<plot-opaque>>=
+plot(clear.spct * 0, annotations = "colour.guide")
+@
+
+Flat neutral filters as fractional transmittance.
+<<plot-neutral-T>>=
+plot(clear.spct * 0.5, annotations = "colour.guide")
+@
+
+As absorbance.
+<<plot-neutral-A>>=
+plot(clear.spct * A2T(1), annotations = "colour.guide")
 @
 
 \section{Plastic films}
@@ -76,7 +94,9 @@ plot(clear.spct)
 for (s in names(acetate.mspct)) {
   print(plot(acetate.mspct[[s]], annotations = "colour.guide") +
           labs(title = paste("Courtaulds cellulose acetate ", 
-                             gsub(".", " ", s, fixed = TRUE))))
+                             gsub(".", " ", s, fixed = TRUE), 
+                             ' acetate.mspct[["', s, '"]]', 
+                             sep = "")))
 }
 @
 
@@ -98,7 +118,9 @@ plot(polythene.used.spct)
 <<plot-rosco>>=
 for (s in names(rosco.mspct)) {
   print(plot(rosco.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Rosco ", gsub(".", " ", s, fixed = TRUE))))
+          labs(title = paste("Rosco ", gsub(".", " ", s, fixed = TRUE), 
+                             ' rosco.mspct[["', s, '"]]', 
+                             sep = "")))
 }
 @
 
@@ -107,7 +129,9 @@ for (s in names(rosco.mspct)) {
 <<plot-lee>>=
 for (s in names(lee.mspct)) {
   print(plot(lee.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Lee ", gsub("_", " ", s, fixed = TRUE))))
+          labs(title = paste("Lee ", gsub("_", " ", s, fixed = TRUE), 
+                             ' lee.mspct[["', s, '"]]', 
+                             sep = "")))
 }
 @
 
@@ -171,7 +195,9 @@ plot(PVC.spct)
 <<plot-schott1>>=
 for (s in names(schott.mspct)) {
   print(plot(schott.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("SCHOTT", s)))
+          labs(title = paste("SCHOTT ", s, 
+                             ' shott.mspct[["', s, '"]]', 
+                             sep = "")))
 }
 @
 
