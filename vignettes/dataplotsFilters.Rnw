@@ -73,19 +73,11 @@ plot(clear.spct)
 
 \subsection{Cellulose diacetate}
 <<plot-acetate>>=
-plot(acetate.115um.new.spct)
-plot(acetate.250um.new.spct)
-plot(acetate.480um.new.spct)
-@
-
-<<plot-acetate-age>>=
-plot(acetate.ageing0.spct)
-plot(acetate.ageing20.spct)
-plot(acetate.ageing30.spct)
-plot(acetate.ageing60.spct)
-plot(acetate.ageing100.spct)
-plot(acetate.ageing180.spct)
-plot(acetate.ageing300.spct)
+for (s in names(acetate.mspct)) {
+  print(plot(acetate.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("Courtaulds cellulose acetate ", 
+                             gsub(".", " ", s, fixed = TRUE))))
+}
 @
 
 %\newpage
@@ -104,27 +96,19 @@ plot(polythene.used.spct)
 %\newpage
 \subsection{Rosco theatrical filters}
 <<plot-rosco>>=
-plot(clear.00.new.spct)
-plot(uv.226.new.spct)
-plot(uv.226.used.spct)
-plot(canary.yellow.new.spct)
-plot(canary.yellow.used.spct)
-plot(moss.green.new.spct)
-plot(moss.green.used.spct)
-plot(rose.pink.new.spct)
-plot(neon.pink.used.spct)
+for (s in names(rosco.mspct)) {
+  print(plot(rosco.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("Rosco ", gsub(".", " ", s, fixed = TRUE))))
+}
 @
 
 %\newpage
 \subsection{Lee theatrical filters}
 <<plot-lee>>=
-plot(Lee_101_Yellow.spct)
-plot(Lee_105_Orange.spct)
-plot(Lee_119_Dark_Blue.spct)
-plot(Lee_199_Regal_Blue.spct)
-plot(Lee_210_0.6ND.spct)
-plot(Lee_298_0.15ND.spct)
-plot(Lee_299_1.2ND.spct)
+for (s in names(lee.mspct)) {
+  print(plot(lee.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("Lee ", gsub("_", " ", s, fixed = TRUE))))
+}
 @
 
 %\newpage
@@ -185,58 +169,10 @@ plot(PVC.spct)
 \subsection{Schott long-pass filters}
 
 <<plot-schott1>>=
-plot(gg395.spct)
-plot(gg400.spct)
-plot(gg435.spct)
-plot(gg455.spct)
-plot(gg475.spct)
-plot(gg495.spct)
-@
-
-<<plot-schott2>>=
-plot(bg25.spct)
-plot(bg3.spct)
-plot(bg7.spct)
-@
-
-<<plot-schott3>>=
-plot(kg2.spct)
-plot(kg3.spct)
-plot(kg5.spct)
-@
-
-<<plot-schott4>>=
-plot(n_wg280.spct)
-plot(n_wg295.spct)
-plot(n_wg305.spct)
-plot(n_wg320.spct)
-@
-
-<<plot-schott5>>=
-plot(og515.spct)
-plot(og550.spct)
-plot(og570.spct)
-plot(og590.spct)
-@
-
-<<plot-schott6>>=
-plot(rg610.spct)
-plot(rg630.spct)
-plot(rg645.spct)
-plot(rg695.spct)
-plot(rg715.spct)
-plot(rg780.spct)
-plot(rg830.spct)
-plot(rg850.spct)
-plot(rg9.spct)
-@
-
-\subsection{Schott band-pass filters}
-
-<<plot-schott8>>=
-plot(ug1.spct)
-plot(ug5.spct)
-plot(ug11.spct)
+for (s in names(schott.mspct)) {
+  print(plot(schott.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("SCHOTT", s)))
+}
 @
 
 \section{Petri dishes}

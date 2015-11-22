@@ -1,0 +1,6 @@
+# opaque filter
+w.length transmittance
+100  0
+110  0
+4990  0
+5000  0

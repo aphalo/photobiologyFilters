@@ -1,8 +1,7 @@
-#' Internal transmittance for Schott BG long pass filters
+#' Internal transmittance for Schott filters
 #'
 #' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source.
+#' Data from manufacturer-provided excel filter tool.
 #' 
 #' The variables are as follows:
 #' 
@@ -11,155 +10,38 @@
 #'   \item Tfr (fraction) 
 #' }
 #' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
+#' @note Data supplied by the manufacturer for inclussion in this package.
+#' Version	1 st June 2015. Reproduced with permision.	
 #' 
+#' @section DISCLAIMER from Schott: 
+#'   This data collection is protected by federal copyright law and
+#'   international treaty. The copyright holder retains title to and ownership
+#'   of the data collection.
+#'   
+#'   Data contained in this calculation tool are owned by SCHOTT, any request
+#'   for permission to use them for commercial purposes must be directed to
+#'   SCHOTT.
+#'   
+#'   SCHOTT makes no warranty of representation, either expressed or implied, 
+#'   with respect to this data including their quality,  merchantability, or
+#'   fitness for a particular purpose.
+#'   
+#'   In no event will SCHOTT be liable for direct, indirect, special,
+#'   incidental, or consequential damages arising out of the use or inability to
+#'   use the calculation tool even if SCHOTT has been advised of the possibility
+#'   of such damages.
+#'   
+#'   SCHOTT reserves the right to change the optical and non-optical data
+#'   without prior notice. This calculation tool renders all previous filter
+#'   glass catalogs obsolete 				
+#'   
+#'   This data collection was composed with utmost care.
+#'   
 #' @docType data
 #' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
+#' @format A collection of spectra with 67 member spectra with the names of the filters:
+#' 'UG1' 'UG5' 'UG11' 'BG3' 'BG7' 'BG18' 'BG25' 'BG36' 'BG38' 'BG39' 'BG40' 'BG42' 'S-8612' 'BG50' 'BG55' 'BG60' 'BG60HT' 'BG61' 'BG62' 'BG62HT' 'BG63' 'BG64' 'VG9' 'VG20' 'S-8022' 'S-8023' 'GG395' 'GG400' 'GG420' 'GG435' 'GG455' 'GG475' 'GG495' 'OG515' 'OG530' 'OG550' 'OG570' 'OG590' 'RG9' 'RG610' 'RG630' 'RG645' 'RG665' 'RG695' 'RG715' 'RG780' 'RG830' 'RG850' 'RG1000' 'NG1' 'NG3' 'NG4' 'NG5' 'NG9' 'NG11' 'N-WG280' 'N-WG295' 'N-WG305' 'N-WG320' 'KG1' 'KG2' 'KG3' 'KG5' 'BG67' 'UG2A' 'BG62HS' 'BG66HS'
+#' The reflectance factor and reference thickness are stored in a comment.
 #' 
-#' @name Schott.BG.short.pass
-#' @aliases bg25.spct bg3.spct bg7.spct 
-#' 
-NULL
-#' Internal transmittance for Schott GG long pass filters
-#'
-#' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source.
-#' 
-#' The variables are as follows:
-#' 
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
-#' }
-#' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
-#' 
-#' @docType data
-#' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
-#' 
-#' @name Schott.GG.long.pass
-#' @aliases gg395.spct gg400.spct gg435.spct gg455.spct gg475.spct gg495.spct 
-#' 
-NULL
-#' Internal transmittance for Schott KG short pass filters
-#'
-#' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source.
-#' 
-#' The variables are as follows:
-#' 
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
-#' }
-#' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
-#' 
-#' @docType data
-#' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
-#' 
-#' @name Schott.KG.short.pass
-#' @aliases kg2.spct kg3.spct kg5.spct 
-#' 
-NULL
-#' Internal transmittance for Schott N-WG long pass filters
-#'
-#' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source.
-#' 
-#' The variables are as follows:
-#' 
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
-#' }
-#' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
-#' 
-#' @docType data
-#' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
-#' 
-#' @name Schott.N-WG.short.pass
-#' @aliases n_wg280.spct n_wg295.spct n_wg305.spct n_wg320.spct 
-#' 
-NULL
-#' Internal transmittance for Schott RG long pass filters
-#'
-#' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source.
-#' 
-#' The variables are as follows:
-#' 
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
-#' }
-#' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
-#' 
-#' @docType data
-#' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
-#' 
-#' @name  Schott.RG.long.pass"
-#' @aliases rg610.spct rg630.spct rg645.spct rg665.spct rg695.spct rg715.spct rg780.spct rg830.spct rg850.spct rg9.spct
-NULL
-#' Internal transmittance for Schott OG long pass filters
-#'
-#' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source.
-#' 
-#' The variables are as follows:
-#' 
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
-#' }
-#' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
-#' 
-#' @docType data
-#' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
-#' 
-#' @name  Schott.OG.long.pass"
-#' @aliases og515.spct og530.spct og550.spct og570.spct og590.spct
-NULL
-#' Internal transmittance for Schott UG UV-band pass filters
-#'
-#' Internal transmittance for Schott optical glass filters.
-#' Data from manufacturer datasheet. They are
-#' described as "reference values only" in the source. 
-#' 
-#' The variables are as follows:
-#' 
-#' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
-#' }
-#' 
-#' @note Data from datasheets downloaded from manufacturers website on 24.04.2014 at
-#' \url{http://www.us.schott.com/advanced_optics/english/download/}
-#' 
-#' @docType data
-#' @keywords datasets
-#' @format A data frame with 180 rows and 3 variables
-#' 
-#' @name Schott.UG.band.pass
-#' @aliases ug1.spct ug11.spct ug5.spct
+#' @name schott.mspct
 NULL
