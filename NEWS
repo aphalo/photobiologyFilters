@@ -1,4 +1,20 @@
-photobiologyFilters 0.3.2
+photobiologyFilters 0.4.0 (NOT BACKWARDS COMPATIBLE)
+=========================
+
+Change how data are stored. Data are now in filter_mspct objects, in most
+cases each object contains data for filters from a single supplier.
+
+Replace SCHOTT filter data with those supplied by SCHOTT. Now data for 67
+filters are included and data on thickness and reflection multiplier are
+included for each filter type.
+
+Add data for greenhouse films from XL Horticulture Ltd.
+
+Simplify and improve all data building scripts.
+
+Revise vignettes to use data in new format and to include new data added.
+
+photobiologyFilters 0.3.2 (not released)
 =========================
 
 Add spectra for some Lee filters (data digitized from data sheets).

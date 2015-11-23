@@ -15,7 +15,7 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A collection of filter spectra with seven members, each a data frame 
+#' @format A collection of spectra with seven members, each a filter_spct 
 #' with 296 or 297 rows and 2 variables:
 #' 'ND0.15_298' 'ND0.60_210' 'ND1.20_299' 'Dark_Blue_119' 'Regal_Blue_199' 'Orange_105'
 #' 'Yellow_101'

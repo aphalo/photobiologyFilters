@@ -69,22 +69,26 @@ options(photobiology.plot.annotations = c("boxes", "labels", "colour.guide", "ti
 Perfectly clear filter.
 
 <<plot-clear>>=
-plot(clear.spct, annotations = "colour.guide")
+plot(clear.spct, 
+     annotations = c("colour.guide", "title"))
 @
 
 Perfectly apaque filter.
 <<plot-opaque>>=
-plot(clear.spct * 0, annotations = "colour.guide")
+plot(clear.spct * 0, 
+     annotations = c("colour.guide", "title"))
 @
 
 Flat neutral filters as fractional transmittance.
 <<plot-neutral-T>>=
-plot(clear.spct * 0.5, annotations = "colour.guide")
+plot(clear.spct * 0.5, 
+     annotations = c("colour.guide", "title"))
 @
 
 As absorbance.
 <<plot-neutral-A>>=
-plot(clear.spct * A2T(1), annotations = "colour.guide")
+plot(clear.spct * A2T(1), 
+     annotations = c("colour.guide", "title"))
 @
 
 \section{Plastic films}
@@ -93,8 +97,8 @@ plot(clear.spct * A2T(1), annotations = "colour.guide")
 <<plot-acetate>>=
 for (s in names(acetate.mspct)) {
   print(plot(acetate.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Courtaulds cellulose acetate ", 
-                             gsub(".", " ", s, fixed = TRUE), 
+          labs(title = paste("Cellulose acetate ", 
+                             gsub("_", " ", s, fixed = TRUE), 
                              ' acetate.mspct[["', s, '"]]', 
                              sep = "")))
 }
@@ -103,14 +107,14 @@ for (s in names(acetate.mspct)) {
 %\newpage
 \subsection{Polyester}
 <<plot-polyester>>=
-plot(polyester.new.spct)
+plot(mcdermit.mspct[["Autostat_CT5_125um"]])
 @
 
 \newpage
 \subsection{Polythene}
 <<plot-polythene>>=
-plot(polythene.new.spct)
-plot(polythene.used.spct)
+plot(etola.mspct[["Clear_LD_PE_50um"]])
+plot(etola.mspct[["Clear_LD_PE_50um_used"]])
 @
 
 %\newpage
@@ -118,7 +122,7 @@ plot(polythene.used.spct)
 <<plot-rosco>>=
 for (s in names(rosco.mspct)) {
   print(plot(rosco.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Rosco ", gsub(".", " ", s, fixed = TRUE), 
+          labs(title = paste("Rosco ", gsub("_", " ", s, fixed = TRUE), 
                              ' rosco.mspct[["', s, '"]]', 
                              sep = "")))
 }
@@ -138,53 +142,69 @@ for (s in names(lee.mspct)) {
 %\newpage
 \subsection{Commercial greenhouse films from BPI Agri Visqueen}
 <<plot-bpi>>=
-plot(solatrol.new.spct)
-plot(luminance.new.spct)
+for (s in names(bpi_visqueen.mspct)) {
+  print(plot(bpi_visqueen.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("Visqueen ", gsub("_", " ", s, fixed = TRUE), 
+                             ' bpi_visqueen.mspct[["', s, '"]]', 
+                             sep = "")))
+}
 @
 
-\newpage
+\subsection{Commercial greenhouse films from XL Agriculture}
+
+<<plot-xl-hort>>=
+for (s in names(xl_horticulture.mspct)) {
+  print(plot(xl_horticulture.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("XL Horticulture ", gsub("_", " ", s, fixed = TRUE), 
+                             ' xl_horticulture.mspct[["', s, '"]]', 
+                             sep = "")))
+}
+@
+
+%\newpage
 \section{Plastic sheets}
 
 \subsection{Plexiglas}
 
 <<plot-evonik1>>=
-plot(PLX2458_GT.spct)
-plot(PLX0A000_XT.spct)
-plot(PLX0A570_GT.spct)
-plot(PLX0F00_GT.spct)
-plot(PLX0Z023_GT.spct)
-@
-
-<<plot-evonik2>>=
-plot(PLX1C33_GT.spct)
-plot(PLX2C04_GT.spct)
-plot(PLX3C01_GT.spct)
-plot(PLX5C01_GT.spct)
+for (s in names(plexiglas.mspct)) {
+  print(plot(plexiglas.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("Evonik's Plexiglas ", gsub("_", " ", s, fixed = TRUE), 
+                             ' plexiglas.mspct[["', s, '"]]', 
+                             sep = "")))
+}
 @
 
 \subsection{Polycarbonate}
 
 <<plot-foiltek1>>=
-plot(PC.spct)
-plot(PC_UV.spct)
+for (s in c("Clear_PC", "Clear_PC_UV")) {
+  print(plot(foiltek.mspct[[s]], annotations = "colour.guide") +
+          labs(title = paste("Foiltek ", gsub("_", " ", s, fixed = TRUE), 
+                             ' foiltek.mspct[["', s, '"]]', 
+                             sep = "")))
+}
 @
 
 \subsection{Polyestyrene}
 
 <<plot-foiltek2>>=
-plot(PS.spct)
+plot(foiltek.mspct[["Clear_PS"]], 
+     annotations = c("colour.guide", "title"))
 @
 
 \subsection{Polyester}
 
 <<plot-foiltek3>>=
-plot(Pet_G.spct)
+plot(foiltek.mspct[["Clear_PET_G"]], 
+     annotations = c("colour.guide", "title"))
 @
 
 \subsection{Polyvinilchloride}
 
 <<plot-foiltek4>>=
-plot(PVC.spct)
+plot(foiltek.mspct[["Clear_PVC"]], 
+     annotations = c("colour.guide", "title"))
 @
 
 \newpage
@@ -204,9 +224,9 @@ for (s in names(schott.mspct)) {
 \section{Petri dishes}
 
 <<plot-petri>>=
-plot(Petri_dish_PS_101.spct)
-plot(Petri_dish_PS_109.spct)
-plot(Petri_dish_glass.spct)
+plot(petri_dishes.mspct[["glass_nn"]])
+plot(petri_dishes.mspct[["PS_Sterilin101"]])
+plot(petri_dishes.mspct[["PS_Sterilin109"]])
 @
 
 \end{document}

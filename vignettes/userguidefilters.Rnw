@@ -65,6 +65,7 @@ To load the package into the workspace we use \verb!library(photobiologyFilter)!
 \section{Calculating average transmittance}
 
 <<>>=
+uv.226.new.spct <- rosco.mspct$UV_filter_EColour226
 transmittance(uv.226.new.spct, UV_bands())
 @
 
@@ -86,16 +87,18 @@ plot(uv.226.new.spct) + theme_bw(10)
 
 We can also row-bind several spectra and plot them in panels.
 
-<<echo=TRUE>>=
-filters.spct <- 
-  rbindspct(list(canary = canary.yellow.new.spct,
-                 polyester = polyester.new.spct,
-                 no226 = uv.226.new.spct),
-            idfactor = "filter")
+<<>>=
+filters.spct <- rbindspct(list(PE = etola.mspct$Clear_LD_PE_50um,
+                               PET = mcdermit.mspct$Autostat_CT5_125um,
+                               'Rosco #226' = rosco.mspct$UV_filter_EColour226,
+                               'Rosco #312' = rosco.mspct$Canary_Supergel312),
+                          idfactor = "filter")
 @
 
 <<fig.height=8>>=
-plot(filters.spct, annotations = "colour.guide") + facet_grid(filter~.)
+plot(filters.spct, 
+     annotations = c("colour.guide", "boxes", "labels")) + 
+  facet_grid(filter~.)
 @
 
 \newpage
@@ -125,7 +128,7 @@ plot(uv.226.new.spct, range = c(350, 450))
 To simulate the spectral irradiance of a filtered light source we convolute the bare source's irradiance spectrum with the filter transmittance spectrum.
 
 <<>>=
-plot(sun.spct * canary.yellow.new.spct)
+plot(sun.spct * rosco.mspct$Canary_Supergel312)
 @
 
 \newpage
@@ -133,9 +136,9 @@ If we want to compare the effect of several filters on the spectrum of a light s
 
 <<echo=TRUE>>=
 all.spct <- 
-  rbindspct(list(canary = sun.spct * canary.yellow.new.spct,
-                 polyester = sun.spct * polyester.new.spct,
-                 no226 = sun.spct * uv.226.new.spct),
+  rbindspct(list('Rosco #312' = sun.spct * rosco.mspct$Canary_Supergel312,
+                 'Rosco #226' = sun.spct * rosco.mspct$UV_filter_EColour226,
+                 PET = sun.spct * mcdermit.mspct$Autostat_CT5_125um),
             idfactor = "filter")
 @
 

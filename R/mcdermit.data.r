@@ -1,14 +1,12 @@
-#' Filter spectra data for McDermit Autostat CT5 "polyester" filter (0.125 mm thick)
+#' Filter spectra data for McDermit Autostat CT5 "polyester" filter
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
-#' tabulated values spectral transmittance for different filters.
-#' Unused (new).
+#' tabulated values spectral transmittance for filter.
 #' 
 #' The variables are as follows:
 #' 
 #' \itemize{
 #'   \item w.length (nm)  
-#'   \item Tpc (\%) 
 #'   \item Tfr (fraction) 
 #' }
 #' \url{http://www.macdermidautotype.com/}
@@ -20,5 +18,5 @@
 #' @keywords datasets
 #' @format A data frame with 611 rows and 2 variables
 #' 
-#' @name polyester.new.spct
+#' @name mcdermit.mspct
 NULL

@@ -1,7 +1,9 @@
-#' Quantification of visible radiation for photobiology
+#' Spectral Transmittance Data for Filters
 #' 
-#' Example spectral transmittance data for some commonly used filters.
-#' The package is designed to complement package \code{photobiology}.
+#' A data set of spectral transmittance for frequently used filters and similar
+#' materials. Plastic sheets and films; optical glass and ordinary glass and
+#' some labware. The package is designed to complement package
+#' \code{photobiology}.
 #' 
 #' @docType package
 #' @keywords misc
@@ -11,9 +13,9 @@
 #' \tabular{ll}{
 #' Package: \tab photobiologyFilters\cr
 #' Type: \tab Package\cr
-#' Version: \tab 0.3.2\cr
-#' Date: \tab 2015-11-17\cr
-#' License: \tab GPL (>2.0)\cr
+#' Version: \tab 0.4.0\cr
+#' Date: \tab 2015-11-22\cr
+#' License: \tab GPL (>= 3.0)\cr
 #' }
 #' @references
 #' Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., 

@@ -1,7 +1,5 @@
 # read all available filter data
 # assumes that all files with ".txt" are filter-data files
-# assumes that all files with exactly four columns have two replicate measurements that need
-# to be averaged
 # STEPS
 # 1) clear the workspace
 # 2) read .csv files
@@ -9,10 +7,10 @@
 library(photobiology)
 rm(list = ls())
 setwd("raw.data/Petri_dishes/")
-file.list <- shell('ls *.CSV', intern = TRUE)
+file.list <- shell('ls *.csv', intern = TRUE)
+petri.lst <- list()
 for (file.name in file.list) {
-  dt.name <- paste(sub(pattern = ".CSV", replacement = "", x = file.name), 
-                   "spct", sep = ".")
+  name <- sub(pattern = ".csv", replacement = "", x = file.name)
   tmp.df <- read.csv(file.name, skip = 1, header = FALSE, 
                      col.names = c("w.length", "Tpc", "sd_Tpc"), 
                      colClasses = c("integer", "double", "NULL"))
@@ -20,9 +18,11 @@ for (file.name in file.list) {
   tmp.df[["Tpc"]] <- NULL
   setFilterSpct(tmp.df, Tfr.type = "total")
   tmp.df <- clean(tmp.df)
-  assign(dt.name, tmp.df)
-  save(list = dt.name, file = paste("../../data/", dt.name, ".rda", sep = ""))
+  petri.lst[[name]] <- tmp.df
 }
-# rm(list = ls())
-setwd("./../..")
+petri_dishes.mspct <- filter_mspct(petri.lst)
+setwd("../..")
+
+save(petri_dishes.mspct, file = "data/petri.dishes.mspct.rda")
+
 

@@ -1,4 +1,4 @@
-# polythene xx um (Etola) new
+# LD-polythene 50 um (Etola) new
 w.length.1 transmittance.1  w.length.2 transmittance.2
 190	4.8	190	5.3
 191	5.2	191	5.2

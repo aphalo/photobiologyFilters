@@ -1,4 +1,4 @@
-#' Filter spectra data for commercial grenhouse films from BPI Visqueen
+#' Filter spectra data for commercial grenhouse films from XL Horticulture
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different films used as
@@ -18,8 +18,8 @@
 #' 
 #' @docType data
 #' @keywords datasets
-#' @format A collection of spectra with three members, each a filter_spct 
+#' @format A collection of spectra with seven members, each a filter_spct 
 #' with 611 rows and 2 variables:
 #' 
-#' @name bpi_visqueen.mspct
+#' @name xl_horticulture.mspct
 NULL
