@@ -14,7 +14,7 @@
 #' Package: \tab photobiologyFilters\cr
 #' Type: \tab Package\cr
 #' Version: \tab 0.4.0\cr
-#' Date: \tab 2015-11-22\cr
+#' Date: \tab 2015-11-30\cr
 #' License: \tab GPL (>= 3.0)\cr
 #' }
 #' @references
@@ -29,3 +29,8 @@
 #' @import photobiology
 #' 
 NULL
+
+.onAttach <- function(libname, pkgname) {
+  packageStartupMessage("photobiologyFilters: As of version >= 4.0 spectral data are stored in collections of spectra, and individual spectra are accessed through indexing. Indexing should be done with character strings to ensure long-term repeatability. This new scheme is not backwards compatible with earlier versions.")
+}
+
