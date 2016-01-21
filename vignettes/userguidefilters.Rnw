@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{User Guide}
-%\VignetteDepends{knitr, ggplot2}
+%\VignetteDepends{knitr, ggplot2, ggspectra, photobiology, photobiologyWavebands}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -27,14 +27,18 @@
 <<setup, include=FALSE, cache=FALSE>>=
 library(knitr)
 opts_chunk$set(fig.path='figure/pos-', fig.align='center', fig.show='hold', size="footnotesize", fig.width=8, fig.height=4, out.width='.95\\textwidth', dev='cairo_pdf')
-options(replace.assign=TRUE,width=55)
+options(replace.assign = TRUE, width = 55,
+        warnPartialMatchAttr = FALSE,
+        warnPartialMatchDollar = FALSE,
+        warnPartialMatchArgs = FALSE)
 @
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
 library(photobiology)
-library(photobiologygg)
+library(photobiologyWavebands)
 library(photobiologyFilters)
 library(ggplot2)
+library(ggspectra)
 @
 
 <<own-set-up, echo=FALSE, include=FALSE>>=

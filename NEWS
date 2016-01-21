@@ -1,3 +1,9 @@
+photobiologyFilters 0.4.1 
+=========================
+
+Update for ggplot2 2.0.0, ggspectra 0.1.0, and photobiology 0.9.1.
+Only change is in dependencies.
+
 photobiologyFilters 0.4.0 (NOT BACKWARDS COMPATIBLE)
 =========================
 

@@ -3,3 +3,4 @@
 ^raw\.data/*
 ^\.git/*
 vignettes/figure
+*\.log

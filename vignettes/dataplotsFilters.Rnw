@@ -1,6 +1,6 @@
 %\VignetteEngine{knitr}
 %\VignetteIndexEntry{Catalogue of filter transmittance spectra}
-%\VignetteDepends{knitr, ggplot2, photobiologygg}
+%\VignetteDepends{knitr, ggplot2, ggspectra, photobiology, photobiologyWavebands}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
@@ -34,8 +34,10 @@ options(replace.assign=TRUE,width=55)
 
 <<example-0-hiden, eval=TRUE, include=FALSE>>=
 library(ggplot2)
+library(ggspectra)
+library(photobiology)
+library(photobiologyWavebands)
 library(photobiologyFilters)
-library(photobiologygg)
 @
 
 <<own-set-up, echo=FALSE, include=FALSE>>=
