@@ -2,7 +2,7 @@ library(readxl)
 library(dplyr)
 library(photobiology)
 
-setwd("raw.data/schott_new")
+setwd("raw.data/Schott")
 
 sheet_names <- excel_sheets("SCHOTT data optical filter glass 2015-v01.xlsx")
 

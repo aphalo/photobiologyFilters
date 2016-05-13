@@ -10,7 +10,7 @@
 #'   \item Tfr (fraction)
 #' }
 #' 
-#' \url{http://www.sterilin.co.uk/}
+#' \url{https://www.thermofisher.com/}
 #' 
 #' @docType data
 #' @keywords datasets

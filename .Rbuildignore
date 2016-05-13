@@ -1,6 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^raw\.data/*
-^\.git/*
+^raw\.data/
+^\.git/
 vignettes/figure
-*\.log
+^.*\.log

@@ -1,3 +1,9 @@
+photobiologyFilters 0.4.2 
+=========================
+
+Rebuild data objects. Only change is in dependencies and fixed a bug in the
+build.
+
 photobiologyFilters 0.4.1 
 =========================
 
