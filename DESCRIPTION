@@ -1,28 +1,34 @@
 Package: photobiologyFilters
 Type: Package
 Title: Spectral Transmittance Data for Filters
-Version: 0.4.2
-Date: 2016-05-02
-Author: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
+Version: 0.4.3.9000
+Date: 2016-09-18
+Authors@R:
+   c(
+    person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre")),
+    person("Titta K.", "Kotilainen", email = "titta.kotilainen@helsinki.fi", role = "ctb", comment = "Contributed data"),
+    person("Tania", "de la Rosa", email = "tania.delarosa@niras.fi", role = "ctb", comment = "Contributed data"),
+    person("Riitta", "Tegelberg", email = "riitta.tegelberg@uef.fi", role = "ctb", comment = "Contributed data"),
+    person("SCHOTT AG", role = "ctb", comment = "Contributed data")
+    )
 Maintainer: Pedro J. Aphalo <pedro.aphalo@helsinki.fi>
-Description: A data set of spectral transmittance for frequently
-    used filters and similar materials. Plastic sheets and films; optical
-    glass and ordinary glass and some labware.
+Description: A data only package with spectral 'transmittance' data for 
+    frequently used filters and similar materials. Plastic sheets and films; 
+    optical glass and ordinary glass and some labware.
 License: GPL (>= 3)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.2.0),
-    photobiology (>= 0.9.7)
+    photobiology (>= 0.9.9)
 Suggests:
-    knitr,
+    knitr (>= 1.13),
     ggplot2 (>= 2.1.0),
-    ggspectra (>= 0.1.6),
-    photobiologyWavebands (>= 0.4.0)
-LazyLoad: yes
+    ggspectra (>= 0.1.7),
+    photobiologyWavebands (>= 0.4.1)
+LazyLoad: no
 LazyData: yes
-ByteCompile: yes
+ByteCompile: no
 Encoding: UTF-8
 URL: http://www.r4photobiology.info/
 BugReports: https://bitbucket.org/aphalo/photobiologyfilters
-Roxygen: list(wrap = FALSE)
 RoxygenNote: 5.0.1

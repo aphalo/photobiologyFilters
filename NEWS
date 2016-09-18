@@ -1,10 +1,17 @@
-photobiologyFilters 0.4.2 
+photobiologyFilters 0.4.3
+=========================
+
+Rebuild data objects.
+Update documentation.
+Build documentation web site with 'staticdocs'.
+
+photobiologyFilters 0.4.2
 =========================
 
 Rebuild data objects. Only change is in dependencies and fixed a bug in the
 build.
 
-photobiologyFilters 0.4.1 
+photobiologyFilters 0.4.1
 =========================
 
 Update for ggplot2 2.0.0, ggspectra 0.1.0, and photobiology 0.9.1.
@@ -31,7 +38,7 @@ photobiologyFilters 0.3.2 (not released)
 
 Add spectra for some Lee filters (data digitized from data sheets).
 Remove all references to data.table from data object build scripts.
-Rebuild all data objects with photobiology (0.8.11). 
+Rebuild all data objects with photobiology (0.8.11).
 
 photobiologyFilters 0.3.1
 =========================
@@ -52,7 +59,7 @@ Added data for Petri dishes.
 photobiologyFilters 0.2.3
 =========================
 
-Revised script used for creating filter data objects. To avoid problems with 
+Revised script used for creating filter data objects. To avoid problems with
 conversions to absorbance and taking into account that what can be really
 measured is that transmittance is below the detection limit of the
 instrument used, the minimum value of fractional transmittance has been

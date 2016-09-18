@@ -1,19 +1,18 @@
 %\VignetteEngine{knitr}
-%\VignetteIndexEntry{Catalogue of filter transmittance spectra}
+%\VignetteIndexEntry{Catalogue of filter spectra}
 %\VignetteDepends{knitr, ggplot2, ggspectra, photobiology, photobiologyWavebands}
 %\VignetteKeyword{misc}
 
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage{abbrev}
+\usepackage{xspace}
 \usepackage[unicode=true,pdfusetitle,
  bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=2,
  breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
  {hyperref}
 \usepackage{listings}
-\usepackage{booktabs}
-%\usepackage{breakurl}
+\usepackage{url}
 
 \newcommand{\PB}{\textsf{photobiology}\xspace}
 \newcommand{\PBVIS}{\textsf{photobiologyVIS}\xspace}
@@ -23,7 +22,7 @@
 \newcommand{\PBFil}{\textsf{photobiologyFilters}\xspace}
 \newcommand{\PBLam}{\textsf{photobiologyLamps}\xspace}
 \newcommand{\PBSen}{\textsf{photobiologySensors}\xspace}
- 
+
 \begin{document}
 
 <<setup, include=FALSE, cache=FALSE>>=
@@ -71,25 +70,25 @@ options(photobiology.plot.annotations = c("boxes", "labels", "colour.guide", "ti
 Perfectly clear filter.
 
 <<plot-clear>>=
-plot(clear.spct, 
+plot(clear.spct,
      annotations = c("colour.guide", "title"))
 @
 
-Perfectly apaque filter.
+Perfectly opaque filter.
 <<plot-opaque>>=
-plot(clear.spct * 0, 
+plot(clear.spct * 0,
      annotations = c("colour.guide", "title"))
 @
 
 Flat neutral filters as fractional transmittance.
 <<plot-neutral-T>>=
-plot(clear.spct * 0.5, 
+plot(clear.spct * 0.5,
      annotations = c("colour.guide", "title"))
 @
 
 As absorbance.
 <<plot-neutral-A>>=
-plot(clear.spct * A2T(1), 
+plot(clear.spct * A2T(1),
      annotations = c("colour.guide", "title"))
 @
 
@@ -99,9 +98,9 @@ plot(clear.spct * A2T(1),
 <<plot-acetate>>=
 for (s in names(acetate.mspct)) {
   print(plot(acetate.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Cellulose acetate ", 
-                             gsub("_", " ", s, fixed = TRUE), 
-                             ' acetate.mspct[["', s, '"]]', 
+          labs(title = paste("Cellulose acetate ",
+                             gsub("_", " ", s, fixed = TRUE),
+                             ' acetate.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -124,8 +123,8 @@ plot(etola.mspct[["Clear_LD_PE_50um_used"]])
 <<plot-rosco>>=
 for (s in names(rosco.mspct)) {
   print(plot(rosco.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Rosco ", gsub("_", " ", s, fixed = TRUE), 
-                             ' rosco.mspct[["', s, '"]]', 
+          labs(title = paste("Rosco ", gsub("_", " ", s, fixed = TRUE),
+                             ' rosco.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -135,8 +134,8 @@ for (s in names(rosco.mspct)) {
 <<plot-lee>>=
 for (s in names(lee.mspct)) {
   print(plot(lee.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Lee ", gsub("_", " ", s, fixed = TRUE), 
-                             ' lee.mspct[["', s, '"]]', 
+          labs(title = paste("Lee ", gsub("_", " ", s, fixed = TRUE),
+                             ' lee.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -146,8 +145,8 @@ for (s in names(lee.mspct)) {
 <<plot-bpi>>=
 for (s in names(bpi_visqueen.mspct)) {
   print(plot(bpi_visqueen.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Visqueen ", gsub("_", " ", s, fixed = TRUE), 
-                             ' bpi_visqueen.mspct[["', s, '"]]', 
+          labs(title = paste("Visqueen ", gsub("_", " ", s, fixed = TRUE),
+                             ' bpi_visqueen.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -157,8 +156,8 @@ for (s in names(bpi_visqueen.mspct)) {
 <<plot-xl-hort>>=
 for (s in names(xl_horticulture.mspct)) {
   print(plot(xl_horticulture.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("XL Horticulture ", gsub("_", " ", s, fixed = TRUE), 
-                             ' xl_horticulture.mspct[["', s, '"]]', 
+          labs(title = paste("XL Horticulture ", gsub("_", " ", s, fixed = TRUE),
+                             ' xl_horticulture.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -171,8 +170,8 @@ for (s in names(xl_horticulture.mspct)) {
 <<plot-evonik1>>=
 for (s in names(plexiglas.mspct)) {
   print(plot(plexiglas.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Evonik's Plexiglas ", gsub("_", " ", s, fixed = TRUE), 
-                             ' plexiglas.mspct[["', s, '"]]', 
+          labs(title = paste("Evonik's Plexiglas ", gsub("_", " ", s, fixed = TRUE),
+                             ' plexiglas.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -182,8 +181,8 @@ for (s in names(plexiglas.mspct)) {
 <<plot-foiltek1>>=
 for (s in c("Clear_PC", "Clear_PC_UV")) {
   print(plot(foiltek.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("Foiltek ", gsub("_", " ", s, fixed = TRUE), 
-                             ' foiltek.mspct[["', s, '"]]', 
+          labs(title = paste("Foiltek ", gsub("_", " ", s, fixed = TRUE),
+                             ' foiltek.mspct[["', s, '"]]',
                              sep = "")))
 }
 @
@@ -191,21 +190,21 @@ for (s in c("Clear_PC", "Clear_PC_UV")) {
 \subsection{Polyestyrene}
 
 <<plot-foiltek2>>=
-plot(foiltek.mspct[["Clear_PS"]], 
+plot(foiltek.mspct[["Clear_PS"]],
      annotations = c("colour.guide", "title"))
 @
 
 \subsection{Polyester}
 
 <<plot-foiltek3>>=
-plot(foiltek.mspct[["Clear_PET_G"]], 
+plot(foiltek.mspct[["Clear_PET_G"]],
      annotations = c("colour.guide", "title"))
 @
 
 \subsection{Polyvinilchloride}
 
 <<plot-foiltek4>>=
-plot(foiltek.mspct[["Clear_PVC"]], 
+plot(foiltek.mspct[["Clear_PVC"]],
      annotations = c("colour.guide", "title"))
 @
 
@@ -217,8 +216,8 @@ plot(foiltek.mspct[["Clear_PVC"]],
 <<plot-schott1>>=
 for (s in names(schott.mspct)) {
   print(plot(schott.mspct[[s]], annotations = "colour.guide") +
-          labs(title = paste("SCHOTT ", s, 
-                             ' shott.mspct[["', s, '"]]', 
+          labs(title = paste("SCHOTT ", s,
+                             ' shott.mspct[["', s, '"]]',
                              sep = "")))
 }
 @

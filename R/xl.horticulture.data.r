@@ -19,7 +19,11 @@
 #' @docType data
 #' @keywords datasets
 #' @format A collection of spectra with seven members, each a filter_spct 
-#' with 611 rows and 2 variables:
+#' with 611 rows and 2 variables
 #' 
 #' @name xl_horticulture.mspct
+#' 
+#' @examples
+#' names(xl_horticulture.mspct)
+#' 
 NULL

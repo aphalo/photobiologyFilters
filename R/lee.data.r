@@ -2,23 +2,22 @@
 #'
 #' Datasets containing the wavelengths at a 1 nm interval and
 #' tabulated values spectral transmittance for different filters.
-#' 
+#'
 #' The variables are as follows:
-#' 
+#'
 #' \itemize{
-#'   \item w.length (nm)  
-#'   \item Tfr (fraction) 
+#'   \item w.length (nm)
+#'   \item Tfr (fraction)
 #' }
-#' 
-#' @references 
+#'
+#' @references
 #' \url{http://www.leefilters.com/lighting/colour-details.html}
-#' 
+#'
 #' @docType data
 #' @keywords datasets
-#' @format A collection of spectra with seven members, each a filter_spct 
-#' with 296 or 297 rows and 2 variables:
-#' 'ND0.15_298' 'ND0.60_210' 'ND1.20_299' 'Dark_Blue_119' 'Regal_Blue_199' 'Orange_105'
-#' 'Yellow_101'
-#' 
-#' @name lee.mspct
-NULL
+#' @format A vector of character strings.
+#'
+#' @examples
+#' lee
+#'
+"lee"
