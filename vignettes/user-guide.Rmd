@@ -1,0 +1,126 @@
+---
+title: "`photobiologyFilters` `r packageVersion('photobiologyFilters')`<br>User Guide"
+author: "Pedro J. Aphalo"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{User Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r}
+knitr::opts_chunk$set(fig.width=8, fig.height=4)
+```
+
+```{r}
+library(photobiology)
+library(photobiologyWavebands)
+library(photobiologyFilters)
+```
+
+## Introduction
+
+In this very brief User Guide we describe how to access individual spectra or
+subsets of spectra.
+
+## Accessing individual spectra
+
+The `filter_spct` member objects in `filters.mspct` can be accessed through their
+names or through a numeric index. As the numeric indexes are likely to change 
+with updates to the package, their use is discouraged. Names as character
+strings should be used instead. The names are listed in the documentation
+and also available through the "Data Catalogue" vignette. They can also be
+listed with method `names()`.
+
+```{r}
+names(filters.mspct)
+```
+
+We can use a character string as index to extract an individual `filter_spct`
+object.
+
+```{r}
+filters.mspct$UG11
+```
+
+```{r}
+filters.mspct[["UG11"]]
+```
+
+Be aware that according to R's rules, using single square brackets will return
+a `filter_mspct` object possibly of length one. This statement is not equivalent
+to the one in the chunk immediately above.
+
+```{r}
+filters.mspct["UG11"]
+```
+
+## Accessing subsets of spectra
+
+We can subset the `filter_mspct` object by indexing with vectors of character
+strings. The package provides some predefined ones, and users can easily
+define their own, either as constants or through computation. Here we use
+a vector defined by the package.
+
+```{r}
+filters.mspct[petri_dishes]
+```
+
+And below we use a computed one. In this case we extract the member spectra
+with names containing the string "osram".
+
+```{r}
+filters.mspct[grep("UG", names(filters.mspct))]
+```
+
+## Calculating summaries
+
+```{r}
+transmittance(filters.mspct$UG11, UVA())
+```
+```{r}
+absorbance(filters.mspct$UG11, list(UVA(), Red()))
+```
+
+```{r}
+transmittance(filters.mspct[grep("UG", names(filters.mspct))], 
+              list(UVB(), UVA()))
+```
+
+## Using the data in other contexts
+
+As `filter_mspct` is a class derived from `list`, and `filter_spct` is derived from
+`tibble::tible` which is a compatible reimplementation of `data.frame` the
+data can be used very easily with any R function.
+
+```{r}
+head(as.data.frame(filters.mspct$UG11))
+```
+
+Of course `attach` and `with` also work as expected.
+```{r}
+attach(filters.mspct)
+transmittance(UG11, UVA())
+detach(filters.mspct)
+```
+```{r}
+attach(filters.mspct)
+with(UG11, range(w.length))
+detach(filters.mspct)
+```
+
+```{r}
+with(filters.mspct, transmittance(UG11, UVA()))
+```
+ ## Additional information on the individual filters
+ 
+ 
+```{r}
+comment(filters.mspct$UG11)
+getTfrType(filters.mspct$UG11)
+names(filters.mspct$UG11)
+```
+
+
+

@@ -18,7 +18,7 @@ schott.mspct <- split2filter_mspct(filters_Tfr.df, Tfr.type = "internal")
 k_Rfr <- filters.df[1, -1]
 thickness <- filters.df[2, -1] * 1e-3
 
-comments <- paste("SCHOTT filer data, reference thickness (m):",  thickness,
+comments <- paste("SCHOTT filter data, reference thickness (m):",  thickness,
                   "and reflectance factor:", k_Rfr)
 
 names(comments) <- names(schott.mspct)
