@@ -14,6 +14,7 @@ for (file.name in file.list) {
   tmp.df <- read.table(file.name, header = TRUE)
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = transmittance / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df, "Polyester, clear film, 0.000125 m thick, Autostat CT5 from McDermit Autotype; new")
   tmp.df <- clean(tmp.df)
   mcdermit.lst[[name]] <- tmp.df
 }

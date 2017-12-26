@@ -14,6 +14,9 @@ file.list <- list.files(pattern = '*.txt$')
 rosco.lst <- list()
 for (file.name in file.list) {
   name <- sub(pattern=".txt", replacement="", x=file.name)
+  name <- sub("Supergel", "Supergel_no", name)
+  name <- sub("EColour", "EColour_no", name)
+  used <- grepl("used", name)
   tmp.df <- read.table(file.name, header=TRUE)
   if (ncol(tmp.df) == 4) {
     tmp.df <- transmute(tmp.df, w.length = w.length.1,
@@ -25,6 +28,11 @@ for (file.name in file.list) {
   }
   tmp.df <- mutate(tmp.df, Tfr = ifelse(Tfr < 1e-5, 1e-5, Tfr))
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df, paste("Theatrical 'gel', type '",
+                                gsub("_", " ", sub("_used", "", name)),
+                                ifelse(used, "; used", "; new"),
+                                "; from Rosco, UK",
+                                sep = ""))
   rosco.lst[[name]] <- tmp.df
 }
 rosco.mspct <- filter_mspct(rosco.lst)

@@ -15,11 +15,15 @@ for (file.name in file.list) {
                      colClasses = c("numeric", "numeric", "NULL"))
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = Tpc / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df,
+                  paste("Poly(methyl methacrylate) (PMMA) 'acrylic' sheet; Plexiglas '",
+                                gsub("_", " ", name), "'; 0.002 m thick; new; from Evonik Industries, Germany",
+                  sep = ""))
   clean(tmp.df)
   plexiglas.lst[[name]] <- tmp.df
 }
-plexiglas.mspct <- filter_mspct(plexiglas.lst)
+evonik.mspct <- filter_mspct(plexiglas.lst)
 setwd("../..")
 
-save(plexiglas.mspct, file = "data-raw/rda/plexiglas.mspct.rda")
+save(evonik.mspct, file = "data-raw/rda/evonik.mspct.rda")
 

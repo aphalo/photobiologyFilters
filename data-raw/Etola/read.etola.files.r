@@ -14,6 +14,7 @@ file.list <- list.files(pattern = "*.txt")
 etola.lst <- list()
 for (file.name in file.list) {
   name <- sub(pattern=".txt", replacement="", x=file.name)
+  used <- grepl("used", name)
   tmp.df <- read.table(file.name, header=TRUE)
   if (ncol(tmp.df) == 4) {
     tmp.df <- transmute(tmp.df, w.length = w.length.1,
@@ -24,6 +25,8 @@ for (file.name in file.list) {
     stop("ncol != 2 || ncol!=4")
   }
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df, paste("Clear low-density polyethylene (LD-PE) film; ", 50e-6, " m thick; ",
+                  ifelse(used, "used", "new"), sep = ""))
   clean(tmp.df)
   etola.lst[[name]] <- tmp.df
 }

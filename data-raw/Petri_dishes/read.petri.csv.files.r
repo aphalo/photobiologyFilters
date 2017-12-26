@@ -17,6 +17,10 @@ for (file.name in file.list) {
   tmp.df[["Tfr"]] <- tmp.df[["Tpc"]] / 100
   tmp.df[["Tpc"]] <- NULL
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df,
+                  paste("Petri dish lid; ", ifelse(grepl("PS", name),
+                                               paste("polystyrene; ", sub("PS_", "", name)),
+                                               "glass")))
   tmp.df <- clean(tmp.df)
   petri.lst[[name]] <- tmp.df
 }

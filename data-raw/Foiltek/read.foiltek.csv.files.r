@@ -14,10 +14,18 @@ file.list <- list.files(pattern = "*.csv$")
 foiltek.lst <- list()
 for (file.name in file.list) {
   name <- sub(pattern=".csv", replacement="", x=file.name)
+  material <- switch(name,
+    Clear_PC = "Polycarbonate (PC)",
+    Clear_PET = "Polyethylene terephthalate (PET), 'polyester'",
+    Clear_PS = "Polystyrene (PS)",
+    Clear_PVC = "Polyvinyl chloride (PVC)",
+    ""
+  )
   tmp.df <- read.csv(file.name, skip=1, header=FALSE, col.names=c("w.length", "Tpc", "sd_Tpc"),
                      colClasses = c("numeric", "numeric", "NULL"))
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = Tpc / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df, paste(material, "; clear sheet; new", sep = ""))
   tmp.df <- clean(tmp.df)
   foiltek.lst[[name]] <- tmp.df
 }

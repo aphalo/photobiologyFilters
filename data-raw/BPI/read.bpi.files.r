@@ -15,6 +15,7 @@ for (file.name in file.list) {
   tmp.df <- read.table(file.name, header = TRUE)
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = transmittance / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df, paste(name, ", special greenhouse cladding film from BPI Agri", sep = ""))
   clean(tmp.df)
   bpi_visqueen.lst[[name]] <- tmp.df
 }

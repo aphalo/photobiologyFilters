@@ -1,3 +1,15 @@
+photobiologyFilters 0.4.4
+=========================
+
+Rebuild data objects, setting attribute "what.measured".
+Add data for MIDOPT filters (the package now has data for 210 filters, and
+filter-like materials).
+Rename some filters, for clarity and consistency (NOT FULLY BACKWARDS COMPATIBLE).
+Add lists of names by type, colour and by material.
+Update documentation, expanding the "User Guide" and removing the
+"Data Catalogue".
+Build documentation web site with 'pkgdown'.
+
 photobiologyFilters 0.4.3
 =========================
 

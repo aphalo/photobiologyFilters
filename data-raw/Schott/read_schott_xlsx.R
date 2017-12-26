@@ -11,18 +11,22 @@ filters.df <- read_excel("SCHOTT data optical filter glass 2015-v01.xlsx",
 head(filters.df)
 
 filters_Tfr.df <- filters.df[-(1:4), ]
-filters_Tfr.df <- rename(filters_Tfr.df, w.length = `Glass type`)
+names(filters_Tfr.df)[1] <- "w.length"
 filters_Tfr.df <- mutate(filters_Tfr.df, w.length = as.numeric(w.length))
 schott.mspct <- split2filter_mspct(filters_Tfr.df, Tfr.type = "internal")
 
 k_Rfr <- filters.df[1, -1]
 thickness <- filters.df[2, -1] * 1e-3
 
-comments <- paste("SCHOTT filter data, reference thickness (m):",  thickness,
-                  "and reflectance factor:", k_Rfr)
+what <- paste("SCHOTT ", names(filters.df)[-1], ", thickness (m): ",  thickness, sep = "")
+
+comments <- paste("SCHOTT filter '", names(filters.df)[-1], "' data, reference thickness (m): ",  thickness,
+                  " and reflectance factor: ", signif(k_Rfr, 3), "\n (c) copyright SCHOTT, reproduced with permission.", sep = "")
 
 names(comments) <- names(schott.mspct)
+names(what) <- names(schott.mspct)
 for (s in names(schott.mspct)) {
+  setWhatMeasured(schott.mspct[[s]], what[s])
   comment(schott.mspct[[s]]) <- as.character(comments[s])
 }
 setwd("../..")

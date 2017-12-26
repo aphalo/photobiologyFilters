@@ -8,20 +8,26 @@
 # 3) save all the data.frames created into individual Rda file in data folder
 library(photobiology)
 library(dplyr)
+library(stringr)
 rm(list = ls())
 setwd("data-raw/acetate")
 file.list <- list.files(pattern = "*.txt")
 acetate.lst <- list()
 for (file.name in file.list) {
   name <- sub(pattern = ".txt", replacement = "", x = file.name)
+  thickness <- as.numeric(str_sub(name, 7, 9)) * 1e-6
+  used <- grepl("age", name)
+  name <- sub("Clear_", "Clear_CA_", name)
   tmp.df <- read.table(file.name, header = TRUE)
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = transmittance / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  setWhatMeasured(tmp.df, paste("Courtaulds cellulose (di-)acetate (CA); ", thickness, " m thick; ",
+                                ifelse(used, "used", "new"), sep = ""))
   clean(tmp.df)
   acetate.lst[[name]] <- tmp.df
 }
-acetate.mspct <- filter_mspct(acetate.lst)
+courtaulds.mspct <- filter_mspct(acetate.lst)
 setwd("../..")
 
-save(acetate.mspct, file = "data-raw/rda/acetate.mspct.rda")
+save(courtaulds.mspct, file = "data-raw/rda/courtaulds.mspct.rda")
 

@@ -48,9 +48,27 @@
 #' @import photobiology
 #'
 #' @examples
+#' library(ggspectra)
+#' library(photobiologyWavebands)
+#'
+#' # Total number of spectra in the package
+#' length(filters.mspct)
+#'
+#' # SCHOTT filters example
 #' schott
 #' filters.mspct$OG530
 #' filters.mspct[["OG530"]]
+#'
+#' # combining name (index) vectors
+#' # blue glass filters
+#' intersect(optical_glass, blue_filters)
+#' # green plastic films
+#' intersect(plastic_film, green_filters)
+#'
+#' # A Plexiglas sheet
+#' plot(filters.mspct$Sky_Blue_5C01_GT)
+#' transmittance(filters.mspct$Sky_Blue_5C01_GT, Orange())
+#' transmittance(filters.mspct$Sky_Blue_5C01_GT, NIR())
 #'
 "_PACKAGE"
 

@@ -14,6 +14,10 @@ for (file.name in file.list) {
   setFilterSpct(tmp.spct, Tfr.type = "total")
   tmp.spct <- clean(tmp.spct)
   tmp.spct <- interpolate_spct(tmp.spct, w.length.out = 403:698, fill = NA)
+  tmp.spct <- setWhatMeasured(tmp.spct, paste("Theatrical 'gel'; Lee '",
+                                              gsub("_", " ", name),
+                                              "'; new; Lee filters, UK",
+                                              sep = ""))
   lee.lst[[name]] <- tmp.spct
 }
 lee.mspct <- filter_mspct(lee.lst)

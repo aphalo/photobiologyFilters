@@ -1,0 +1,38 @@
+reference:
+  - title: Package overview
+    contents:
+    - "photobiologyFilters-package"
+  - title: Spectra
+    contents:
+    - filters.mspct
+  - title: Indexing vectors by color
+    contents:
+    - uv_filters
+  - title: Indexing vectors by material
+    contents:
+    - optical_glass
+    - plastic_sheet
+    - plastic_film
+  - title: Indexing vectors by type
+    contents:
+    - band_pass
+    - long_pass
+    - short_pass
+  - title: Indexing vectors by manufacturer or supplier
+    contents:
+    - courtaulds
+    - bpi_visqueen
+    - etola
+    - evonik
+    - foiltek
+    - lee
+    - mcdermit
+    - petri_dishes
+    - rosco
+    - schott
+    - xl_horticulture
+
+articles:
+  - title: Vignettes
+    contents:
+    - '`user-guide`'

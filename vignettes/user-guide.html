@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="Pedro J. Aphalo" />
+
+<meta name="date" content="2017-12-26" />
+
+<title>User Guide</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+
+
+<link href="data:text/css;charset=utf-8,body%20%7B%0Abackground%2Dcolor%3A%20%23fff%3B%0Amargin%3A%201em%20auto%3B%0Amax%2Dwidth%3A%20700px%3B%0Aoverflow%3A%20visible%3B%0Apadding%2Dleft%3A%202em%3B%0Apadding%2Dright%3A%202em%3B%0Afont%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0Afont%2Dsize%3A%2014px%3B%0Aline%2Dheight%3A%201%2E35%3B%0A%7D%0A%23header%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0A%23TOC%20%7B%0Aclear%3A%20both%3B%0Amargin%3A%200%200%2010px%2010px%3B%0Apadding%3A%204px%3B%0Awidth%3A%20400px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Aborder%2Dradius%3A%205px%3B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Afont%2Dsize%3A%2013px%3B%0Aline%2Dheight%3A%201%2E3%3B%0A%7D%0A%23TOC%20%2Etoctitle%20%7B%0Afont%2Dweight%3A%20bold%3B%0Afont%2Dsize%3A%2015px%3B%0Amargin%2Dleft%3A%205px%3B%0A%7D%0A%23TOC%20ul%20%7B%0Apadding%2Dleft%3A%2040px%3B%0Amargin%2Dleft%3A%20%2D1%2E5em%3B%0Amargin%2Dtop%3A%205px%3B%0Amargin%2Dbottom%3A%205px%3B%0A%7D%0A%23TOC%20ul%20ul%20%7B%0Amargin%2Dleft%3A%20%2D2em%3B%0A%7D%0A%23TOC%20li%20%7B%0Aline%2Dheight%3A%2016px%3B%0A%7D%0Atable%20%7B%0Amargin%3A%201em%20auto%3B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dcolor%3A%20%23DDDDDD%3B%0Aborder%2Dstyle%3A%20outset%3B%0Aborder%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0Aborder%2Dwidth%3A%202px%3B%0Apadding%3A%205px%3B%0Aborder%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0Aborder%2Dwidth%3A%201px%3B%0Aborder%2Dstyle%3A%20inset%3B%0Aline%2Dheight%3A%2018px%3B%0Apadding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0Aborder%2Dleft%2Dstyle%3A%20none%3B%0Aborder%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Ap%20%7B%0Amargin%3A%200%2E5em%200%3B%0A%7D%0Ablockquote%20%7B%0Abackground%2Dcolor%3A%20%23f6f6f6%3B%0Apadding%3A%200%2E25em%200%2E75em%3B%0A%7D%0Ahr%20%7B%0Aborder%2Dstyle%3A%20solid%3B%0Aborder%3A%20none%3B%0Aborder%2Dtop%3A%201px%20solid%20%23777%3B%0Amargin%3A%2028px%200%3B%0A%7D%0Adl%20%7B%0Amargin%2Dleft%3A%200%3B%0A%7D%0Adl%20dd%20%7B%0Amargin%2Dbottom%3A%2013px%3B%0Amargin%2Dleft%3A%2013px%3B%0A%7D%0Adl%20dt%20%7B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Aul%20%7B%0Amargin%2Dtop%3A%200%3B%0A%7D%0Aul%20li%20%7B%0Alist%2Dstyle%3A%20circle%20outside%3B%0A%7D%0Aul%20ul%20%7B%0Amargin%2Dbottom%3A%200%3B%0A%7D%0Apre%2C%20code%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0Aborder%2Dradius%3A%203px%3B%0Acolor%3A%20%23333%3B%0Awhite%2Dspace%3A%20pre%2Dwrap%3B%20%0A%7D%0Apre%20%7B%0Aborder%2Dradius%3A%203px%3B%0Amargin%3A%205px%200px%2010px%200px%3B%0Apadding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0Abackground%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0Acode%20%7B%0Afont%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0Afont%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0Apadding%3A%202px%200px%3B%0A%7D%0Adiv%2Efigure%20%7B%0Atext%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0Abackground%2Dcolor%3A%20%23FFFFFF%3B%0Apadding%3A%202px%3B%0Aborder%3A%201px%20solid%20%23DDDDDD%3B%0Aborder%2Dradius%3A%203px%3B%0Aborder%3A%201px%20solid%20%23CCCCCC%3B%0Amargin%3A%200%205px%3B%0A%7D%0Ah1%20%7B%0Amargin%2Dtop%3A%200%3B%0Afont%2Dsize%3A%2035px%3B%0Aline%2Dheight%3A%2040px%3B%0A%7D%0Ah2%20%7B%0Aborder%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Apadding%2Dbottom%3A%202px%3B%0Afont%2Dsize%3A%20145%25%3B%0A%7D%0Ah3%20%7B%0Aborder%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0Apadding%2Dtop%3A%2010px%3B%0Afont%2Dsize%3A%20120%25%3B%0A%7D%0Ah4%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0Amargin%2Dleft%3A%208px%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Ah5%2C%20h6%20%7B%0Aborder%2Dbottom%3A%201px%20solid%20%23ccc%3B%0Afont%2Dsize%3A%20105%25%3B%0A%7D%0Aa%20%7B%0Acolor%3A%20%230033dd%3B%0Atext%2Ddecoration%3A%20none%3B%0A%7D%0Aa%3Ahover%20%7B%0Acolor%3A%20%236666ff%3B%20%7D%0Aa%3Avisited%20%7B%0Acolor%3A%20%23800080%3B%20%7D%0Aa%3Avisited%3Ahover%20%7B%0Acolor%3A%20%23BB00BB%3B%20%7D%0Aa%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0Aa%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0Atext%2Ddecoration%3A%20underline%3B%20%7D%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%20code%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">User Guide</h1>
+<h3 class="subtitle"><em>Package ‘photobiologyFilters’ 0.4.3.9000</em></h3>
+<h4 class="author"><em>Pedro J. Aphalo</em></h4>
+<h4 class="date"><em>2017-12-26</em></h4>
+
+
+<div id="TOC">
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-data">The data</a></li>
+<li><a href="#accessing-individual-spectra">Accessing individual spectra</a></li>
+<li><a href="#accessing-subsets-of-spectra">Accessing subsets of spectra</a></li>
+<li><a href="#querying-metadata">Querying metadata</a></li>
+<li><a href="#plotting">Plotting</a></li>
+<li><a href="#calculating-summaries">Calculating summaries</a></li>
+<li><a href="#using-the-data-in-other-contexts">Using the data in other contexts</a></li>
+<li><a href="#the-r4photobiology-suite">The R4Photobiology suite</a></li>
+</ul>
+</div>
+
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">fig.width=</span><span class="dv">8</span>, <span class="dt">fig.height=</span><span class="dv">4</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)
+<span class="kw">library</span>(photobiologyWavebands)
+<span class="kw">library</span>(photobiologyFilters)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(ggspectra)</code></pre></div>
+<pre><code>## For news about 'ggspectra', please, see http://www.r4photobiology.info/</code></pre>
+<pre><code>## For on-line documentation see http://docs.r4photobiology.info/ggspectra/</code></pre>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>In this very brief User Guide we describe how to access individual spectra or subsets of spectra.</p>
+</div>
+<div id="the-data" class="section level2">
+<h2>The data</h2>
+<p>Spectral data is included both for optical filters, sold as such, and for materials that either on purpose or by accident may be interposed in the “light” path in photobiological experiments, including plastic sheets and films. It must be kept in mind that, 1) absorptance depends on the thickness of a filter in addition to the properties of the material it is made off, and that 2) reflectance depends on the angle of incidence of the light beam.</p>
+<p>The spectral data have been acquired with an assortment of different instruments. Some data are measured by the authors with spectrophotometers, others have been provided by filter manufacturers.</p>
+<p>The difference in resolution and slit function among instruments can give, for the same filter, measured “apparent” peaks and valleys of slightly different width, and slopes of slightly different steepness. This is an inevitable artefact of spectral measurements, but as except for some dichroic (= interference) filters have relatively wide (“Gaussian”) peaks the distortion is small.</p>
+<p>Another important consideration is that some materials scatter transmitted and reflected light, and consequently such materials can be accurately measured by only use of an integrating sphere. Data included here have been in many cases measured without an integrating sphere; i.e. only by assesing the direct beam. For non-scattering materials this causes minor errors.</p>
+<p>Glass-filter properties vary to some extent among melt batches. Variation can also be expected among batches of plastic filters. Furthermore, filters age upon exposure to light and UV radiaition, and in some cases even upon exposure to air. Ageing is not limited to plastic filters and can also affect optical glass.</p>
+<p>We do not provide spectral reflectance data for the filters in this collection, as we do not have such data available. For filters made of ionic glass and coloured plastics, reflection is not selective, and amounts to about 9 to 10% of radiation incident at an angle close to perpendicular to the surface. Antireflection coating (ARC) reduces reflections, and multicoating (MC) even further. Such coatings are not equally effective at all wavelengths and, consequently, their use can modify the spectral properties of a filter. In contrast to the filters described above, dichroic or interference filters reflect the “rejected” radiation. It is also possible to produce filters that have an absorbing glass as substrate and a dichroic coating deposited onto one or both of its surfaces.</p>
+<p>All the spectral data in this package are stored in a single R object, a collection of spectra of class <code>filter_spct</code>. Individual or subsets of spectra can be retrieved by <em>name</em>. The package includes also several <code>character</code> vectors of <em>names</em>, each one containing names for LEDs of a given <em>color</em>, a given <em>type</em> or from a given <em>manufacturer</em>. These are listed in the help index for the package. The <em>names</em> used are in most cases the codes used by the manufacturers for the given type. Any dashes in these codes have been replaced by underscores.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># band_pass</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">schott</code></pre></div>
+<pre><code>##  [1] &quot;UG1&quot;     &quot;UG5&quot;     &quot;UG11&quot;    &quot;BG3&quot;     &quot;BG7&quot;     &quot;BG18&quot;    &quot;BG25&quot;   
+##  [8] &quot;BG36&quot;    &quot;BG38&quot;    &quot;BG39&quot;    &quot;BG40&quot;    &quot;BG42&quot;    &quot;S-8612&quot;  &quot;BG50&quot;   
+## [15] &quot;BG55&quot;    &quot;BG60&quot;    &quot;BG60HT&quot;  &quot;BG61&quot;    &quot;BG62&quot;    &quot;BG62HT&quot;  &quot;BG63&quot;   
+## [22] &quot;BG64&quot;    &quot;VG9&quot;     &quot;VG20&quot;    &quot;S-8022&quot;  &quot;S-8023&quot;  &quot;GG395&quot;   &quot;GG400&quot;  
+## [29] &quot;GG420&quot;   &quot;GG435&quot;   &quot;GG455&quot;   &quot;GG475&quot;   &quot;GG495&quot;   &quot;OG515&quot;   &quot;OG530&quot;  
+## [36] &quot;OG550&quot;   &quot;OG570&quot;   &quot;OG590&quot;   &quot;RG9&quot;     &quot;RG610&quot;   &quot;RG630&quot;   &quot;RG645&quot;  
+## [43] &quot;RG665&quot;   &quot;RG695&quot;   &quot;RG715&quot;   &quot;RG780&quot;   &quot;RG830&quot;   &quot;RG850&quot;   &quot;RG1000&quot; 
+## [50] &quot;NG1&quot;     &quot;NG3&quot;     &quot;NG4&quot;     &quot;NG5&quot;     &quot;NG9&quot;     &quot;NG11&quot;    &quot;N-WG280&quot;
+## [57] &quot;N-WG295&quot; &quot;N-WG305&quot; &quot;N-WG320&quot; &quot;KG1&quot;     &quot;KG2&quot;     &quot;KG3&quot;     &quot;KG5&quot;    
+## [64] &quot;BG67&quot;    &quot;UG2A&quot;    &quot;BG62HS&quot;  &quot;BG66HS&quot;</code></pre>
+</div>
+<div id="accessing-individual-spectra" class="section level2">
+<h2>Accessing individual spectra</h2>
+<p>The <code>filter_spct</code> member objects in <code>filters.mspct</code> can be accessed through their names or through a numeric index. As the numeric indexes are likely to change with updates to the package, their use is discouraged. Names as character strings should be used instead. The names are listed in the documentation and also available through the “Data Catalogue” vignette. They can also be listed with method <code>names()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(filters.mspct)</code></pre></div>
+<pre><code>##   [1] &quot;UG1&quot;                           &quot;UG5&quot;                          
+##   [3] &quot;UG11&quot;                          &quot;BG3&quot;                          
+##   [5] &quot;BG7&quot;                           &quot;BG18&quot;                         
+##   [7] &quot;BG25&quot;                          &quot;BG36&quot;                         
+##   [9] &quot;BG38&quot;                          &quot;BG39&quot;                         
+##  [11] &quot;BG40&quot;                          &quot;BG42&quot;                         
+##  [13] &quot;S-8612&quot;                        &quot;BG50&quot;                         
+##  [15] &quot;BG55&quot;                          &quot;BG60&quot;                         
+##  [17] &quot;BG60HT&quot;                        &quot;BG61&quot;                         
+##  [19] &quot;BG62&quot;                          &quot;BG62HT&quot;                       
+##  [21] &quot;BG63&quot;                          &quot;BG64&quot;                         
+##  [23] &quot;VG9&quot;                           &quot;VG20&quot;                         
+##  [25] &quot;S-8022&quot;                        &quot;S-8023&quot;                       
+##  [27] &quot;GG395&quot;                         &quot;GG400&quot;                        
+##  [29] &quot;GG420&quot;                         &quot;GG435&quot;                        
+##  [31] &quot;GG455&quot;                         &quot;GG475&quot;                        
+##  [33] &quot;GG495&quot;                         &quot;OG515&quot;                        
+##  [35] &quot;OG530&quot;                         &quot;OG550&quot;                        
+##  [37] &quot;OG570&quot;                         &quot;OG590&quot;                        
+##  [39] &quot;RG9&quot;                           &quot;RG610&quot;                        
+##  [41] &quot;RG630&quot;                         &quot;RG645&quot;                        
+##  [43] &quot;RG665&quot;                         &quot;RG695&quot;                        
+##  [45] &quot;RG715&quot;                         &quot;RG780&quot;                        
+##  [47] &quot;RG830&quot;                         &quot;RG850&quot;                        
+##  [49] &quot;RG1000&quot;                        &quot;NG1&quot;                          
+##  [51] &quot;NG3&quot;                           &quot;NG4&quot;                          
+##  [53] &quot;NG5&quot;                           &quot;NG9&quot;                          
+##  [55] &quot;NG11&quot;                          &quot;N-WG280&quot;                      
+##  [57] &quot;N-WG295&quot;                       &quot;N-WG305&quot;                      
+##  [59] &quot;N-WG320&quot;                       &quot;KG1&quot;                          
+##  [61] &quot;KG2&quot;                           &quot;KG3&quot;                          
+##  [63] &quot;KG5&quot;                           &quot;BG67&quot;                         
+##  [65] &quot;UG2A&quot;                          &quot;BG62HS&quot;                       
+##  [67] &quot;BG66HS&quot;                        &quot;Clear_CA_115um&quot;               
+##  [69] &quot;Clear_CA_115um_age000&quot;         &quot;Clear_CA_115um_age020&quot;        
+##  [71] &quot;Clear_CA_115um_age030&quot;         &quot;Clear_CA_115um_age060&quot;        
+##  [73] &quot;Clear_CA_115um_age100&quot;         &quot;Clear_CA_115um_age180&quot;        
+##  [75] &quot;Clear_CA_115um_age300&quot;         &quot;Clear_CA_250um&quot;               
+##  [77] &quot;Clear_CA_480um&quot;                &quot;Luminance&quot;                    
+##  [79] &quot;Solatrol&quot;                      &quot;Clear_LD_PE_50um&quot;             
+##  [81] &quot;Clear_LD_PE_50um_used&quot;         &quot;Clear_PC&quot;                     
+##  [83] &quot;Clear_PC_UV&quot;                   &quot;Clear_PET_G&quot;                  
+##  [85] &quot;Clear_PS&quot;                      &quot;Clear_PVC&quot;                    
+##  [87] &quot;Dark_Blue_119&quot;                 &quot;ND0.15_298&quot;                   
+##  [89] &quot;ND0.60_210&quot;                    &quot;ND1.20_299&quot;                   
+##  [91] &quot;Orange_105&quot;                    &quot;Regal_Blue_199&quot;               
+##  [93] &quot;Yellow_101&quot;                    &quot;PET_Autostat_CT5_125um&quot;       
+##  [95] &quot;glass_nn&quot;                      &quot;PS_Sterilin101&quot;               
+##  [97] &quot;PS_Sterilin109&quot;                &quot;Cherry_3C01_GT&quot;               
+##  [99] &quot;Clear_0A000_XT&quot;                &quot;Clear_0F00_GT&quot;                
+## [101] &quot;Clear_2458_GT&quot;                 &quot;Clear_UV_100_0A570_GT&quot;        
+## [103] &quot;Orange_2C04_GT&quot;                &quot;Sky_Blue_5C01_GT&quot;             
+## [105] &quot;Solar_Clear_0Z023_GT&quot;          &quot;Yellow_1C33_GT&quot;               
+## [107] &quot;Canary_Supergel_no312&quot;         &quot;Canary_Supergel_no312_used&quot;   
+## [109] &quot;Clear_00_not_current&quot;          &quot;Moss_Green_EColour_no89&quot;      
+## [111] &quot;Moss_Green_EColour_no89_used&quot;  &quot;Neon_Pink_Supergel_no343_used&quot;
+## [113] &quot;UV_filter_EColour_no226&quot;       &quot;UV_filter_EColour_no226_used&quot; 
+## [115] &quot;AB555&quot;                         &quot;AC370&quot;                        
+## [117] &quot;AC380&quot;                         &quot;AC685&quot;                        
+## [119] &quot;AC760&quot;                         &quot;AC800&quot;                        
+## [121] &quot;AC850&quot;                         &quot;AC900&quot;                        
+## [123] &quot;Bi405&quot;                         &quot;Bi440&quot;                        
+## [125] &quot;Bi450&quot;                         &quot;Bi518&quot;                        
+## [127] &quot;Bi520&quot;                         &quot;Bi550&quot;                        
+## [129] &quot;Bi632&quot;                         &quot;Bi650&quot;                        
+## [131] &quot;Bi660&quot;                         &quot;Bi725&quot;                        
+## [133] &quot;Bi780&quot;                         &quot;Bi808&quot;                        
+## [135] &quot;Bi830&quot;                         &quot;Bi850&quot;                        
+## [137] &quot;Bi880&quot;                         &quot;BN660&quot;                        
+## [139] &quot;BN740&quot;                         &quot;BN785&quot;                        
+## [141] &quot;BN850&quot;                         &quot;BN940&quot;                        
+## [143] &quot;BP324&quot;                         &quot;BP365&quot;                        
+## [145] &quot;BP470&quot;                         &quot;BP505&quot;                        
+## [147] &quot;BP525&quot;                         &quot;BP540&quot;                        
+## [149] &quot;BP550&quot;                         &quot;BP590&quot;                        
+## [151] &quot;BP635&quot;                         &quot;BP660&quot;                        
+## [153] &quot;BP695&quot;                         &quot;BP735&quot;                        
+## [155] &quot;BP810&quot;                         &quot;BP845&quot;                        
+## [157] &quot;BP865&quot;                         &quot;BP880&quot;                        
+## [159] &quot;DB395-870&quot;                     &quot;DB475-850&quot;                    
+## [161] &quot;DB550-850&quot;                     &quot;DB660-850&quot;                    
+## [163] &quot;DB735&quot;                         &quot;DB850&quot;                        
+## [165] &quot;DB940&quot;                         &quot;LP1000&quot;                       
+## [167] &quot;LP330&quot;                         &quot;LP340&quot;                        
+## [169] &quot;LP390&quot;                         &quot;LP415&quot;                        
+## [171] &quot;LP470&quot;                         &quot;LP500&quot;                        
+## [173] &quot;LP515&quot;                         &quot;LP550&quot;                        
+## [175] &quot;LP580&quot;                         &quot;LP590&quot;                        
+## [177] &quot;LP610&quot;                         &quot;LP630&quot;                        
+## [179] &quot;LP645&quot;                         &quot;LP665&quot;                        
+## [181] &quot;LP695&quot;                         &quot;LP715&quot;                        
+## [183] &quot;LP780&quot;                         &quot;LP800&quot;                        
+## [185] &quot;LP815&quot;                         &quot;LP830&quot;                        
+## [187] &quot;LP850&quot;                         &quot;LP900&quot;                        
+## [189] &quot;LP920&quot;                         &quot;NF550&quot;                        
+## [191] &quot;PE530&quot;                         &quot;SP510&quot;                        
+## [193] &quot;SP570&quot;                         &quot;SP585&quot;                        
+## [195] &quot;SP625&quot;                         &quot;SP635&quot;                        
+## [197] &quot;SP644&quot;                         &quot;SP645&quot;                        
+## [199] &quot;SP650&quot;                         &quot;SP675&quot;                        
+## [201] &quot;SP701&quot;                         &quot;SP705&quot;                        
+## [203] &quot;SP730&quot;                         &quot;SP785&quot;                        
+## [205] &quot;TB475-550-850&quot;                 &quot;TB550-660-850&quot;                
+## [207] &quot;Supergreen&quot;                    &quot;Superblue&quot;                    
+## [209] &quot;Multilux&quot;                      &quot;UV_Tstar&quot;</code></pre>
+<p>We can use a character string as index to extract an individual <code>filter_spct</code> object.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filters.mspct<span class="op">$</span>UG11</code></pre></div>
+<pre><code>## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200 1e-05
+##  2      201 1e-05
+##  3      202 1e-05
+##  4      203 1e-05
+##  5      204 1e-05
+##  6      205 1e-05
+##  7      206 1e-05
+##  8      207 1e-05
+##  9      208 1e-05
+## 10      209 1e-05
+## # ... with 991 more rows</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filters.mspct[[<span class="st">&quot;UG11&quot;</span>]]</code></pre></div>
+<pre><code>## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200 1e-05
+##  2      201 1e-05
+##  3      202 1e-05
+##  4      203 1e-05
+##  5      204 1e-05
+##  6      205 1e-05
+##  7      206 1e-05
+##  8      207 1e-05
+##  9      208 1e-05
+## 10      209 1e-05
+## # ... with 991 more rows</code></pre>
+<p>Be aware that according to R’s rules, using single square brackets will return a <code>filter_mspct</code> object possibly of length one. This statement is not equivalent to the one in the chunk immediately above.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filters.mspct[<span class="st">&quot;UG11&quot;</span>]</code></pre></div>
+<pre><code>## Object: filter_mspct [1 x 1]
+## --- Member: UG11 ---
+## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200 1e-05
+##  2      201 1e-05
+##  3      202 1e-05
+##  4      203 1e-05
+##  5      204 1e-05
+##  6      205 1e-05
+##  7      206 1e-05
+##  8      207 1e-05
+##  9      208 1e-05
+## 10      209 1e-05
+## # ... with 991 more rows
+## 
+## --- END ---</code></pre>
+<p>Of course, with this syntax it is possible to use a vector of member names.</p>
+</div>
+<div id="accessing-subsets-of-spectra" class="section level2">
+<h2>Accessing subsets of spectra</h2>
+<p>We can subset the <code>filter_mspct</code> object by indexing with vectors of character strings. The package provides some predefined ones, and users can easily define their own, either as constants or through computation. Here we use a vector defined by the package.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filters.mspct[petri_dishes]</code></pre></div>
+<pre><code>## Object: filter_mspct [3 x 1]
+## --- Member: glass_nn ---
+## Object: filter_spct [911 x 2]
+## Wavelength range 190 to 1100 nm, step 1 nm 
+## Label: Petri dish lid;  glass 
+## 
+## # A tibble: 911 x 2
+##    w.length          Tfr
+##       &lt;int&gt;        &lt;dbl&gt;
+##  1      190 0.0001643576
+##  2      191 0.0001931656
+##  3      192 0.0001112528
+##  4      193 0.0001150516
+##  5      194 0.0001389327
+##  6      195 0.0001006121
+##  7      196 0.0001294445
+##  8      197 0.0001016109
+##  9      198 0.0001000001
+## 10      199 0.0001000268
+## # ... with 901 more rows
+## --- Member: PS_Sterilin101 ---
+## Object: filter_spct [911 x 2]
+## Wavelength range 190 to 1100 nm, step 1 nm 
+## Label: Petri dish lid;  polystyrene;  Sterilin101 
+## 
+## # A tibble: 911 x 2
+##    w.length          Tfr
+##       &lt;int&gt;        &lt;dbl&gt;
+##  1      190 0.0001039559
+##  2      191 0.0001297974
+##  3      192 0.0001544347
+##  4      193 0.0001500571
+##  5      194 0.0001174608
+##  6      195 0.0001000001
+##  7      196 0.0001202332
+##  8      197 0.0001010653
+##  9      198 0.0001000001
+## 10      199 0.0001000189
+## # ... with 901 more rows
+## --- Member: PS_Sterilin109 ---
+## Object: filter_spct [911 x 2]
+## Wavelength range 190 to 1100 nm, step 1 nm 
+## Label: Petri dish lid;  polystyrene;  Sterilin109 
+## 
+## # A tibble: 911 x 2
+##    w.length          Tfr
+##       &lt;int&gt;        &lt;dbl&gt;
+##  1      190 0.0001776724
+##  2      191 0.0001155660
+##  3      192 0.0001724332
+##  4      193 0.0001111122
+##  5      194 0.0001000713
+##  6      195 0.0001000001
+##  7      196 0.0001300740
+##  8      197 0.0001015103
+##  9      198 0.0001000001
+## 10      199 0.0001000268
+## # ... with 901 more rows
+## 
+## --- END ---</code></pre>
+<p>And below we use a computed one. In this case we extract the member spectra with names containing the string “UG”.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filters.mspct[<span class="kw">grep</span>(<span class="st">&quot;UG&quot;</span>, <span class="kw">names</span>(filters.mspct))]</code></pre></div>
+<pre><code>## Object: filter_mspct [4 x 1]
+## --- Member: UG1 ---
+## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200    NA
+##  2      201    NA
+##  3      202    NA
+##  4      203    NA
+##  5      204    NA
+##  6      205    NA
+##  7      206    NA
+##  8      207    NA
+##  9      208    NA
+## 10      209    NA
+## # ... with 991 more rows
+## --- Member: UG5 ---
+## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200 1e-05
+##  2      201 1e-05
+##  3      202 1e-05
+##  4      203 1e-05
+##  5      204 1e-05
+##  6      205 1e-05
+##  7      206 1e-05
+##  8      207 1e-05
+##  9      208 1e-05
+## 10      209 1e-05
+## # ... with 991 more rows
+## --- Member: UG11 ---
+## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200 1e-05
+##  2      201 1e-05
+##  3      202 1e-05
+##  4      203 1e-05
+##  5      204 1e-05
+##  6      205 1e-05
+##  7      206 1e-05
+##  8      207 1e-05
+##  9      208 1e-05
+## 10      209 1e-05
+## # ... with 991 more rows
+## --- Member: UG2A ---
+## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200    NA
+##  2      201    NA
+##  3      202    NA
+##  4      203    NA
+##  5      204    NA
+##  6      205    NA
+##  7      206    NA
+##  8      207    NA
+##  9      208    NA
+## 10      209    NA
+## # ... with 991 more rows
+## 
+## --- END ---</code></pre>
+</div>
+<div id="querying-metadata" class="section level2">
+<h2>Querying metadata</h2>
+<p>If package ‘photobiology’ is loaded then the specialised <code>print()</code> method will be used and a summary of the metadata will be included in the header of the printout.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">filters.mspct<span class="op">$</span>UG11</code></pre></div>
+<pre><code>## Object: filter_spct [1,001 x 2]
+## Wavelength range 200 to 5200 nm, step 1 to 50 nm 
+## 
+## # A tibble: 1,001 x 2
+##    w.length   Tfr
+##       &lt;dbl&gt; &lt;dbl&gt;
+##  1      200 1e-05
+##  2      201 1e-05
+##  3      202 1e-05
+##  4      203 1e-05
+##  5      204 1e-05
+##  6      205 1e-05
+##  7      206 1e-05
+##  8      207 1e-05
+##  9      208 1e-05
+## 10      209 1e-05
+## # ... with 991 more rows</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getWhatMeasured</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getWhenMeasured</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<pre><code>## [1] NA</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">is_normalized</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<pre><code>## [1] FALSE</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">comment</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<pre><code>## [1] &quot;SCHOTT filter 'UG11' data, reference thickness (m): 0.001 and reflectance factor: 0.908\n (c) copyright SCHOTT, reproduced with permission.&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<pre><code>## [1] &quot;w.length&quot; &quot;Tfr&quot;</code></pre>
+<p>Of the different metadata items, the type of data is of great importance. Transmittance (and absorptance) can be expressed in two different ways: 1) taking incident radiation as reference, or 2) taking radiation entering the material as reference (i.e. discounting reflection). 1) is referref as <em>total</em> transmittance while 2) is referred as <em>internal</em> transmittance. Attribute `Tfr.type&quot; is used to store this information.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getTfrType</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<pre><code>## [1] &quot;internal&quot;</code></pre>
+</div>
+<div id="plotting" class="section level2">
+<h2>Plotting</h2>
+<p>Spectra can be plotted in the same ways as other data stored in data frames, using base R graphics, package ‘lattice’ or ‘ggplot2’. However, another package in our suite, ‘ggspectra’, built as an extension to ‘ggplot2’ makes plotting spectra extremely easy.</p>
+<p><code>plot()</code> methods use the metadata in the objects to set labels and decorations, as well as automatically setting the mapping of the <em>x</em> and <em>y</em> aesthetics.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+<p>Package ‘ggspectra’ also defines specializations of method <code>ggplot()</code> for spectra.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(filters.mspct<span class="op">$</span>UG11) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_line</span>()</code></pre></div>
+<p><img src="data:image/png;base64,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" /><!-- --></p>
+</div>
+<div id="calculating-summaries" class="section level2">
+<h2>Calculating summaries</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">transmittance</span>(filters.mspct<span class="op">$</span>UG11, <span class="kw">UVA</span>())</code></pre></div>
+<pre><code>##   UVA.ISO 
+## 0.6941875 
+## attr(,&quot;Tfr.type&quot;)
+## [1] &quot;internal&quot;
+## attr(,&quot;radiation.unit&quot;)
+## [1] &quot;transmittance average&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">absorbance</span>(filters.mspct<span class="op">$</span>UG11, <span class="kw">list</span>(<span class="kw">UVA</span>(), <span class="kw">Red</span>()))</code></pre></div>
+<pre><code>##   UVA.ISO   Red.ISO 
+## 0.3061089 2.3054286 
+## attr(,&quot;Tfr.type&quot;)
+## [1] &quot;internal&quot;
+## attr(,&quot;radiation.unit&quot;)
+## [1] &quot;absorbance average&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">transmittance</span>(filters.mspct[<span class="kw">grep</span>(<span class="st">&quot;UG&quot;</span>, <span class="kw">names</span>(filters.mspct))], 
+              <span class="kw">list</span>(<span class="kw">UVB</span>(), <span class="kw">UVA</span>()))</code></pre></div>
+<pre><code>## # A tibble: 4 x 3
+##   spct.idx transmittance_UVB.ISO transmittance_UVA.ISO
+##     &lt;fctr&gt;                 &lt;dbl&gt;                 &lt;dbl&gt;
+## 1      UG1             0.1534611             0.6590461
+## 2      UG5             0.9567783             0.9242814
+## 3     UG11             0.8509689             0.6941875
+## 4     UG2A             0.0471637             0.6601073</code></pre>
+</div>
+<div id="using-the-data-in-other-contexts" class="section level2">
+<h2>Using the data in other contexts</h2>
+<p>As <code>filter_mspct</code> is a class derived from <code>list</code>, and <code>filter_spct</code> is derived from <code>tibble::tible</code> which is a mostly compatible reimplementation of <code>data.frame</code> the data can be used very easily with any R function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(<span class="kw">as.data.frame</span>(filters.mspct<span class="op">$</span>UG11))</code></pre></div>
+<pre><code>##   w.length   Tfr
+## 1      200 1e-05
+## 2      201 1e-05
+## 3      202 1e-05
+## 4      203 1e-05
+## 5      204 1e-05
+## 6      205 1e-05</code></pre>
+<p>Of course <code>attach</code> and <code>with</code> also work as expected.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(filters.mspct)
+<span class="kw">transmittance</span>(UG11, <span class="kw">UVA</span>())</code></pre></div>
+<pre><code>##   UVA.ISO 
+## 0.6941875 
+## attr(,&quot;Tfr.type&quot;)
+## [1] &quot;internal&quot;
+## attr(,&quot;radiation.unit&quot;)
+## [1] &quot;transmittance average&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">detach</span>(filters.mspct)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attach</span>(filters.mspct)
+<span class="kw">with</span>(UG11, <span class="kw">range</span>(w.length))</code></pre></div>
+<pre><code>## [1]  200 5200</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">detach</span>(filters.mspct)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">with</span>(filters.mspct, <span class="kw">transmittance</span>(UG11, <span class="kw">UVA</span>()))</code></pre></div>
+<pre><code>##   UVA.ISO 
+## 0.6941875 
+## attr(,&quot;Tfr.type&quot;)
+## [1] &quot;internal&quot;
+## attr(,&quot;radiation.unit&quot;)
+## [1] &quot;transmittance average&quot;</code></pre>
+</div>
+<div id="the-r4photobiology-suite" class="section level2">
+<h2>The R4Photobiology suite</h2>
+<p>This package, is a data only package, part of a suite, which has package ‘photobiology’ at its core. Please visit (<a href="http://www.r4photobiology.info/" class="uri">http://www.r4photobiology.info/</a>) for more details. For more details on plotting spectra, please consult the documentation for package ‘ggspectra’, and for information on the calculation of summaries and maths operations between spectra, please, consult the documentation for package ‘photobiology’.</p>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
