@@ -8,7 +8,7 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #'
-#' @aliases acrylic plexiglas polycarbonate polystyrene polyester polyvynil_chloride optical_glass plastic_film plastic_sheet
+#' @aliases materials
 #'
 #' @examples
 #' acrylic
@@ -16,6 +16,43 @@
 #' # select short-pass filters
 #' filters.mspct[acrylic]
 #'
-#' @seealso \code{\link{acrylic}}
+#' @seealso \code{\link{filters.mspct}}
 #'
 "acetate"
+
+#' @rdname acetate
+#'
+"acrylic"
+
+#' @rdname acetate
+#'
+"polycarbonate"
+
+#' @rdname acetate
+#'
+"plexiglas"
+
+#' @rdname acetate
+#'
+"polystyrene"
+
+#' @rdname acetate
+#'
+"polyester"
+
+#' @rdname acetate
+#'
+"polyvynil_chloride"
+
+#' @rdname acetate
+#'
+"optical_glass"
+
+#' @rdname acetate
+#'
+"plastic_film"
+
+#' @rdname acetate
+#'
+"plastic_sheet"
+

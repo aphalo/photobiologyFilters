@@ -26,7 +26,7 @@ comments <- paste("SCHOTT filter '", names(filters.df)[-1], "' data, reference t
 names(comments) <- names(schott.mspct)
 names(what) <- names(schott.mspct)
 for (s in names(schott.mspct)) {
-  setWhatMeasured(schott.mspct[[s]], what[s])
+  schott.mspct[[s]] <- setWhatMeasured(schott.mspct[[s]], as.character(what[s]))
   comment(schott.mspct[[s]]) <- as.character(comments[s])
 }
 setwd("../..")
