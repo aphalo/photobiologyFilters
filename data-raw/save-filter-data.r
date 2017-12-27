@@ -21,7 +21,7 @@ for (obj in objects) {
 filters.mspct <-
   c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, lee.mspct,
   mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct,
-  xl_horticulture.mspct, zeiss.mspct)
+  xl_horticulture.mspct, zeiss.mspct, glass_windows.mspct)
 
 acetate <- courtaulds
 acrylic <- plexiglas <- evonik
@@ -51,7 +51,7 @@ short_pass <- grep("KG|SP", names(filters.mspct), value = TRUE)
 
 save(filters.mspct,
      bpi_visqueen, courtaulds, etola, evonik, foiltek, lee, mcdermit, petri_dishes,
-     plexiglas, rosco, schott, xl_horticulture, midopt,
+     plexiglas, rosco, schott, xl_horticulture, midopt, glass_windows,
      acetate, acrylic, plexiglas, polycarbonate, polystyrene, polyester, polyvynil_chloride,
      optical_glass, plastic_film, plastic_sheet,
      clear_filters, yellow_filters, orange_filters, green_filters, blue_green_filters,

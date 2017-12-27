@@ -12,6 +12,7 @@
 #'
 #' @note Data supplied by the manufacturer for inclussion in this package.
 #' Version	1 st June 2015. Reproduced with permision.
+#' \url{http://www.schott.com/advanced_optics}
 #'
 #' @section DISCLAIMER from Schott:
 #'   This data collection is protected by federal copyright law and

@@ -5,3 +5,5 @@
 ^vignettes/figure$
 ^.*\.log
 ^inst/web$
+^docs$
+^_pkgdown\.yml$

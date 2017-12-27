@@ -9,3 +9,4 @@ vignettes/*.pdf
 *.synctex.gz
 *.log
 inst/web
+docs

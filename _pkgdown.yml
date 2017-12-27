@@ -11,6 +11,7 @@ reference:
   - title: Indexing vectors by material
     contents:
     - optical_glass
+    - glass_windows
     - plastic_sheet
     - plastic_film
   - title: Indexing vectors by type
@@ -27,6 +28,7 @@ reference:
     - foiltek
     - lee
     - mcdermit
+    - midopt
     - petri_dishes
     - rosco
     - schott

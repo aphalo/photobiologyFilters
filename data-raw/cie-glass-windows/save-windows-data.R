@@ -1,4 +1,5 @@
 library(readxl)
+library(photobiology)
 
 setwd("data-raw/cie-glass-windows")
 
@@ -9,4 +10,8 @@ glass.tb <- read_excel("206.xls", sheet = "AllGlasses", skip = 8)
 
 names(glass.tb)[1] <- "w.length"
 
-split2filter_mspct(glass.tb, Tfr.type = "total")
+glass_windows.mspct <- split2filter_mspct(glass.tb, Tfr.type = "total")
+
+setwd("../..")
+
+save(glass_windows.mspct, file = "data-raw/rda/glass-windows.mspct.rda")

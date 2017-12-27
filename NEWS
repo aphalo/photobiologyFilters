@@ -2,8 +2,8 @@ photobiologyFilters 0.4.4
 =========================
 
 Rebuild data objects, setting attribute "what.measured".
-Add data for MIDOPT filters (the package now has data for 210 filters, and
-filter-like materials).
+Add data for MIDOPT filters, from Midwest Optical Systems, Inc.
+Add data for different types of window glasses, as used by CIE.
 Rename some filters, for clarity and consistency (NOT FULLY BACKWARDS COMPATIBLE).
 Add lists of names by type, colour and by material.
 Update documentation, expanding the "User Guide" and removing the
