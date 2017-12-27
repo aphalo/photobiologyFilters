@@ -191,6 +191,12 @@ as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 plot(filters.mspct$UG11)
 ```
 
+```{r}
+plot(filters.mspct$TB550_660_850, 
+     annotations = c("+", "title:what"), 
+     span = 11)
+```
+
 Package 'ggspectra' also defines specializations of method `ggplot()` for 
 spectra.
 

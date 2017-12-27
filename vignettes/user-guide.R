@@ -53,6 +53,11 @@ getTfrType(filters.mspct$UG11)
 plot(filters.mspct$UG11)
 
 ## ------------------------------------------------------------------------
+plot(filters.mspct$TB550_660_850, 
+     annotations = c("+", "title:what"), 
+     span = 11)
+
+## ------------------------------------------------------------------------
 ggplot(filters.mspct$UG11) +
   geom_line()
 

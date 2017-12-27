@@ -11,7 +11,8 @@ midopt.lst <- list()
 failed <- character()
 for (file.name in file.list) {
   name <- sub(pattern = "_Transmission_MidOpt.pdf", replacement = "", x = file.name)
-  type <- str_match(name, "BP|Bi|BN|PE|AB|AC|LP|NF|SP")
+  name <- gsub("-", "_", name)
+  type <- str_match(name, "BP|Bi|BN|PE|AB|AC|LP|NF|SP|TB|DB")
   type.name <- switch(type,
                       BP = "band-pass",
                       Bi = "band-pass",
