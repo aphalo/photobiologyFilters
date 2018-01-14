@@ -1,6 +1,7 @@
 library(tabulizer)
 library(tibble)
 library(dplyr)
+library(photobiology)
 library(ggspectra)
 library(stringr)
 rm(list = ls())
@@ -60,8 +61,14 @@ for (file.name in file.list) {
                               paste("Machine vision ", type.name, " filter '",
                                     name,
                                     "'; ", material,
-                                    "; new; from MidOpt, USA",
+                                    "; from MidOpt, USA",
                                     sep = ""))
+  comment(tmp.spct) <- paste("MIDOPT Machine vision ", type.name, " filter '",
+                             name,
+                             "', ", material,
+                    "\n(c) Midwest Optical Systems, Inc. (MidOpt), reproduced with permission.",
+                    sep = "")
+
   midopt.lst[[name]] <- tmp.spct
 
 }

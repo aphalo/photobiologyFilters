@@ -15,6 +15,8 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #'
+#' @note Idependent measurement of a single sample, not a specification.
+#'
 #' @examples
 #' etola
 #'

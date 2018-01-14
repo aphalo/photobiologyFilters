@@ -18,6 +18,8 @@
 #'
 #' @note Data measured with an Agilent 8453 spectrophotometer (based on diode array).
 #'
+#' @note Idependent measurement of a single sample, not a specification.
+#'
 #' @examples
 #' petri_dishes
 #'

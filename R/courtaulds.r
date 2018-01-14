@@ -20,6 +20,8 @@
 #' @note Instrument used: Hewlett-Packard 8453 diode array spectrophotometer
 #'   without an integrating sphere.
 #'
+#' @note Idependent measurement of a single sample, not a specification.
+#'
 #' @docType data
 #' @keywords datasets
 #'
