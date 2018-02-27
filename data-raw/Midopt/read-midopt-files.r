@@ -13,6 +13,7 @@ failed <- character()
 for (file.name in file.list) {
   name <- sub(pattern = "_Transmission_MidOpt.pdf", replacement = "", x = file.name)
   name <- gsub("-", "_", name)
+  name <- enc2native(name)
   type <- str_match(name, "BP|Bi|BN|PE|AB|AC|LP|NF|SP|TB|DB")
   type.name <- switch(type,
                       BP = "band-pass",
@@ -35,7 +36,7 @@ for (file.name in file.list) {
   }
 
 
-  tmp.mt <- extract_tables(file.name)[[1]]
+  tmp.mt <- extract_tables(file.name, encoding = "ASCII")[[1]]
   num_slices <- ncol(tmp.mt) %/% 2L
   if (ncol(tmp.mt) %% 2L != 0L | is.na(try(as.numeric(tmp.mt[2, 1])))) {
     failed <- c(failed, name)

@@ -12,6 +12,7 @@ head(filters.df)
 
 filters_Tfr.df <- filters.df[-(1:4), ]
 names(filters_Tfr.df)[1] <- "w.length"
+names(filters_Tfr.df) <- gsub("-", "_", names(filters_Tfr.df))
 filters_Tfr.df <- mutate(filters_Tfr.df, w.length = as.numeric(w.length))
 schott.mspct <- split2filter_mspct(filters_Tfr.df, Tfr.type = "internal")
 

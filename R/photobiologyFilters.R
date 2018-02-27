@@ -17,7 +17,7 @@
 #'   \item The whole catalogue of Schott optical filters (official data
 #'   supplied by Schott for inclussion in this package).
 #'   \item Most of the catalogue of MIDOPT filters (official data
-#'   extracted from dowloaded files from supplier, reproduced by permision).
+#'   extracted from dowloaded files from supplier, reproduced with permission).
 #'   \item Clear glass as used in windows (as used by CIE, from data file
 #'   downloaded from CIE's server.)
 #'   \item Several types of Plexiglas from Evonik measured at our lab.
@@ -29,12 +29,17 @@
 #'   Some measured at our lab and others data digitized from manufacturers'
 #'   catalogues.
 #'   \item Films used as greenhouse cladding from  BPI Agri/Visqueen,
-#'   XL-horticulture and generic, measured at our lab..
+#'   XL-horticulture and generic, measured at our lab.
 #' }
 #'
 #' @note This package is part of a suite of R packages for photobiological
 #'   calculations described at the
 #'   [r4photobiology](http://www.r4photobiology.info) web site.
+#'
+#' @references
+#'
+#' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
+#' 21-29. \url{http://doi.org/10.19232/uv4pb.2015.1.14}.
 #'
 #' @section Warning!: Except for those from Schott and MIDOPT, none of the
 #'   spectral data included in this package are "official" specifications. In

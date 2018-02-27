@@ -84,11 +84,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="#plotting">Plotting</a></li>
 <li><a href="#calculating-summaries">Calculating summaries</a></li>
 <li><a href="#using-the-data-in-other-contexts">Using the data in other contexts</a></li>
-<li><a href="#the-r4photobiology-suite">The R4Photobiology suite</a></li>
 </ul>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span>opts_chunk<span class="op">$</span><span class="kw">set</span>(<span class="dt">fig.width=</span><span class="dv">8</span>, <span class="dt">fig.height=</span><span class="dv">4</span>)</code></pre></div>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>This package, is a data only package, part of a suite, which has package ‘photobiology’ at its core. Please visit (<a href="http://www.r4photobiology.info/" class="uri">http://www.r4photobiology.info/</a>) for additional information. For details on plotting spectra, please consult the documentation for package ‘ggspectra’, and for information on the calculation of summaries and maths operations between spectra, please, consult the documentation for package ‘photobiology’.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(photobiology)
 <span class="kw">library</span>(photobiologyWavebands)</code></pre></div>
 <pre><code>## For news about 'photobiologyWavebands', please, see http://www.r4photobiology.info/</code></pre>
@@ -98,8 +99,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="kw">library</span>(ggspectra)</code></pre></div>
 <pre><code>## For news about 'ggspectra', please, see http://www.r4photobiology.info/</code></pre>
 <pre><code>## For on-line documentation see http://docs.r4photobiology.info/ggspectra/</code></pre>
-<div id="introduction" class="section level2">
-<h2>Introduction</h2>
 <p>In this very brief User Guide we describe how to access individual spectra or subsets of spectra.</p>
 </div>
 <div id="the-data" class="section level2">
@@ -107,9 +106,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Spectral data is included both for optical filters, sold as such, and for materials that either on purpose or by accident may be interposed in the “light” path in photobiological experiments, including plastic sheets and films. It must be kept in mind that, 1) absorptance depends on the thickness of a filter in addition to the properties of the material it is made off, and that 2) reflectance depends on the angle of incidence of the light beam.</p>
 <p>The spectral data have been acquired with an assortment of different instruments. Some data are measured by the authors with spectrophotometers, others have been provided by filter manufacturers.</p>
 <p>The difference in resolution and slit function among instruments can give, for the same filter, measured “apparent” peaks and valleys of slightly different width, and slopes of slightly different steepness. This is an inevitable artefact of spectral measurements, but as except for some dichroic (= interference) filters have relatively wide (“Gaussian”) peaks the distortion is small.</p>
-<p>Another important consideration is that some materials scatter transmitted and reflected light, and consequently such materials can be accurately measured by only use of an integrating sphere. Data included here have been in many cases measured without an integrating sphere; i.e. only by assesing the direct beam. For non-scattering materials this causes minor errors.</p>
-<p>Glass-filter properties vary to some extent among melt batches. Variation can also be expected among batches of plastic filters. Furthermore, filters age upon exposure to light and UV radiaition, and in some cases even upon exposure to air. Ageing is not limited to plastic filters and can also affect optical glass.</p>
-<p>We do not provide spectral reflectance data for the filters in this collection, as we do not have such data available. For filters made of ionic glass and coloured plastics, reflection is not selective, and amounts to about 9 to 10% of radiation incident at an angle close to perpendicular to the surface. Antireflection coating (ARC) reduces reflections, and multicoating (MC) even further. Such coatings are not equally effective at all wavelengths and, consequently, their use can modify the spectral properties of a filter. In contrast to the filters described above, dichroic or interference filters reflect the “rejected” radiation. It is also possible to produce filters that have an absorbing glass as substrate and a dichroic coating deposited onto one or both of its surfaces.</p>
+<p>Another important consideration is that some materials scatter transmitted and reflected light, and consequently such materials can be accurately measured by only use of an integrating sphere. Data included here have been in many cases measured without an integrating sphere; i.e. only by assessing the direct beam. For non-scattering materials this causes minor errors.</p>
+<p>Glass-filter properties vary to some extent among melt batches. Variation can also be expected among batches of plastic filters. Furthermore, filters age upon exposure to light and UV radiation, and in some cases even upon exposure to air. Ageing is not limited to plastic filters and can also affect optical glass.</p>
+<p>We do not provide spectral reflectance data for the filters in this collection, as we do not have such data available. For filters made of ionic glass and coloured plastics, reflection is not selective, and amounts to about 9 to 10% of radiation incident at an angle close to perpendicular to the surface. Anti-reflection coating (ARC) reduces reflections, and multi-coating (MC) even further. Such coatings are not equally effective at all wavelengths and, consequently, their use can modify the spectral properties of a filter. In contrast to the filters described above, dichroic or interference filters reflect the “rejected” radiation. It is also possible to produce filters that have an absorbing glass as substrate and a dichroic coating deposited onto one or both of its surfaces.</p>
 <p>All the spectral data in this package are stored in a single R object, a collection of spectra of class <code>filter_spct</code>. Individual or subsets of spectra can be retrieved by <em>name</em>. The package includes also several <code>character</code> vectors of <em>names</em>, each one containing names for LEDs of a given <em>color</em>, a given <em>type</em> or from a given <em>manufacturer</em>. These are listed in the help index for the package. The <em>names</em> used are in most cases the codes used by the manufacturers for the given type. Any dashes in these codes have been replaced by underscores.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># band_pass</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">schott</code></pre></div>
@@ -489,7 +488,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>## [1] &quot;SCHOTT filter 'UG11' data, reference thickness (m): 0.001 and reflectance factor: 0.908\n (c) copyright SCHOTT, reproduced with permission.&quot;</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">names</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
 <pre><code>## [1] &quot;w.length&quot; &quot;Tfr&quot;</code></pre>
-<p>Of the different metadata items, the type of data is of great importance. Transmittance (and absorptance) can be expressed in two different ways: 1) taking incident radiation as reference, or 2) taking radiation entering the material as reference (i.e. discounting reflection). 1) is referref as <em>total</em> transmittance while 2) is referred as <em>internal</em> transmittance. Attribute `Tfr.type&quot; is used to store this information.</p>
+<p>Of the different metadata items, the type of data is of great importance. Transmittance (and absorptance) can be expressed in two different ways: 1) taking incident radiation as reference, or 2) taking radiation entering the material as reference (i.e. discounting reflection). 1) is referred as <em>total</em> transmittance while 2) is referred as <em>internal</em> transmittance. Attribute `Tfr.type&quot; is used to store this information.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">getTfrType</span>(filters.mspct<span class="op">$</span>UG11)</code></pre></div>
 <pre><code>## [1] &quot;internal&quot;</code></pre>
 </div>
@@ -566,10 +565,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 ## [1] &quot;internal&quot;
 ## attr(,&quot;radiation.unit&quot;)
 ## [1] &quot;transmittance average&quot;</code></pre>
-</div>
-<div id="the-r4photobiology-suite" class="section level2">
-<h2>The R4Photobiology suite</h2>
-<p>This package, is a data only package, part of a suite, which has package ‘photobiology’ at its core. Please visit (<a href="http://www.r4photobiology.info/" class="uri">http://www.r4photobiology.info/</a>) for more details. For more details on plotting spectra, please consult the documentation for package ‘ggspectra’, and for information on the calculation of summaries and maths operations between spectra, please, consult the documentation for package ‘photobiology’.</p>
 </div>
 
 
