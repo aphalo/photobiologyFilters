@@ -43,6 +43,7 @@ for (file.name in file.list) {
     next()
   }
   tmp.spct <- tmp.mt[-1, 1:2]
+
   if (num_slices > 1) {
     for (i in 2:num_slices) {
             ii <- 2L * i
@@ -51,6 +52,14 @@ for (file.name in file.list) {
               tmp.mt[-1, (ii-1):ii])
     }
   }
+
+  NonASCII <- tools::showNonASCII(tmp.spct)
+  if (length(NonASCII) > 0L) {
+    cat("\nNon ASCII characters in ", file.name, ": ", NonASCII, "\n")
+  } else {
+    cat(".")
+  }
+
   tmp.spct %>%
     as.tibble() %>%
     select("w.length" = .data$V1, "Tpc" = .data$V2) %>%

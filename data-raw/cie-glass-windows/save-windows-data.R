@@ -1,3 +1,4 @@
+library(tools)
 library(readxl)
 library(photobiology)
 
@@ -5,8 +6,12 @@ setwd("data-raw/cie-glass-windows")
 
 glass.head <- read_excel("206.xls", sheet = "AllGlasses", n_max = 8)
 manufacturers <- enc2native(unlist(glass.head[4, -1], use.names = FALSE))
+manufacturers <- iconv(manufacturers, from = "UTF8", to = "ASCII", sub = " ")
+print(manufacturers)
 thickness <- try(as.numeric(unlist(glass.head[3, -1], use.names = FALSE)) * 1e-3)
 glass.name <- enc2native(names(glass.head)[-1])
+glass.name <- iconv(glass.name, from = "UTF8", to = "ASCII", sub = " ")
+print(glass.name)
 
 glass.tb <- read_excel("206.xls", sheet = "AllGlasses", skip = 8)
 

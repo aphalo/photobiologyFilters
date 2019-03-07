@@ -13,6 +13,13 @@ setwd("data-raw/Foiltek/")
 file.list <- list.files(pattern = "*.csv$")
 foiltek.lst <- list()
 for (file.name in file.list) {
+  NonASCII <- tools::showNonASCIIfile(file.name)
+  if (length(NonASCII) > 0L) {
+    cat("\nNon ASCII characters in ", file.name, ": ", NonASCII, "\n")
+  } else {
+    cat(".")
+  }
+
   name <- sub(pattern=".csv", replacement="", x=file.name)
   material <- switch(name,
     Clear_PC = "Polycarbonate (PC)",
@@ -23,6 +30,7 @@ for (file.name in file.list) {
   )
   tmp.df <- read.csv(file.name, skip=1, header=FALSE, col.names=c("w.length", "Tpc", "sd_Tpc"),
                      colClasses = c("numeric", "numeric", "NULL"))
+
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = Tpc / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
   setWhatMeasured(tmp.df, paste(material, "; clear sheet; new", sep = ""))

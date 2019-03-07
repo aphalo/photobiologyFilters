@@ -11,6 +11,13 @@ setwd("data-raw/BPI")
 file.list <- list.files(pattern = "*.txt")
 bpi_visqueen.lst <- list()
 for (file.name in file.list) {
+  NonASCII <- tools::showNonASCIIfile(file.name)
+  if (length(NonASCII) > 0L) {
+    cat("\nNon ASCII characters in ", file.name, ": ", NonASCII, "\n")
+  } else {
+    cat(".")
+  }
+
   name <- sub(pattern = ".txt", replacement = "", x = file.name)
   tmp.df <- read.table(file.name, header = TRUE)
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = transmittance / 100)

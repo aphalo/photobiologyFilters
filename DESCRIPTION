@@ -34,4 +34,4 @@ ByteCompile: no
 Encoding: UTF-8
 URL: http://www.r4photobiology.info/
 BugReports: https://bitbucket.org/aphalo/photobiologyfilters
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1

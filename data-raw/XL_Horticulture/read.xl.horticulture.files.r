@@ -4,6 +4,8 @@ rm(list = ls())
 setwd("data-raw")
 tmp.df <- read.table("various.filters.2005.data", header = TRUE)
 tmp.df <- select(tmp.df, Wavelength, supergreen, superblue, multilux)
+head(tmp.df)
+
 tmp.df <- transmute(tmp.df,
                     w.length = Wavelength,
                     Supergreen = supergreen / 100,

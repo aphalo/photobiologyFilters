@@ -1,7 +1,7 @@
-photobiologyFilters 0.4.4-1
-===========================
+photobiologyFilters 0.4.4-1 (2019-03-07)
+========================================
 
-Attempt to remove an UTF-8 character from the data.
+Remove a non-ASCII character from the data.
 
 photobiologyFilters 0.4.4
 =========================
