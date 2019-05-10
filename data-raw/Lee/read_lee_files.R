@@ -17,6 +17,7 @@ for (file.name in file.list) {
   tmp.spct <- setWhatMeasured(tmp.spct, paste("Theatrical 'gel'; Lee '",
                                               gsub("_", " ", name),
                                               "'; new; Lee filters, UK",
+                                              " (digitized from specs.)",
                                               sep = ""))
   lee.lst[[name]] <- tmp.spct
 }

@@ -14,7 +14,7 @@ for (file.name in file.list) {
   name <- sub(pattern = "_Transmission_MidOpt.pdf", replacement = "", x = file.name)
   name <- gsub("-", "_", name)
   name <- enc2native(name)
-  type <- str_match(name, "BP|Bi|BN|PE|AB|AC|LP|NF|SP|TB|DB")
+  type <- str_match(name, "BP|Bi|BN|PE|AB|AC|LP|NF|SP|TB|DB|Ni|ND")
   type.name <- switch(type,
                       BP = "band-pass",
                       Bi = "band-pass",
@@ -26,15 +26,16 @@ for (file.name in file.list) {
                       LP = "long-pass",
                       SP = "short-pass",
                       PE = "band-pass",
-                      NF = "short-pass")
+                      NF = "short-pass",
+                      Ni = "neutral-density",
+                      ND = "neutral-density")
   if (grepl("i", type)) {
     material <- "interference"
-  } else if (grepl("A", type)) {
+  } else if (grepl("^A", type)) {
     material <- "acrylic"
   } else {
     material <- "optical glass"
   }
-
 
   tmp.mt <- extract_tables(file.name, encoding = "ASCII")[[1]]
   num_slices <- ncol(tmp.mt) %/% 2L
@@ -72,6 +73,7 @@ for (file.name in file.list) {
                                     name,
                                     "'; ", material,
                                     "; from MidOpt, USA",
+                                    " (from specs.)",
                                     sep = ""))
   comment(tmp.spct) <- paste("MIDOPT Machine vision ", type.name, " filter '",
                              name,

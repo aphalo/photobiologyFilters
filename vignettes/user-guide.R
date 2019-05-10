@@ -7,6 +7,7 @@ library(photobiologyWavebands)
 library(photobiologyFilters)
 library(ggplot2)
 library(ggspectra)
+theme_set(theme_bw())
 
 ## ------------------------------------------------------------------------
 # band_pass
@@ -30,7 +31,13 @@ filters.mspct["UG11"]
 filters.mspct[petri_dishes]
 
 ## ------------------------------------------------------------------------
+all_accessors
+
+## ------------------------------------------------------------------------
 filters.mspct[grep("UG", names(filters.mspct))]
+
+## ------------------------------------------------------------------------
+grep("UG", names(filters.mspct), value = TRUE)
 
 ## ------------------------------------------------------------------------
 filters.mspct$UG11
@@ -43,7 +50,7 @@ getWhenMeasured(filters.mspct$UG11)
 is_normalized(filters.mspct$UG11)
 
 ## ------------------------------------------------------------------------
-comment(filters.mspct$UG11)
+cat(comment(filters.mspct$UG11))
 names(filters.mspct$UG11)
 
 ## ------------------------------------------------------------------------

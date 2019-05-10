@@ -13,7 +13,7 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #'
-#' @aliases types
+#' @aliases filter types
 #'
 #' @examples
 #' band_pass

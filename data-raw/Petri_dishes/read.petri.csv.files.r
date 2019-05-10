@@ -3,7 +3,8 @@
 # STEPS
 # 1) clear the workspace
 # 2) read .csv files
-# 3) save all the data.frames created into a single Rda file in data folder
+# 3) collect all the filter_spct objects into a filter_mspct object
+# 4) save the filter_mscpt object into a single Rda file in the data-raw/rda folder
 library(photobiology)
 rm(list = ls())
 setwd("data-raw/Petri_dishes/")

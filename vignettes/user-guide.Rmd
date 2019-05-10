@@ -31,6 +31,7 @@ library(photobiologyWavebands)
 library(photobiologyFilters)
 library(ggplot2)
 library(ggspectra)
+theme_set(theme_bw())
 ```
 
 In this very brief User Guide we describe how to access individual spectra or
@@ -134,7 +135,7 @@ Of course, with this syntax it is possible to use a vector of member names.
 ## Accessing subsets of spectra
 
 We can subset the `filter_mspct` object by indexing with vectors of character
-strings. The package provides some predefined ones, and users can easily
+strings. The package provides several predefined ones, and users can easily
 define their own, either as constants or through computation. Here we use
 a vector defined by the package.
 
@@ -142,22 +143,39 @@ a vector defined by the package.
 filters.mspct[petri_dishes]
 ```
 
-And below we use a computed one. In this case we extract the member spectra
+The vector `all_accessors` contains the names of the different vectors of
+names of members of `filters.mspct`.
+
+```{r}
+all_accessors
+```
+
+In addition to the predefined vactors it is possible to compute numeric indexing vectors
+using pattern matching with `grep()`. In this example we extract the member spectra
 with names containing the string "UG".
 
 ```{r}
 filters.mspct[grep("UG", names(filters.mspct))]
 ```
 
+To generate the subset of names matching a pattern, we can also use `grep()`.
+
+```{r}
+grep("UG", names(filters.mspct), value = TRUE)
+```
+
 ## Querying metadata
 
-If package 'photobiology' is loaded then the specialised `print()` method will be
-used and a summary of the metadata will be included in the header of the
-printout.
+The spectra are saved in objects of class `"filter_spct"`, defined in package
+'photobiology'. Specializations of several methods including `print()` and
+`summary()` include a summary of the metadata in the header of the printout.
 
 ```{r}
 filters.mspct$UG11
 ```
+
+Metadata can also be queried with other methods. Please, see the documentation
+for package 'photobiology' for the details.
 
 ```{r}
 getWhatMeasured(filters.mspct$UG11)
@@ -169,7 +187,7 @@ is_normalized(filters.mspct$UG11)
 ```
 
 ```{r}
-comment(filters.mspct$UG11)
+cat(comment(filters.mspct$UG11))
 names(filters.mspct$UG11)
 ```
 
@@ -242,6 +260,7 @@ attach(filters.mspct)
 transmittance(UG11, UVA())
 detach(filters.mspct)
 ```
+
 ```{r}
 attach(filters.mspct)
 with(UG11, range(w.length))

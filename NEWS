@@ -1,10 +1,16 @@
-photobiologyFilters 0.4.4-1 (2019-03-07)
-========================================
+photobiologyFilters 0.4.5 (2019-05-10)
+======================================
 
 Remove a non-ASCII character from the data.
+* Add data for various filters used in photography.
+* Add data for some filters supplied by UQG Optics.
+* Add data for 49 new filters supplied by MIDOPT.
+* Rebuild all spectral data objects with current version of package
+'photobiology' (= 0.9.27).
+* Require R 3.5.0 due to the new file format used to store the data.
 
-photobiologyFilters 0.4.4
-=========================
+photobiologyFilters 0.4.4 (2018-01-15)
+======================================
 
 Rebuild data objects, setting attribute "what.measured".
 Add data for MIDOPT filters, from Midwest Optical Systems, Inc.

@@ -1,0 +1,116 @@
+---
+output:
+  github_document:
+    html_preview: false
+---
+
+```{r readme-01, echo = FALSE}
+knitr::opts_chunk$set(
+  fig.asp = 2/3,
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-"
+)
+```
+
+# photobiologyFilters
+
+[![](https://www.r-pkg.org/badges/version/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) 
+
+Package **photobiologyFilters** is a collection of spectral transmittance data for more than 250 filters measured in our lab or for which data have been made available by the suppliers for inclussion in this package.
+
+## Examples
+
+The first example shows how to list all available filters. We use `head()` to
+limit the output.
+
+```{r example-02, message=FALSE}
+library(photobiologyFilters)
+library(ggspectra)
+theme_set(theme_bw())
+```
+
+
+```{r example-03}
+length(names(filters.mspct))
+```
+
+
+```{r example-04}
+# list names of the first 10 filters
+head(names(filters.mspct), 10)
+```
+
+The second example shows how to use a predefined vector of filter names to extract
+those made of polyester (PET). Please, see the _User Guide_ or documentation
+for the names of other vectors of names for materials, suppliers, and regions of
+the spectrum.
+
+```{r example-05}
+polyester
+filters.mspct[polyester]
+```
+
+Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate mean transmittance for two regions of the spectrum given by wavelengths in nanometres.
+
+```{r example-06}
+transmittance(filters.mspct["Clear_PET_G"], 
+              list(waveband(c(250, 315)), waveband(c(500,600))))
+```
+
+Methods in package 'ggspectra' can be used for plotting.
+
+```{r example-07}
+autoplot(filters.mspct["Clear_PET_G"], annotations = c("+", "boundaries")) +
+  stat_find_wls(target = c(0.5, 0.05)) +
+  stat_find_wls(target =c(0.5, 0.05), geom = "text", hjust = 1.2)
+```
+
+The classes of the objects used to store the spectral data are derived from `"data.frame"` making direct use of the data easy with functions and methods 
+from base R and various packages.
+
+## Installation
+
+Installation of the most recent stable version from CRAN:
+
+```{r, eval=FALSE}
+install.packages("photobiologyFilters")
+```
+
+Installation of the current unstable version from Bitbucket:
+
+```{r, eval=FALSE}
+# install.packages("devtools")
+devtools::install_bitbucket("aphalo/photobiologyfilters")
+```
+
+## Documentation 
+
+HTML documentation is available at (https://docs.r4photobiology.info/photobiologyFilters/), including a _User Guide_.
+
+News on updates to the different packages of the 'r4photobiology' suite are regularly posted at (https://www.r4photobiology.info/).
+
+Two articles introduce the basic ideas behind the design of the suite and its use:
+Aphalo P. J. (2015) (https://doi.org/10.19232/uv4pb.2015.1.14) and Aphalo P. J. (2016)  (https://doi.org/10.19232/uv4pb.2016.1.15).
+
+A book is under preparation, and the draft is currently available at (https://leanpub.com/r4photobiology/).
+
+A handbook written before the suite was developed contains useful information on the quantification and manipulation of ultraviolet and visible radiation:
+Aphalo, P. J., Albert, A., Björn, L. O., McLeod, A. R., Robson, T. M., & Rosenqvist, E. (Eds.) (2012) Beyond the Visible: A handbook of best practice in plant UV photobiology (1st ed., p. xxx + 174). Helsinki: University of Helsinki, Department of Biosciences, Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF), 978-952-10-8362-4 (paperback). PDF file available from (https://hdl.handle.net/10138/37558).
+
+## Contributing
+
+Pull requests, bug reports, and feature requests are welcome at (https://bitbucket.org/aphalo/photobiologyfilters).
+
+## Citation
+
+If you use this package to produce scientific or commercial publications, please cite according to:
+
+```{r}
+citation("photobiologyFilters")
+```
+
+## License
+
+© 2012-2019 Pedro J. Aphalo (pedro.aphalo@helsinki.fi). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+

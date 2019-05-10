@@ -46,3 +46,7 @@
 #' schott
 #'
 "schott"
+
+#' @rdname schott
+#'
+"schott_filters"

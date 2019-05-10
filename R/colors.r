@@ -54,3 +54,8 @@
 #' @rdname clear_filters
 #'
 "heat_filters"
+
+#' @rdname clear_filters
+#'
+"uvir_cut_filters"
+
