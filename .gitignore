@@ -8,5 +8,6 @@ vignettes/*.pdf
 *.synctex
 *.synctex.gz
 *.log
+*.svg
 inst/web
 docs

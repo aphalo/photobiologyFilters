@@ -150,7 +150,7 @@ names of members of `filters.mspct`.
 all_accessors
 ```
 
-In addition to the predefined vactors it is possible to compute numeric indexing vectors
+In addition to the predefined vectors it is possible to compute numeric indexing vectors
 using pattern matching with `grep()`. In this example we extract the member spectra
 with names containing the string "UG".
 
@@ -209,34 +209,44 @@ data frames, using base R graphics, package 'lattice' or 'ggplot2'. However, ano
 package in our suite, 'ggspectra', built as an extension to 'ggplot2' makes 
 plotting spectra extremely easy.
 
-`plot()` methods use the metadata in the objects to set labels and decorations,
+`autoplot()` methods use the metadata in the objects to set labels and decorations,
 as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 
 ```{r}
-plot(filters.mspct$UG11)
+autoplot(filters.mspct$LP500)
 ```
 
 ```{r}
-plot(filters.mspct$TB550_660_850, 
-     annotations = c("+", "title:what"), 
-     span = 11)
+autoplot(filters.mspct$TB550_660_850, 
+         annotations = c("+", "title:what"), 
+         span = 11)
+```
+
+To graphically compare filters, we can pass a collection of spectral objects,
+such as subset of `filters.mspct`.
+
+```{r}
+autoplot(filters.mspct[c("UG1", "UG11")], 
+         range = c(200, 800),
+         annotations = c("+", "boundaries"), 
+         span = 11)
 ```
 
 Package 'ggspectra' also defines specializations of method `ggplot()` for 
 spectra.
 
 ```{r}
-ggplot(filters.mspct$UG11) +
+ggplot(filters.mspct$Firecrest_UVIR_Cut) +
   geom_line()
 ```
 
 ## Calculating summaries
 
 ```{r}
-transmittance(filters.mspct$UG11, UVA())
+transmittance(filters.mspct$Firecrest_UVIR_Cut, UVA())
 ```
 ```{r}
-absorbance(filters.mspct$UG11, list(UVA(), Red()))
+absorbance(filters.mspct$Firecrest_UVIR_Cut, list(UVA(), NIR()))
 ```
 
 ```{r}

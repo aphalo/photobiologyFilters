@@ -57,22 +57,28 @@ names(filters.mspct$UG11)
 getTfrType(filters.mspct$UG11)
 
 ## ------------------------------------------------------------------------
-plot(filters.mspct$UG11)
+autoplot(filters.mspct$LP500)
 
 ## ------------------------------------------------------------------------
-plot(filters.mspct$TB550_660_850, 
-     annotations = c("+", "title:what"), 
-     span = 11)
+autoplot(filters.mspct$TB550_660_850, 
+         annotations = c("+", "title:what"), 
+         span = 11)
 
 ## ------------------------------------------------------------------------
-ggplot(filters.mspct$UG11) +
+autoplot(filters.mspct[c("UG1", "UG11")], 
+         range = c(200, 800),
+         annotations = c("+", "boundaries"), 
+         span = 11)
+
+## ------------------------------------------------------------------------
+ggplot(filters.mspct$Firecrest_UVIR_Cut) +
   geom_line()
 
 ## ------------------------------------------------------------------------
-transmittance(filters.mspct$UG11, UVA())
+transmittance(filters.mspct$Firecrest_UVIR_Cut, UVA())
 
 ## ------------------------------------------------------------------------
-absorbance(filters.mspct$UG11, list(UVA(), Red()))
+absorbance(filters.mspct$Firecrest_UVIR_Cut, list(UVA(), NIR()))
 
 ## ------------------------------------------------------------------------
 transmittance(filters.mspct[grep("UG", names(filters.mspct))], 

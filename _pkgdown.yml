@@ -15,7 +15,7 @@ reference:
     - filters.mspct
   - title: Indexing vectors by color
     contents:
-    - uv_filters
+    - clear_filters
   - title: Indexing vectors by material
     contents:
     - optical_glass
@@ -27,20 +27,23 @@ reference:
     - band_pass
     - long_pass
     - short_pass
+  - title: Indexing vectors by use
+    contents:
+    - photography_filters
+    - theatrical_gels
+    - petri_dishes
   - title: Indexing vectors by manufacturer or supplier
     contents:
-    - courtaulds
     - bpi_visqueen
+    - courtaulds
     - etola
     - evonik
     - foiltek
-    - lee
     - mcdermit
     - midopt
-    - petri_dishes
-    - rosco
     - schott
     - xl_horticulture
+
 
 articles:
   - title: Vignettes
