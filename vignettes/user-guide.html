@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2019-05-10" />
+<meta name="date" content="2019-05-11" />
 
 <title>User Guide</title>
 
@@ -304,7 +304,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <h1 class="title toc-ignore">User Guide</h1>
 <h3 class="subtitle">Package ‘photobiologyFilters’ 0.4.4.9010</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2019-05-10</h4>
+<h4 class="date">2019-05-11</h4>
 
 
 <div id="TOC">
@@ -682,7 +682,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 ## [61] &quot;xl_horticulture&quot;        &quot;yellow_filters&quot;        
 ## [63] &quot;zeiss&quot;                  &quot;zeiss_filters&quot;         
 ## [65] &quot;zomei_filters&quot;</code></pre>
-<p>In addition to the predefined vactors it is possible to compute numeric indexing vectors using pattern matching with <code>grep()</code>. In this example we extract the member spectra with names containing the string “UG”.</p>
+<p>In addition to the predefined vectors it is possible to compute numeric indexing vectors using pattern matching with <code>grep()</code>. In this example we extract the member spectra with names containing the string “UG”.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" title="1">filters.mspct[<span class="kw">grep</span>(<span class="st">&quot;UG&quot;</span>, <span class="kw">names</span>(filters.mspct))]</a></code></pre></div>
 <pre><code>## Object: filter_mspct [5 x 1]
 ## --- Member: UG1 ---

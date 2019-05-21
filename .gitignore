@@ -11,3 +11,4 @@ vignettes/*.pdf
 *.svg
 inst/web
 docs
+data-raw/photo-filters/spectra-with-acq-names/

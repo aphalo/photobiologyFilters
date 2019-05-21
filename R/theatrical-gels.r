@@ -16,7 +16,8 @@
 #' \url{http://www.rosco.com/filters/index.cfm}
 #'
 #' @note Instruments used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
-#' Co. Ltd, China) equiped with an integrating sphere for Rosco filters and while
+#' Co. Ltd, China) equiped with an integrating sphere for Rosco filters except no. 299
+#' which was measured with an Agilent 8453 array spectrophotometer and while
 #' spectra for Lee gels have been digitized from the spectra in the Lee
 #' filters catalogue.
 #'

@@ -119,8 +119,8 @@ autoplot(filters.mspct$Firecrest_UVIR_Cut) +
   stat_find_wls(target = 0.05, colour = "orange") +
   stat_find_wls(target = 0.05, geom = "text", hjust = 1.1, size = 3.5, label.fmt = "%.3g nm")
 
-lee.ggp <-
-  autoplot(filters.mspct$ND1.20_299, range = c(190, 1050)) +
+rosco.ggp <-
+  autoplot(filters.mspct$Neutral_Density_1_2_EColour299, range = c(190, 1050)) +
   stat_peaks(span = 101, colour = "red") +
   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
   geom_hline(yintercept = A2T(1.2), linetype = "dashed", colour = "blue") +

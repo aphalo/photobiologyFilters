@@ -43,6 +43,12 @@ autoplot(filters.mspct$Tiffen_Haze_2A) +
   stat_find_wls() + stat_find_wls(geom = "text", hjust = 1.2, size = 3.5) +
   stat_find_wls(target = 0.05, colour = "orange") + stat_find_wls(target = 0.05, geom = "text_repel", hjust = 1.2, size = 3.5)
 
+autoplot(filters.mspct$Firecrest_UVIR_Cut) +
+  stat_find_wls() + stat_find_wls(geom = "text", hjust = 1.2, size = 3.5) +
+  stat_find_wls(target = 0.05, colour = "orange") + stat_find_wls(target = 0.05, geom = "text_repel", hjust = 1.2, size = 3.5) +
+  stat_peaks(span = 71, colour = "red") + stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 71, size = 3.5) +
+  stat_valleys(span = 51, colour = "blue") + stat_valleys(geom = "text", angle = 90, hjust = 1.3, span = 51, size = 3.5)
+
 autoplot(filters.mspct$Rocolax_UV_IR_Cut_PRO_HD_W) +
   stat_find_wls() + stat_find_wls(geom = "text", hjust = 1.2, size = 3.5) +
   stat_find_wls(target = 0.05, colour = "orange") + stat_find_wls(target = 0.05, geom = "text_repel", hjust = 1.2, size = 3.5) +
