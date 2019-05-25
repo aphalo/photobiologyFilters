@@ -54,14 +54,14 @@ filters.mspct[polyester]
 Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate mean transmittance for two regions of the spectrum given by wavelengths in nanometres.
 
 ```{r example-06}
-transmittance(filters.mspct["Clear_PET_G"], 
+transmittance(filters.mspct["Foiltek_Clear_PET_G"], 
               list(waveband(c(250, 315)), waveband(c(500,600))))
 ```
 
 Methods in package 'ggspectra' can be used for plotting.
 
 ```{r example-07}
-autoplot(filters.mspct["Clear_PET_G"], annotations = c("+", "boundaries")) +
+autoplot(filters.mspct["Foiltek_Clear_PET_G"], annotations = c("+", "boundaries")) +
   stat_find_wls(target = c(0.5, 0.05)) +
   stat_find_wls(target =c(0.5, 0.05), geom = "text", hjust = 1.2)
 ```

@@ -5,7 +5,6 @@ knitr::opts_chunk$set(fig.width=8, fig.height=4)
 library(photobiology)
 library(photobiologyWavebands)
 library(photobiologyFilters)
-library(ggplot2)
 library(ggspectra)
 theme_set(theme_bw())
 
@@ -16,16 +15,16 @@ theme_set(theme_bw())
 schott
 
 ## ------------------------------------------------------------------------
-names(filters.mspct)
+head(names(filters.mspct), 6)
 
 ## ------------------------------------------------------------------------
-filters.mspct$UG11
+filters.mspct$Schott_UG11
 
 ## ------------------------------------------------------------------------
-filters.mspct[["UG11"]]
+filters.mspct[["Schott_UG11"]]
 
 ## ------------------------------------------------------------------------
-filters.mspct["UG11"]
+filters.mspct["Schott_UG11"]
 
 ## ------------------------------------------------------------------------
 filters.mspct[petri_dishes]
@@ -40,32 +39,32 @@ filters.mspct[grep("UG", names(filters.mspct))]
 grep("UG", names(filters.mspct), value = TRUE)
 
 ## ------------------------------------------------------------------------
-filters.mspct$UG11
+filters.mspct$Schott_UG11
 
 ## ------------------------------------------------------------------------
-getWhatMeasured(filters.mspct$UG11)
-getWhenMeasured(filters.mspct$UG11)
+getWhatMeasured(filters.mspct$Schott_UG11)
+getWhenMeasured(filters.mspct$Schott_UG11)
 
 ## ------------------------------------------------------------------------
-is_normalized(filters.mspct$UG11)
+is_normalized(filters.mspct$Schoot_UG11)
 
 ## ------------------------------------------------------------------------
-cat(comment(filters.mspct$UG11))
-names(filters.mspct$UG11)
+cat(comment(filters.mspct$Schott_UG11), "\n")
+names(filters.mspct$Schott_UG11)
 
 ## ------------------------------------------------------------------------
-getTfrType(filters.mspct$UG11)
+getTfrType(filters.mspct$Schott_UG11)
 
 ## ------------------------------------------------------------------------
-autoplot(filters.mspct$LP500)
+autoplot(filters.mspct$MIDOPT_LP500)
 
 ## ------------------------------------------------------------------------
-autoplot(filters.mspct$TB550_660_850, 
+autoplot(filters.mspct$MIDOPT_TB550_660_850, 
          annotations = c("+", "title:what"), 
          span = 11)
 
 ## ------------------------------------------------------------------------
-autoplot(filters.mspct[c("UG1", "UG11")], 
+autoplot(filters.mspct[c("Schott_UG1", "Schott_UG11")], 
          range = c(200, 800),
          annotations = c("+", "boundaries"), 
          span = 11)
@@ -85,18 +84,18 @@ transmittance(filters.mspct[grep("UG", names(filters.mspct))],
               list(UVB(), UVA()))
 
 ## ------------------------------------------------------------------------
-head(as.data.frame(filters.mspct$UG11))
+head(as.data.frame(filters.mspct$Schott_UG11))
 
 ## ------------------------------------------------------------------------
 attach(filters.mspct)
-transmittance(UG11, UVA())
+transmittance(Schott_UG11, UVA())
 detach(filters.mspct)
 
 ## ------------------------------------------------------------------------
 attach(filters.mspct)
-with(UG11, range(w.length))
+with(Schott_UG11, range(w.length))
 detach(filters.mspct)
 
 ## ------------------------------------------------------------------------
-with(filters.mspct, transmittance(UG11, UVA()))
+with(filters.mspct, transmittance(Schott_UG11, UVA()))
 

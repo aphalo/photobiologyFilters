@@ -31,6 +31,7 @@ for (file.name in file.list) {
   etola.lst[[name]] <- tmp.df
 }
 etola.mspct <- filter_mspct(etola.lst)
+names(etola.mspct) <- paste("Unbranded", names(etola.mspct), sep = "_")
 setwd("../..")
 
 save(etola.mspct, file = "data-raw/rda/etola.mspct.rda")

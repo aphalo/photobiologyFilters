@@ -27,6 +27,7 @@ for (file.name in file.list) {
   bpi_visqueen.lst[[name]] <- tmp.df
 }
 bpi_visqueen.mspct <- filter_mspct(bpi_visqueen.lst)
+names(bpi_visqueen.mspct) <- paste("BPI", names(bpi_visqueen.mspct), sep = "_")
 setwd("../..")
 
 save(bpi_visqueen.mspct, file = "data-raw/rda/bpi-visqueen.mspct.rda")

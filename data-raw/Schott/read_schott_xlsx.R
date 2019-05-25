@@ -40,6 +40,7 @@ for (s in names(schott.mspct)) {
   schott.mspct[[s]] <- setWhatMeasured(schott.mspct[[s]], as.character(what[s]))
   comment(schott.mspct[[s]]) <- as.character(comments[s])
 }
+names(schott.mspct) <- paste("Schott", names(schott.mspct), sep = "_")
 setwd("../..")
 
 save(schott.mspct, file = "data-raw/rda/schott.mspct.rda")

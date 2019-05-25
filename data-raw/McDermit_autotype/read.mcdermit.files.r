@@ -19,6 +19,7 @@ for (file.name in file.list) {
   mcdermit.lst[[name]] <- tmp.df
 }
 mcdermit.mspct <- filter_mspct(mcdermit.lst)
+names(mcdermit.mspct) <- paste("McDermit", names(mcdermit.mspct), sep = "_")
 setwd("../..")
 
 save(mcdermit.mspct, file = "data-raw/rda/mcdermit.mspct.rda")

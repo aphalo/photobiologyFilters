@@ -24,7 +24,7 @@ for (file.name in file.list) {
   name <- sub(pattern = ".txt", replacement = "", x = file.name)
   thickness <- as.numeric(str_sub(name, 7, 9)) * 1e-6
   used <- grepl("age", name)
-  name <- sub("Clear_", "Clear_CA_", name)
+  name <- sub("Clear_", "CA_", name)
   tmp.df <- read.table(file.name, header = TRUE)
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = transmittance / 100)
 
@@ -35,6 +35,7 @@ for (file.name in file.list) {
   acetate.lst[[name]] <- tmp.df
 }
 courtaulds.mspct <- filter_mspct(acetate.lst)
+names(courtaulds.mspct) <- paste("Courttaulds", names(courtaulds.mspct), sep = "_")
 setwd("../..")
 
 save(courtaulds.mspct, file = "data-raw/rda/courtaulds.mspct.rda")

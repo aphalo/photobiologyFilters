@@ -36,6 +36,7 @@ for (file.name in file.list) {
   rosco.lst[[name]] <- tmp.df
 }
 rosco.mspct <- filter_mspct(rosco.lst)
+names(rosco.mspct) <- paste("Rosco", names(rosco.mspct), sep = "_")
 setwd("../..")
 
 save(rosco.mspct, file = "data-raw/rda/rosco.mspct.rda")

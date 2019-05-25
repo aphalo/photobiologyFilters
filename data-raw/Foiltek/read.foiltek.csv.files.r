@@ -23,6 +23,7 @@ for (file.name in file.list) {
   name <- sub(pattern=".csv", replacement="", x=file.name)
   material <- switch(name,
     Clear_PC = "Polycarbonate (PC)",
+    Clear_PC_UV = "Polycarbonate (PC)",
     Clear_PET = "Polyethylene terephthalate (PET), 'polyester'",
     Clear_PS = "Polystyrene (PS)",
     Clear_PVC = "Polyvinyl chloride (PVC)",
@@ -38,6 +39,8 @@ for (file.name in file.list) {
   foiltek.lst[[name]] <- tmp.df
 }
 foiltek.mspct <- filter_mspct(foiltek.lst)
+names(foiltek.mspct) <- paste(ifelse(grepl("PC_UV", names(foiltek.mspct)), "Macrolife", "Foiltek"),
+                              names(foiltek.mspct), sep = "_")
 setwd("./../..")
 
 save(foiltek.mspct, file = "data-raw/rda/foiltek.mspct.rda")

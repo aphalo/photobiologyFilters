@@ -8,7 +8,7 @@ file.list <- list.files(pattern = "*.csv$")
 
 lee.lst <- list()
 for (file.name in file.list) {
-  name <- sub(pattern = ".csv", replacement = "", x = file.name)
+  name <- paste("Lee", sub(pattern = ".csv", replacement = "", x = file.name), sep = "_")
   tmp.spct <- read_csv(file.name, col_names = c("w.length", "Tfr"),
                      col_types = "dd")
   setFilterSpct(tmp.spct, Tfr.type = "total")

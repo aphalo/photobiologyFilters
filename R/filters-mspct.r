@@ -17,7 +17,8 @@
 #'   \code{"filter_spct"}.
 #'
 #' @examples
+#' filters.mspct$Schott_UG11
+#' filters.mspct[[1]]
 #' names(filters.mspct)
-#' filters.mspct$UG11
 #'
 "filters.mspct"

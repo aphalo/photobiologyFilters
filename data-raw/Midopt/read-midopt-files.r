@@ -86,6 +86,8 @@ for (file.name in file.list) {
 }
 
 midopt.mspct <- filter_mspct(midopt.lst)
+names(midopt.mspct) <- paste("MIDOPT", names(midopt.mspct), sep = "_")
+
 setwd("../..")
 
 save(midopt.mspct, file = "data-raw/rda/midopt.mspct.rda")

@@ -23,6 +23,8 @@ for (file.name in file.list) {
   plexiglas.lst[[name]] <- tmp.df
 }
 evonik.mspct <- filter_mspct(plexiglas.lst)
+
+names(evonik.mspct) <- paste("Evonik", names(evonik.mspct), sep = "_")
 setwd("../..")
 
 save(evonik.mspct, file = "data-raw/rda/evonik.mspct.rda")

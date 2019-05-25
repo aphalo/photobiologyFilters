@@ -34,13 +34,107 @@ autoplot(filters.mspct$Zomei_ND_09, plot.qty = "absorbance") +
            label = sprintf("OD %.1f = T %.2f", 0.9, A2T(0.9)),
            colour = "blue", size = 3, vjust = -0.3)
 
-# autoplot(filters.mspct$Knight_ND12) +
-#   stat_peaks(span = 101, colour = "red") +
-#   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
-#   geom_hline(yintercept = A2T(1.2), linetype = "dashed", colour = "blue") +
-#   annotate(geom = "text", y = A2T(1.2), x  = 250,
-#            label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
-#            colour = "blue", size = 3, vjust = -0.3)
+autoplot(filters.mspct$KnightX_ND16_resin) +
+   stat_peaks(span = 101, colour = "red") +
+   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+   geom_hline(yintercept = A2T(1.2), linetype = "dashed", colour = "blue") +
+   annotate(geom = "text", y = A2T(1.2), x  = 250,
+            label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
+            colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$KnightX_ND16_resin, plot.qty = "absorbance") +
+  geom_hline(yintercept = 1.2, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 1.2, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
+           colour = "blue", size = 3, vjust = -0.3) +
+  geom_hline(yintercept = 2, linetype = "dashed", colour = "red") +
+  annotate(geom = "text", y = 2, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 2, A2T(2)),
+           colour = "red", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Hitech_ND_09_HL) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = A2T(0.9), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = A2T(0.9), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 0.9, A2T(0.9)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Hitech_ND_09_HL, plot.qty = "absorbance") +
+  geom_hline(yintercept = 0.9, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 0.9, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 0.9, A2T(0.9)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Hitech_ND_06_HL) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = A2T(0.6), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = A2T(0.6), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 0.6, A2T(0.6)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Hitech_ND_06_HL, plot.qty = "absorbance") +
+  geom_hline(yintercept = 0.6, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 0.6, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 0.6, A2T(0.6)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_e_colour_ND_209) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = 0.5, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 0.5, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.5), 0.5),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_e_colour_ND_209, plot.qty = "absorbance") +
+  geom_hline(yintercept = T2A(0.5), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = T2A(0.5), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.5), 0.5),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_e_colour_ND_210) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = 0.25, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 0.25, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.25), 0.25),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_e_colour_ND_210, plot.qty = "absorbance") +
+  geom_hline(yintercept = T2A(0.25), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = T2A(0.25), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.25), 0.25),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_e_colour_ND_211) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = 0.125, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 0.125, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.125), 0.125),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_e_colour_ND_211, plot.qty = "absorbance") +
+  geom_hline(yintercept = T2A(0.125), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = T2A(0.125), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.125), 0.125),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_Cinegel_grey_97) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = 0.5, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 0.5, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.5), 0.5),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Rosco_Cinegel_grey_97, plot.qty = "absorbance") +
+  geom_hline(yintercept = T2A(0.5), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = T2A(0.5), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", T2A(0.5), 0.5),
+           colour = "blue", size = 3, vjust = -0.3)
 
 firecrest.ggp <-
 autoplot(filters.mspct$Firecrest_ND12) +
@@ -60,10 +154,46 @@ firecrest_uvir.ggp <-
            label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
            colour = "blue", size = 3, vjust = -0.3)
 
+autoplot(filters.mspct$Firecrest_ND12) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = A2T(1.2), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = A2T(1.2), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
+           colour = "blue", size = 3, vjust = -0.3)
+
 autoplot(filters.mspct$Firecrest_ND12, plot.qty = "absorbance") +
   geom_hline(yintercept = 1.2, linetype = "dashed", colour = "blue") +
   annotate(geom = "text", y = 1.2, x  = 250,
            label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Firecrest_ND12_sqr) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = A2T(1.2), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = A2T(1.2), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Firecrest_ND12_sqr, plot.qty = "absorbance") +
+  geom_hline(yintercept = 1.2, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 1.2, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 1.2, A2T(1.2)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Firecrest_IRND_15_MC) +
+  stat_peaks(span = 101, colour = "red") +
+  stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
+  geom_hline(yintercept = A2T(1.5), linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = A2T(1.5), x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 1.5, A2T(1.5)),
+           colour = "blue", size = 3, vjust = -0.3)
+
+autoplot(filters.mspct$Firecrest_IRND_15_MC, plot.qty = "absorbance") +
+  geom_hline(yintercept = 1.5, linetype = "dashed", colour = "blue") +
+  annotate(geom = "text", y = 1.5, x  = 250,
+           label = sprintf("OD %.1f = T %.2g", 1.5, A2T(1.5)),
            colour = "blue", size = 3, vjust = -0.3)
 
 schott.ggp <-

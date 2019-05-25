@@ -26,6 +26,7 @@ filters.mspct <-
   xl_horticulture.mspct, zeiss.mspct, glass_windows.mspct, photography_filters.mspct,
   kolarivision.mspct)
 
+filters.mspct <- filters.mspct[sort(names(filters.mspct))]
 midopt_filters <- midopt
 lee_gels <- lee
 rosco_gels <- rosco

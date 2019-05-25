@@ -20,5 +20,6 @@ for (s in names(xl_horticulture.mspct)) {
                   paste("'", s, "' greenhouse cladding film; new; from XL Horticulature, UK", sep = ""))
 }
 
+names(xl_horticulture.mspct) <- paste("XL_Horticulture", names(xl_horticulture.mspct), sep = "_")
 save(xl_horticulture.mspct, file = "data-raw/rda/xl-horticulture.mspct.rda")
 
