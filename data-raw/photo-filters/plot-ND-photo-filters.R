@@ -1,4 +1,3 @@
-
 library(photobiologyFilters)
 library(photobiologyWavebands)
 library(ggspectra)
@@ -8,7 +7,7 @@ library(svglite)
 
 set_annotations_default(c("=", "title:what", "boxes", "boundaries", "summaries"))
 set_w.band_default(split_bands((2:10)*100))
-theme_set(theme_bw(12))
+theme_set(theme_bw(12) + theme(legend.position = "top"))
 
 zomei.ggp <-
 autoplot(filters.mspct$Zomei_ND_09) +
@@ -80,7 +79,7 @@ autoplot(filters.mspct$Hitech_ND_06_HL, plot.qty = "absorbance") +
            label = sprintf("OD %.1f = T %.2g", 0.6, A2T(0.6)),
            colour = "blue", size = 3, vjust = -0.3)
 
-autoplot(filters.mspct$Rosco_e_colour_ND_209) +
+autoplot(filters.mspct$Rosco_ND_Ecolour_no209) +
   stat_peaks(span = 101, colour = "red") +
   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
   geom_hline(yintercept = 0.5, linetype = "dashed", colour = "blue") +
@@ -122,7 +121,7 @@ autoplot(filters.mspct$Rosco_e_colour_ND_211, plot.qty = "absorbance") +
            label = sprintf("OD %.1f = T %.2g", T2A(0.125), 0.125),
            colour = "blue", size = 3, vjust = -0.3)
 
-autoplot(filters.mspct$Rosco_Cinegel_grey_97) +
+autoplot(filters.mspct$Rosco_Grey_Cinegel_no97) +
   stat_peaks(span = 101, colour = "red") +
   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
   geom_hline(yintercept = 0.5, linetype = "dashed", colour = "blue") +
@@ -197,7 +196,7 @@ autoplot(filters.mspct$Firecrest_IRND_15_MC, plot.qty = "absorbance") +
            colour = "blue", size = 3, vjust = -0.3)
 
 schott.ggp <-
-autoplot(filters.mspct$NG3, range = c(190, 1050)) +
+autoplot(filters.mspct$Schott_NG3, range = c(190, 1050)) +
   stat_peaks(span = 101, colour = "red") +
   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
   geom_hline(yintercept = A2T(0.9), linetype = "dashed", colour = "blue") +
@@ -206,7 +205,7 @@ autoplot(filters.mspct$NG3, range = c(190, 1050)) +
            colour = "blue", size = 3, vjust = -0.3)
 
 schott_uvir.ggp <-
-  autoplot(filters.mspct$NG3 * filters.mspct$Firecrest_UVIR_Cut,
+  autoplot(filters.mspct$Schott_NG3 * filters.mspct$Firecrest_UVIR_Cut,
            range = c(190, 1050)) +
   stat_peaks(span = 101, colour = "red") +
   stat_peaks(geom = "text", angle = 90, hjust = -0.3, span = 101, size = 3.5) +
@@ -215,7 +214,7 @@ schott_uvir.ggp <-
            label = sprintf("OD %.1f = T %.2g", 0.9, A2T(0.9)),
            colour = "blue", size = 3, vjust = -0.3)
 
-autoplot(filters.mspct$NG3, plot.qty = "absorbance", range = c(190, 1050)) +
+autoplot(filters.mspct$Schott_NG3, plot.qty = "absorbance", range = c(190, 1050)) +
   geom_hline(yintercept = 0.9, linetype = "dashed", colour = "blue") +
   annotate(geom = "text", y = 0.9, x  = 250,
            label = sprintf("OD %.1f = T %.2g", 0.9, A2T(0.9)),
@@ -272,3 +271,5 @@ dev.off()
 
 set_annotations_default()
 set_w.band_default()
+
+
