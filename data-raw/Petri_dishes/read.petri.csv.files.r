@@ -22,6 +22,7 @@ for (file.name in file.list) {
                   paste("Petri dish lid; ", ifelse(grepl("PS", name),
                                                paste("polystyrene; ", sub("PS_", "", name)),
                                                "glass")))
+  setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
   tmp.df <- clean(tmp.df)
   petri.lst[[name]] <- tmp.df
 }

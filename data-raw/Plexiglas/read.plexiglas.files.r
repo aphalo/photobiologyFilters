@@ -19,6 +19,7 @@ for (file.name in file.list) {
                   paste("Poly(methyl methacrylate) (PMMA) 'acrylic' sheet; Plexiglas '",
                                 gsub("_", " ", name), "'; 0.002 m thick; new; from Evonik Industries, Germany",
                   sep = ""))
+  setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
   clean(tmp.df)
   plexiglas.lst[[name]] <- tmp.df
 }

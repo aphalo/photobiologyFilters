@@ -10,6 +10,7 @@ Kolari_HM <- interpolate_wl(Kolari_HM, w.length.out = 200:1000, fill = NULL)
 nrow(Kolari_HM)
 range(Kolari_HM)
 setWhatMeasured(Kolari_HM, "Kolari Vision Color Correcting Hot Mirror Filter")
+setHowMeasured(Kolari_HM, "Digitized from plot at supplier's web site.")
 comment(Kolari_HM)  <- "Kolari Vision Color Correcting Hot Mirror Filter (UV/IR Cut Filter) – AR Coated\n digitized data from supplier's description."
 # plot(zeiss_UV_T.spct)
 

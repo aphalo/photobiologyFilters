@@ -35,6 +35,7 @@ for (file.name in file.list) {
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = Tpc / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
   setWhatMeasured(tmp.df, paste(material, "; clear sheet; new", sep = ""))
+  setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
   tmp.df <- clean(tmp.df)
   foiltek.lst[[name]] <- tmp.df
 }

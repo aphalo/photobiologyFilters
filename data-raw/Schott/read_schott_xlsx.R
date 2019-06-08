@@ -38,6 +38,7 @@ names(comments) <- names(schott.mspct)
 names(what) <- names(schott.mspct)
 for (s in names(schott.mspct)) {
   schott.mspct[[s]] <- setWhatMeasured(schott.mspct[[s]], as.character(what[s]))
+  schott.mspct[[s]] <- setHowMeasured(schott.mspct[[s]], "Numerical data from supplier.")
   comment(schott.mspct[[s]]) <- as.character(comments[s])
 }
 names(schott.mspct) <- paste("Schott", names(schott.mspct), sep = "_")

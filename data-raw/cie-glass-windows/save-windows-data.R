@@ -27,6 +27,8 @@ for (i in 1:length(glass_windows.mspct)) {
                           "'; thickness ", signif(thickness[i], 3),
                           "; from ", manufacturers[i],
                           sep = ""))
+  glass_windows.mspct[[i]] <- setHowMeasured(glass_windows.mspct[[i]], "Numerical data from CIE.")
+
   comment(glass_windows.mspct[[i]]) <- "Source: CIE, file '206.xls'"
 }
 

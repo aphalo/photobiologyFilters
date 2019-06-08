@@ -75,6 +75,7 @@ for (file.name in file.list) {
                                     "; from MidOpt, USA",
                                     " (from specs.)",
                                     sep = ""))
+  tmp.spct <- setHowMeasured(tmp.spct, "Numerical data from supplier.")
   comment(tmp.spct) <- paste("MIDOPT Machine vision ", type.name, " filter '",
                              name,
                              "', ", material,

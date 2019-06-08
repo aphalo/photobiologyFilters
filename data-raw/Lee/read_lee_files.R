@@ -19,6 +19,8 @@ for (file.name in file.list) {
                                               "'; new; Lee filters, UK",
                                               " (digitized from specs.)",
                                               sep = ""))
+  tmp.spct <- setHowMeasured(tmp.spct, "Digitized from plot at supplier's web site.")
+
   lee.lst[[name]] <- tmp.spct
 }
 lee.mspct <- filter_mspct(lee.lst)

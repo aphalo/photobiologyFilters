@@ -21,6 +21,7 @@ for (file.name in file.list) {
   setFilterSpct(tmp.df, Tfr.type = "total")
   setWhatMeasured(tmp.df,
                   paste("Photography filter:", gsub("_", "-", gsub("-", " ", name))))
+  setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
   comment(tmp.df) <- "Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo."
   tmp.df <- clean(tmp.df)
   photo_filters.lst[[gsub("_$", "", gsub("[.][.]|[.]", "_", make.names(name)))]] <- tmp.df

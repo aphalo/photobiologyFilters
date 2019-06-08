@@ -10,6 +10,7 @@ zeiss_UV_T.spct <- interpolate_wl(zeiss_UV_T.spct, w.length.out = 200:1000, fill
 nrow(zeiss_UV_T.spct)
 range(zeiss_UV_T.spct)
 setWhatMeasured(zeiss_UV_T.spct, "Zeiss 'UV T*' filter, longpass, multi-coated; from Zeiss, Germany")
+setHowMeasured(zeiss_UV_T.spct, "Digitized from plot in manufacturer's brochure.")
 # plot(zeiss_UV_T.spct)
 
 zeiss.mspct <- filter_mspct(list(Zeiss_UV_Tstar_specs = zeiss_UV_T.spct))
