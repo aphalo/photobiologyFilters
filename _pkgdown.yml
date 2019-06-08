@@ -10,6 +10,7 @@ reference:
   - title: Package overview
     contents:
     - "photobiologyFilters-package"
+    - all_accessors
   - title: Spectra
     contents:
     - filters.mspct
@@ -42,6 +43,7 @@ reference:
     - mcdermit
     - midopt
     - schott
+    - uqg
     - xl_horticulture
 
 

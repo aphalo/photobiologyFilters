@@ -1,8 +1,8 @@
 Package: photobiologyFilters
 Type: Package
 Title: Spectral Transmittance Data for Filters
-Version: 0.4.4.9010
-Date: 2019-05-25
+Version: 0.4.5
+Date: 2019-06-09
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0003-3385-972X")),
@@ -21,12 +21,12 @@ License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
     R (>= 3.5.0),
-    photobiology (>= 0.9.27)
+    photobiology (>= 0.9.28)
 Suggests:
-    knitr (>= 1.22),
-    rmarkdown (>= 1.12),
+    knitr (>= 1.23),
+    rmarkdown (>= 1.13),
     ggplot2 (>= 3.1.1),
-    ggspectra (>= 0.3.3),
+    ggspectra (>= 0.3.4),
     photobiologyWavebands (>= 0.4.3)
 LazyLoad: no
 LazyData: yes

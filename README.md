@@ -1,7 +1,10 @@
 
 # photobiologyFilters
 
-[![](https://www.r-pkg.org/badges/version/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters)
+[![CRAN
+version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters)
+[![cran
+checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html)
 
 Package **photobiologyFilters** is a collection of spectral
 transmittance data for more than 250 filters measured in our lab or for
@@ -21,13 +24,17 @@ theme_set(theme_bw())
 
 ``` r
 length(names(filters.mspct))
-#> [1] 234
+#> [1] 329
 ```
 
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "UG1"  "UG5"  "UG11" "BG3"  "BG7"  "BG18" "BG25" "BG36" "BG38" "BG39"
+#>  [1] "Baader_U_filter"             "BPI_Luminance"              
+#>  [3] "BPI_Solatrol"                "BW_007_Clear_MRC_nano"      
+#>  [5] "Courttaulds_CA_115um"        "Courttaulds_CA_115um_age000"
+#>  [7] "Courttaulds_CA_115um_age020" "Courttaulds_CA_115um_age030"
+#>  [9] "Courttaulds_CA_115um_age060" "Courttaulds_CA_115um_age100"
 ```
 
 The second example shows how to use a predefined vector of filter names
@@ -37,10 +44,10 @@ suppliers, and regions of the spectrum.
 
 ``` r
 polyester
-#> [1] "Clear_PET_G"            "PET_Autostat_CT5_125um"
+#> [1] "Foiltek_Clear_PET_G"             "McDermit_PET_Autostat_CT5_125um"
 filters.mspct[polyester]
 #> Object: filter_mspct [2 x 1]
-#> --- Member: Clear_PET_G ---
+#> --- Member: Foiltek_Clear_PET_G ---
 #> Object: filter_spct [911 x 2]
 #> Wavelength range 190 to 1100 nm, step 1 nm 
 #> Label: ; clear sheet; new 
@@ -59,7 +66,7 @@ filters.mspct[polyester]
 #>  9      198 0.000100
 #> 10      199 0.000100
 #> # ... with 901 more rows
-#> --- Member: PET_Autostat_CT5_125um ---
+#> --- Member: McDermit_PET_Autostat_CT5_125um ---
 #> Object: filter_spct [611 x 2]
 #> Wavelength range 190 to 800 nm, step 1 nm 
 #> Label: Polyester, clear film, 0.000125 m thick, Autostat CT5 from McDermit Autotype; new 
@@ -87,18 +94,18 @@ Summary calculations can be easily done with methods from package
 of the spectrum given by wavelengths in nanometres.
 
 ``` r
-transmittance(filters.mspct["Clear_PET_G"], 
+transmittance(filters.mspct["Foiltek_Clear_PET_G"], 
               list(waveband(c(250, 315)), waveband(c(500,600))))
 #> # A tibble: 1 x 3
-#>   spct.idx    transmittance_range.250.315 transmittance_range.500.600
-#>   <fct>                             <dbl>                       <dbl>
-#> 1 Clear_PET_G                    0.000177                       0.876
+#>   spct.idx            transmittance_range.250.3~ transmittance_range.500.6~
+#>   <fct>                                    <dbl>                      <dbl>
+#> 1 Foiltek_Clear_PET_G                   0.000177                      0.876
 ```
 
 Methods in package ‘ggspectra’ can be used for plotting.
 
 ``` r
-autoplot(filters.mspct["Clear_PET_G"]) +
+autoplot(filters.mspct["Foiltek_Clear_PET_G"], annotations = c("+", "boundaries")) +
   stat_find_wls(target = c(0.5, 0.05)) +
   stat_find_wls(target =c(0.5, 0.05), geom = "text", hjust = 1.2)
 ```
