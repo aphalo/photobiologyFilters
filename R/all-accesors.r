@@ -1,6 +1,6 @@
 #' Names of different accessors
 #'
-#' The package makes available a colelction of character vectors that can be
+#' The package makes available a collection of character vectors that can be
 #' used to extract spectral data for specific subsets of the filters. Some
 #' correspond to supplier names, other to materials, types, colours and
 #' typical uses. The data object described here lists the names of all these
@@ -11,6 +11,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' all_accessors
+#' all_filter_accessors
 #'
-"all_accessors"
+"all_filter_accessors"

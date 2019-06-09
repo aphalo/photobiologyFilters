@@ -11,10 +11,16 @@ transmittance data for more than 250 filters measured in our lab or for
 which data have been made available by the suppliers for inclussion in
 this package.
 
-## Examples
+## Code breaking renaming of data objects
 
-The first example shows how to list all available filters. We use
-`head()` to limit the output.
+In the update to version 0.5.0 several members of the collection of
+filter spectra were renamed to ensure consistency and clarity. As of
+version 0.5.0 all member names start with the name of the manufacturer
+or supplier. In addition, several of the vectors of names of member
+spectra were renamed to include the word “filters” to avoid possible
+name clashes with other packages and also to improve naming consistency.
+
+## Examples
 
 ``` r
 library(photobiologyFilters)
@@ -22,10 +28,16 @@ library(ggspectra)
 theme_set(theme_bw())
 ```
 
+How many spectra are included in the current version of
+‘photobiologyFilters’?
+
 ``` r
-length(names(filters.mspct))
+length(filters.mspct)
 #> [1] 329
 ```
+
+What are the names of available spectra. We use `head()` to limit the
+output.
 
 ``` r
 # list names of the first 10 filters
@@ -37,15 +49,19 @@ head(names(filters.mspct), 10)
 #>  [9] "Courttaulds_CA_115um_age060" "Courttaulds_CA_115um_age100"
 ```
 
-The second example shows how to use a predefined vector of filter names
-to extract those made of polyester (PET). Please, see the *User Guide*
-or documentation for the names of other vectors of names for materials,
-suppliers, and regions of the spectrum.
+To subset based on different criteria we can use predefined character
+vectors of filter names. For example, vector `polyester` lists the names
+of the spectra for filters made of polyester (PET).
 
 ``` r
-polyester
+polyester_filters
 #> [1] "Foiltek_Clear_PET_G"             "McDermit_PET_Autostat_CT5_125um"
-filters.mspct[polyester]
+```
+
+We can use the vector to extract all these spectra as a collection.
+
+``` r
+filters.mspct[polyester_filters]
 #> Object: filter_mspct [2 x 1]
 #> --- Member: Foiltek_Clear_PET_G ---
 #> Object: filter_spct [911 x 2]
@@ -88,6 +104,42 @@ filters.mspct[polyester]
 #> 
 #> --- END ---
 ```
+
+The package includes a character vector with the names of these vectors
+of names that are available.
+
+``` r
+all_filter_accessors
+#>  [1] "acetate_filters"            "acrylic_filters"           
+#>  [3] "baader_filters"             "band_pass_filters"         
+#>  [5] "blue_filters"               "blue_green_filters"        
+#>  [7] "bpi_visqueen_filters"       "bw_filters"                
+#>  [9] "clear_filters"              "courtaulds_filters"        
+#> [11] "etola_filters"              "evonik_filters"            
+#> [13] "fake_unbranded_filters"     "firecrest_filters"         
+#> [15] "foiltek_filters"            "green_filters"             
+#> [17] "haida_filters"              "Haida_filters"             
+#> [19] "heat_filters"               "heliopan_filters"          
+#> [21] "hoya_filters"               "kenko_filters"             
+#> [23] "kolarivision_filters"       "lee_filters"               
+#> [25] "long_pass_filters"          "mcdermit_filters"          
+#> [27] "midopt_filters"             "neutral_filters"           
+#> [29] "optical_glass_filters"      "orange_filters"            
+#> [31] "photography_filters"        "plastic_film_filters"      
+#> [33] "plastic_sheet_filters"      "plexiglas_filters"         
+#> [35] "polycarbonate_filters"      "polyester_filters"         
+#> [37] "polystyrene_filters"        "polyvynil_chloride_filters"
+#> [39] "red_nir_filters"            "rocolax_filters"           
+#> [41] "rosco_filters"              "schott_filters"            
+#> [43] "short_pass_filters"         "tiffen_filters"            
+#> [45] "uqg_filters"                "uv_filters"                
+#> [47] "uvir_cut_filters"           "uvroptics_filters"         
+#> [49] "xl_horticulture_filters"    "yellow_filters"            
+#> [51] "zeiss_filters"              "zomei_filters"
+```
+
+Please, see the *User Guide* or documentation for the names of other
+vectors of names for materials, suppliers, and regions of the spectrum.
 
 Summary calculations can be easily done with methods from package
 ‘photobiology’. Here we calculate mean transmittance for two regions

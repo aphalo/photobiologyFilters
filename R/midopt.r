@@ -26,10 +26,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' midopt
-#'
-"midopt"
-
-#' @rdname midopt
+#' midopt_filters
 #'
 "midopt_filters"

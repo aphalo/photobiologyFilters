@@ -20,10 +20,15 @@ knitr::opts_chunk$set(
 
 Package **photobiologyFilters** is a collection of spectral transmittance data for more than 250 filters measured in our lab or for which data have been made available by the suppliers for inclussion in this package.
 
-## Examples
+## Code breaking renaming of data objects
 
-The first example shows how to list all available filters. We use `head()` to
-limit the output.
+In the update to version 0.5.0 several members of the collection of filter spectra were
+renamed to ensure consistency and clarity. As of version 0.5.0 all member names
+start with the name of the manufacturer or supplier. In addition, several of the vectors
+of names of member spectra were renamed to include the word "filters" to avoid possible
+name clashes with other packages and also to improve naming consistency.
+
+## Examples
 
 ```{r example-02, message=FALSE}
 library(photobiologyFilters)
@@ -31,26 +36,40 @@ library(ggspectra)
 theme_set(theme_bw())
 ```
 
+How many spectra are included in the current version of 'photobiologyFilters'?
 
 ```{r example-03}
-length(names(filters.mspct))
+length(filters.mspct)
 ```
 
+What are the names of available spectra. We use `head()` to limit the output.
 
 ```{r example-04}
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
 ```
 
-The second example shows how to use a predefined vector of filter names to extract
-those made of polyester (PET). Please, see the _User Guide_ or documentation
-for the names of other vectors of names for materials, suppliers, and regions of
-the spectrum.
+To subset based on different criteria we can use predefined character vectors of filter names. For example, vector `polyester` lists the names of the spectra for filters made of polyester (PET). 
 
 ```{r example-05}
-polyester
-filters.mspct[polyester]
+polyester_filters
 ```
+
+We can use the vector to extract all these spectra as a collection.
+
+```{r example-05a}
+filters.mspct[polyester_filters]
+```
+
+The package includes a character vector with the names of these vectors of names that are available.
+
+```{r example-05b}
+all_filter_accessors
+```
+
+Please, see the _User Guide_ or documentation
+for the names of other vectors of names for materials, suppliers, and regions of
+the spectrum.
 
 Summary calculations can be easily done with methods from package 'photobiology'. Here we calculate mean transmittance for two regions of the spectrum given by wavelengths in nanometres.
 

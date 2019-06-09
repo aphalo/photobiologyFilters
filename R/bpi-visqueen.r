@@ -23,6 +23,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' bpi_visqueen
+#' bpi_visqueen_filters
 #'
-"bpi_visqueen"
+"bpi_visqueen_filters"

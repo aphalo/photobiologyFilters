@@ -18,6 +18,6 @@
 #' @note Idependent measurement of a single sample, not a specification.
 #'
 #' @examples
-#' etola
+#' etola_filters
 #'
-"etola"
+"etola_filters"

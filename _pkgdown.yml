@@ -10,7 +10,7 @@ reference:
   - title: Package overview
     contents:
     - "photobiologyFilters-package"
-    - all_accessors
+    - all_filter_accessors
   - title: Spectra
     contents:
     - filters.mspct
@@ -19,32 +19,28 @@ reference:
     - clear_filters
   - title: Indexing vectors by material
     contents:
-    - optical_glass
-    - glass_windows
-    - plastic_sheet
-    - plastic_film
+    - acetate_filters
   - title: Indexing vectors by type
     contents:
-    - band_pass
-    - long_pass
-    - short_pass
+    - band_pass_filters
   - title: Indexing vectors by use
     contents:
     - photography_filters
-    - theatrical_gels
     - petri_dishes
+    - glass_windows
+    - theatrical_gels
   - title: Indexing vectors by manufacturer or supplier
     contents:
-    - bpi_visqueen
-    - courtaulds
-    - etola
-    - evonik
-    - foiltek
-    - mcdermit
-    - midopt
-    - schott
-    - uqg
-    - xl_horticulture
+    - bpi_visqueen_filters
+    - courtaulds_filters
+    - etola_filters
+    - evonik_filters
+    - foiltek_filters
+    - mcdermit_filters
+    - midopt_filters
+    - schott_filters
+    - uqg_filters
+    - xl_horticulture_filters
 
 
 articles:

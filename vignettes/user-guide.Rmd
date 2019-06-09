@@ -83,18 +83,18 @@ one or both of its surfaces.
 All the spectral data in this package are stored in a single R object, a
 collection of spectra of class `filter_spct`. Individual or subsets of spectra
 can be retrieved by _name_. The package includes also several `character`
-vectors of _names_, each one containing names for LEDs of a given _color_, a
-given _type_ or from a given _manufacturer_. These are listed in the help index
-for the package. The _names_ used are in most cases the codes used by the
-manufacturers for the given type. Any dashes in these codes have been replaced
-by underscores.
+vectors of _names_, each one containing names for filters of a given _color_, a
+given _type_ or from a given _manufacturer_. The names of all these vectors
+are available in vector `all_filter_accessors. The _names_ used are in most 
+cases the codes used by the manufacturers for the given type. Any dashes in 
+these codes have been replaced by underscores.
 
 ```{r}
-# band_pass
+band_pass_filters
 ```
 
 ```{r}
-schott
+schott_filters
 ```
 
 ## Accessing individual spectra
@@ -142,11 +142,11 @@ a vector defined by the package.
 filters.mspct[petri_dishes]
 ```
 
-The vector `all_accessors` contains the names of the different vectors of
+The vector `all_filter_accessors` contains the names of the different vectors of
 names of members of `filters.mspct`.
 
 ```{r}
-all_accessors
+all_filter_accessors
 ```
 
 In addition to the predefined vectors it is possible to compute numeric indexing vectors
@@ -178,7 +178,7 @@ for package 'photobiology' for the details.
 
 ```{r}
 getWhatMeasured(filters.mspct$Schott_UG11)
-getWhenMeasured(filters.mspct$Schott_UG11)
+getHowMeasured(filters.mspct$Schott_UG11)
 ```
 
 ```{r}
@@ -187,7 +187,6 @@ is_normalized(filters.mspct$Schoot_UG11)
 
 ```{r}
 cat(comment(filters.mspct$Schott_UG11), "\n")
-names(filters.mspct$Schott_UG11)
 ```
 
 Of the different metadata items, the type of data is of great importance.
@@ -217,7 +216,7 @@ autoplot(filters.mspct$MIDOPT_LP500)
 
 ```{r}
 autoplot(filters.mspct$MIDOPT_TB550_660_850, 
-         annotations = c("+", "title:what"), 
+         annotations = c("+", "title:none:none:what"), 
          span = 11)
 ```
 

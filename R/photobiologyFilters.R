@@ -69,16 +69,16 @@
 #' length(filters.mspct)
 #'
 #' # SCHOTT filters example
-#' schott
+#' schott_filters
 #' filters.mspct$Schott_OG530
 #' filters.mspct[["Schott_OG530"]]
 #' getWhatMeasured(filters.mspct$Schott_OG530)
 #'
 #' # combining name (index) vectors
 #' # blue glass filters
-#' intersect(optical_glass, blue_filters)
+#' intersect(optical_glass_filters, blue_filters)
 #' # green plastic films
-#' intersect(plastic_film, green_filters)
+#' intersect(plastic_films, green_filters)
 #'
 #' # A Plexiglas sheet
 #' getWhatMeasured(filters.mspct$Evonik_Sky_Blue_5C01_GT)

@@ -23,7 +23,7 @@
 #' @note Idependent measurement of a single sample, not a specification.
 #'
 #' @examples
-#' evonik
+#' evonik_filters
 #'
-"evonik"
+"evonik_filters"
 

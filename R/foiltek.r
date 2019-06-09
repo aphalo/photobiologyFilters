@@ -28,6 +28,6 @@
 #' @note Idependent measurement of a single sample, not a specification.
 #'
 #' @examples
-#' foiltek
+#' foiltek_filters
 #'
-"foiltek"
+"foiltek_filters"

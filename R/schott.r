@@ -43,10 +43,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' schott
-#'
-"schott"
-
-#' @rdname schott
+#' schott_filters
 #'
 "schott_filters"

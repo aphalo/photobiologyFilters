@@ -28,6 +28,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' courtaulds
+#' courtaulds_filters
 #'
-"courtaulds"
+"courtaulds_filters"

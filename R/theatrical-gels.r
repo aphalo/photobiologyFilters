@@ -32,7 +32,7 @@
 
 #' @rdname theatrical_gels
 #'
-"lee"
+"lee_filters"
 
 #' @rdname theatrical_gels
 #'
@@ -40,7 +40,7 @@
 
 #' @rdname theatrical_gels
 #'
-"rosco"
+"rosco_filters"
 
 #' @rdname theatrical_gels
 #'

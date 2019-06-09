@@ -27,10 +27,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' uqg
-#'
-"uqg"
-
-#' @rdname uqg
+#' uqg_filters
 #'
 "uqg_filters"

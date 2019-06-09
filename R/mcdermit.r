@@ -19,6 +19,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' mcdermit
+#' mcdermit_filters
 #'
-"mcdermit"
+"mcdermit_filters"

@@ -1,13 +1,15 @@
-photobiologyFilters 0.5.0 (2019-05-25)
+photobiologyFilters 0.5.0 (2019-06-09)
 ======================================
 
-** (Code breaking!) Rename many of the member spectra contained in filters.mspct
+* (Code breaking!) Rename many of the member spectra contained in filters.mspct
 so that all names start with the brand of the filter.
+* Rename vectors of names used as accessors to end in "_filters" to avoid
+possible conflicts with other packages.
 * Add data for various filters used in photography.
 * Add data for some filters supplied by UQG Optics.
 * Add data for 49 new filters supplied by MIDOPT.
 * Rebuild all spectral data objects with current version of package
-'photobiology' (= 0.9.27).
+'photobiology' (= 0.9.28), setting "how.measured" attribute when known.
 * Remove a non-ASCII character from the data.
 * Require R 3.5.0 due to the new file format used to store the data.
 

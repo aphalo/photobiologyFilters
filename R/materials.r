@@ -1,4 +1,4 @@
-#' Spectral data for filters of different 'materials'
+#' Spectral data for filters made from different materials
 #'
 #' Names of datasets containing the wavelengths and tabulated values for
 #' fractional spectral trabsmittance according to the material they are
@@ -11,48 +11,55 @@
 #' @aliases materials
 #'
 #' @examples
-#' acrylic
+#' acrylic_filters
 #'
-#' # select short-pass filters
-#' filters.mspct[acrylic]
+#' # select filters made from acrylic
+#' filters.mspct[acrylic_filters]
 #'
 #' @seealso \code{\link{filters.mspct}}
 #'
-"acetate"
+"acetate_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"acrylic"
+"acrylic_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"polycarbonate"
+"polycarbonate_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"plexiglas"
+"plexiglas_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"polystyrene"
+"polystyrene_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"polyester"
+"polyester_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"polyvynil_chloride"
+"polyvynil_chloride_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"optical_glass"
+"optical_glass_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"plastic_film"
+"plastic_film_filters"
 
-#' @rdname acetate
+#' @rdname acetate_filters
 #'
-"plastic_sheet"
+"plastic_films"
 
+#' @rdname acetate_filters
+#'
+"plastic_sheet_filters"
+
+#' @rdname acetate_filters
+#'
+"plastic_sheets"

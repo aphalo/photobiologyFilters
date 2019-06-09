@@ -24,6 +24,6 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' xl_horticulture
+#' xl_horticulture_filters
 #'
-"xl_horticulture"
+"xl_horticulture_filters"

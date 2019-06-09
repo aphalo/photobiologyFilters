@@ -9,10 +9,10 @@ library(ggspectra)
 theme_set(theme_bw())
 
 ## ------------------------------------------------------------------------
-# band_pass
+band_pass_filters
 
 ## ------------------------------------------------------------------------
-schott
+schott_filters
 
 ## ------------------------------------------------------------------------
 head(names(filters.mspct), 6)
@@ -30,7 +30,7 @@ filters.mspct["Schott_UG11"]
 filters.mspct[petri_dishes]
 
 ## ------------------------------------------------------------------------
-all_accessors
+all_filter_accessors
 
 ## ------------------------------------------------------------------------
 filters.mspct[grep("UG", names(filters.mspct))]
@@ -43,14 +43,13 @@ filters.mspct$Schott_UG11
 
 ## ------------------------------------------------------------------------
 getWhatMeasured(filters.mspct$Schott_UG11)
-getWhenMeasured(filters.mspct$Schott_UG11)
+getHowMeasured(filters.mspct$Schott_UG11)
 
 ## ------------------------------------------------------------------------
 is_normalized(filters.mspct$Schoot_UG11)
 
 ## ------------------------------------------------------------------------
 cat(comment(filters.mspct$Schott_UG11), "\n")
-names(filters.mspct$Schott_UG11)
 
 ## ------------------------------------------------------------------------
 getTfrType(filters.mspct$Schott_UG11)
@@ -60,7 +59,7 @@ autoplot(filters.mspct$MIDOPT_LP500)
 
 ## ------------------------------------------------------------------------
 autoplot(filters.mspct$MIDOPT_TB550_660_850, 
-         annotations = c("+", "title:what"), 
+         annotations = c("+", "title:none:none:what"), 
          span = 11)
 
 ## ------------------------------------------------------------------------
