@@ -12,7 +12,7 @@ for (l in paste(in.path, filter.files, sep = "")) {
 rm(l)
 
 objects <- sub(".rda", "", filter.files)
-objects <- sub("-", "_", objects)
+objects <- gsub("-", "_", objects)
 object.mspct.lst <- mget(objects)
 
 for (obj in objects) {
@@ -58,7 +58,7 @@ evonik_filters <- evonik
 mcdermit_filters <- mcdermit
 
 acetate_filters <- courtaulds_filters
-acrylic_filters <- plexiglas_filters <- evonik_filters <- evonik_filters
+acrylic_filters <- plexiglas_filters <- evonik_filters
 polycarbonate_filters <- grep("PC", names(filters.mspct), value = TRUE)
 polystyrene_filters <- grep("PS", names(filters.mspct), value = TRUE)
 polyester_filters <- grep("PET", names(filters.mspct), value = TRUE)
@@ -71,7 +71,7 @@ plastic_film_filters <- plastic_films <-
 plastic_sheet_filters <- plastic_sheets <- union(evonik_filters, foiltek_filters)
 
 clear_filters <- grep("clear|Clear|protector|Protector", names(filters.mspct), value = TRUE)
-yellow_filters <- grep("yellow|Yellow|GG|Canary", names(filters.mspct), value = TRUE)
+yellow_filters <- grep("yellow|Yellow|GG|Canary|K2", names(filters.mspct), value = TRUE)
 orange_filters <- grep("orange|Orange|OG", names(filters.mspct), value = TRUE)
 green_filters <- grep("VG|green|Green", names(filters.mspct), value = TRUE)
 blue_filters <- grep("GG|82A", names(filters.mspct), value = TRUE)

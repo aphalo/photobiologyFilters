@@ -7,9 +7,9 @@ version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)]
 checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html)
 
 Package **photobiologyFilters** is a collection of spectral
-transmittance data for more than 250 filters measured in our lab or for
-which data have been made available by the suppliers for inclussion in
-this package.
+transmittance data for more than 300 filters measured in our lab, by
+collaborators or for which data have been made available by the
+suppliers for inclussion in this package.
 
 ## Code breaking renaming of data objects
 
@@ -24,8 +24,6 @@ name clashes with other packages and also to improve naming consistency.
 
 ``` r
 library(photobiologyFilters)
-library(ggspectra)
-theme_set(theme_bw())
 ```
 
 How many spectra are included in the current version of
@@ -33,7 +31,7 @@ How many spectra are included in the current version of
 
 ``` r
 length(filters.mspct)
-#> [1] 329
+#> [1] 339
 ```
 
 What are the names of available spectra. We use `head()` to limit the
@@ -124,18 +122,19 @@ all_filter_accessors
 #> [23] "kolarivision_filters"       "lee_filters"               
 #> [25] "long_pass_filters"          "mcdermit_filters"          
 #> [27] "midopt_filters"             "neutral_filters"           
-#> [29] "optical_glass_filters"      "orange_filters"            
-#> [31] "photography_filters"        "plastic_film_filters"      
-#> [33] "plastic_sheet_filters"      "plexiglas_filters"         
-#> [35] "polycarbonate_filters"      "polyester_filters"         
-#> [37] "polystyrene_filters"        "polyvynil_chloride_filters"
-#> [39] "red_nir_filters"            "rocolax_filters"           
-#> [41] "rosco_filters"              "schott_filters"            
-#> [43] "short_pass_filters"         "tiffen_filters"            
-#> [45] "uqg_filters"                "uv_filters"                
-#> [47] "uvir_cut_filters"           "uvroptics_filters"         
-#> [49] "xl_horticulture_filters"    "yellow_filters"            
-#> [51] "zeiss_filters"              "zomei_filters"
+#> [29] "old_schott_filters"         "optical_glass_filters"     
+#> [31] "orange_filters"             "photography_filters"       
+#> [33] "plastic_film_filters"       "plastic_sheet_filters"     
+#> [35] "plexiglas_filters"          "polycarbonate_filters"     
+#> [37] "polyester_filters"          "polystyrene_filters"       
+#> [39] "polyvynil_chloride_filters" "red_nir_filters"           
+#> [41] "rocolax_filters"            "rosco_filters"             
+#> [43] "schott_filters"             "short_pass_filters"        
+#> [45] "tiffen_filters"             "uqg_filters"               
+#> [47] "uv_filters"                 "uvir_cut_filters"          
+#> [49] "uvroptics_filters"          "xl_horticulture_filters"   
+#> [51] "yellow_filters"             "zeiss_filters"             
+#> [53] "zomei_filters"
 ```
 
 Please, see the *User Guide* or documentation for the names of other
@@ -146,27 +145,21 @@ Summary calculations can be easily done with methods from package
 of the spectrum given by wavelengths in nanometres.
 
 ``` r
-transmittance(filters.mspct["Foiltek_Clear_PET_G"], 
+transmittance(filters.mspct[["Foiltek_Clear_PET_G"]], 
               list(waveband(c(250, 315)), waveband(c(500,600))))
-#> # A tibble: 1 x 3
-#>   spct.idx            transmittance_range.250.3~ transmittance_range.500.6~
-#>   <fct>                                    <dbl>                      <dbl>
-#> 1 Foiltek_Clear_PET_G                   0.000177                      0.876
+#>  range.250.315  range.500.600 
+#>   0.0001766804   0.8759366166 
+#> attr(,"Tfr.type")
+#> [1] "total"
+#> attr(,"radiation.unit")
+#> [1] "transmittance average"
 ```
 
-Methods in package ‘ggspectra’ can be used for plotting.
-
-``` r
-autoplot(filters.mspct["Foiltek_Clear_PET_G"], annotations = c("+", "boundaries")) +
-  stat_find_wls(target = c(0.5, 0.05)) +
-  stat_find_wls(target =c(0.5, 0.05), geom = "text", hjust = 1.2)
-```
-
-![](man/figures/README-example-07-1.png)<!-- -->
-
-The classes of the objects used to store the spectral data are derived
-from `"data.frame"` making direct use of the data easy with functions
-and methods from base R and various packages.
+The `autoplot()` methods from package ‘ggspectra’ can be used for
+plotting one or more spectra at a time. The classes of the objects used
+to store the spectral data are derived from `"data.frame"` making direct
+use of the data easy with functions and methods from base R and various
+packages.
 
 ## Installation
 

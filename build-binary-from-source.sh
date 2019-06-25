@@ -1,4 +1,4 @@
 cd ..
-R CMD INSTALL --resave-data --build photobiologyFilters_0.4.4-1.tar.gz
+R CMD INSTALL --resave-data --build photobiologyFilters_0.5.0.tar.gz
 cd ./photobiologyFilters
 
