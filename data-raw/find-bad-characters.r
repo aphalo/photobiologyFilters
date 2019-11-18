@@ -7,7 +7,7 @@ for (d in dirs[-1]) {
 
   for (f in files) {
     print(f)
-    readline("check?")
+#    readline("check?")
     tools:::showNonASCIIfile(f)
   }
 

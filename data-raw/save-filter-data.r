@@ -43,13 +43,12 @@ kenko_filters <- grep("Kenko", photography_filters, value = TRUE, ignore.case = 
 rocolax_filters <- grep("Rocolax", photography_filters, value = TRUE, ignore.case = TRUE)
 tiffen_filters <- grep("Tiffen", photography_filters, value = TRUE, ignore.case = TRUE)
 haida_filters <- grep("Haida", photography_filters, value = TRUE, ignore.case = TRUE)
-Haida_filters <- grep("Haida", photography_filters, value = TRUE, ignore.case = TRUE)
 fotga_filters <- grep("Fotga", photography_filters, value = TRUE, ignore.case = TRUE)
 zeiss_filters <- grep("Zeiss", photography_filters, value = TRUE, ignore.case = TRUE)
 baader_filters <- grep("Baader", photography_filters, value = TRUE, ignore.case = TRUE)
 uvroptics_filters <- grep("StraightEdgeU", photography_filters, value = TRUE, ignore.case = TRUE)
 fake_unbranded_filters <- grep("Knight|fake", photography_filters, value = TRUE, ignore.case = TRUE)
-photography_filters <- sort(c(photography_filters, zeiss_filters, kolarivision_filters))
+photography_filters <- sort(c(photography_filters, zeiss_filters, kolarivision_filters, fotga_filters))
 courtaulds_filters <- courtaulds
 xl_horticulture_filters <- xl_horticulture
 bpi_visqueen_filters <- bpi_visqueen
