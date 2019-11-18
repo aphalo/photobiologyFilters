@@ -44,6 +44,7 @@ rocolax_filters <- grep("Rocolax", photography_filters, value = TRUE, ignore.cas
 tiffen_filters <- grep("Tiffen", photography_filters, value = TRUE, ignore.case = TRUE)
 haida_filters <- grep("Haida", photography_filters, value = TRUE, ignore.case = TRUE)
 Haida_filters <- grep("Haida", photography_filters, value = TRUE, ignore.case = TRUE)
+fotga_filters <- grep("Fotga", photography_filters, value = TRUE, ignore.case = TRUE)
 zeiss_filters <- grep("Zeiss", photography_filters, value = TRUE, ignore.case = TRUE)
 baader_filters <- grep("Baader", photography_filters, value = TRUE, ignore.case = TRUE)
 uvroptics_filters <- grep("StraightEdgeU", photography_filters, value = TRUE, ignore.case = TRUE)
@@ -97,7 +98,7 @@ save(filters.mspct, all_filter_accessors,
      glass_windows, uqg_filters, kolarivision_filters,
      acetate_filters, acrylic_filters, polycarbonate_filters,
      polystyrene_filters, polyester_filters, polyvynil_chloride_filters,
-     photography_filters, hoya_filters, firecrest_filters, bw_filters, zomei_filters,
+     photography_filters, hoya_filters, firecrest_filters, bw_filters, zomei_filters, fotga_filters,
      haida_filters, kenko_filters, tiffen_filters, baader_filters, uvroptics_filters,
      heliopan_filters, rocolax_filters, zeiss_filters, kenko_filters, fake_unbranded_filters,
      uvir_cut_filters, theatrical_gels, optical_glass_filters,

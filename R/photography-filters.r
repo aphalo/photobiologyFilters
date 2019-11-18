@@ -12,10 +12,19 @@
 #'   \item Tfr (fraction)
 #' }
 #'
-#' \url{https://www.formatt-hitech.com/}, \url{https://www.haidaphoto.com/en/},
-#' \url{http://www.heliopan.de/}, \url{https://hoyafilter.com/},
-#' \url{https://www.zomei.com/}, \url{https://www.baader-planetarium.com/en/},
-#' \url{http://www.uvroptics.com/}.
+#' @section Supplier's web sites:
+#' \url{https://www.baader-planetarium.com/en/},
+#' \url{https://www.formatt-hitech.com/},
+#' \url{https://www.fotga.com/},
+#' \url{https://www.haidaphoto.com/en/},
+#' \url{http://www.heliopan.de/},
+#' \url{https://hoyafilter.com/},
+#' \url{https://kenkoglobal.com/},
+#' \url{https://kolarivision.com/},
+#' \url{https://schneiderkreuznach.com/en/photo-optics},
+#' \url{https://tiffen.com/},
+#' \url{http://www.uvroptics.com/},
+#' \url{https://www.zomei.com/}.
 #'
 #' @docType data
 #' @keywords datasets
@@ -85,3 +94,7 @@
 #' @rdname photography_filters
 #'
 "kolarivision_filters"
+
+#' @rdname photography_filters
+#'
+"fotga_filters"
