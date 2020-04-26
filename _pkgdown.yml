@@ -1,0 +1,49 @@
+destination: ../photobiologyFilters-docs
+
+home:
+  strip_header: true
+  links:
+  - text: Photobiology packages
+    href: https://www.r4photobiology.info/
+
+reference:
+  - title: Package overview
+    contents:
+    - "photobiologyFilters-package"
+    - all_filter_accessors
+  - title: Spectra
+    contents:
+    - filters.mspct
+  - title: Indexing vectors by color
+    contents:
+    - clear_filters
+  - title: Indexing vectors by material
+    contents:
+    - acetate_filters
+  - title: Indexing vectors by type
+    contents:
+    - band_pass_filters
+  - title: Indexing vectors by use
+    contents:
+    - photography_filters
+    - petri_dishes
+    - glass_windows
+    - theatrical_gels
+  - title: Indexing vectors by manufacturer or supplier
+    contents:
+    - bpi_visqueen_filters
+    - courtaulds_filters
+    - etola_filters
+    - evonik_filters
+    - foiltek_filters
+    - mcdermit_filters
+    - midopt_filters
+    - schott_filters
+    - uqg_filters
+    - xl_horticulture_filters
+
+
+articles:
+  - title: Vignettes
+    contents:
+    - '`user-guide`'

@@ -1,4 +1,11 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^raw\.data/*
-^\.git/*
+^data-raw$
+^\.git/
+^vignettes/figure$
+^.*\.log
+^inst/web$
+^docs$
+^_pkgdown\.yml$
+^README\.Rmd$
+^build-binary-from-source.sh$

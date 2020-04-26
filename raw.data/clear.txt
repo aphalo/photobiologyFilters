@@ -1,6 +1,0 @@
-# clear filter
-w.length transmittance
-100  100
-110  100
-4990  100
-5000  100
