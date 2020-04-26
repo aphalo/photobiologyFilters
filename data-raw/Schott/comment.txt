@@ -11,12 +11,6 @@ Please note, that the unit of wavelength is "um" for these formulas!
 
 Hartmann			Sellmeier
 
-
-
-
-
-
-
 Disclaimer
 This data collection is protected by federal copyright law and international treaty.
 The copyright holder retains title to and ownership of the data collection.

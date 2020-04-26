@@ -16,9 +16,25 @@ for (file.name in file.list) {
                      sep = ";",
                      col.names = c("w.length", "Tpc", "sd_Tpc"),
                      colClasses = c("integer", "double", "NULL"))
-  tmp.df[["Tfr"]] <- tmp.df[["Tpc"]] / 100
-  tmp.df[["Tpc"]] <- NULL
+
+  properties <- if (grepl("dichroic|UVK", name)) {
+    list(Rfr.constant = NA_real_,
+         thickness = 1.1e-3,
+         attenuation.mode = "reflection")
+  } else if (grepl("2mm", name)) {
+    list(Rfr.constant = 0.077,
+         thickness = 2e-3,
+         attenuation.mode = "absorption")
+  } else if (grepl("3mm", name)) {
+    list(Rfr.constant = 0.082,
+         thickness = 3e-3,
+         attenuation.mode = "absorption")
+  }
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df,
+                                filter.properties = properties) %>%
+    #    clip_wl(c(240, NA)) %>%
+    smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df,
                   paste("Glass filter:", gsub("_", "-", gsub("-", " ", name))))
   setHowMeasured(tmp.df, "Measured with an array spectrophotometer without integrating sphere.")

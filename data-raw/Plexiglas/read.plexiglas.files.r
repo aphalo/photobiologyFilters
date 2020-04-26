@@ -15,6 +15,12 @@ for (file.name in file.list) {
                      colClasses = c("numeric", "numeric", "NULL"))
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = Tpc / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df,
+                                Rfr.constant = 0.065,
+                                thickness = 3e-3,
+                                attenuation.mode = "absorption") %>%
+#    clip_wl(c(240, NA)) %>%
+    smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df,
                   paste("Poly(methyl methacrylate) (PMMA) 'acrylic' sheet; Plexiglas '",
                                 gsub("_", " ", name), "'; 0.002 m thick; new; from Evonik Industries, Germany",

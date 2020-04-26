@@ -19,11 +19,21 @@ for (file.name in file.list) {
   tmp.df[["Tfr"]] <- tmp.df[["Tpc"]] / 100
   tmp.df[["Tpc"]] <- NULL
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <-
+    clean(tmp.df,
+          range.s.data = c(0, 1)) %>%
+    setFilterProperties(Rfr.constant = ifelse(grepl("UV|Protector|Skylight|IR-[6-8]|R72|Haze|RG|Night|Clear", name),
+                                              max(1 - max(tmp.df[["Tfr"]]), 0),
+                                              NA_real_),
+                        thickness = NA_real_,
+                        attenuation.mode = ifelse(grepl("UVIR|Baader|StraightEdgeU", name),
+                                                        "reflection", "absorption")) %>%
+    #    clip_wl(c(240, NA)) %>%
+    smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df,
                   paste("Photography filter:", gsub("_", "-", gsub("-", " ", name))))
   setHowMeasured(tmp.df, "Individual filters measured with an array spectrophotometer without an integrating sphere.")
   comment(tmp.df) <- "Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo."
-  tmp.df <- clean(tmp.df)
   photo_filters.lst[[gsub("_$", "", gsub("[.][.]|[.]", "_", make.names(name)))]] <- tmp.df
 }
 photography_filters.mspct <- filter_mspct(photo_filters.lst)

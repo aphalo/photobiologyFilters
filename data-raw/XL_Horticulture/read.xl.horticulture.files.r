@@ -16,8 +16,11 @@ setwd("..")
 
 for (s in names(xl_horticulture.mspct)) {
   xl_horticulture.mspct[[s]] <-
-  setWhatMeasured(xl_horticulture.mspct[[s]],
-                  paste("'", s, "' greenhouse cladding film; new; from XL Horticulature, UK", sep = ""))
+    setFilterProperties(xl_horticulture.mspct[[s]], attenuation.mode = "mixed")
+  xl_horticulture.mspct[[s]] <-
+    setWhatMeasured(xl_horticulture.mspct[[s]],
+                    paste("'", s, "' greenhouse cladding film; new;",
+                          "from XL Horticulature, UK", sep = ""))
 }
 
 names(xl_horticulture.mspct) <- paste("XL_Horticulture", names(xl_horticulture.mspct), sep = "_")

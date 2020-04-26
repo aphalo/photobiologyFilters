@@ -9,6 +9,7 @@ library(dplyr)
 rm(list = ls())
 setwd("data-raw/BPI")
 file.list <- list.files(pattern = "*.txt")
+thickness <- c(Solatrol = 100e-6, Luminance = NA_real_)
 bpi_visqueen.lst <- list()
 for (file.name in file.list) {
   NonASCII <- tools::showNonASCIIfile(file.name)
@@ -22,6 +23,10 @@ for (file.name in file.list) {
   tmp.df <- read.table(file.name, header = TRUE)
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = transmittance / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df,
+                                Rfr.constant = NA_real_,
+                                thickness = thickness[name],
+                                attenuation.mode = "mixed")
   setWhatMeasured(tmp.df, paste(name, ", special greenhouse cladding film from BPI Agri", sep = ""))
   clean(tmp.df)
   bpi_visqueen.lst[[name]] <- tmp.df

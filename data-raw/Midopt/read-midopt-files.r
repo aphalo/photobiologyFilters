@@ -29,6 +29,7 @@ for (file.name in file.list) {
                       NF = "short-pass",
                       Ni = "neutral-density",
                       ND = "neutral-density")
+
   if (grepl("i", type)) {
     material <- "interference"
   } else if (grepl("^A", type)) {
@@ -68,6 +69,7 @@ for (file.name in file.list) {
     mutate(w.length = as.numeric(w.length), Tpc = as.numeric(Tpc)) %>%
     arrange(w.length) %>%
     as.filter_spct(Tfr.type = "total") -> tmp.spct
+  tmp.spct <- setFilterProperties(tmp.spct)
   tmp.spct <- setWhatMeasured(tmp.spct,
                               paste("Machine vision ", type.name, " filter '",
                                     name,

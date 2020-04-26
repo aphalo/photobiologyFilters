@@ -24,16 +24,37 @@ for (file.name in file.list) {
   material <- switch(name,
     Clear_PC = "Polycarbonate (PC)",
     Clear_PC_UV = "Polycarbonate (PC)",
-    Clear_PET = "Polyethylene terephthalate (PET), 'polyester'",
+    Clear_PET_G = "Polyethylene terephthalate (PET), 'polyester'",
     Clear_PS = "Polystyrene (PS)",
     Clear_PVC = "Polyvinyl chloride (PVC)",
     ""
   )
+  properties <- switch(name,
+                     Clear_PC = list(Rfr.constant = 0.105,
+                                     thickness = 3e-3,
+                                     attenuation.mode = "absorption"),
+                     Clear_PC_UV = list(Rfr.constant = 0.10,
+                                        thickness = 3e-3,
+                                        attenuation.mode = "absorption"),
+                     Clear_PET_G = list(Rfr.constant = 0.097,
+                                      thickness = 3e-3,
+                                      attenuation.mode = "absorption"),
+                     Clear_PS = list(Rfr.constant = 0.099,
+                                     thickness = 3e-3,
+                                     attenuation.mode = "absorption"),
+                     Clear_PVC = list(Rfr.constant = 0.08,
+                                      thickness = 3e-3,
+                                      attenuation.mode = "absorption"),
+                     ""
+  )
+
   tmp.df <- read.csv(file.name, skip=1, header=FALSE, col.names=c("w.length", "Tpc", "sd_Tpc"),
                      colClasses = c("numeric", "numeric", "NULL"))
 
   tmp.df <- transmute(tmp.df, w.length = w.length, Tfr = Tpc / 100)
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df, properties) %>%
+    smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df, paste(material, "; clear sheet; new", sep = ""))
   setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
   tmp.df <- clean(tmp.df)

@@ -28,6 +28,13 @@ for (file.name in file.list) {
   }
   tmp.df <- mutate(tmp.df, Tfr = ifelse(Tfr < 1e-5, 1e-5, Tfr))
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df,
+                                Rfr.constant = 0.08,
+                                thickness = ifelse(grepl("Supergel", name),
+                                                   90e-6, 75e-6),
+                                attenuation.mode = "absorption") %>%
+    #    clip_wl(c(240, NA)) %>%
+    smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df, paste("Theatrical 'gel', type '",
                                 gsub("_", " ", sub("_used", "", name)),
                                 ifelse(used, "; used", "; new"),

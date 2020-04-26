@@ -15,9 +15,23 @@ for (file.name in file.list) {
   tmp.df <- read.csv(file.name, skip = 1, header = FALSE,
                      col.names = c("w.length", "Tpc", "sd_Tpc"),
                      colClasses = c("integer", "double", "NULL"))
-  tmp.df[["Tfr"]] <- tmp.df[["Tpc"]] / 100
-  tmp.df[["Tpc"]] <- NULL
+
+  properties <- switch(name,
+                       glass_nn = list(Rfr.constant = 0.08,
+                                       thickness = NA_real_,
+                                       attenuation.mode = "absorption"),
+                       PS_Sterilin101 = list(Rfr.constant = 0.104,
+                                       thickness = NA_real_,
+                                       attenuation.mode = "absorption"),
+                       PS_Sterilin109 = list(Rfr.constant = 0.098,
+                                        thickness = NA_real_,
+                                        attenuation.mode = "absorption"),
+                       ""
+  )
+
   setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df, properties) %>%
+    smooth_spct(method = "supsmu", strength = 1)
   setWhatMeasured(tmp.df,
                   paste("Petri dish lid; ", ifelse(grepl("PS", name),
                                                paste("polystyrene; ", sub("PS_", "", name)),

@@ -24,7 +24,11 @@ for (file.name in file.list) {
   } else {
     stop("ncol != 2 || ncol!=4")
   }
-  setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterSpct(tmp.df, Tfr.type = "total")
+  tmp.df <- setFilterProperties(tmp.df,
+                                Rfr.constant = 0.08,
+                                thickness = 50e-6,
+                                attenuation.mode = "absorption")
   setWhatMeasured(tmp.df, paste("Clear low-density polyethylene (LD-PE) film; ", 50e-6, " m thick; ",
                   ifelse(used, "used", "new"), sep = ""))
   clean(tmp.df)
