@@ -34,6 +34,6 @@ LazyLoad: no
 LazyData: yes
 ByteCompile: no
 Encoding: UTF-8
-URL: http://www.r4photobiology.info/
+URL: http://docs.r4photobiology.info/photobiologyFilters/
 BugReports: https://bitbucket.org/aphalo/photobiologyfilters
 RoxygenNote: 7.1.0

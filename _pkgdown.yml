@@ -1,4 +1,5 @@
 destination: ../photobiologyFilters-docs
+url: http://docs.r4photobiology.info/photobiologyFilters/
 
 home:
   strip_header: true
