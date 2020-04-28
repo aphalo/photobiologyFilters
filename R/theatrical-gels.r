@@ -12,8 +12,8 @@
 #' }
 #'
 #' @references
-#' \url{http://www.leefilters.com/lighting/colour-details.html},
-#' \url{http://www.rosco.com/filters/index.cfm}
+#' \url{https://www.leefilters.com/lighting/colour-details.html},
+#' \url{https://emea.rosco.com/en/products/family/filters-and-diffusions}
 #'
 #' @note Instruments used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere for Rosco filters except no. 299

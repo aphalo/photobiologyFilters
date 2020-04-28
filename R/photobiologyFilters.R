@@ -34,7 +34,7 @@
 #'
 #' @note This package is part of a suite of R packages for photobiological
 #'   calculations described at the
-#'   [r4photobiology](http://www.r4photobiology.info) web site.
+#'   [r4photobiology](https://www.r4photobiology.info) web site.
 #'
 #' @references
 #'

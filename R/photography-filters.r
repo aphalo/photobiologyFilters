@@ -23,7 +23,7 @@
 #' \url{https://kolarivision.com/},
 #' \url{https://schneiderkreuznach.com/en/photo-optics},
 #' \url{https://tiffen.com/},
-#' \url{http://www.uvroptics.com/},
+#' \url{https://www.uvroptics.com/},
 #' \url{https://www.zomei.com/}.
 #'
 #' @docType data

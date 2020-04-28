@@ -40,54 +40,66 @@ subsets of spectra.
 
 Spectral data is included both for optical filters, sold as such, and for
 materials that either on purpose or by accident may be interposed in the "light"
-path in photobiological experiments, including plastic sheets and films. It must
+path in photobiological experiments, including glass panes, plastic sheets and films. It must
 be kept in mind that, 1) absorptance depends on the thickness of a filter in
 addition to the properties of the material it is made off, and that 2) reflectance 
 depends on the angle of incidence of the light beam. 
 
 The spectral data have been acquired with an assortment of different
 instruments. Some data are measured by the authors with spectrophotometers,
-others have been provided by filter manufacturers.
+others have been provided by filter manufacturers. Whenever data was available
+an approximate reflectance for normal incidence angle, material thickness, and
+the mode of attenuation have been stored as metadata. In the case of filters
+sold assembled in frames for use in photography and industrial automation
+the thickness is rarely disclosed by suppliers. Reflectance in some cases
+was estimated from maximum transmittance for known clear materials or from
+independent sources.
 
 The difference in resolution and slit function among instruments can give, for
 the same filter, measured "apparent" peaks and valleys of slightly different
 width, and slopes of slightly different steepness. This is an inevitable
-artefact of spectral measurements, but as except for some dichroic (=
-interference) filters have relatively wide ("Gaussian") peaks the distortion is
+artifact of spectral measurements, and except for some dichroic (= interference)
+filters, filters have relatively wide ("Gaussian") peaks, the distortion is
 small.
 
 Another important consideration is that some materials scatter transmitted and
-reflected light, and consequently such materials can be accurately measured by
-only use of an integrating sphere. Data included here have been in many cases
+reflected light, and consequently such materials can be accurately measured 
+only with an integrating sphere. Data included here have been in many cases
 measured without an integrating sphere; i.e. only by assessing the direct beam.
 For non-scattering materials this causes minor errors.
 
 Glass-filter properties vary to some extent among melt batches. Variation can
 also be expected among batches of plastic filters. Furthermore, filters age
 upon exposure to light and UV radiation, and in some cases even upon
-exposure to air. Ageing is not limited to plastic filters and can also affect
+exposure to air. Aging is not limited to plastic filters and can also affect
 optical glass.
 
-We do not provide spectral reflectance data for the filters in this collection,
-as we do not have such data available. For filters made of ionic glass and 
-coloured plastics, reflection is not selective, and amounts to about 9 to 10\%
-of radiation incident at an angle close to perpendicular to the surface.
-Anti-reflection coating (ARC) reduces reflections, and multi-coating (MC) even
-further. Such coatings are not equally effective at all wavelengths and, 
-consequently, their use can modify the spectral properties of a filter. In
-contrast to the filters described above, dichroic or interference filters
-reflect the "rejected" radiation. It is also possible to produce filters that
-have an absorbing glass as substrate and a dichroic coating deposited onto
-one or both of its surfaces.
+We provide spectral reflectance constants for some of the filters in this
+collection, as we do not have such data available for all of them. For filters
+made of ionic glass and coloured plastics, reflection is not selective, and
+amounts to about 9 to 10\% of radiation incident at an angle close to
+perpendicular to the surface. Anti-reflection coating (ARC) reduces reflections,
+and multi-coating (MC) even further. Such coatings are not equally effective at
+all wavelengths and, consequently, their use can modify the spectral properties
+of a filter. In contrast to the filters described above, dichroic or
+interference filters reflect the "rejected" radiation. It is also possible to
+produce filters that have an absorbing glass as substrate and a dichroic coating
+deposited onto one or both of its surfaces. In the metadata filters are tagged
+as belonging to one of three `attenuation.mode` types: `absorption`,
+`reflection` and `mixed`. Mixed includes those filters where
+wavelength-selective attenuation is brought about both by absorption and
+reflection, including scattering media and dichroic filters deposited on
+absorptive ionic glass.
 
 All the spectral data in this package are stored in a single R object, a
-collection of spectra of class `filter_spct`. Individual or subsets of spectra
-can be retrieved by _name_. The package includes also several `character`
-vectors of _names_, each one containing names for filters of a given _color_, a
-given _type_ or from a given _manufacturer_. The names of all these vectors
-are available in vector `all_filter_accessors. The _names_ used are in most 
-cases the codes used by the manufacturers for the given type. Any dashes in 
-these codes have been replaced by underscores.
+collection of spectra of class `filter_mspct` with members of class
+`filter_spct`. Individual or subsets of spectra can be retrieved by _name_. The
+package includes also several `character` vectors of _names_, each one
+containing names for filters of a given _color_, a given _type_ or from a given
+_manufacturer_. The names of all these vectors are available in vector
+`all_filter_accessors. The _names_ used are in most cases the codes used by the
+manufacturers for the given type with a code for the manufacturer of supplier
+added. Any dashes in these codes have been replaced by underscores.
 
 ```{r}
 band_pass_filters
@@ -112,6 +124,7 @@ head(names(filters.mspct), 6)
 
 We can use a character string as index to extract an individual `filter_spct`
 object.
+
 
 ```{r}
 filters.mspct$Schott_UG11
@@ -168,6 +181,11 @@ grep("UG", names(filters.mspct), value = TRUE)
 The spectra are saved in objects of class `"filter_spct"`, defined in package
 'photobiology'. Specializations of several methods including `print()` and
 `summary()` include a summary of the metadata in the header of the printout.
+Two different definitions of transmittance exist, differing in how reflection
+is treated: for "internal" transmittance, the divisor is the radiation entering
+the material, and for "total" transmittance the incident radiation. For some
+materials reflectance (`Rfr`) does not vary much with wavelength, and some
+suppliers provide a constant value for it.
 
 ```{r}
 filters.mspct$Schott_UG11
@@ -177,8 +195,15 @@ Metadata can also be queried with other methods. Please, see the documentation
 for package 'photobiology' for the details.
 
 ```{r}
-getWhatMeasured(filters.mspct$Schott_UG11)
-getHowMeasured(filters.mspct$Schott_UG11)
+filter_properties(filters.mspct$Schott_UG11)
+```
+
+```{r}
+what_measured(filters.mspct$Schott_UG11)
+```
+
+```{r}
+how_measured(filters.mspct$Schott_UG11)
 ```
 
 ```{r}
@@ -199,6 +224,37 @@ Attribute `Tfr.type" is used to store this information.
 ```{r}
 getTfrType(filters.mspct$Schott_UG11)
 ```
+## Conversions
+
+When metatdata are available and the mode of attenuation is `"absorption"` it is
+possible to compute the expected transmittance for a different thickness of the
+material. In the example we compute transmittance for a thickness of 4 mm.
+
+```{r}
+convertThickness(filters.mspct$Schott_UG11, thickness = 4e-3)
+```
+We can also convert `"internal"` transmittance into `"total"` transmittance.
+
+```{r}
+convertTfrType(filters.mspct$Schott_UG11, Tfr.type = "total")
+```
+Conversion between transmittance, absorptance and absorbance is also possible.
+In package 'photobiology' fractions of one are used to express transmittance,
+reflectance and absorptance.
+
+```{r}
+any2Afr(filters.mspct$Schott_UG11, action = "replace")
+```
+
+For absorbance, logarithms using 10 as base are used. In some fields, natural
+logarithms are used instead. Expressing `A` on this base is not supported by
+this package and any input absorbances must be first converted to log10 based
+`A`.
+
+```{r}
+any2A(filters.mspct$Schott_UG11, action = "replace")
+```
+
 
 ## Plotting
 
@@ -213,10 +269,16 @@ as well as automatically setting the mapping of the _x_ and _y_ aesthetics.
 ```{r}
 autoplot(filters.mspct$MIDOPT_LP500)
 ```
+```{r}
+autoplot(filters.mspct$MIDOPT_LP500,
+         annotations = list(c("-", "peaks"), c("+", "wls")))
+```
 
 ```{r}
 autoplot(filters.mspct$MIDOPT_TB550_660_850, 
-         annotations = c("+", "title:none:none:what"), 
+         annotations = c("+", "title:none:none:what", "wls"), 
+         w.band = VIS_bands(),
+         range = c(500, 910),
          span = 11)
 ```
 
@@ -225,13 +287,40 @@ such as subset of `filters.mspct`.
 
 ```{r}
 autoplot(filters.mspct[c("Schott_UG1", "Schott_UG11")], 
-         range = c(200, 800),
+         range = c(200, 900),
          annotations = c("+", "boundaries"), 
          span = 11)
 ```
 
+To graphichaly compare filter thicknesses we can pass a collection of spectral objects.
+
+```{r}
+thin_and_thick.mspct <- 
+  filter_mspct(list("1 mm" = filters.mspct$Schott_UG11,
+                    "3 mm" = convertThickness(filters.mspct$Schott_UG11,
+                                              thickness = 3e-3)))
+autoplot(thin_and_thick.mspct,
+         range = c(200, 900),
+         annotations = c("+", "boundaries"),
+         span = 101)
+```
+
+To graphichaly assess filter stacks with air gaps.
+
+```{r}
+stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro * filters.mspct$Firecrest_UVIR_Cut
+                    
+autoplot(stack.spct,
+         range = c(NA, 1400),
+         w.band = c(UV_bands(), IR_bands("CIE")),
+         annotations = c("+", "boundaries", "wls"),
+         span = 21) +
+  geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro, colour = "purple") +
+  geom_vline(xintercept = c(589, 589.6), linetype = "dotted") # Na emission lines
+```
+
 Package 'ggspectra' also defines specializations of method `ggplot()` for 
-spectra.
+spectra that automatically maps the $x$ and $y$ _aesthetics_.
 
 ```{r}
 ggplot(filters.mspct$Firecrest_UVIR_Cut) +

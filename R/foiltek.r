@@ -16,7 +16,7 @@
 #' }
 #'
 #' Sample chips supplied free of charge by Foiltek on 02.07.2014
-#' \url{http://www.foiltek.fi/}
+#' \url{https://foiltek.fi/}
 #'
 #' @docType data
 #' @keywords datasets

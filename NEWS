@@ -1,10 +1,12 @@
-photobiologyFilters 0.5.1 (2020-04-xx)
+photobiologyFilters 0.5.1 (2020-04-28)
 ======================================
 
 * Add data for Heliopan UVIR-cut "Digital" filter.
 * Add data for Fotga UV IR CUT filter.
 * Correct wrong spelling of Tangsinuo Technologies in two filters' names.
 * Add filter.properties metadata when available.
+* Add refractive_index.mspct with data for 15 materials.
+* Revise the User Guide.
 
 photobiologyFilters 0.5.0 (2019-06-25)
 ======================================

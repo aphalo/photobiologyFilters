@@ -12,7 +12,7 @@
 #' }
 #'
 #' Sample chips bought from the manufacturers website on 24.04.2014
-#' \url{http://www.plexiglas-shop.com/}
+#' \url{https://www.plexiglas-shop.com/}
 #'
 #' @docType data
 #' @keywords datasets
