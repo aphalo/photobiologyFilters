@@ -1,5 +1,5 @@
 destination: ../photobiologyFilters-docs
-url: http://docs.r4photobiology.info/photobiologyFilters/
+url: https://docs.r4photobiology.info/photobiologyFilters/
 
 home:
   strip_header: true
@@ -15,6 +15,7 @@ reference:
   - title: Spectra
     contents:
     - filters.mspct
+    - refractive_index.mspct
   - title: Indexing vectors by color
     contents:
     - clear_filters
