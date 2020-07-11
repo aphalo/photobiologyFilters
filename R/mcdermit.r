@@ -9,7 +9,7 @@
 #'   \item w.length (nm)
 #'   \item Tfr (fraction)
 #' }
-#' \url{https://www.macdermidautotype.com/}
+#' \url{http://autotype.macdermid.com/}
 #'
 #' @note Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.

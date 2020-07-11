@@ -25,4 +25,8 @@
 #' refractive_index.mspct$Acrylic
 #' refractive_index.mspct[["Acrylic"]]
 #'
+#' # Compute spectral reflectance for an interface between acrylic and air
+#' # incidence angle of colimated light 60 degrees.
+#' Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["Acrylic"]])
+#'
 "refractive_index.mspct"

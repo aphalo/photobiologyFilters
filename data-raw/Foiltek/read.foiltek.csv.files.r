@@ -31,7 +31,7 @@ for (file.name in file.list) {
   )
   properties <- switch(name,
                      Clear_PC = list(Rfr.constant = 0.105,
-                                     thickness = 3e-3,
+                                     thickness = 2e-3,
                                      attenuation.mode = "absorption"),
                      Clear_PC_UV = list(Rfr.constant = 0.10,
                                         thickness = 3e-3,
@@ -43,7 +43,7 @@ for (file.name in file.list) {
                                      thickness = 3e-3,
                                      attenuation.mode = "absorption"),
                      Clear_PVC = list(Rfr.constant = 0.08,
-                                      thickness = 3e-3,
+                                      thickness = 1.5e-3,
                                       attenuation.mode = "absorption"),
                      ""
   )
