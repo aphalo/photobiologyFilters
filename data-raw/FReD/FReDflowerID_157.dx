@@ -1,0 +1,5 @@
+<br />
+<b>Warning</b>:  fopen(http://www.reflectance.co.uk/new/jcampmaker.php?id=157) [<a href='function.fopen'>function.fopen</a>]: failed to open stream: HTTP request failed! HTTP/1.1 404 Not Found
+ in <b>/home/fred/public_html/jcampdownloader.php</b> on line <b>9</b><br />
+<br />
+<b>Warning</b>:  fpassthru() expects parameter 1 to be resource, boolean given in <b>/home/fred/public_html/jcampdownloader.php</b> on line <b>10</b><br />

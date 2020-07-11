@@ -2,6 +2,8 @@ photobiologyFilters 0.5.2 (2020-05-xx)
 ======================================
 
 * Correct wrong thickness metadata in PC and PET_G sheet spectra.
+* Add reflectance data for various materials (previously contained in package
+photobiologyReflectors, never released).
 
 photobiologyFilters 0.5.1 (2020-04-28)
 ======================================

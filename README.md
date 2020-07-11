@@ -9,7 +9,9 @@ checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.
 Package **photobiologyFilters** is a collection of spectral
 transmittance data for more than 300 filters measured in our lab, by
 collaborators or for which data have been made available by the
-suppliers for inclussion in this package.
+suppliers for inclusion in this package. It also contains spectral
+reflectance data and rfraction index data for some materials and natural
+surfaces.
 
 ## Code breaking renaming of data objects
 
@@ -34,7 +36,22 @@ length(filters.mspct)
 #> [1] 339
 ```
 
-What are the names of available spectra. We use `head()` to limit the
+``` r
+length(metals.mspct)
+#> [1] 12
+```
+
+``` r
+length(materials.mspct)
+#> [1] 14
+```
+
+``` r
+length(refractive_index.mspct)
+#> [1] 15
+```
+
+What are the names of available spectra? We use `head()` to limit the
 output.
 
 ``` r
@@ -64,41 +81,45 @@ filters.mspct[polyester_filters]
 #> --- Member: Foiltek_Clear_PET_G ---
 #> Object: filter_spct [911 x 2]
 #> Wavelength range 190 to 1100 nm, step 1 nm 
-#> Label: ; clear sheet; new 
+#> Label: Polyethylene terephthalate (PET), 'polyester'; clear sheet; new 
+#> Transmittance of type 'total'
+#> Rfr (/1): 0.097, thickness (mm): 3, attenuation mode: absorption.
 #> 
 #> # A tibble: 911 x 2
 #>    w.length      Tfr
 #>       <dbl>    <dbl>
-#>  1      190 0.000101
-#>  2      191 0.000109
-#>  3      192 0.000108
-#>  4      193 0.000101
-#>  5      194 0.000100
-#>  6      195 0.000100
-#>  7      196 0.000100
-#>  8      197 0.000100
+#>  1      190 0.000105
+#>  2      191 0.000104
+#>  3      192 0.000104
+#>  4      193 0.000103
+#>  5      194 0.000102
+#>  6      195 0.000102
+#>  7      196 0.000102
+#>  8      197 0.000101
 #>  9      198 0.000100
 #> 10      199 0.000100
 #> # ... with 901 more rows
 #> --- Member: McDermit_PET_Autostat_CT5_125um ---
-#> Object: filter_spct [611 x 2]
-#> Wavelength range 190 to 800 nm, step 1 nm 
+#> Object: filter_spct [561 x 2]
+#> Wavelength range 240 to 800 nm, step 1 nm 
 #> Label: Polyester, clear film, 0.000125 m thick, Autostat CT5 from McDermit Autotype; new 
+#> Transmittance of type 'total'
+#> Rfr (/1): 0.074, thickness (mm): 0.125, attenuation mode: absorption.
 #> 
-#> # A tibble: 611 x 2
-#>    w.length   Tfr
-#>       <int> <dbl>
-#>  1      190 0.011
-#>  2      191 0.01 
-#>  3      192 0.011
-#>  4      193 0.015
-#>  5      194 0.016
-#>  6      195 0.012
-#>  7      196 0.011
-#>  8      197 0.011
-#>  9      198 0.011
-#> 10      199 0.011
-#> # ... with 601 more rows
+#> # A tibble: 561 x 2
+#>    w.length     Tfr
+#>       <int>   <dbl>
+#>  1      240 0.00482
+#>  2      241 0.00464
+#>  3      242 0.00446
+#>  4      243 0.00429
+#>  5      244 0.00414
+#>  6      245 0.004  
+#>  7      246 0.004  
+#>  8      247 0.004  
+#>  9      248 0.004  
+#> 10      249 0.004  
+#> # ... with 551 more rows
 #> 
 #> --- END ---
 ```
@@ -115,8 +136,8 @@ all_filter_accessors
 #>  [9] "clear_filters"              "courtaulds_filters"        
 #> [11] "etola_filters"              "evonik_filters"            
 #> [13] "fake_unbranded_filters"     "firecrest_filters"         
-#> [15] "foiltek_filters"            "green_filters"             
-#> [17] "haida_filters"              "Haida_filters"             
+#> [15] "foiltek_filters"            "fotga_filters"             
+#> [17] "green_filters"              "haida_filters"             
 #> [19] "heat_filters"               "heliopan_filters"          
 #> [21] "hoya_filters"               "kenko_filters"             
 #> [23] "kolarivision_filters"       "lee_filters"               
@@ -137,7 +158,7 @@ all_filter_accessors
 #> [53] "zomei_filters"
 ```
 
-Please, see the *User Guide* or documentation for the names of other
+Please, see the *User Guide* or help pages for the names of other
 vectors of names for materials, suppliers, and regions of the spectrum.
 
 Summary calculations can be easily done with methods from package
@@ -147,10 +168,10 @@ of the spectrum given by wavelengths in nanometres.
 ``` r
 transmittance(filters.mspct[["Foiltek_Clear_PET_G"]], 
               list(waveband(c(250, 315)), waveband(c(500,600))))
-#>  range.250.315  range.500.600 
-#>   0.0001766804   0.8759366166 
+#> Tfr(wl)_range.250.315 Tfr(wl)_range.500.600 
+#>          0.0001840984          0.8759395389 
 #> attr(,"Tfr.type")
-#> [1] "total"
+#> [1] "unknown"
 #> attr(,"radiation.unit")
 #> [1] "transmittance average"
 ```
@@ -218,8 +239,8 @@ citation("photobiologyFilters")
 #> 
 #> To cite package 'photobiologyFilters' in publications, please use:
 #> 
-#>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants
-#>   Bulletin, 2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
+#>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
+#>   2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -237,6 +258,6 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2019 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2020 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

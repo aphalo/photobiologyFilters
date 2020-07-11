@@ -36,7 +36,7 @@ theme_set(theme_bw())
 In this very brief User Guide we describe how to access individual spectra or
 subsets of spectra.
 
-## The data
+## The transmittance and reflectance data
 
 Spectral data is included both for optical filters, sold as such, and for
 materials that either on purpose or by accident may be interposed in the "light"
@@ -45,7 +45,7 @@ be kept in mind that, 1) absorptance depends on the thickness of a filter in
 addition to the properties of the material it is made off, and that 2) reflectance 
 depends on the angle of incidence of the light beam. 
 
-The spectral data have been acquired with an assortment of different
+The spectral transmittance or absorbance data have been acquired with an assortment of different
 instruments. Some data are measured by the authors with spectrophotometers,
 others have been provided by filter manufacturers. Whenever data was available
 an approximate reflectance for normal incidence angle, material thickness, and
@@ -65,7 +65,7 @@ small.
 Another important consideration is that some materials scatter transmitted and
 reflected light, and consequently such materials can be accurately measured 
 only with an integrating sphere. Data included here have been in many cases
-measured without an integrating sphere; i.e. only by assessing the direct beam.
+measured without an integrating sphere; i.e., only by assessing the direct beam.
 For non-scattering materials this causes minor errors.
 
 Glass-filter properties vary to some extent among melt batches. Variation can
@@ -91,7 +91,7 @@ wavelength-selective attenuation is brought about both by absorption and
 reflection, including scattering media and dichroic filters deposited on
 absorptive ionic glass.
 
-All the spectral data in this package are stored in a single R object, a
+All the spectral transmittance data in this package are stored in a single R object, a
 collection of spectra of class `filter_mspct` with members of class
 `filter_spct`. Individual or subsets of spectra can be retrieved by _name_. The
 package includes also several `character` vectors of _names_, each one
@@ -109,21 +109,39 @@ band_pass_filters
 schott_filters
 ```
 
-## Accessing individual spectra
+In addition to these data for filters, the package contains spectral reflectance data for both metal surfaces and various man-made and natural surfaces. All reflactance are for normally incident radiation and total, that is including both especular reflectance and scattering. 
 
-The `filter_spct` member objects in `filters.mspct` can be accessed through their
-names or through a numeric index. As the numeric indexes are likely to change 
-with updates to the package, their use is discouraged. Names as character
-strings should be used instead. The names are listed in the documentation
-and also available through the "Data Catalogue" vignette. They can also be
-listed with method `names()`.
+These collections are smaller, so we list the names of all members but only the
+first 20 names for filters.
+
 
 ```{r}
-head(names(filters.mspct), 6)
+names(metals.mspct)
 ```
 
-We can use a character string as index to extract an individual `filter_spct`
-object.
+```{r}
+names(materials.mspct)
+```
+
+```{r}
+head(names(filters.mspct), 20)
+```
+
+To obtain metadata in a tabular for, we can use function `spct_metadata()`.
+
+```{r}
+spct_metadata(filters.mspct[1:5])[ , c("spct.idx", "what.measured")]
+```
+
+## Accessing individual spectra
+
+The `filter_spct` member objects in `filters.mspct` and the `reflector_spct` objects contained in `metals.mspct`  and `materials.mspct` can
+be accessed through their names or through a numeric index. As the numeric
+indexes are likely to change with updates to the package, their use is
+discouraged. Names should be used instead. The names are listed in the
+documentation and be listed with method `names()`.
+
+We can use a character string with the name as an index to extract an individual spectrum.
 
 
 ```{r}
