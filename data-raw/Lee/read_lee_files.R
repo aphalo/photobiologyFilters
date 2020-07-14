@@ -20,7 +20,7 @@ for (file.name in file.list) {
                                               " (digitized from specs.)",
                                               sep = ""))
   tmp.spct <- setHowMeasured(tmp.spct, "Digitized from plot at supplier's web site.")
-
+  setFilterProperties(tmp.spct) # Missing metadata
   lee.lst[[name]] <- tmp.spct
 }
 lee.mspct <- filter_mspct(lee.lst)

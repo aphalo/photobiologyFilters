@@ -31,11 +31,15 @@ for (file.name in file.list) {
   setFilterSpct(tmp.df, Tfr.type = "total")
   setWhatMeasured(tmp.df, paste("Courtaulds cellulose (di-)acetate (CA); ", thickness, " m thick; ",
                                 ifelse(used, "used", "new"), sep = ""))
+  setFilterProperties(tmp.df,
+                      Rfr.constant = 0.069,
+                      thickness = thickness,
+                      attenuation.mode = "absorption")
   clean(tmp.df)
   acetate.lst[[name]] <- tmp.df
 }
 courtaulds.mspct <- filter_mspct(acetate.lst)
-names(courtaulds.mspct) <- paste("Courttaulds", names(courtaulds.mspct), sep = "_")
+names(courtaulds.mspct) <- paste("Courtaulds", names(courtaulds.mspct), sep = "_")
 setwd("../..")
 
 save(courtaulds.mspct, file = "data-raw/rda/courtaulds.mspct.rda")

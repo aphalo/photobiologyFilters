@@ -40,6 +40,7 @@ for (file.name in file.list) {
                                 ifelse(used, "; used", "; new"),
                                 "; from Rosco, UK",
                                 sep = ""))
+  setFilterProperties(tmp.df) # Missing metadata
   rosco.lst[[name]] <- tmp.df
 }
 rosco.mspct <- filter_mspct(rosco.lst)
