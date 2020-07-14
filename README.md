@@ -10,7 +10,8 @@ Package **photobiologyFilters** is a collection of spectral
 transmittance data for more than 300 filters measured in our lab, by
 collaborators or for which data have been made available by the
 suppliers for inclusion in this package. It also contains spectral
-reflectance data and rfraction index data for some materials and natural
+reflectance data and spectral refraction index data for some materials
+and spectral reflectance data for some man-made and natural land
 surfaces.
 
 ## Code breaking renaming of data objects

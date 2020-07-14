@@ -2,7 +2,7 @@
 title: "User Guide"
 subtitle: "Package 'photobiologyFilters' `r packageVersion('photobiologyFilters')` "
 author: "Pedro J. Aphalo"
-date: "`r Sys.Date()`"
+date: "`r packageDate('photobiologyFilters')`"
 output: 
   rmarkdown::html_vignette:
     toc: yes
@@ -33,63 +33,123 @@ library(ggspectra)
 theme_set(theme_bw())
 ```
 
-In this very brief User Guide we describe how to access individual spectra or
+In this brief User Guide we describe how to access individual spectra or
 subsets of spectra.
+
+## The objects containing the data
+
+Spectral data are stored in objects of classes defined in package 
+'photobiology'. These clases are derived from tibbles, which in turn is
+derived from data frames. Consequently the data can be used with native R
+functions and operators and with other R packages. 
+
+```{r}
+class(filters.mspct[[1]])
+```
+```{r}
+class(metals.mspct[[1]])
+```
+
+Package 'photobiologyInOut' provides functions that facilitate the exchange of
+spectral data with R packages 'colorSpec', 'hyperSpec' and 'pavo'.
+
+The individual spectra are stored in collections of spectra which are objects
+derived from R's list class.
+
+```{r}
+class(filters.mspct)
+```
+```{r}
+class(metals.mspct)
+```
+
+Spectral reflectance and transmittance values are stored as fractions of one,
+and wavelengths expressed in nanometres (nm).
+
+```{r}
+colnames(filters.mspct[[1]])
+```
+```{r}
+colnames(metals.mspct[[1]])
+```
+
+```{r}
+nrow(filters.mspct[[1]])
+```
+Functions and operators in the packages that are part of the R for photobiology
+suite recognize these classes, which allows automation of some computations and
+validation of the data values returned by operations or stored.
 
 ## The transmittance and reflectance data
 
-Spectral data is included both for optical filters, sold as such, and for
+Spectral data are included both for optical filters, sold as such, and for
 materials that either on purpose or by accident may be interposed in the "light"
-path in photobiological experiments, including glass panes, plastic sheets and films. It must
-be kept in mind that, 1) absorptance depends on the thickness of a filter in
-addition to the properties of the material it is made off, and that 2) reflectance 
-depends on the angle of incidence of the light beam. 
+path in photobiological experiments, including glass panes, plastic sheets and
+films. It must be kept in mind that, 1) absorptance depends on the thickness of
+a filter in addition to the properties of the material it is made off, and that
+2) reflectance depends on the angle of incidence of the light beam. Spectral
+transmittance can be expressed either as internal or total, depending on how
+the effect reflections at surfaces are accounted for. The conversion between
+total and internal transmittance requires reflectance to be known.
 
-The spectral transmittance or absorbance data have been acquired with an assortment of different
-instruments. Some data are measured by the authors with spectrophotometers,
-others have been provided by filter manufacturers. Whenever data was available
-an approximate reflectance for normal incidence angle, material thickness, and
-the mode of attenuation have been stored as metadata. In the case of filters
-sold assembled in frames for use in photography and industrial automation
-the thickness is rarely disclosed by suppliers. Reflectance in some cases
-was estimated from maximum transmittance for known clear materials or from
-independent sources.
+We provide reflectance estimates for several of the filters in this collection,
+but we do not have such data available for all of them. For filters made of
+ionic glass and coloured plastics, reflection is not selective, and amounts to
+about 9 to 10\% of radiation incident at an angle close to perpendicular to the
+surface (when both interfaces with air are considered). Anti-reflection coating
+(ARC) reduces reflections, and multi-coating (MC) even further. Such coatings
+are not equally effective at all wavelengths and, consequently, their use can
+modify the spectral properties of a filter. In contrast to absorptive filters
+described above, dichroic or interference filters reflect the "rejected"
+radiation. It is also possible to produce filters that have an absorbing glass
+as substrate and a dichroic coating deposited onto one or both of its surfaces.
+In the metadata filters are tagged as belonging to one of three
+`attenuation.mode` types: `absorption`, `reflection` and `mixed`. Mixed includes
+those filters where wavelength-selective attenuation is brought about both by
+absorption and reflection, including scattering media and dichroic filters
+deposited on absorptive ionic glass.
+
+The spectral transmittance or absorbance data have been acquired with an
+assortment of different instruments. Some data are measured by the authors with
+spectrophotometers, others have been provided by filter manufacturers. Whenever
+these metadata was available an approximate reflectance for normal incidence angle,
+material thickness, and the mode of attenuation have been stored as attributes. In
+the case of filters sold assembled in frames for use in photography and
+industrial automation the thickness is rarely disclosed by suppliers, but in 
+some cases we have been able to measure it.
+
+For absortive filters with no coatings reflectance was
+computed from the spectral refraction index if available, or copied from
+manufacturer's specifications or for some standard materials based on published
+sources. In the case of filters with anti-reflection coatings, in most cases the
+estimated reflectance is based on the maximum total transmittance. Most of the data
+are approximations given as a single value for the whole spectrum following
+Schott's practice. (We aim to add in the future actual measured and/or 
+computed spectral reflectance for some filters or claer glass to serve as 
+examples).
 
 The difference in resolution and slit function among instruments can give, for
-the same filter, measured "apparent" peaks and valleys of slightly different
-width, and slopes of slightly different steepness. This is an inevitable
-artifact of spectral measurements, and except for some dichroic (= interference)
-filters, filters have relatively wide ("Gaussian") peaks, the distortion is
-small.
+the same filter, measured spectra with "apparent" peaks and valleys of slightly
+different width, and slopes of slightly different steepness. This is an
+inevitable artifact of spectral measurements, which has little effect on the
+spectra from absorptive filters (with gradual slopes and bell-shaped peaks) but
+can be more significant for dichroic (= interference) filters with very steep
+cut-on and cut-off slopes.
 
 Another important consideration is that some materials scatter transmitted and
 reflected light, and consequently such materials can be accurately measured 
 only with an integrating sphere. Data included here have been in many cases
 measured without an integrating sphere; i.e., only by assessing the direct beam.
-For non-scattering materials this causes minor errors.
+For non-scattering materials this causes only minor errors. For scattering
+materials like polythene films, the data included have being measured with 
+an integrating sphere.
 
 Glass-filter properties vary to some extent among melt batches. Variation can
 also be expected among batches of plastic filters. Furthermore, filters age
 upon exposure to light and UV radiation, and in some cases even upon
 exposure to air. Aging is not limited to plastic filters and can also affect
-optical glass.
-
-We provide spectral reflectance constants for some of the filters in this
-collection, as we do not have such data available for all of them. For filters
-made of ionic glass and coloured plastics, reflection is not selective, and
-amounts to about 9 to 10\% of radiation incident at an angle close to
-perpendicular to the surface. Anti-reflection coating (ARC) reduces reflections,
-and multi-coating (MC) even further. Such coatings are not equally effective at
-all wavelengths and, consequently, their use can modify the spectral properties
-of a filter. In contrast to the filters described above, dichroic or
-interference filters reflect the "rejected" radiation. It is also possible to
-produce filters that have an absorbing glass as substrate and a dichroic coating
-deposited onto one or both of its surfaces. In the metadata filters are tagged
-as belonging to one of three `attenuation.mode` types: `absorption`,
-`reflection` and `mixed`. Mixed includes those filters where
-wavelength-selective attenuation is brought about both by absorption and
-reflection, including scattering media and dichroic filters deposited on
-absorptive ionic glass.
+optical glass. Manufacturers occasionaly may update the specifications
+for filters while mantaining the product code.
 
 All the spectral transmittance data in this package are stored in a single R object, a
 collection of spectra of class `filter_mspct` with members of class
@@ -108,12 +168,15 @@ band_pass_filters
 ```{r}
 schott_filters
 ```
+Help pages give additional information.
 
-In addition to these data for filters, the package contains spectral reflectance data for both metal surfaces and various man-made and natural surfaces. All reflactance are for normally incident radiation and total, that is including both especular reflectance and scattering. 
+```{r, eval=FALSE}
+help(schott_filters)
+```
 
-These collections are smaller, so we list the names of all members but only the
-first 20 names for filters.
+In addition to these data for filters, the package contains spectral reflectance data for both metal surfaces and various man-made and natural surfaces. All spectral reflectance data in the package are for normally incident radiation and _total_ values, that is including both especular reflection and scattering. 
 
+These collections are small, so we list the names of all members.
 
 ```{r}
 names(metals.mspct)
@@ -123,14 +186,20 @@ names(metals.mspct)
 names(materials.mspct)
 ```
 
+The collection of filter spectra is large, so we list only the first 20 names.
+
 ```{r}
 head(names(filters.mspct), 20)
 ```
 
-To obtain metadata in a tabular for, we can use function `spct_metadata()`.
+To obtain metadata in a tabular form, we can use function `spct_metadata()`. This
+function is available in package 'photobiology' version 0.10.5 or later. (This
+example is run only if a supported version is loaded.)
 
 ```{r}
-spct_metadata(filters.mspct[1:5])[ , c("spct.idx", "what.measured")]
+if (utils::packageVersion('photobiology') > "0.10.4.9001") {
+  spct_metadata(filters.mspct[1:5])[ , c("spct.idx", "what.measured")]
+}
 ```
 
 ## Accessing individual spectra
@@ -139,10 +208,10 @@ The `filter_spct` member objects in `filters.mspct` and the `reflector_spct` obj
 be accessed through their names or through a numeric index. As the numeric
 indexes are likely to change with updates to the package, their use is
 discouraged. Names should be used instead. The names are listed in the
-documentation and be listed with method `names()`.
+documentation and be listed with method `names()`. All examples below use 
+`filters.mspct` but operations on the other collections work in the same way.
 
 We can use a character string with the name as an index to extract an individual spectrum.
-
 
 ```{r}
 filters.mspct$Schott_UG11
