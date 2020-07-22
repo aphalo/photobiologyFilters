@@ -58,11 +58,11 @@ output.
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "Baader_U_filter"             "BPI_Luminance"              
-#>  [3] "BPI_Solatrol"                "BW_007_Clear_MRC_nano"      
-#>  [5] "Courttaulds_CA_115um"        "Courttaulds_CA_115um_age000"
-#>  [7] "Courttaulds_CA_115um_age020" "Courttaulds_CA_115um_age030"
-#>  [9] "Courttaulds_CA_115um_age060" "Courttaulds_CA_115um_age100"
+#>  [1] "Baader_U_filter"            "BPI_Luminance"             
+#>  [3] "BPI_Solatrol"               "BW_007_Clear_MRC_nano"     
+#>  [5] "Courtaulds_CA_115um"        "Courtaulds_CA_115um_age000"
+#>  [7] "Courtaulds_CA_115um_age020" "Courtaulds_CA_115um_age030"
+#>  [9] "Courtaulds_CA_115um_age060" "Courtaulds_CA_115um_age100"
 ```
 
 To subset based on different criteria we can use predefined character
