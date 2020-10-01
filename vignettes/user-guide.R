@@ -9,16 +9,28 @@ library(ggspectra)
 theme_set(theme_bw())
 
 ## -----------------------------------------------------------------------------
+class(filters.mspct)
+
+## -----------------------------------------------------------------------------
 class(filters.mspct[[1]])
+
+## -----------------------------------------------------------------------------
+class(metals.mspct)
 
 ## -----------------------------------------------------------------------------
 class(metals.mspct[[1]])
 
 ## -----------------------------------------------------------------------------
-class(filters.mspct)
+class(materials.mspct)
 
 ## -----------------------------------------------------------------------------
-class(metals.mspct)
+class(materials.mspct[[1]])
+
+## -----------------------------------------------------------------------------
+class(refractive_index.mspct)
+
+## -----------------------------------------------------------------------------
+class(refractive_index.mspct[[1]])
 
 ## -----------------------------------------------------------------------------
 colnames(filters.mspct[[1]])
@@ -27,7 +39,10 @@ colnames(filters.mspct[[1]])
 colnames(metals.mspct[[1]])
 
 ## -----------------------------------------------------------------------------
-nrow(filters.mspct[[1]])
+colnames(materials.mspct[[1]])
+
+## -----------------------------------------------------------------------------
+colnames(refractive_index.mspct[[1]])
 
 ## -----------------------------------------------------------------------------
 band_pass_filters
@@ -45,10 +60,14 @@ names(metals.mspct)
 names(materials.mspct)
 
 ## -----------------------------------------------------------------------------
+names(refractive_index.mspct)
+
+## -----------------------------------------------------------------------------
 head(names(filters.mspct), 20)
 
 ## -----------------------------------------------------------------------------
 if (utils::packageVersion('photobiology') > "0.10.4.9001") {
+  print(colnames(spct_metadata(filters.mspct[1:5])))
   spct_metadata(filters.mspct[1:5])[ , c("spct.idx", "what.measured")]
 }
 
@@ -142,14 +161,22 @@ stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro * filters.mspct$Firecrest_
 autoplot(stack.spct,
          range = c(NA, 1400),
          w.band = c(UV_bands(), IR_bands("CIE")),
-         annotations = c("+", "boundaries", "wls"),
+         annotations = list(c("+", "boundaries"), c("-", "peaks")),
          span = 21) +
   geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro, colour = "purple") +
   geom_vline(xintercept = c(589, 589.6), linetype = "dotted") # Na emission lines
 
 ## -----------------------------------------------------------------------------
 ggplot(filters.mspct$Firecrest_UVIR_Cut) +
-  geom_line()
+  geom_line() +
+  scale_x_wl_continuous() +
+  scale_y_Tfr_continuous(Tfr.type = "total")
+
+## -----------------------------------------------------------------------------
+autoplot(metals.mspct$gold, range = c(NA, 800))
+
+## -----------------------------------------------------------------------------
+autoplot(materials.mspct$grass, range = c(NA, 800))
 
 ## -----------------------------------------------------------------------------
 transmittance(filters.mspct$Firecrest_UVIR_Cut, UVA())
@@ -160,6 +187,9 @@ absorbance(filters.mspct$Firecrest_UVIR_Cut, list(UVA(), NIR()))
 ## -----------------------------------------------------------------------------
 transmittance(filters.mspct[grep("UG", names(filters.mspct))], 
               list(UVB(), UVA()))
+
+## -----------------------------------------------------------------------------
+reflectance(metals.mspct, w.band = VIS_bands())
 
 ## -----------------------------------------------------------------------------
 head(as.data.frame(filters.mspct$Schott_UG11))

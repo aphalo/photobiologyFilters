@@ -38,29 +38,65 @@ subsets of spectra.
 
 ## The objects containing the data
 
-Spectral data are stored in objects of classes defined in package 
-'photobiology'. These clases are derived from tibbles, which in turn is
-derived from data frames. Consequently the data can be used with native R
-functions and operators and with other R packages. 
+The data are stored in objects of classes defined in package 'photobiology'
+grouped into four collections of spectra. Functions and operators in the
+packages that are part of the R for photobiology suite recognize these classes,
+which allows automation of some computations and validation of the data values
+returned by operations on the data.
 
-```{r}
-class(filters.mspct[[1]])
-```
-```{r}
-class(metals.mspct[[1]])
-```
+Individual spectra are stored in clases are derived from tibbles, which in turn
+is derived from data frames with additional metadata stored as attributes of the
+objects. Being the objects derived from `data.frame` means that the data can be
+used with native R functions and operators and with other R packages. As package
+'photobiologyInOut' provides functions that facilitate the exchange of spectral
+data with R packages 'colorSpec', 'hyperSpec' and 'pavo', the data in these
+package can also be easily used with them.
 
-Package 'photobiologyInOut' provides functions that facilitate the exchange of
-spectral data with R packages 'colorSpec', 'hyperSpec' and 'pavo'.
+The individual spectra are stored in collections as objects of classes derived
+from R's list class.
 
-The individual spectra are stored in collections of spectra which are objects
-derived from R's list class.
+`filters.mspct` contains spectral transmittance data for 
+`r length(filters.mspct)` optical filters and other similar transparent and
+semitransparent sheets and films.
 
 ```{r}
 class(filters.mspct)
 ```
+
+```{r}
+class(filters.mspct[[1]])
+```
+`metals.mspct` contains spectral reflectance data for `r length(metals.mspct)`
+metals.
+
 ```{r}
 class(metals.mspct)
+```
+
+```{r}
+class(metals.mspct[[1]])
+```
+`materials.mspct` contains spectral reflectance data for 
+`r length(metals.mspct)` materials and surfaces, including different types
+vegetation.
+
+```{r}
+class(materials.mspct)
+```
+
+```{r}
+class(materials.mspct[[1]])
+```
+`refractive_index.mspct` contains spectral refractive index data for 
+`r length(metals.mspct)` materials. These values allow the computation of 
+reflectance at different angles of incidence.
+
+```{r}
+class(refractive_index.mspct)
+```
+
+```{r}
+class(refractive_index.mspct[[1]])
 ```
 
 Spectral reflectance and transmittance values are stored as fractions of one,
@@ -72,14 +108,14 @@ colnames(filters.mspct[[1]])
 ```{r}
 colnames(metals.mspct[[1]])
 ```
+```{r}
+colnames(materials.mspct[[1]])
+```
+Refractive index values are:
 
 ```{r}
-nrow(filters.mspct[[1]])
+colnames(refractive_index.mspct[[1]])
 ```
-Functions and operators in the packages that are part of the R for photobiology
-suite recognize these classes, which allows automation of some computations and
-validation of the data values returned by operations or stored.
-
 ## The transmittance and reflectance data
 
 Spectral data are included both for optical filters, sold as such, and for
@@ -94,7 +130,7 @@ total and internal transmittance requires reflectance to be known.
 
 We provide reflectance estimates for several of the filters in this collection,
 but we do not have such data available for all of them. For filters made of
-ionic glass and coloured plastics, reflection is not selective, and amounts to
+ionic glass and coloured plastics, reflection is very weakly selective, and amounts to
 about 9 to 10\% of radiation incident at an angle close to perpendicular to the
 surface (when both interfaces with air are considered). Anti-reflection coating
 (ARC) reduces reflections, and multi-coating (MC) even further. Such coatings
@@ -112,7 +148,7 @@ deposited on absorptive ionic glass.
 The spectral transmittance or absorbance data have been acquired with an
 assortment of different instruments. Some data are measured by the authors with
 spectrophotometers, others have been provided by filter manufacturers. Whenever
-these metadata was available an approximate reflectance for normal incidence angle,
+these metadata were available an approximate reflectance for normal incidence angle,
 material thickness, and the mode of attenuation have been stored as attributes. In
 the case of filters sold assembled in frames for use in photography and
 industrial automation the thickness is rarely disclosed by suppliers, but in 
@@ -125,7 +161,7 @@ sources. In the case of filters with anti-reflection coatings, in most cases the
 estimated reflectance is based on the maximum total transmittance. Most of the data
 are approximations given as a single value for the whole spectrum following
 Schott's practice. (We aim to add in the future actual measured and/or 
-computed spectral reflectance for some filters or claer glass to serve as 
+computed spectral reflectance for some filters or clear glass to serve as 
 examples).
 
 The difference in resolution and slit function among instruments can give, for
@@ -148,8 +184,8 @@ Glass-filter properties vary to some extent among melt batches. Variation can
 also be expected among batches of plastic filters. Furthermore, filters age
 upon exposure to light and UV radiation, and in some cases even upon
 exposure to air. Aging is not limited to plastic filters and can also affect
-optical glass. Manufacturers occasionaly may update the specifications
-for filters while mantaining the product code.
+optical glass. Manufacturers occasionally may update the specifications
+for filters while maintaining the product code.
 
 All the spectral transmittance data in this package are stored in a single R object, a
 collection of spectra of class `filter_mspct` with members of class
@@ -157,9 +193,10 @@ collection of spectra of class `filter_mspct` with members of class
 package includes also several `character` vectors of _names_, each one
 containing names for filters of a given _color_, a given _type_ or from a given
 _manufacturer_. The names of all these vectors are available in vector
-`all_filter_accessors. The _names_ used are in most cases the codes used by the
+`all_filter_accessors`. The _names_ used are in most cases the codes used by the
 manufacturers for the given type with a code for the manufacturer of supplier
-added. Any dashes in these codes have been replaced by underscores.
+prepended. Any dashes in these codes have been replaced by underscores to 
+convert them into syntactically valid R names.
 
 ```{r}
 band_pass_filters
@@ -185,6 +222,9 @@ names(metals.mspct)
 ```{r}
 names(materials.mspct)
 ```
+```{r}
+names(refractive_index.mspct)
+```
 
 The collection of filter spectra is large, so we list only the first 20 names.
 
@@ -194,10 +234,12 @@ head(names(filters.mspct), 20)
 
 To obtain metadata in a tabular form, we can use function `spct_metadata()`. This
 function is available in package 'photobiology' version 0.10.5 or later. (This
-example is run only if a supported version is loaded.)
+example is run only if a supported version is loaded.) The limit the number of
+columns we select two of them by name.
 
 ```{r}
 if (utils::packageVersion('photobiology') > "0.10.4.9001") {
+  print(colnames(spct_metadata(filters.mspct[1:5])))
   spct_metadata(filters.mspct[1:5])[ , c("spct.idx", "what.measured")]
 }
 ```
@@ -229,7 +271,8 @@ to the one in the chunk immediately above.
 filters.mspct["Schott_UG11"]
 ```
 
-Of course, with this syntax it is possible to use a vector of member names.
+Of course, with single square brackets it is possible to use a vector of member
+names.
 
 ## Accessing subsets of spectra
 
@@ -333,7 +376,7 @@ reflectance and absorptance.
 any2Afr(filters.mspct$Schott_UG11, action = "replace")
 ```
 
-For absorbance, logarithms using 10 as base are used. In some fields, natural
+For expressing absorbance, base-10 logarithms are used. In some fields, natural
 logarithms are used instead. Expressing `A` on this base is not supported by
 this package and any input absorbances must be first converted to log10 based
 `A`.
@@ -392,7 +435,7 @@ autoplot(thin_and_thick.mspct,
          span = 101)
 ```
 
-To graphichaly assess filter stacks with air gaps.
+To graphically assess filter stacks with air gaps.
 
 ```{r}
 stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro * filters.mspct$Firecrest_UVIR_Cut
@@ -400,7 +443,7 @@ stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro * filters.mspct$Firecrest_
 autoplot(stack.spct,
          range = c(NA, 1400),
          w.band = c(UV_bands(), IR_bands("CIE")),
-         annotations = c("+", "boundaries", "wls"),
+         annotations = list(c("+", "boundaries"), c("-", "peaks")),
          span = 21) +
   geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro, colour = "purple") +
   geom_vline(xintercept = c(589, 589.6), linetype = "dotted") # Na emission lines
@@ -411,10 +454,22 @@ spectra that automatically maps the $x$ and $y$ _aesthetics_.
 
 ```{r}
 ggplot(filters.mspct$Firecrest_UVIR_Cut) +
-  geom_line()
+  geom_line() +
+  scale_x_wl_continuous() +
+  scale_y_Tfr_continuous(Tfr.type = "total")
+```
+
+```{r}
+autoplot(metals.mspct$gold, range = c(NA, 800))
+```
+```{r}
+autoplot(materials.mspct$grass, range = c(NA, 800))
 ```
 
 ## Calculating summaries
+
+Here we use waveband defintions from package 'photobiologyWavebands' and 
+summary functions from package 'photobiology'.
 
 ```{r}
 transmittance(filters.mspct$Firecrest_UVIR_Cut, UVA())
@@ -426,6 +481,10 @@ absorbance(filters.mspct$Firecrest_UVIR_Cut, list(UVA(), NIR()))
 ```{r}
 transmittance(filters.mspct[grep("UG", names(filters.mspct))], 
               list(UVB(), UVA()))
+```
+
+```{r}
+reflectance(metals.mspct, w.band = VIS_bands())
 ```
 
 ## Using the data in other contexts
@@ -454,7 +513,3 @@ detach(filters.mspct)
 ```{r}
 with(filters.mspct, transmittance(Schott_UG11, UVA()))
 ```
-
-
-
-
