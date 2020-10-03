@@ -170,7 +170,7 @@ autoplot(stack.spct,
 ggplot(filters.mspct$Firecrest_UVIR_Cut) +
   geom_line() +
   scale_x_wl_continuous() +
-  scale_y_Tfr_continuous(Tfr.type = "total")
+  scale_y_Tfr_total_continuous()
 
 ## -----------------------------------------------------------------------------
 autoplot(metals.mspct$gold, range = c(NA, 800))

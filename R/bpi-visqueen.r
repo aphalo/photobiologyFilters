@@ -11,7 +11,7 @@
 #'   \item Tfr (fraction)
 #' }
 #'
-#' \url{https://www.rpc-bpi.com/agriculture/}
+#' \url{https://www.rpc-bpi.com/sector/horticultural-solutions/}
 #'
 #' Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
 #' Co. Ltd, China) equiped with an integrating sphere.
