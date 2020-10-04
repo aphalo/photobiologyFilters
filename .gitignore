@@ -1,14 +1,3 @@
 .Rproj.user
 .Rhistory
 .RData
-NAMESPACE
-man
-vignettes/*.pdf
-*.tex
-*.synctex
-*.synctex.gz
-*.log
-*.svg
-inst/web
-docs
-data-raw/photo-filters/spectra-with-acq-names/
