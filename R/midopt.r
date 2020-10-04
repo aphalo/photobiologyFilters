@@ -15,7 +15,7 @@
 #' @note Data downloaded from \url{https://midopt.com/filters/} on 2017-12-26 and
 #' 2019-05-10. Republished with permission.
 #' Copyright (c) Midwest Optical Systems, Inc. (MidOpt)
-#' \url{https://www.midopt.com/}
+#' \url{https://midopt.com/}
 #'
 #' @section DISCLAIMER from MidOpt: data are typical values and may vary by
 #' plus/minus 10 nm. To interactively comparing filter spectra, please visit
