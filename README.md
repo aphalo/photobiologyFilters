@@ -1,5 +1,5 @@
 
-# photobiologyFilters
+# photobiologyFilters <img src="man/figures/logo.png" align="right" width="120" />
 
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters)
@@ -163,8 +163,8 @@ Please, see the *User Guide* or help pages for the names of other
 vectors of names for materials, suppliers, and regions of the spectrum.
 
 Summary calculations can be easily done with methods from package
-‘photobiology’. Here we calculate mean transmittance for two regions
-of the spectrum given by wavelengths in nanometres.
+‘photobiology’. Here we calculate mean transmittance for two regions of
+the spectrum given by wavelengths in nanometres.
 
 ``` r
 transmittance(filters.mspct[["Foiltek_Clear_PET_G"]], 
@@ -191,11 +191,11 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyFilters")
 ```
 
-Installation of the current unstable version from Bitbucket:
+Installation of the current unstable version from GitHub:
 
 ``` r
 # install.packages("devtools")
-devtools::install_bitbucket("aphalo/photobiologyfilters")
+devtools::install_github("aphalo/photobiologyfilters")
 ```
 
 ## Documentation
@@ -228,7 +228,7 @@ Division of Plant Biology. ISBN 978-952-10-8363-1 (PDF),
 ## Contributing
 
 Pull requests, bug reports, and feature requests are welcome at
-(<https://bitbucket.org/aphalo/photobiologyfilters>).
+(<https://github.com/aphalo/photobiologyfilters>).
 
 ## Citation
 
@@ -259,6 +259,6 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2020 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2021 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

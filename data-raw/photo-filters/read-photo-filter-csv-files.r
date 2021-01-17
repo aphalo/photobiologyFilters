@@ -15,27 +15,27 @@ file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
 all_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
 thickness <-
   c(2.2, 0.78, 1.1, 1.2,
-    1.2, NA, NA,
+    1.2, NA, NA, NA,
     0.54, 1.6, NA,
     2.2, 2.3,
     2.2, 1.75, 1.75,
     2.3, 2.3, 2.4,
     1.1, 1.1,
     1.1, 4.8,
-    3.1, 3.1,
+    1.6, 3.1, 3.1,
     2.6, 2.1,
     rep(2.04, 8)
     )
 names_thickness <-
   c("Firecrest_CPL", "Firecrest_IRND_15_MC", "Firecrest_ND12", "Firecrest_ND18",
     "Firecrest_UV400", "Firecrest_UVIR_Cut", "Firecrest_ND12_sqr",
-    "Fotga_UVIR_CUT", "Haida_Clear_Night_NanoPro", "Heliopan_BG38",
+    "Fotga_UVIR_CUT", "Haida_IR720_NanoPro", "Haida_Clear_Night_NanoPro", "Heliopan_BG38",
     "Heliopan_Orange_22_SH_PMC", "Heliopan_Yellow_5_SH_PMC",
     "Heliopan_UVIR_CUT_Digital", "Hitech_ND_06_HL", "Hitech_ND_09_HL",
     "Hoya_25A_HMC", "Hoya_Y_K2_HMC", "Hoya_R72",
     "Rocolax_UVIR_Cut_445nm_650nm", "Rocolax_UVIR_Cut_PRO_HD_W_52mm",
     "Rocolax_UVIR_Cut_PRO_HD_W_30_5mm", "StraightEdgeU_Mk_I",
-    "Tangsinuo_ZBW1_3mm", "Tangsinuo_ZBW2_3mm",
+    "Tangsinuo_ZWB1_1.6mm", "Tangsinuo_ZWB1_3mm", "Tangsinuo_ZWB2_3mm",
     "Tiffen_Haze_2A_52mm", "Tiffen_Haze_2A_62mm",
     "Zomei_IR_680_30_5mm", "Zomei_IR_680_52mm", "Zomei_IR_720_30_5mm",
     "Zomei_IR_720_72mm", "Zomei_IR_760_30_5mm", "Zomei_IR_760_52mm",

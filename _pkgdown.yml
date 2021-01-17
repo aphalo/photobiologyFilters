@@ -1,12 +1,6 @@
 destination: ../photobiologyFilters-docs
 url: https://docs.r4photobiology.info/photobiologyFilters/
 
-home:
-  strip_header: true
-  links:
-  - text: Photobiology packages
-    href: https://www.r4photobiology.info/
-
 reference:
   - title: Package overview
     contents:
@@ -46,7 +40,35 @@ reference:
     - uqg_filters
     - xl_horticulture_filters
 
-articles:
-  - title: Vignettes
-    contents:
-    - '`user-guide`'
+navbar:
+  structure:
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - tutorials
+    - news
+    right: github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    news:
+      text: Changelog
+      href: news/index.html
+    articles:
+      text: User Guide
+      menu:
+      - text: 'The R for Photobiology Suite'
+        href: articles/r4p-introduction.html
+      - text: 'User Guide'
+        href: articles/user-guide.html
+    tutorials:
+      text: Resources
+      menu:
+      - text: R for Photobiology packages
+        href: https://www.r4photobiology.info/
