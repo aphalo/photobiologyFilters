@@ -6,6 +6,7 @@
 ^.*\.log
 ^inst/web$
 ^docs$
+^pkgdown$
 ^_pkgdown\.yml$
 ^README\.Rmd$
 ^build-binary-from-source.sh$
