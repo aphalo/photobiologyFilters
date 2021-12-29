@@ -201,7 +201,7 @@ code used.
 # photobiologyFilters 0.1.1
 
 -   Add warning to documentation as the spectral transmittance for
-    *Rosco \#00* is not that of the filters currently being sold.
+    *Rosco #00* is not that of the filters currently being sold.
 
 # photobiologyFilters 0.1.0
 

@@ -24,7 +24,8 @@ thickness <-
     1.1, 4.8,
     1.6, 3.1, 3.1,
     2.6, 2.1,
-    rep(2.04, 8)
+    rep(2.04, 8),
+    1.99, 1.53
     )
 names_thickness <-
   c("Firecrest_CPL", "Firecrest_IRND_15_MC", "Firecrest_ND12", "Firecrest_ND18",
@@ -39,7 +40,8 @@ names_thickness <-
     "Tiffen_Haze_2A_52mm", "Tiffen_Haze_2A_62mm",
     "Zomei_IR_680_30_5mm", "Zomei_IR_680_52mm", "Zomei_IR_720_30_5mm",
     "Zomei_IR_720_72mm", "Zomei_IR_760_30_5mm", "Zomei_IR_760_52mm",
-    "Zomei_IR_850_52mm", "Zomei_IR_950_52mm")
+    "Zomei_IR_850_52mm", "Zomei_IR_950_52mm",
+    "Tangsinuo-QB21-AR-52mm", "Tangsinuo-QB21-AR-30.5mm")
 names(thickness) <- names_thickness
 
 attenuation.modes <-
