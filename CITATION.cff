@@ -1,5 +1,5 @@
 # -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.1.1
+# CITATION file created with {cffr} R package, v0.2.2
 # See also: https://docs.ropensci.org/cffr/
 # -----------------------------------------------------------
  
@@ -8,7 +8,7 @@ message: 'To cite package "photobiologyFilters" in publications use:'
 type: software
 license: GPL-2.0-or-later
 title: 'photobiologyFilters: Spectral Transmittance and Spectral Reflectance Data'
-version: 0.5.2.9000
+version: 0.5.2.9001
 doi: 10.19232/uv4pb.2015.1.14
 abstract: Spectral 'transmittance' data for frequently used filters and similar materials.
   Plastic sheets and films; photography filters; theatrical gels; machine-vision filters;
@@ -26,16 +26,18 @@ preferred-citation:
   authors:
   - family-names: Aphalo
     given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
   journal: UV4Plants Bulletin
   volume: '2015'
-  number: '1'
-  pages: 21-29
+  issue: '1'
   year: '2015'
   doi: 10.19232/uv4pb.2015.1.14
+  start: 21-29
 repository: https://CRAN.R-project.org/package=photobiologyFilters
 repository-code: https://github.com/aphalo/photobiologyfilters
 url: https://docs.r4photobiology.info/photobiologyFilters/
-date-released: '2021-01-17'
+date-released: '2022-07-04'
 contact:
 - family-names: Aphalo
   given-names: Pedro J.
@@ -44,3 +46,139 @@ contact:
 keywords:
 - cran
 - r-package
+references:
+- type: software
+  title: 'R: A Language and Environment for Statistical Computing'
+  notes: Depends
+  authors:
+  - name: R Core Team
+  location:
+    name: Vienna, Austria
+  year: '2022'
+  url: https://www.R-project.org/
+  institution:
+    name: R Foundation for Statistical Computing
+  version: '>= 3.6.0'
+- type: software
+  title: photobiology
+  abstract: 'photobiology: Photobiological Calculations'
+  notes: Depends
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=photobiology
+  version: '>= 0.10.4'
+- type: software
+  title: knitr
+  abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
+  notes: Suggests
+  authors:
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  year: '2022'
+  url: https://CRAN.R-project.org/package=knitr
+  version: '>= 1.30'
+- type: software
+  title: rmarkdown
+  abstract: 'rmarkdown: Dynamic Documents for R'
+  notes: Suggests
+  authors:
+  - family-names: Allaire
+    given-names: JJ
+    email: jj@rstudio.com
+  - family-names: Xie
+    given-names: Yihui
+    email: xie@yihui.name
+    orcid: https://orcid.org/0000-0003-0645-5666
+  - family-names: McPherson
+    given-names: Jonathan
+    email: jonathan@rstudio.com
+  - family-names: Luraschi
+    given-names: Javier
+    email: javier@rstudio.com
+  - family-names: Ushey
+    given-names: Kevin
+    email: kevin@rstudio.com
+  - family-names: Atkins
+    given-names: Aron
+    email: aron@rstudio.com
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@rstudio.com
+  - family-names: Chang
+    given-names: Winston
+    email: winston@rstudio.com
+  - family-names: Iannone
+    given-names: Richard
+    email: rich@rstudio.com
+    orcid: https://orcid.org/0000-0003-3925-190X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=rmarkdown
+  version: '>= 2.3'
+- type: software
+  title: ggplot2
+  abstract: 'ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics'
+  notes: Suggests
+  authors:
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@rstudio.com
+    orcid: https://orcid.org/0000-0003-4757-117X
+  - family-names: Chang
+    given-names: Winston
+    orcid: https://orcid.org/0000-0002-1576-2126
+  - family-names: Henry
+    given-names: Lionel
+  - family-names: Pedersen
+    given-names: Thomas Lin
+    email: thomas.pedersen@rstudio.com
+    orcid: https://orcid.org/0000-0002-5147-4711
+  - family-names: Takahashi
+    given-names: Kohske
+  - family-names: Wilke
+    given-names: Claus
+    orcid: https://orcid.org/0000-0002-7470-9261
+  - family-names: Woo
+    given-names: Kara
+    orcid: https://orcid.org/0000-0002-5125-4188
+  - family-names: Yutani
+    given-names: Hiroaki
+    orcid: https://orcid.org/0000-0002-3385-7233
+  - family-names: Dunnington
+    given-names: Dewey
+    orcid: https://orcid.org/0000-0002-9415-4582
+  year: '2022'
+  url: https://CRAN.R-project.org/package=ggplot2
+  version: '>= 3.3.2'
+- type: software
+  title: ggspectra
+  abstract: 'ggspectra: Extensions to ''ggplot2'' for Radiation Spectra'
+  notes: Suggests
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=ggspectra
+  version: '>= 0.3.6'
+- type: software
+  title: photobiologyWavebands
+  abstract: 'photobiologyWavebands: Waveband Definitions for UV, VIS, and IR Radiation'
+  notes: Suggests
+  authors:
+  - family-names: Aphalo
+    given-names: Pedro J.
+    email: pedro.aphalo@helsinki.fi
+    orcid: https://orcid.org/0000-0003-3385-972X
+  year: '2022'
+  url: https://CRAN.R-project.org/package=photobiologyWavebands
+  version: '>= 0.4.4'
