@@ -6,14 +6,9 @@
 \alias{photobiologyFilters-package}
 \title{photobiologyFilters: Spectral Transmittance and Spectral Reflectance Data}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-Spectral 'transmittance' data for frequently used filters and 
-    similar materials. Plastic sheets and films; photography filters; 
-    theatrical gels; machine-vision filters; various types of window glass;
-    optical glass and some laboratory plastics and glassware. Spectral 
-    reflectance data for frequently encountered materials. Part of the
-    'r4photobiology' suite, Aphalo P. J. (2015) <doi:10.19232/uv4pb.2015.1.14>.
+Spectral 'transmittance' data for frequently used filters and similar materials. Plastic sheets and films; photography filters; theatrical gels; machine-vision filters; various types of window glass; optical glass and some laboratory plastics and glassware. Spectral reflectance data for frequently encountered materials. Part of the 'r4photobiology' suite, Aphalo P. J. (2015) \doi{10.19232/uv4pb.2015.1.14}.
 }
 \details{
 This package contains transmission spectra for different types of
@@ -126,7 +121,7 @@ autoplot(materials.mspct$construction.asphalt, range = NIR(), w.band = NULL)
 }
 \references{
 Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
-21-29. \url{https://doi.org/10.19232/uv4pb.2015.1.14}.
+21-29. \doi{10.19232/uv4pb.2015.1.14}.
 }
 \seealso{
 Useful links:

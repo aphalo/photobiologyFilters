@@ -22,7 +22,7 @@ rm(obj)
 
 filters.mspct <-
   c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, lee.mspct,
-  mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
+  mcdermit.mspct, petri_dishes.mspct, purshee.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
   xl_horticulture.mspct, zeiss.mspct, glass_windows.mspct, photography_filters.mspct,
   kolarivision.mspct)
 
@@ -46,9 +46,12 @@ haida_filters <- grep("Haida", photography_filters, value = TRUE, ignore.case = 
 fotga_filters <- grep("Fotga", photography_filters, value = TRUE, ignore.case = TRUE)
 zeiss_filters <- grep("Zeiss", photography_filters, value = TRUE, ignore.case = TRUE)
 baader_filters <- grep("Baader", photography_filters, value = TRUE, ignore.case = TRUE)
+tangsinuo_filters <- grep("Tangsinuo", photography_filters, value = TRUE, ignore.case = TRUE)
 uvroptics_filters <- grep("StraightEdgeU", photography_filters, value = TRUE, ignore.case = TRUE)
 fake_unbranded_filters <- grep("Knight|fake", photography_filters, value = TRUE, ignore.case = TRUE)
-photography_filters <- sort(c(photography_filters, zeiss_filters, kolarivision_filters, fotga_filters))
+photography_filters <-
+  sort(c(photography_filters, zeiss_filters, kolarivision_filters,
+         fotga_filters, tangsinuo_filters, purshee_filters))
 courtaulds_filters <- courtaulds
 xl_horticulture_filters <- xl_horticulture
 bpi_visqueen_filters <- bpi_visqueen
@@ -98,8 +101,8 @@ save(filters.mspct, all_filter_accessors,
      acetate_filters, acrylic_filters, polycarbonate_filters,
      polystyrene_filters, polyester_filters, polyvynil_chloride_filters,
      photography_filters, hoya_filters, firecrest_filters, bw_filters, zomei_filters, fotga_filters,
-     haida_filters, kenko_filters, tiffen_filters, baader_filters, uvroptics_filters,
-     heliopan_filters, rocolax_filters, zeiss_filters, kenko_filters, fake_unbranded_filters,
+     haida_filters, kenko_filters, tiffen_filters, baader_filters, uvroptics_filters, tangsinuo_filters,
+     heliopan_filters, rocolax_filters, zeiss_filters, kenko_filters, purshee_filters, fake_unbranded_filters,
      uvir_cut_filters, theatrical_gels, optical_glass_filters,
      plastic_films, plastic_sheets, plastic_film_filters, plastic_sheet_filters,
      clear_filters, yellow_filters, orange_filters, green_filters, blue_green_filters,

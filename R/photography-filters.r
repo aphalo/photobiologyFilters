@@ -98,3 +98,11 @@
 #' @rdname photography_filters
 #'
 "fotga_filters"
+
+#' @rdname photography_filters
+#'
+"tangsinuo_filters"
+
+#' @rdname photography_filters
+#'
+"purshee_filters"

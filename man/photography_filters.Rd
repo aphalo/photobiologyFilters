@@ -18,6 +18,8 @@
 \alias{rocolax_filters}
 \alias{kolarivision_filters}
 \alias{fotga_filters}
+\alias{tangsinuo_filters}
+\alias{purshee_filters}
 \title{Total transmittance for photography filters}
 \format{
 A vector of character strings.
@@ -51,6 +53,10 @@ An object of class \code{character} of length 3.
 An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 8.
+
+An object of class \code{character} of length 2.
 }
 \usage{
 photography_filters
@@ -84,6 +90,10 @@ rocolax_filters
 kolarivision_filters
 
 fotga_filters
+
+tangsinuo_filters
+
+purshee_filters
 }
 \description{
 Total transmittance for filters intended for use on camera lenses from

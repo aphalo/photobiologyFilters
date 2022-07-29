@@ -45,8 +45,10 @@ for (file.name in file.list) {
 }
 purshee.mspct <- filter_mspct(purshee.lst)
 purshee.mspct <- trim_wl(purshee.mspct, range = c(NA, 1020))
+names(purshee.mspct) <- paste("Purshee", names(purshee.mspct), sep = "_")
+purshee_filters <- names(purshee.mspct)
 setwd("../..")
 
-save(purshee.mspct, file = "data-raw/rda/purshee.mspct.rda")
+save(purshee.mspct, purshee_filters, file = "data-raw/rda/purshee.mspct.rda")
 
 

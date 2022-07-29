@@ -6,7 +6,8 @@ editor_options:
 
 # photobiologyFilters 0.5.3
 
--   Add data for a few photography filters.
+-   Add data for a few photography filters, including UV pass stack from
+    Tangsinuo.
 -   **Move Git repositoty from *Bitbucket* to *GitHub*.**
 
 # photobiologyFilters 0.5.2

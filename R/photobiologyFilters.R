@@ -54,7 +54,7 @@
 #' @references
 #'
 #' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
-#' 21-29. \url{https://doi.org/10.19232/uv4pb.2015.1.14}.
+#' 21-29. \doi{10.19232/uv4pb.2015.1.14}.
 #'
 #' @section Warning!: Except for those from Schott and MIDOPT, none of the
 #'   spectral data included in this package are "official" specifications. In

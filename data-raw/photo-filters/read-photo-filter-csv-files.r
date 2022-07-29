@@ -12,7 +12,9 @@ rm(list = ls())
 setwd("data-raw/photo-filters/")
 
 file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
-all_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
+full_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
+length(full_names)
+
 thickness <-
   c(2.2, 0.78, 1.1, 1.2,
     1.2, NA, NA, NA,
@@ -25,7 +27,9 @@ thickness <-
     1.6, 3.1, 3.1,
     2.6, 2.1,
     rep(2.04, 8),
-    1.99, 1.53
+    1.99, 1.53,
+    2.10,2.05,1.58,1.99,
+    3.09,3.08
     )
 names_thickness <-
   c("Firecrest_CPL", "Firecrest_IRND_15_MC", "Firecrest_ND12", "Firecrest_ND18",
@@ -41,9 +45,11 @@ names_thickness <-
     "Zomei_IR_680_30_5mm", "Zomei_IR_680_52mm", "Zomei_IR_720_30_5mm",
     "Zomei_IR_720_72mm", "Zomei_IR_760_30_5mm", "Zomei_IR_760_52mm",
     "Zomei_IR_850_52mm", "Zomei_IR_950_52mm",
-    "Tangsinuo-QB21-AR-52mm", "Tangsinuo-QB21-AR-30.5mm")
+    "Tangsinuo_QB21_AR_52mm", "Tangsinuo_QB21_AR_30.5mm",
+    "Tangsinuo_ZWB1_52mm", "Tangsinuo_ZWB1_52mm", "Tangsinuo_ZWB1_67mm",
+    "Tangsinuo_TSN575_52mm", "Tangsinuo_ZWB1_3mm", "Tangsinuo_ZWB2_3mm")
 names(thickness) <- names_thickness
-
+thickness[order(names_thickness)]
 attenuation.modes <-
   c(rep("absorption_layered", 9),
     rep("mixed", 2),
@@ -98,7 +104,7 @@ for (file.name in file.list) {
 }
 photography_filters.mspct <- filter_mspct(photo_filters.lst)
 photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1020))
-
+names(photography_filters.mspct)
 save(photography_filters.mspct, file = "../rda/photography-filters.mspct.rda")
 
 setwd("../..")
