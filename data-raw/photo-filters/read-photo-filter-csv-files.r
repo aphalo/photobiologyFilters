@@ -5,8 +5,12 @@
 # 2) read .csv files
 # 3) collect all the filter_spct objects into a filter_mspct object
 # 4) save the filter_mscpt object into a single Rda file in the data-raw/rda folder
+
+# Now thickness and size information are extracted from file names
+
 library(photobiology)
 library(dplyr)
+library(stringr)
 
 rm(list = ls())
 setwd("data-raw/photo-filters/")
@@ -15,41 +19,6 @@ file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
 full_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
 length(full_names)
 
-thickness <-
-  c(2.2, 0.78, 1.1, 1.2,
-    1.2, NA, NA, NA,
-    0.54, 1.6, NA,
-    2.2, 2.3,
-    2.2, 1.75, 1.75,
-    2.3, 2.3, 2.4,
-    1.1, 1.1,
-    1.1, 4.8,
-    1.6, 3.1, 3.1,
-    2.6, 2.1,
-    rep(2.04, 8),
-    1.99, 1.53,
-    2.10,2.05,1.58,1.99,
-    3.09,3.08
-    )
-names_thickness <-
-  c("Firecrest_CPL", "Firecrest_IRND_15_MC", "Firecrest_ND12", "Firecrest_ND18",
-    "Firecrest_UV400", "Firecrest_UVIR_Cut", "Firecrest_ND12_sqr",
-    "Fotga_UVIR_CUT", "Haida_IR720_NanoPro", "Haida_Clear_Night_NanoPro", "Heliopan_BG38",
-    "Heliopan_Orange_22_SH_PMC", "Heliopan_Yellow_5_SH_PMC",
-    "Heliopan_UVIR_CUT_Digital", "Hitech_ND_06_HL", "Hitech_ND_09_HL",
-    "Hoya_25A_HMC", "Hoya_Y_K2_HMC", "Hoya_R72",
-    "Rocolax_UVIR_Cut_445nm_650nm", "Rocolax_UVIR_Cut_PRO_HD_W_52mm",
-    "Rocolax_UVIR_Cut_PRO_HD_W_30_5mm", "StraightEdgeU_Mk_I",
-    "Tangsinuo_ZWB1_1.6mm", "Tangsinuo_ZWB1_3mm", "Tangsinuo_ZWB2_3mm",
-    "Tiffen_Haze_2A_52mm", "Tiffen_Haze_2A_62mm",
-    "Zomei_IR_680_30_5mm", "Zomei_IR_680_52mm", "Zomei_IR_720_30_5mm",
-    "Zomei_IR_720_72mm", "Zomei_IR_760_30_5mm", "Zomei_IR_760_52mm",
-    "Zomei_IR_850_52mm", "Zomei_IR_950_52mm",
-    "Tangsinuo_QB21_AR_52mm", "Tangsinuo_QB21_AR_30.5mm",
-    "Tangsinuo_ZWB1_52mm", "Tangsinuo_ZWB1_52mm", "Tangsinuo_ZWB1_67mm",
-    "Tangsinuo_TSN575_52mm", "Tangsinuo_ZWB1_3mm", "Tangsinuo_ZWB2_3mm")
-names(thickness) <- names_thickness
-thickness[order(names_thickness)]
 attenuation.modes <-
   c(rep("absorption_layered", 9),
     rep("mixed", 2),
@@ -68,9 +37,15 @@ names_modes <-
 names(attenuation.modes) <- names_modes
 
 photo_filters.lst <- list()
+# for quality control
+filter.suppliers <- character()
+filter.sizes <- character()
+filter.thicknesses <- character()
+filter.types <- character()
+filter.labels <- character()
+
 for (file.name in file.list) {
   cat(file.name, ", ")
-  name <- sub(pattern = ".CSV|.csv", replacement = "", x = file.name)
   tmp.df <- read.csv(file.name, skip = 1, header = FALSE,
                      sep = ";",
                      col.names = c("w.length", "Tpc", "sd_Tpc"),
@@ -80,31 +55,74 @@ for (file.name in file.list) {
   setFilterSpct(tmp.df, Tfr.type = "total")
   tmp.df <-
     clean(tmp.df,
-          range.s.data = c(0, 1)) %>%
-    setFilterProperties(Rfr.constant = ifelse(grepl("UV|Protector|Skylight|IR-[6-8]|R72|Haze|RG|Night|Clear", name),
+          range.s.data = c(0, 1))
+
+  raw.name <- sub(pattern = ".CSV|.csv", replacement = "", x = file.name)
+  split.name <- str_split(raw.name, pattern = "-")[[1]]
+  num.split.parts <- length(split.name)
+  if (!grepl("mm$", split.name[num.split.parts])) {
+    num.split.parts <- num.split.parts - 1L
+  }
+  filter.supplier <- split.name[1]
+  filter.suppliers <- c(filter.suppliers, filter.supplier)
+  filter.size <- split.name[num.split.parts]
+  if (grepl("DDmm$", filter.size)) {
+    filter.size <- NA_character_
+  }
+  filter.sizes <- c(filter.sizes, filter.size)
+  filter.thickness <- split.name[num.split.parts - 1]
+  if (grepl("TTmm$", filter.thickness)) {
+    filter.thickness <- NA_character_
+  }
+  # works but too specific regexp would be preferable
+  if (grepl("2mm2mm", filter.thickness)) {
+    filter.thickness <- c("2mm", "2mm")
+  }
+  filter.thicknesses <- c(filter.thicknesses, filter.thickness)
+  filter.type <- paste(split.name[2:num.split.parts - 2], collapse = " ")
+  filter.types <- c(filter.types, filter.type)
+  if (grepl("Baader", filter.supplier)) {
+    filter.label <- "Astrophotography filter:"
+  } else {
+    filter.label <- "Photography filter:"
+  }
+  filter.labels <- c(filter.labels, filter.label)
+
+  object.name <- gsub("_$", "", gsub("[.][.]|[.]", "_", make.names(raw.name)))
+  object.name <- gsub("30_5mm", "30.5mm", object.name)
+
+  tmp.df <-
+    setFilterProperties(tmp.df,
+                        Rfr.constant = ifelse(grepl("UV|Protector|Skylight|IR-[6-8]|R72|Haze|RG|Night|Clear", filter.type),
                                               max(1 - max(tmp.df[["Tfr"]]), 0),
                                               NA_real_),
-                        thickness = ifelse(name %in% names_thickness,
-                                           thickness[name], NA_real_),
-                        attenuation.mode = ifelse(name %in% names_modes,
-                                                  attenuation.modes[name],
-                                                  "absorption")) %>%
-    #    clip_wl(c(240, NA)) %>%
-    smooth_spct(method = "supsmu", strength = 0.5)
-  if (grepl("Baader", name)) {
-    filter_label <- "Astrophotography filter:"
-  } else {
-    filter_label <- "Photography filter:"
-  }
+                        thickness = as.numeric(gsub("mm$", "", filter.thickness)) * 1e-3,
+                        attenuation.mode = ifelse(object.name %in% names_modes,
+                                                  attenuation.modes[object.name],
+                                                  "absorption"))
+
+  tmp.df <-
+    smooth_spct(tmp.df, method = "supsmu", strength = 0.5)
+
   setWhatMeasured(tmp.df,
-                  paste(filter_label, gsub("_", "-", gsub("-", " ", name))))
-  setHowMeasured(tmp.df, "Individual filters measured with an array spectrophotometer without an integrating sphere.")
-  comment(tmp.df) <- "Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo."
-  photo_filters.lst[[gsub("_$", "", gsub("[.][.]|[.]", "_", make.names(name)))]] <- tmp.df
+                  paste(filter.label, filter.type))
+  setHowMeasured(tmp.df,
+                 "Filters measured with an array spectrophotometer without an integrating sphere.")
+  comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
+                           comment(tmp.df))
+  photo_filters.lst[[object.name]] <- tmp.df
 }
 photography_filters.mspct <- filter_mspct(photo_filters.lst)
 photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1020))
 names(photography_filters.mspct)
+
+# quality control
+unique(filter.suppliers)
+unique(filter.sizes)
+unique(filter.thicknesses)
+unique(filter.types)
+unique(filter.labels)
+
 save(photography_filters.mspct, file = "../rda/photography-filters.mspct.rda")
 
 setwd("../..")
