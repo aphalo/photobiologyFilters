@@ -11,7 +11,7 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' all_selectors
+#' all_screen_selectors
 #'
 #' @rdname all_selectors
 #' @aliases selectors

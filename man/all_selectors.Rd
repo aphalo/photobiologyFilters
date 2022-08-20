@@ -24,7 +24,7 @@ uses. The data objects described here list the names of all these vectors
 of names corresponding to the different collections of spectra..
 }
 \examples{
-all_selectors
+all_screen_selectors
 
 }
 \keyword{datasets}
