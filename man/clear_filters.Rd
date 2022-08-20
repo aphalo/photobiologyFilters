@@ -20,7 +20,7 @@ A vector of character strings.
 
 An object of class \code{character} of length 30.
 
-An object of class \code{character} of length 44.
+An object of class \code{character} of length 45.
 
 An object of class \code{character} of length 9.
 

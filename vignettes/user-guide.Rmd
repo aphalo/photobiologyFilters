@@ -1,5 +1,5 @@
 ---
-title: "User Guide"
+title: "The data and how to use them"
 subtitle: "Package 'photobiologyFilters' `r packageVersion('photobiologyFilters')` "
 author: "Pedro J. Aphalo"
 date: "`r packageDate('photobiologyFilters')`"
@@ -7,7 +7,7 @@ output:
   rmarkdown::html_vignette:
     toc: yes
 vignette: >
-  %\VignetteIndexEntry{User Guide}
+  %\VignetteIndexEntry{The data and how to use them}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -193,7 +193,7 @@ collection of spectra of class `filter_mspct` with members of class
 package includes also several `character` vectors of _names_, each one
 containing names for filters of a given _color_, a given _type_ or from a given
 _manufacturer_. The names of all these vectors are available in vector
-`all_filter_accessors`. The _names_ used are in most cases the codes used by the
+`all_filter_selectors`. The _names_ used are in most cases the codes used by the
 manufacturers for the given type with a code for the manufacturer of supplier
 prepended. Any dashes in these codes have been replaced by underscores to 
 convert them into syntactically valid R names.
@@ -285,11 +285,11 @@ a vector defined by the package.
 filters.mspct[petri_dishes]
 ```
 
-The vector `all_filter_accessors` contains the names of the different vectors of
+The vector `all_filter_selectors` contains the names of the different vectors of
 names of members of `filters.mspct`.
 
 ```{r}
-all_filter_accessors
+all_filter_selectors
 ```
 
 In addition to the predefined vectors it is possible to compute numeric indexing vectors

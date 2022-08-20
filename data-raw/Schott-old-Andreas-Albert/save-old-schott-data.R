@@ -20,7 +20,7 @@ for (i in seq_along(old.filters)) {
                                         sep = ""))
   setHowMeasured(temp.spct,
                  "Mean of three filters which had been in use for several years.")
-  comment(tmp.df) <- "Measured with HMGU-EUS Biochrom4060 scanning spectrophotometer by Andreas Albert."
+  comment(temp.spct) <- "Measured with HMGU-EUS Biochrom4060 scanning spectrophotometer by Andreas Albert."
   old_schott_filters.mspct[[filter.names[i]]] <- temp.spct
 }
 

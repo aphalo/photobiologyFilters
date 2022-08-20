@@ -84,7 +84,7 @@ filters.mspct["Schott_UG11"]
 filters.mspct[petri_dishes]
 
 ## -----------------------------------------------------------------------------
-all_filter_accessors
+all_filter_selectors
 
 ## -----------------------------------------------------------------------------
 filters.mspct[grep("UG", names(filters.mspct))]

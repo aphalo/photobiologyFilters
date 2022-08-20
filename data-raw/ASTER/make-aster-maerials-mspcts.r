@@ -22,6 +22,11 @@ for (f in files) {
 }
 
 materials.mspct <- as.reflector_mspct(materials.mspct)
+materials.mspct <- thin_wl(materials.mspct)
+
 comment(materials.mspct) <- "Source: ASTER spectral library. This is a small selection. See: https://speclib.jpl.nasa.gov/."
 
 save(materials.mspct, file = "data/materials-mspct.rda")
+
+tools::resaveRdaFiles("data", compress="auto")
+print(tools::checkRdaFiles("data"))

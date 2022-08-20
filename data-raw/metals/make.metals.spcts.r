@@ -2,7 +2,7 @@ library("photobiology")
 
 rm(list = ls())
 
-metals.dt <- read.table(file="raw.data/metals/Spisz.metals.data", header = TRUE)
+metals.dt <- read.table(file="data-raw/metals/Spisz.metals.data", header = TRUE)
 
 metals.mspct <- list()
 for (metal in setdiff(colnames(metals.dt), "wl")) {

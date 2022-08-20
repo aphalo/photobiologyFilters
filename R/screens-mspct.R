@@ -1,0 +1,60 @@
+#' Total transmittance of climate screens
+#'
+#' Total spectral transmittance of shade and insect screens sold for use in
+#' greenhouses. Spectra for 197 types from nine suppliers measured consistently
+#' as described by Kotilainen et al. (2018).
+#'
+#' The variables for each spectrum are as follows:
+#'
+#' \itemize{ \item w.length (nm) \item Tfr (fraction) }
+#'
+#' @docType data
+#' @keywords datasets
+#' @format A filter_mspct object containing a collection of \code{reflector_spct}
+#'   objects each with a variable number of rows and 2 variables.
+#'
+#' @details Spectral data for twenty four climate-screen samples (ten
+#'   Harmony-type, two Luxous-type, seven Solaro-type and six Tempa-type) and
+#'   four insect-screen samples provided by Svensson (AB Ludvig Svensson, KINNA,
+#'   Sweden, \url{https://www.ludvigsvensson.com/en/climate-screens}).
+#'   Twenty-six shade-net samples (16 Sombra-type and ten Sombra raschel-type
+#'   (patterned)) and 12 thrip, aphid, and insect -net samples (two
+#'   Anti-Trip-type, eight Anti-Afidos-type and two Anti-Insect types) were
+#'   provided by Mallas Textiles (Mallas Textiles Fabricantes, Chimalhuacán,
+#'   Mexico, \url{https://mallastextilesmx.com/}) were described by Kotilainen
+#'   et al. (2018). Additional spectra obtained by the same authors are also
+#'   included in this package. If you use these data in publications, please,
+#'   cite both Kotilainen et al. (2018) and this package.
+#'
+#' @note The original data of Kotilainen et al. (2018) plus additional data are
+#'   available at Zenodo (Robson and Kotilainen, 2018). The data read from file
+#'   \code{ScreensNets_irrad_trans.xlsx}, worksheet \code{"database"}, have been
+#'   reprocessed to remove noise. The wavelength values have been "thinned" in
+#'   featureless regions using as criterion the lack of change in the local
+#'   slope to significantly reduce the size of the data set as well as also
+#'   applying loss less compression of the R data file.
+#'
+#' @references
+#'  Kotilainen, Titta; Robson, T. Matthew; Hernández, Ricardo (2018) Light
+#'  quality characterization under climate screens and shade nets for
+#'  controlled-environment agriculture. PLOS ONE, Vol. 13, No. 6, p. e0199628.
+#'  \doi{10.1371/journal.pone.0199628}.
+#'
+#'  Robson, T. Matthew; Kotilainen, Titta (2018) Spectral transmittance of solar
+#'  radiation by screens and nets used in horticulture and agriculture. (1.1.1)
+#'  \[Data set\]. Zenodo. \doi{10.5281/zenodo.1561317}
+#'
+#' @section Acknowledgements:
+#'  These data were acquired as part of research funded by the Academy of
+#'  Finland (Decision No. 304653 to T. M. Robson) and USDA National Institute of
+#'  Food and Agriculture (Decision No. 107454 to R. Hernández).
+#'
+#' @examples
+#' library(ggspectra)
+#'
+#' names(screens.mspct)
+#' cat(comment(screens.mspct[[10]]))
+#' autoplot(screens.mspct[[10]], annotations = c("+", "title:what", "boundaries"),
+#'          range = c(320, 800))
+#'
+"screens.mspct"

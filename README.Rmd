@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # photobiologyFilters <img src="man/figures/logo.png" align="right" width="120" />
 
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html)
+[![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 
 Package **photobiologyFilters** is a collection of spectral transmittance data for more than 300 filters measured in our lab, by collaborators or for which data have been made available by the suppliers for inclusion in this package. It also contains spectral reflectance data and spectral refraction index data for some materials and spectral reflectance data for some man-made and natural land surfaces.
 
@@ -36,6 +37,10 @@ length(filters.mspct)
 ```
 
 ```{r example-03a}
+length(screens.mspct)
+```
+
+```{r example-03aa}
 length(metals.mspct)
 ```
 
@@ -69,7 +74,7 @@ filters.mspct[polyester_filters]
 The package includes a character vector with the names of these vectors of names that are available.
 
 ```{r example-05b}
-all_filter_accessors
+all_filter_selectors
 ```
 
 Please, see the *User Guide* or help pages for the names of other vectors of names for materials, suppliers, and regions of the spectrum.
@@ -124,4 +129,4 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2021 Pedro J. Aphalo ([pedro.aphalo\@helsinki.fi](mailto:pedro.aphalo@helsinki.fi)). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2022 Pedro J. Aphalo ([pedro.aphalo\@helsinki.fi](mailto:pedro.aphalo@helsinki.fi)). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.

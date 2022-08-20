@@ -6,9 +6,17 @@ editor_options:
 
 # photobiologyFilters 0.5.3
 
--   Add data for a few photography filters, including UV pass stack from
-    Tangsinuo.
--   **Move Git repositoty from *Bitbucket* to *GitHub*.**
+-   Add data for 197 climate screens as used in horticulture (contributed by
+T. K. Kotilainen, T. M. Robson and R. Hernández).
+-   Add data for additional photography filters, including UV-pass stacks 
+(measured by P. J. Aphalo).
+-   Fill-in missing and correct wrong metadata for some photography filters.
+-   Rename photography filters to include thickness and size when available. 
+_Code breaking!_.
+-   Rebuild data objects with 'photobiology' (> 0.10.12).
+-   Compact the spectral data using `photobiology::thin_wl()`. _Can slightly 
+change the result of computations and plot details_.
+-   **Move Git repository from *Bitbucket* to *GitHub*.**
 
 # photobiologyFilters 0.5.2
 

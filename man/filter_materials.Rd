@@ -3,7 +3,6 @@
 \docType{data}
 \name{acetate_filters}
 \alias{acetate_filters}
-\alias{materials}
 \alias{acrylic_filters}
 \alias{polycarbonate_filters}
 \alias{plexiglas_filters}

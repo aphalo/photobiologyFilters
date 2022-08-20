@@ -1,30 +1,37 @@
 #' @details This package contains transmission spectra for different types of
-#' optical filters and filter-like objects. These spectral data are NOT
-#' normalized. In most cases they have been obtained from sheets of the standard
-#' thickness supplied by sellers. Metadata is stored together with the spectral
-#' data, when available, it includes thickness, an approximate estimate of
-#' Rfr and whether attenuation by the filter is based on reflection, absorption
-#' or both. Beware that when attenuation is by absorption in the body of the
-#' filter, thickness has a strong effect on
-#' the wavelengths at which Tfr = 0.5 is reached for a given material. Be also
-#' aware that some of the data are for total transmittance and some for internal
-#' transmittance. Depending on the type of filter, spectral transmittance
-#' depends more or less strongly on the angle of incidence of radiation. All
-#' measurements included have been done with a angle of incidence that deviates
-#' at most by a 10 degrees from zero (light beam perpendicular to the surface of
-#' the filter). Additional data is provided in the documentation for different
-#' objects, and metadata is also stored as attributes in the individual spectral
-#' objects. When metadata are available, estimates of spectral transmittance for
-#' different thicknesses can be usually computed. The same is true for the
-#' conversion between total and internal transmittance.
+#'   optical filters and filter-like objects. These spectral data are NOT
+#'   normalized. In most cases they have been obtained from sheets of the
+#'   standard thickness supplied by sellers. Metadata is stored together with
+#'   the spectral data, when available, it includes thickness, an approximate
+#'   estimate of \code{Rfr} (contribution of reflectance) and whether
+#'   attenuation by the filter is based on reflection, absorption or both.
+#'   Beware that when attenuation is by absorption in the body of the filter,
+#'   thickness has a strong effect on the wavelengths at which Tfr = 0.5 is
+#'   reached for a given material. Be also aware that some of the data are for
+#'   total transmittance and some for internal transmittance. Depending on the
+#'   type of filter, spectral transmittance depends more or less strongly on the
+#'   angle of incidence of radiation. All measurements included have been done
+#'   with a angle of incidence that deviates at most by a 10 degrees from zero
+#'   (light beam perpendicular to the surface of the filter). Additional data is
+#'   provided in the documentation for different objects, and metadata is also
+#'   stored as attributes in the individual spectral objects. When metadata are
+#'   available, estimates of spectral transmittance for different thicknesses
+#'   can be approximately computed for filters based on ionic or absorptive
+#'   glass or plastic. The same is true for the conversion between total and
+#'   internal transmittance if \code{Rfr} is available. There are also filters
+#'   based on surface reflection or absorptive layers on the surface or encased.
+#'   Some filters even use a combination of these approaches.
 #'
-#' In addition to transmittance for semitransparent materials, the package also
-#' contains data on the refractive index as a function of wavelength, for
-#' several different materials. These data allow the estimation of spectral
-#' reflectance for these materials.
+#'   Total spectral transmittance for climate screens used in agriculture and
+#'   horticulture is also included.
 #'
-#' Spectral reflectance data is included for some common metals and for
-#' natural and man-made surfaces relevant to remote sensing.
+#'   In addition to transmittance for semitransparent materials, the package
+#'   also contains data on the refractive index as a function of wavelength, for
+#'   several different materials. These data allow the estimation of spectral
+#'   reflectance for these materials.
+#'
+#'   Spectral reflectance data is included for several common metals and for
+#'   natural and man-made surfaces (relevant to remote sensing).
 #'
 #' Transmittance data are included for:
 #' \itemize{
@@ -52,7 +59,6 @@
 #'   [r4photobiology](https://www.r4photobiology.info) web site.
 #'
 #' @references
-#'
 #' Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin, 2015:1,
 #' 21-29. \doi{10.19232/uv4pb.2015.1.14}.
 #'
@@ -70,9 +76,10 @@
 #'   name under which they are sold. In other words, the data provided here are
 #'   not a substitute for actual measurements of transmission spectra of the
 #'   filters actually used in a given piece of scientific research. For less
-#'   demanding situations the data are in most cases useful, but perfect
+#'   demanding situations the data are in most cases useful, but good
 #'   agreement with measurements on other batches of filters of the same exact
-#'   type should not be expected.
+#'   type should not be expected, specially for materials not intended to be
+#'   used as optical filters.
 #'
 #' @import photobiology
 #'

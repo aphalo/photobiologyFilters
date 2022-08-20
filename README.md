@@ -5,6 +5,8 @@
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters)
 [![cran
 checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html)
+[![R build
+status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 
 Package **photobiologyFilters** is a collection of spectral
 transmittance data for more than 300 filters measured in our lab, by
@@ -34,7 +36,12 @@ How many spectra are included in the current version of
 
 ``` r
 length(filters.mspct)
-#> [1] 339
+#> [1] 356
+```
+
+``` r
+length(screens.mspct)
+#> [1] 197
 ```
 
 ``` r
@@ -58,11 +65,11 @@ output.
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "Baader_U_filter"            "BPI_Luminance"             
-#>  [3] "BPI_Solatrol"               "BW_007_Clear_MRC_nano"     
-#>  [5] "Courtaulds_CA_115um"        "Courtaulds_CA_115um_age000"
-#>  [7] "Courtaulds_CA_115um_age020" "Courtaulds_CA_115um_age030"
-#>  [9] "Courtaulds_CA_115um_age060" "Courtaulds_CA_115um_age100"
+#>  [1] "Baader_U_filter_1mm_48mm"         "BPI_Luminance"                   
+#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1_2mm_46mm"
+#>  [5] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
+#>  [7] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"      
+#>  [9] "Courtaulds_CA_115um_age060"       "Courtaulds_CA_115um_age100"
 ```
 
 To subset based on different criteria we can use predefined character
@@ -78,49 +85,51 @@ We can use the vector to extract all these spectra as a collection.
 
 ``` r
 filters.mspct[polyester_filters]
-#> Object: filter_mspct [2 x 1]
+#> Object: filter_mspct [2]
 #> --- Member: Foiltek_Clear_PET_G ---
-#> Object: filter_spct [911 x 2]
-#> Wavelength range 190 to 1100 nm, step 1 nm 
+#> Object: filter_spct [318 x 2]
+#> Wavelength range 190-1100 nm, step 1-4 nm 
 #> Label: Polyethylene terephthalate (PET), 'polyester'; clear sheet; new 
 #> Transmittance of type 'total'
-#> Rfr (/1): 0.097, thickness (mm): 3, attenuation mode: absorption.
+#> Rfr (/1): 0.097, thickness (mm): 3.00, attenuation mode: absorption.
 #> 
-#> # A tibble: 911 x 2
+#> # A tibble: 318 × 2
 #>    w.length      Tfr
 #>       <dbl>    <dbl>
 #>  1      190 0.000105
-#>  2      191 0.000104
-#>  3      192 0.000104
-#>  4      193 0.000103
-#>  5      194 0.000102
-#>  6      195 0.000102
-#>  7      196 0.000102
-#>  8      197 0.000101
-#>  9      198 0.000100
-#> 10      199 0.000100
-#> # ... with 901 more rows
+#>  2      194 0.000102
+#>  3      198 0.000100
+#>  4      201 0.000100
+#>  5      202 0.000100
+#>  6      206 0.000100
+#>  7      209 0.000100
+#>  8      210 0.000100
+#>  9      214 0.000102
+#> 10      215 0.000102
+#> # … with 308 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 #> --- Member: McDermit_PET_Autostat_CT5_125um ---
-#> Object: filter_spct [561 x 2]
-#> Wavelength range 240 to 800 nm, step 1 nm 
+#> Object: filter_spct [283 x 2]
+#> Wavelength range 240-800 nm, step 1-4 nm 
 #> Label: Polyester, clear film, 0.000125 m thick, Autostat CT5 from McDermit Autotype; new 
 #> Transmittance of type 'total'
 #> Rfr (/1): 0.074, thickness (mm): 0.125, attenuation mode: absorption.
 #> 
-#> # A tibble: 561 x 2
+#> # A tibble: 283 × 2
 #>    w.length     Tfr
 #>       <int>   <dbl>
 #>  1      240 0.00482
-#>  2      241 0.00464
-#>  3      242 0.00446
-#>  4      243 0.00429
-#>  5      244 0.00414
-#>  6      245 0.004  
-#>  7      246 0.004  
-#>  8      247 0.004  
-#>  9      248 0.004  
-#> 10      249 0.004  
-#> # ... with 551 more rows
+#>  2      244 0.00414
+#>  3      248 0.004  
+#>  4      252 0.00386
+#>  5      256 0.00329
+#>  6      258 0.003  
+#>  7      259 0.003  
+#>  8      260 0.003  
+#>  9      264 0.00357
+#> 10      267 0.004  
+#> # … with 273 more rows
+#> # ℹ Use `print(n = ...)` to see more rows
 #> 
 #> --- END ---
 ```
@@ -129,7 +138,7 @@ The package includes a character vector with the names of these vectors
 of names that are available.
 
 ``` r
-all_filter_accessors
+all_filter_selectors
 #>  [1] "acetate_filters"            "acrylic_filters"           
 #>  [3] "baader_filters"             "band_pass_filters"         
 #>  [5] "blue_filters"               "blue_green_filters"        
@@ -141,22 +150,23 @@ all_filter_accessors
 #> [17] "green_filters"              "haida_filters"             
 #> [19] "heat_filters"               "heliopan_filters"          
 #> [21] "hoya_filters"               "kenko_filters"             
-#> [23] "kolarivision_filters"       "lee_filters"               
-#> [25] "long_pass_filters"          "mcdermit_filters"          
-#> [27] "midopt_filters"             "neutral_filters"           
-#> [29] "old_schott_filters"         "optical_glass_filters"     
-#> [31] "orange_filters"             "photography_filters"       
-#> [33] "plastic_film_filters"       "plastic_sheet_filters"     
-#> [35] "plexiglas_filters"          "polycarbonate_filters"     
-#> [37] "polyester_filters"          "polystyrene_filters"       
-#> [39] "polyvynil_chloride_filters" "red_nir_filters"           
-#> [41] "rocolax_filters"            "rosco_filters"             
-#> [43] "schott_filters"             "short_pass_filters"        
-#> [45] "tiffen_filters"             "uqg_filters"               
-#> [47] "uv_filters"                 "uvir_cut_filters"          
-#> [49] "uvroptics_filters"          "xl_horticulture_filters"   
-#> [51] "yellow_filters"             "zeiss_filters"             
-#> [53] "zomei_filters"
+#> [23] "knightx_filters"            "kolarivision_filters"      
+#> [25] "lee_filters"                "long_pass_filters"         
+#> [27] "mcdermit_filters"           "midopt_filters"            
+#> [29] "neutral_filters"            "old_schott_filters"        
+#> [31] "optical_glass_filters"      "orange_filters"            
+#> [33] "photography_filters"        "plastic_film_filters"      
+#> [35] "plastic_sheet_filters"      "plexiglas_filters"         
+#> [37] "polycarbonate_filters"      "polyester_filters"         
+#> [39] "polystyrene_filters"        "polyvynil_chloride_filters"
+#> [41] "purshee_filters"            "red_nir_filters"           
+#> [43] "rocolax_filters"            "rosco_filters"             
+#> [45] "schott_filters"             "short_pass_filters"        
+#> [47] "tangsinuo_filters"          "tiffen_filters"            
+#> [49] "uqg_filters"                "uv_filters"                
+#> [51] "uvir_cut_filters"           "uvroptics_filters"         
+#> [53] "xl_horticulture_filters"    "yellow_filters"            
+#> [55] "zeiss_filters"              "zomei_filters"
 ```
 
 Please, see the *User Guide* or help pages for the names of other
@@ -170,7 +180,7 @@ the spectrum given by wavelengths in nanometres.
 transmittance(filters.mspct[["Foiltek_Clear_PET_G"]], 
               list(waveband(c(250, 315)), waveband(c(500,600))))
 #> Tfr(wl)_range.250.315 Tfr(wl)_range.500.600 
-#>          0.0001840984          0.8759395389 
+#>          0.0001886533          0.8759401279 
 #> attr(,"Tfr.type")
 #> [1] "unknown"
 #> attr(,"radiation.unit")
@@ -259,6 +269,6 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2021 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2022 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

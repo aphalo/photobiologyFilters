@@ -14,7 +14,7 @@ glass.name <- enc2native(names(glass.head)[-1])
 glass.name <- iconv(glass.name, from = "UTF8", to = "ASCII", sub = " ")
 print(glass.name)
 
-attenuation.mode <- ifelse(is.na(thickness), "unknown", "absorption")
+attenuation.mode <- ifelse(is.na(thickness), NA_character_, "absorption")
 Rfr.constant <- ifelse(material == "Glass", 0.08, NA_real_)
 
 glass.tb <- read_excel("206.xls", sheet = "AllGlasses", skip = 8)

@@ -8,8 +8,6 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #'
-#' @aliases materials
-#'
 #' @examples
 #' acrylic_filters
 #'
@@ -18,48 +16,50 @@
 #'
 #' @seealso \code{\link{filters.mspct}}
 #'
+#' @rdname filter_materials
+#'
 "acetate_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "acrylic_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "polycarbonate_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "plexiglas_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "polystyrene_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "polyester_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "polyvynil_chloride_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "optical_glass_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "plastic_film_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "plastic_films"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "plastic_sheet_filters"
 
-#' @rdname acetate_filters
+#' @rdname filter_materials
 #'
 "plastic_sheets"

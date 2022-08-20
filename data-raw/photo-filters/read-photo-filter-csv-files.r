@@ -19,23 +19,6 @@ file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
 full_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
 length(full_names)
 
-attenuation.modes <-
-  c(rep("absorption_layered", 9),
-    rep("mixed", 2),
-    rep("reflection", 8))
-
-names_modes <-
-  c("Tiffen_Haze_2A_52mm", "Tiffen_Haze_2A_62mm", "Firecrest_CPL",
-    "Firecrest_IRND_15_MC", "Firecrest_ND12", "Firecrest_ND18",
-    "Firecrest_UV400", "Firecrest_UVIR_Cut", "Firecrest_ND12_sqr",
-    "Baader_U_filter", "StraightEdgeU_Mk_I",
-    "Heliopan_UVIR_CUT_Digital", "Firecrest_UVIR_Cut",
-    "Rocolax_UVIR_Cut_445nm_650nm", "Rocolax_UVIR_Cut_PRO_HD_W_52mm",
-    "Rocolax_UVIR_Cut_PRO_HD_W_30_5mm",
-    "Hoya_UV0_HMC_Super", "Hoya_UV0_HMC", "Zeiss_UV_Tstar")
-
-names(attenuation.modes) <- names_modes
-
 photo_filters.lst <- list()
 # for quality control
 filter.suppliers <- character()
@@ -43,6 +26,13 @@ filter.sizes <- character()
 filter.thicknesses <- character()
 filter.types <- character()
 filter.labels <- character()
+filter.modes <- character()
+
+modes.map <- c(RFL = "reflection",
+               LYR = "absorption.layer",
+               MIX = "mixed",
+               ABS = "absorption",
+               STK = "stack")
 
 for (file.name in file.list) {
   cat(file.name, ", ")
@@ -60,17 +50,29 @@ for (file.name in file.list) {
   raw.name <- sub(pattern = ".CSV|.csv", replacement = "", x = file.name)
   split.name <- str_split(raw.name, pattern = "-")[[1]]
   num.split.parts <- length(split.name)
-  if (!grepl("mm$", split.name[num.split.parts])) {
-    num.split.parts <- num.split.parts - 1L
+
+
+  if (!grepl("ABS|LYR|MIX|RFL|STK", split.name[num.split.parts])) {
+    filter.mode <- NA_character_
+  } else {
+    filter.mode <- modes.map[split.name[num.split.parts]]
   }
+  filter.modes <- c(filter.modes, filter.mode)
+
   filter.supplier <- split.name[1]
   filter.suppliers <- c(filter.suppliers, filter.supplier)
-  filter.size <- split.name[num.split.parts]
+
+  filter.size <- split.name[num.split.parts - 1L]
+  if (!grepl("mm$", filter.size)) {
+    num.split.parts <- num.split.parts - 1L
+    filter.size <- split.name[num.split.parts - 1L]
+  }
   if (grepl("DDmm$", filter.size)) {
     filter.size <- NA_character_
   }
   filter.sizes <- c(filter.sizes, filter.size)
-  filter.thickness <- split.name[num.split.parts - 1]
+
+  filter.thickness <- split.name[num.split.parts - 2L]
   if (grepl("TTmm$", filter.thickness)) {
     filter.thickness <- NA_character_
   }
@@ -79,8 +81,10 @@ for (file.name in file.list) {
     filter.thickness <- c("2mm", "2mm")
   }
   filter.thicknesses <- c(filter.thicknesses, filter.thickness)
-  filter.type <- paste(split.name[2:num.split.parts - 2], collapse = " ")
+
+  filter.type <- paste(split.name[2:(num.split.parts - 3L)], collapse = " ")
   filter.types <- c(filter.types, filter.type)
+
   if (grepl("Baader", filter.supplier)) {
     filter.label <- "Astrophotography filter:"
   } else {
@@ -88,7 +92,9 @@ for (file.name in file.list) {
   }
   filter.labels <- c(filter.labels, filter.label)
 
-  object.name <- gsub("_$", "", gsub("[.][.]|[.]", "_", make.names(raw.name)))
+  object.name <- gsub("_$", "",
+                      gsub("[.][.]|[.]", "_",
+                           make.names(gsub("-ABS|-LYR|-MIX|-RFL|-STK", "", raw.name))))
   object.name <- gsub("30_5mm", "30.5mm", object.name)
 
   tmp.df <-
@@ -97,9 +103,7 @@ for (file.name in file.list) {
                                               max(1 - max(tmp.df[["Tfr"]]), 0),
                                               NA_real_),
                         thickness = as.numeric(gsub("mm$", "", filter.thickness)) * 1e-3,
-                        attenuation.mode = ifelse(object.name %in% names_modes,
-                                                  attenuation.modes[object.name],
-                                                  "absorption"))
+                        attenuation.mode = filter.mode)
 
   tmp.df <-
     smooth_spct(tmp.df, method = "supsmu", strength = 0.5)
@@ -117,6 +121,7 @@ photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 10
 names(photography_filters.mspct)
 
 # quality control
+unique(filter.modes)
 unique(filter.suppliers)
 unique(filter.sizes)
 unique(filter.thicknesses)
