@@ -44,10 +44,10 @@ The original data of Kotilainen et al. (2018) plus additional data are
   applying loss less compression of the R data file.
 }
 \section{Acknowledgements}{
-
- These data were acquired as part of research funded by the Academy of
- Finland (Decision No. 304653 to T. M. Robson) and USDA National Institute of
- Food and Agriculture (Decision No. 107454 to R. Hernández).
+ These data were acquired as part of research
+  funded by the Academy of Finland (Decision No. 304653 and 304519 to T. M.
+  Robson) and USDA National Institute of Food and Agriculture (Decision No.
+  107454 to R. Hernández).
 }
 
 \examples{

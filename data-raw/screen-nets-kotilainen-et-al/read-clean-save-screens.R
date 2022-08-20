@@ -1,6 +1,7 @@
 library(readxl)
 library(photobiology)
 library(dplyr)
+library(stringr)
 
 rm(list = ls(pattern = "*"))
 gc()
@@ -37,6 +38,25 @@ screens.mspct %>%
 screens.mspct <- clean(screens.mspct)
 
 screens.mspct <- thin_wl(screens.mspct)
+
+suppliers.map <- c(arrigoni = "Arrigoni",
+                   svensson = "Svensson, Sweden",
+                   criadolopez = "Criado Lopez",
+                   howitec = "Howitec",
+                   jiangsuhuachangyarns = "Jiang Suhua Chang Yarns",
+                   mallastextiles = "Mallas Textiles, Mexico",
+                   huachangyarns = "Hua Chang Yarns",
+                   oerlemansplastics = "Oerleman Plastics")
+
+for (s in names(screens.mspct)) {
+  s_splt <- str_split(s, pattern = "_", n = 2)[[1]]
+  what_measured(screens.mspct[[s]]) <- sprintf("Climate screen type '%s' supplied by '%s'.",
+                                              gsub("\\.", " ", s_splt[2]), suppliers.map[s_splt[1]])
+  how_measured(screens.mspct[[s]]) <- "Measured with an Ocean Optics Maya 2000Pro spectrometer in sunlight."
+  comment(screens.mspct[[s]]) <-
+    paste("Source: Zenodo doi:10.5281/zenodo.1561317, file 'ScreensNets_irrad_trans.xlsx', worksheet 'database'.",
+          comment(screens.mspct[[s]]), sep = "\n")
+  }
 
 for (supplier in screen_suppliers) {
   assign(paste(supplier, "screens", sep = "_"),

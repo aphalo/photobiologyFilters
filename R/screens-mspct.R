@@ -44,10 +44,10 @@
 #'  radiation by screens and nets used in horticulture and agriculture. (1.1.1)
 #'  \[Data set\]. Zenodo. \doi{10.5281/zenodo.1561317}
 #'
-#' @section Acknowledgements:
-#'  These data were acquired as part of research funded by the Academy of
-#'  Finland (Decision No. 304653 to T. M. Robson) and USDA National Institute of
-#'  Food and Agriculture (Decision No. 107454 to R. Hernández).
+#' @section Acknowledgements: These data were acquired as part of research
+#'   funded by the Academy of Finland (Decision No. 304653 and 304519 to T. M.
+#'   Robson) and USDA National Institute of Food and Agriculture (Decision No.
+#'   107454 to R. Hernández).
 #'
 #' @examples
 #' library(ggspectra)
