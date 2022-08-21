@@ -13,12 +13,11 @@ knitr::opts_chunk$set(
 )
 ```
 
-# photobiologyFilters <img src="man/figures/logo.png" align="right" width="120" />
+# photobiologyFilters <img src="man/figures/logo.png" align="right" width="120"/>
 
-[![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html)
-[![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
+[![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html) [![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 
-Package **photobiologyFilters** is a collection of spectral transmittance data for more than 300 filters measured in our lab, by collaborators or for which data have been made available by the suppliers for inclusion in this package. It also contains spectral reflectance data and spectral refraction index data for some materials and spectral reflectance data for some man-made and natural land surfaces.
+Package **photobiologyFilters** is a collection of spectral transmittance data for more than 500 transparent and partially transparent materials measured in our lab, by collaborators and contributors including data have made available by the suppliers for inclusion in this package. The package also contains spectral reflectance data and spectral refraction index data for some materials and spectral reflectance data for some man-made and natural land surfaces.
 
 ## Code breaking renaming of data objects
 
@@ -32,21 +31,31 @@ library(photobiologyFilters)
 
 How many spectra are included in the current version of 'photobiologyFilters'?
 
+More than 300 spectra for optical glass and plastic sheets and films. This collection includes filters used for photography, the whole set of Schott glass filters, most of MIDOPT filters, various types of glass, acrylic, polycarbonate and other panes, and theatrical "gels" and some greenhouse cladding films. Most of these materials do not scatter light and all of them are homogeneous.
+
 ```{r example-03}
 length(filters.mspct)
 ```
+
+Nearly 200 spectra for different climate screens used in horticulture and agriculture. All these materials scatter light and have a heterogeneous surface, as they are nets, yarns or composites in which part of the surface has different transmittance than the matrix: either an opaque yarn with holes or a partly clear matrix with embedded opaque or partly opaque elements.
 
 ```{r example-03a}
 length(screens.mspct)
 ```
 
+Reflectance spectra for a few metals are included.
+
 ```{r example-03aa}
 length(metals.mspct)
 ```
 
+Reflectance spectra for different surfaces, such as bare ground, asphalt and different types of vegetation.
+
 ```{r example-03b}
 length(materials.mspct)
 ```
+
+The refractive index can be used to derive other optical properties, such as reflectance at different angles of incidence. For some materials the refractive index varies strongly with wavelength while for other materials varies weakly. This is a small set, serving as example.
 
 ```{r example-03c}
 length(refractive_index.mspct)
@@ -59,7 +68,7 @@ What are the names of available spectra? We use `head()` to limit the output.
 head(names(filters.mspct), 10)
 ```
 
-To subset based on different criteria we can use predefined character vectors of filter names. For example, vector `polyester` lists the names of the spectra for filters made of polyester (PET).
+To subset based on different criteria we can use predefined character vectors of filter or climate-screen names. For example, vector `polyester` lists the names of the spectra for filters made of polyester (PET).
 
 ```{r example-05}
 polyester_filters
@@ -71,10 +80,14 @@ We can use the vector to extract all these spectra as a collection.
 filters.mspct[polyester_filters]
 ```
 
-The package includes a character vector with the names of these vectors of names that are available.
+The package includes two character vectors with the names of the vectors of names that are available for filters and screens.
 
 ```{r example-05b}
 all_filter_selectors
+```
+
+```{r example-05c}
+all_screen_selectors
 ```
 
 Please, see the *User Guide* or help pages for the names of other vectors of names for materials, suppliers, and regions of the spectrum.
@@ -121,7 +134,7 @@ Pull requests, bug reports, and feature requests are welcome at (<https://github
 
 ## Citation
 
-If you use this package to produce scientific or commercial publications, please cite according to:
+If you use this package to produce scientific or commercial publications, please cite it according to the recommended citation below. For individual spectra please read the corresponding help page and if available, also cite the original source of the data. Be aware that most data have been re-processed before inclussion in the package.
 
 ```{r}
 citation("photobiologyFilters")

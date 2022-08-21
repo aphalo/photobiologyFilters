@@ -72,7 +72,8 @@ for (file.name in file.list) {
   }
   filter.sizes <- c(filter.sizes, filter.size)
 
-  filter.thickness <- split.name[num.split.parts - 2L]
+  filter.thickness.raw <- split.name[num.split.parts - 2L]
+  filter.thickness <- filter.thickness.raw
   if (grepl("TTmm$", filter.thickness)) {
     filter.thickness <- NA_character_
   }
@@ -92,10 +93,14 @@ for (file.name in file.list) {
   }
   filter.labels <- c(filter.labels, filter.label)
 
-  object.name <- gsub("_$", "",
-                      gsub("[.][.]|[.]", "_",
-                           make.names(gsub("-ABS|-LYR|-MIX|-RFL|-STK", "", raw.name))))
-  object.name <- gsub("30_5mm", "30.5mm", object.name)
+  object.name <- paste(filter.supplier, gsub(" ", "_", filter.type),
+                       filter.thickness.raw, filter.size, sep = "_")
+  print(object.name)
+
+  # object.name <- gsub("_$", "",
+  #                     gsub("([a-zA-Z])[.]([a-zA-Z])", "\\1_\\2",
+  #                          make.names(gsub("-ABS|-LYR|-MIX|-RFL|-STK", "", raw.name))))
+  # we convert decimal markers back into dots (there should be a better way...)
 
   tmp.df <-
     setFilterProperties(tmp.df,

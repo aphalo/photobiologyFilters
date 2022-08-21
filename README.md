@@ -1,5 +1,5 @@
 
-# photobiologyFilters <img src="man/figures/logo.png" align="right" width="120" />
+# photobiologyFilters <img src="man/figures/logo.png" align="right" width="120"/>
 
 [![CRAN
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters)
@@ -9,9 +9,10 @@ checks](https://cranchecks.info/badges/worst/photobiologyFilters)](https://cran.
 status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 
 Package **photobiologyFilters** is a collection of spectral
-transmittance data for more than 300 filters measured in our lab, by
-collaborators or for which data have been made available by the
-suppliers for inclusion in this package. It also contains spectral
+transmittance data for more than 500 transparent and partially
+transparent materials measured in our lab, by collaborators and
+contributors including data have made available by the suppliers for
+inclusion in this package. The package also contains spectral
 reflectance data and spectral refraction index data for some materials
 and spectral reflectance data for some man-made and natural land
 surfaces.
@@ -34,25 +35,49 @@ library(photobiologyFilters)
 How many spectra are included in the current version of
 ‘photobiologyFilters’?
 
+More than 300 spectra for optical glass and plastic sheets and films.
+This collection includes filters used for photography, the whole set of
+Schott glass filters, most of MIDOPT filters, various types of glass,
+acrylic, polycarbonate and other panes, and theatrical “gels” and some
+greenhouse cladding films. Most of these materials do not scatter light
+and all of them are homogeneous.
+
 ``` r
 length(filters.mspct)
-#> [1] 356
+#> [1] 355
 ```
+
+Nearly 200 spectra for different climate screens used in horticulture
+and agriculture. All these materials scatter light and have a
+heterogeneous surface, as they are nets, yarns or composites in which
+part of the surface has different transmittance than the matrix: either
+an opaque yarn with holes or a partly clear matrix with embedded opaque
+or partly opaque elements.
 
 ``` r
 length(screens.mspct)
 #> [1] 197
 ```
 
+Reflectance spectra for a few metals are included.
+
 ``` r
 length(metals.mspct)
 #> [1] 12
 ```
 
+Reflectance spectra for different surfaces, such as bare ground, asphalt
+and different types of vegetation.
+
 ``` r
 length(materials.mspct)
 #> [1] 14
 ```
+
+The refractive index can be used to derive other optical properties,
+such as reflectance at different angles of incidence. For some materials
+the refractive index varies strongly with wavelength while for other
+materials varies weakly. This is a small set, serving as example.
 
 ``` r
 length(refractive_index.mspct)
@@ -66,15 +91,16 @@ output.
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
 #>  [1] "Baader_U_filter_1mm_48mm"         "BPI_Luminance"                   
-#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1_2mm_46mm"
+#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
 #>  [5] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
 #>  [7] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"      
 #>  [9] "Courtaulds_CA_115um_age060"       "Courtaulds_CA_115um_age100"
 ```
 
 To subset based on different criteria we can use predefined character
-vectors of filter names. For example, vector `polyester` lists the names
-of the spectra for filters made of polyester (PET).
+vectors of filter or climate-screen names. For example, vector
+`polyester` lists the names of the spectra for filters made of polyester
+(PET).
 
 ``` r
 polyester_filters
@@ -134,8 +160,8 @@ filters.mspct[polyester_filters]
 #> --- END ---
 ```
 
-The package includes a character vector with the names of these vectors
-of names that are available.
+The package includes two character vectors with the names of the vectors
+of names that are available for filters and screens.
 
 ``` r
 all_filter_selectors
@@ -167,6 +193,14 @@ all_filter_selectors
 #> [51] "uvir_cut_filters"           "uvroptics_filters"         
 #> [53] "xl_horticulture_filters"    "yellow_filters"            
 #> [55] "zeiss_filters"              "zomei_filters"
+```
+
+``` r
+all_screen_selectors
+#> [1] "arrigoni_screens"             "criadolopez_screens"         
+#> [3] "howitec_screens"              "huachangyarns_screens"       
+#> [5] "jiangsuhuachangyarns_screens" "mallastextiles_screens"      
+#> [7] "oerlemansplastics_screens"    "svensson_screens"
 ```
 
 Please, see the *User Guide* or help pages for the names of other
@@ -243,7 +277,10 @@ Pull requests, bug reports, and feature requests are welcome at
 ## Citation
 
 If you use this package to produce scientific or commercial
-publications, please cite according to:
+publications, please cite it according to the recommended citation
+below. For individual spectra please read the corresponding help page
+and if available, also cite the original source of the data. Be aware
+that most data have been re-processed before inclussion in the package.
 
 ``` r
 citation("photobiologyFilters")

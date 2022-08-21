@@ -122,13 +122,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -662,7 +669,7 @@ individual spectrum.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length     Tfr
@@ -684,7 +691,7 @@ individual spectrum.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length     Tfr
@@ -712,7 +719,7 @@ above.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length     Tfr
@@ -747,7 +754,7 @@ through computation. Here we use a vector defined by the package.</p>
 ## Wavelength range 190-1100 nm, step 1-4 nm 
 ## Label: Petri dish lid;  glass 
 ## Transmittance of type &#39;total&#39;
-## Rfr (/1): 0.080, thickness (mm): NA, attenuation mode: absorption.
+## Rfr (/1): 0.08, thickness (mm): NA, attenuation mode: absorption.
 ## 
 ## # A tibble: 302 × 2
 ##    w.length      Tfr
@@ -853,7 +860,7 @@ names containing the string “UG”.</p>
 ## Wavelength range 258-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG1 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.086, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.086, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 553 × 2
 ##    w.length      Tfr
@@ -875,7 +882,7 @@ names containing the string “UG”.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length     Tfr
@@ -919,7 +926,7 @@ names containing the string “UG”.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG5 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.086, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.086, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 536 × 2
 ##    w.length      Tfr
@@ -941,7 +948,7 @@ names containing the string “UG”.</p>
 ## Wavelength range 190-1020 nm, step 1-4 nm 
 ## Label: Glass filter: UQG UG1 2mm 
 ## Transmittance of type &#39;total&#39;
-## Rfr (/1): 0.077, thickness (mm): 2.00, attenuation mode: absorption.
+## Rfr (/1): 0.077, thickness (mm): 2, attenuation mode: absorption.
 ## 
 ## # A tibble: 376 × 2
 ##    w.length      Tfr
@@ -982,7 +989,7 @@ for it.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length     Tfr
@@ -1002,7 +1009,7 @@ for it.</p>
 <p>Metadata can also be queried with other methods. Please, see the
 documentation for package ‘photobiology’ for the details.</p>
 <div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter_properties</span>(filters.mspct<span class="sc">$</span>Schott_UG11)</span></code></pre></div>
-<pre><code>## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.</code></pre>
+<pre><code>## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.</code></pre>
 <div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">what_measured</span>(filters.mspct<span class="sc">$</span>Schott_UG11)</span></code></pre></div>
 <pre><code>## [1] &quot;SCHOTT UG11 1mm-thick&quot;</code></pre>
 <div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">how_measured</span>(filters.mspct<span class="sc">$</span>Schott_UG11)</span></code></pre></div>
@@ -1033,7 +1040,7 @@ we compute transmittance for a thickness of 4 mm.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;internal&#39;
-## Rfr (/1): 0.092, thickness (mm): 4.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 4, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length   Tfr
@@ -1057,7 +1064,7 @@ we compute transmittance for a thickness of 4 mm.</p>
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
 ## Transmittance of type &#39;total&#39;
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length        Tfr
@@ -1081,7 +1088,7 @@ transmittance, reflectance and absorptance.</p>
 <pre><code>## Object: filter_spct [675 x 2]
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length   Afr
@@ -1106,7 +1113,7 @@ must be first converted to log10 based <code>A</code>.</p>
 <pre><code>## Object: filter_spct [675 x 2]
 ## Wavelength range 200-5200 nm, step 1-50 nm 
 ## Label: SCHOTT UG11 1mm-thick 
-## Rfr (/1): 0.092, thickness (mm): 1.00, attenuation mode: absorption.
+## Rfr (/1): 0.092, thickness (mm): 1, attenuation mode: absorption.
 ## 
 ## # A tibble: 675 × 2
 ##    w.length     A

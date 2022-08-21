@@ -56,7 +56,10 @@ for (s in names(screens.mspct)) {
   comment(screens.mspct[[s]]) <-
     paste("Source: Zenodo doi:10.5281/zenodo.1561317, file 'ScreensNets_irrad_trans.xlsx', worksheet 'database'.",
           comment(screens.mspct[[s]]), sep = "\n")
-  }
+  filter_properties(screens.mspct[[s]]) <- list(Rfr.constant = NA_real_,
+                                                thickness = NA_real_,
+                                                attenuation.mode = "mixed")
+}
 
 for (supplier in screen_suppliers) {
   assign(paste(supplier, "screens", sep = "_"),

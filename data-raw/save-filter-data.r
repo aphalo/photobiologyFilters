@@ -57,6 +57,7 @@ fake_unbranded_filters <- grep("unbranded|fake", photography_filters, value = TR
 photography_filters <-
   unique(sort(c(photography_filters, zeiss_filters, kolarivision_filters,
          fotga_filters, tangsinuo_filters, purshee_filters)))
+
 courtaulds_filters <- courtaulds
 xl_horticulture_filters <- xl_horticulture
 bpi_visqueen_filters <- bpi_visqueen
