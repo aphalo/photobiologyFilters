@@ -63,7 +63,7 @@ for (s in names(screens.mspct)) {
 
 for (supplier in screen_suppliers) {
   assign(paste(supplier, "screens", sep = "_"),
-         grep(supplier, names(screens.mspct), ignore.case = TRUE, value = TRUE))
+         grep(paste("^", supplier, sep=""), names(screens.mspct), ignore.case = TRUE, value = TRUE))
 }
 
 all_screen_selectors <- ls(pattern = "_screens$")
