@@ -56,8 +56,8 @@
 #'  \doi{10.1371/journal.pone.0199628}.
 #'
 #'  Robson, T. Matthew; Kotilainen, Titta (2018) Spectral transmittance of solar
-#'  radiation by screens and nets used in horticulture and agriculture. (1.1.1)
-#'  \[Data set\]. Zenodo. \doi{10.5281/zenodo.1561317}
+#'  radiation by screens and nets used in horticulture and agriculture. 1.1.1.
+#'  Data set. Zenodo. \doi{10.5281/zenodo.1561317}
 #'
 #' @section Acknowledgements: These data were acquired as part of research
 #'   funded by the Academy of Finland (Decision No. 304653 and 304519 to T. M.

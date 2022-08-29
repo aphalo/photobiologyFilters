@@ -1,4 +1,4 @@
-#' Indexing of filters of different 'colors'
+#' Indexing of filters of different colors
 #'
 #' Names of datasets containing the wavelengths and tabulated values for
 #' fractional spectral transmittance for filters of given colours.

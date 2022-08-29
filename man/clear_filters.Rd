@@ -14,7 +14,7 @@
 \alias{red_nir_filters}
 \alias{heat_filters}
 \alias{uvir_cut_filters}
-\title{Indexing of filters of different 'colors'}
+\title{Indexing of filters of different colors}
 \format{
 A vector of character strings.
 
