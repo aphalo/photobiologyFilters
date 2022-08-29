@@ -1,15 +1,8 @@
-#' Total transmittance for PMMA sheets (Plexiglas) by Evonik
+#' Indexing of PMMA sheets (Plexiglas) by Evonik
 #'
-#' Total transmittance for Plexiglas sheets 3 mm think.
-#' Data are to be used as "reference values only" as values may change in time
-#' and production batch.
-#'
-#' The variables are as follows:
-#'
-#' \itemize{
-#'   \item w.length (nm)
-#'   \item Tfr (fraction)
-#' }
+#' Vectors of names of member objects containing spectral transmittance data for
+#' Plexiglas sheets 3 mm think. Data are to be used as "reference values only"
+#' as values may change in time and production batch.
 #'
 #' Sample chips bought from the manufacturers website on 24.04.2014
 #' \url{https://www.plexiglas-shop.com/}
@@ -20,7 +13,9 @@
 #'
 #' @note Data measured with an Agilent~8453 spectrophotometer (based on diode array).
 #'
-#' @note Idependent measurement of a single sample, not a specification.
+#' @note Individual measurements of single samples, not a specification.
+#'
+#' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
 #' evonik_filters

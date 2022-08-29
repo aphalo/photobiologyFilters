@@ -3,7 +3,7 @@
 \docType{data}
 \name{uqg_filters}
 \alias{uqg_filters}
-\title{Total transmittance for UQG filters}
+\title{Indexing of UQG filters}
 \format{
 A vector of character strings.
 }
@@ -11,15 +11,10 @@ A vector of character strings.
 uqg_filters
 }
 \description{
-Total transmittance for UQG optical glass absorptive and interference
-(dichroic) filters. Data measured by P. J. Aphalo with an Agilet 8453 array
-spectrophotometer. Some of the filters are Schott glass and we have retained
-the Schott type names.
-}
-\details{
-The variables are as follows:
-
-\itemize{ \item w.length (nm) \item Tfr (fraction) }
+Vectors of names of member objects containing spectral data for for UQG
+optical glass absorptive and interference (dichroic) filters. Data measured
+by P. J. Aphalo with an Agilent 8453 array spectrophotometer. Some of the
+filters are Schott glass and we have retained the Schott type names.
 }
 \note{
 Filter supplier: UQG Ltd. The Norman Industrial Estate, Milton,
@@ -30,7 +25,7 @@ Filter supplier: UQG Ltd. The Norman Industrial Estate, Milton,
   measurement of a single filter of each type. Filters from other production
   batches may differ in their spectral properties, specially for wavelengths
   outside the range described in the manufacturer's published specifications.
-  The characterisitics of some types of glass filters may change with time
+  The characteristics of some types of glass filters may change with time
   through surface oxidation or by effect of exposure to radiation including
   solar radiation. The data provided is to be used only as a coarse guide.
   When filter properties are important the filter actually used should be
@@ -40,5 +35,8 @@ Filter supplier: UQG Ltd. The Norman Industrial Estate, Milton,
 \examples{
 uqg_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

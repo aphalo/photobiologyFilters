@@ -3,7 +3,7 @@
 \docType{data}
 \name{petri_dishes}
 \alias{petri_dishes}
-\title{Total transmittance for Petri dishes}
+\title{Indexing of Petri dishes}
 \format{
 A vector of character strings.
 }
@@ -11,25 +11,23 @@ A vector of character strings.
 petri_dishes
 }
 \description{
-Total transmittance for the covers of Petri dishes. Data are to be used as
-"reference values only" as values may change in time and production batch.
-}
-\details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
+Vectors of names of member objects with spectral data for the covers of Petri
+dishes. Data are to be used as "reference values only" as values may change
+in time and with production batch.
 }
 \note{
-Data measured with an Agilent 8453 spectrophotometer (based on diode array).
-Supplier of the Petri dishes: Thermo Fisher Scientific.
+Data measured with an Agilent 8453 spectrophotometer (based on diode
+  array). Supplier of the plastic Petri dishes: Thermo Fisher Scientific.
 
-Idependent measurement of a single sample, not a specification.
+Individual measurement of a single sample, not a specification.
 }
 \examples{
 petri_dishes
 
+filters.mspct[petri_dishes]
+
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

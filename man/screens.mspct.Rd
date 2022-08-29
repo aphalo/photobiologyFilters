@@ -3,7 +3,7 @@
 \docType{data}
 \name{screens.mspct}
 \alias{screens.mspct}
-\title{Total transmittance of climate screens}
+\title{Spectral transmittance of climate screens}
 \format{
 A filter_mspct object containing a collection of \code{reflector_spct}
   objects each with a variable number of rows and 2 variables.
@@ -12,13 +12,16 @@ A filter_mspct object containing a collection of \code{reflector_spct}
 screens.mspct
 }
 \description{
-Total spectral transmittance of shade and insect screens sold for use in
-greenhouses. Spectra for 197 types from nine suppliers measured consistently
-as described by Kotilainen et al. (2018).
+A collection of transmittance spectra for climate screens and nets from
+different suppliers. We include under "screens" nets, cloths and perforated
+films with spatially heterogeneous optical properties. We exclude "filters"
+including all semi-transparent and transparent sheets and films with
+homogeneous optical properties. Spectra for nearly 200 types of screens from
+nine suppliers measured consistently as described by Kotilainen et al.
+(2018).
 }
 \details{
 The variables for each spectrum are as follows:
-
 \itemize{ \item w.length (nm) \item Tfr (fraction) }
 
 Spectral data for twenty four climate-screen samples (ten
@@ -33,8 +36,20 @@ Spectral data for twenty four climate-screen samples (ten
   et al. (2018). Additional spectra obtained by the same authors are also
   included in this package. If you use these data in publications, please,
   cite both Kotilainen et al. (2018) and this package.
+
+  The \code{"filter_mspct"} object named \code{screens.mspct} contains a collection of
+  \code{"filter_spct"} objects with spectral transmittance data for climate screens.
+
+  The variables in each member spectrum are as follows: \itemize{ \item
+  \code{w.length} (nm) \item \code{Tfr} (transmittance expressed as a
+  fraction of one) } These member objects contain metadata stored as R
+  attributes. Accessors  to the metadata are available:
+  \code{what_measured()}, \code{how_measured()}, \code{when_measured()},
+  \code{filter_properties()} and \code{comment()}.
 }
 \note{
+Please see the help for the indexing vectors for specific details.
+
 The original data of Kotilainen et al. (2018) plus additional data are
   available at Zenodo (Robson and Kotilainen, 2018). The data read from file
   \code{ScreensNets_irrad_trans.xlsx}, worksheet \code{"database"}, have been
@@ -51,12 +66,14 @@ The original data of Kotilainen et al. (2018) plus additional data are
 }
 
 \examples{
-library(ggspectra)
+screens.mspct$arrigoni_X2210WO.Iride.Black.Green
+
+what_measured(screens.mspct$arrigoni_X2210WO.Iride.Black.Green)
+how_measured(screens.mspct$arrigoni_X2210WO.Iride.Black.Green)
+filter_properties(screens.mspct$arrigoni_X2210WO.Iride.Black.Green)
+cat(comment(screens.mspct$arrigoni_X2210WO.Iride.Black.Green))
 
 names(screens.mspct)
-cat(comment(screens.mspct[[10]]))
-autoplot(screens.mspct[[10]], annotations = c("+", "title:what", "boundaries"),
-         range = c(320, 800))
 
 }
 \references{

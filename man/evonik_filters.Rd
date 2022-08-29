@@ -3,7 +3,7 @@
 \docType{data}
 \name{evonik_filters}
 \alias{evonik_filters}
-\title{Total transmittance for PMMA sheets (Plexiglas) by Evonik}
+\title{Indexing of PMMA sheets (Plexiglas) by Evonik}
 \format{
 A vector of character strings.
 }
@@ -11,28 +11,24 @@ A vector of character strings.
 evonik_filters
 }
 \description{
-Total transmittance for Plexiglas sheets 3 mm think.
-Data are to be used as "reference values only" as values may change in time
-and production batch.
+Vectors of names of member objects containing spectral transmittance data for
+Plexiglas sheets 3 mm think. Data are to be used as "reference values only"
+as values may change in time and production batch.
 }
 \details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
-
 Sample chips bought from the manufacturers website on 24.04.2014
 \url{https://www.plexiglas-shop.com/}
 }
 \note{
 Data measured with an Agilent~8453 spectrophotometer (based on diode array).
 
-Idependent measurement of a single sample, not a specification.
+Individual measurements of single samples, not a specification.
 }
 \examples{
 evonik_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

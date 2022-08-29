@@ -21,7 +21,8 @@
 \alias{tangsinuo_filters}
 \alias{purshee_filters}
 \alias{knightx_filters}
-\title{Total transmittance for photography filters}
+\alias{kenfaith_filters}
+\title{Indexing of photography filters}
 \format{
 A vector of character strings.
 
@@ -31,7 +32,7 @@ An object of class \code{character} of length 7.
 
 An object of class \code{character} of length 2.
 
-An object of class \code{character} of length 10.
+An object of class \code{character} of length 11.
 
 An object of class \code{character} of length 2.
 
@@ -43,7 +44,7 @@ An object of class \code{character} of length 3.
 
 An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 7.
+An object of class \code{character} of length 10.
 
 An object of class \code{character} of length 1.
 
@@ -60,6 +61,8 @@ An object of class \code{character} of length 15.
 An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 4.
+
+An object of class \code{character} of length 1.
 }
 \usage{
 photography_filters
@@ -99,22 +102,15 @@ tangsinuo_filters
 purshee_filters
 
 knightx_filters
+
+kenfaith_filters
 }
 \description{
-Total transmittance for filters intended for use on camera lenses from
-various brands and suppliers: B+W, Formatt-Hitech (Hitech, Firecrest), Fotga,
-Haida, Heliopan, Hoya, KinghtX, KolariVision, Purshee, Rocolax, Tangsinuo,
-Tiffen, UVRoptics, Zeiss, and Zomei. Data are to be used as \emph{"reference
-values only"} as values may change in time and production batch or glass
-melt. The fine structure of the spectra depends on the wavelength resolution
-of the spectrometer used and post-processing applied to the data. In some
-cases spectra for multiple filters of the same brand are type are included
-and show such variation.
-}
-\details{
-The variables are as follows:
-
-\itemize{ \item w.length (nm) \item Tfr (fraction) }
+Vectors of names of member objects with spectral data for filters intended to
+be used on camera lenses, grouped by supplier. Suppliers: B+W, Formatt-Hitech
+(Hitech, Firecrest), Fotga, Haida, Heliopan, Hoya, Ken & Faith Concept,
+KinghtX, KolariVision, Purshee, Rocolax, Tangsinuo, Tiffen, UVRoptics, Zeiss,
+and Zomei.
 }
 \note{
 Data measured with an Agilent 8453 spectrophotometer (based on diode
@@ -122,18 +118,36 @@ Data measured with an Agilent 8453 spectrophotometer (based on diode
 
 Idependent measurement of a single sample, not a specification.
 }
+\section{Warning!}{
+ Data are to be used as \emph{"reference values only"} as
+  actual transmittance may change in time and with production batch or glass
+  melt. In some cases spectra for multiple filters of the same brand and type
+  are included and show such variation. In other words, these spectra are
+  measured in individual filters, other filters of the same type and brand
+  will almost surely differ to some extent in their spectra.
+
+The variables are as follows:
+
+\itemize{ \item w.length (nm) \item Tfr (fraction) }
+}
+
 \section{Supplier's web sites, if known}{
 
   \url{https://www.baader-planetarium.com/en/},
-  \url{https://www.formatt-hitech.com/}, \url{https://www.fotga.com/},
-  \url{https://www.haidaphoto.com/en/}, \url{https://www.heliopan.de/},
-  \url{https://hoyafilter.com/}, \url{https://kenkoglobal.com/},
+  \url{https://www.formatt-hitech.com/},
+  \url{https://www.fotga.com/},
+  \url{https://www.haidaphoto.com/en/},
+  \url{https://www.heliopan.de/},
+  \url{https://hoyafilter.com/},
+  \url{https://kenkoglobal.com/},
+  \url{https://www.kentfaith.com/},
   \url{https://knightx-photography.aliexpress.com/store/924165},
   \url{https://kolarivision.com/},
   \url{https://purshee.aliexpress.com/store/1996249},
   \url{https://schneiderkreuznach.com/en/photo-optics},
   \url{https://tangsinuo.aliexpress.com/store/4314008},
-  \url{https://tiffen.com/}, \url{https://www.uvroptics.com/},
+  \url{https://tiffen.com/},
+  \url{https://www.uvroptics.com/},
   \url{https://www.zomei.com/}.
 }
 

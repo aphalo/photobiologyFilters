@@ -7,11 +7,11 @@
 \alias{types'}
 \alias{long_pass_filters}
 \alias{short_pass_filters}
-\title{Spectral data for filters of different types}
+\title{Indexing of filters of different curve types}
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 56.
+An object of class \code{character} of length 58.
 
 An object of class \code{character} of length 17.
 }
@@ -23,12 +23,11 @@ long_pass_filters
 short_pass_filters
 }
 \description{
-Names of datasets containing the wavelengths and tabulated values for
-fractional spectral trabsmittance according to their type or optical
+Vectors of names of member objects grouped according to their type or optical
 properties. Band-pass filters transmit a range of wavelengths, but block
 shorter and longer ones. Long-pass filters absorb wavelengths shorter than
 their cut-off and short-pass filters absorb wavelengths longer than their
-cut-off.
+cut-off. Multi-band and single-band pass filters are listed together.
 }
 \note{
 These vectors include only optical-glass filters with well defined

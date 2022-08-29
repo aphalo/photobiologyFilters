@@ -16,10 +16,13 @@ rm(list = ls())
 setwd("data-raw/photo-filters/")
 
 file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
+
 full_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
 length(full_names)
 
 photo_filters.lst <- list()
+stacked_filters.lst <- list()
+
 # for quality control
 filter.suppliers <- character()
 filter.sizes <- character()
@@ -86,15 +89,18 @@ for (file.name in file.list) {
   filter.type <- paste(split.name[2:(num.split.parts - 3L)], collapse = " ")
   filter.types <- c(filter.types, filter.type)
 
-  if (grepl("Baader", filter.supplier)) {
+  object.name <- paste(filter.supplier, gsub(" ", "_", filter.type),
+                       filter.thickness.raw, filter.size, sep = "_")
+
+  if (grepl("Baader", object.name)) {
     filter.label <- "Astrophotography filter:"
+  } else if (grepl("stack", object.name)) {
+    filter.label <- "Filter stack (air gap):"
   } else {
     filter.label <- "Photography filter:"
   }
   filter.labels <- c(filter.labels, filter.label)
 
-  object.name <- paste(filter.supplier, gsub(" ", "_", filter.type),
-                       filter.thickness.raw, filter.size, sep = "_")
   print(object.name)
 
   # object.name <- gsub("_$", "",
@@ -119,6 +125,7 @@ for (file.name in file.list) {
                  "Filters measured with an array spectrophotometer without an integrating sphere.")
   comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
                            comment(tmp.df))
+
   photo_filters.lst[[object.name]] <- tmp.df
 }
 photography_filters.mspct <- filter_mspct(photo_filters.lst)

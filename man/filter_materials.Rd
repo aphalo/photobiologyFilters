@@ -14,7 +14,7 @@
 \alias{plastic_films}
 \alias{plastic_sheet_filters}
 \alias{plastic_sheets}
-\title{Spectral data for filters made from different materials}
+\title{Indexing of filters made from different materials}
 \format{
 A vector of character strings.
 
@@ -66,14 +66,19 @@ plastic_sheet_filters
 plastic_sheets
 }
 \description{
-Names of datasets containing the wavelengths and tabulated values for
-fractional spectral trabsmittance according to the material they are
-made off.
+Vectors of names of member objects containing fractional spectral
+transmittance data for films (very flexible) and sheets (rigid or nearly
+rigid) grouped by the material they are made of.
+}
+\details{
+The vectors can be used to extract subsets of spectra from the
+ collection in \code{filter.mspct}. Some spectra are included in more
+ than one vector.
 }
 \examples{
 acrylic_filters
 
-# select filters made from acrylic
+# extract spectral data for filters made from acrylic
 filters.mspct[acrylic_filters]
 
 }

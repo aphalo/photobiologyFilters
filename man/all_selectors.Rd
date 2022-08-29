@@ -5,7 +5,7 @@
 \alias{all_filter_selectors}
 \alias{selectors}
 \alias{all_screen_selectors}
-\title{Names of different selectors}
+\title{Names of different indexing vectors}
 \format{
 A vector of character strings.
 
@@ -19,12 +19,15 @@ all_screen_selectors
 \description{
 The package makes available character vectors that can be used to extract
 spectral data for specific subsets of the filters, screens, etc. Some
-correspond to supplier names, other to materials, types, colours and typical
+correspond to supplier names, others to materials, types, colours and typical
 uses. The data objects described here list the names of all these vectors
-of names corresponding to the different collections of spectra..
+of names grouped by the collection of spectra they index.
 }
 \examples{
 all_screen_selectors
 
+}
+\seealso{
+\code{\link{filters.mspct}} and \code{\link{screens.mspct}}
 }
 \keyword{datasets}

@@ -11,25 +11,23 @@ A vector of character strings.
 glass_windows
 }
 \description{
-Datasets containing the wavelengths at a 1 nm interval and
-tabulated values spectral transmittance for glass windows as used by CIE.
+Indexing vector for extracting transmittance spectra for
+  window glass panes from object \code{filters.mspct}.
 }
 \details{
-For each of the 26 spectra in the collection the variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
+A character vector of names of members of the collection of spectra.
 }
 \note{
-Data from file \url{http://files.cie.co.at/206.xls}, downloaded 2017-06-25.
-Abbreviated names from original .xls file used as member names. Full glass
-names, thickness and manufacturers names, retained and stored as metadata
-in attribute "what.measured".
+The spectral data for these glasses is taken from file
+  \url{http://files.cie.co.at/206.xls}, downloaded 2017-06-25. Abbreviated
+  names from the original .xls file used as member names. Full glass names,
+  thickness and manufacturers names, retained and stored as metadata in
+  attribute "what.measured".
 }
 \examples{
 glass_windows
+
+head(filters.mspct[glass_windows], 2)
 
 }
 \keyword{datasets}

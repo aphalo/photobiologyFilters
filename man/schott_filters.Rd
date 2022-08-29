@@ -3,7 +3,7 @@
 \docType{data}
 \name{schott_filters}
 \alias{schott_filters}
-\title{Internal transmittance for Schott filters}
+\title{Indexing of Schott filters}
 \format{
 A vector of character strings.
 }
@@ -11,19 +11,11 @@ A vector of character strings.
 schott_filters
 }
 \description{
-Internal transmittance for Schott optical glass filters.
+Vectors of names of member objects containing spectral dara for Schott optical glass filters.
 Data from manufacturer-provided excel filter tool.
 }
-\details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
-}
 \note{
-Data supplied by the manufacturer for inclussion in this package.
+Data supplied by the manufacturer for inclusion in this package.
 Version	1 st June 2015. Reproduced with permission.
 \url{https://www.schott.com/advanced_optics}
 }
@@ -56,5 +48,8 @@ Version	1 st June 2015. Reproduced with permission.
 \examples{
 schott_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

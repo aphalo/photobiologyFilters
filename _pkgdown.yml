@@ -25,6 +25,7 @@ reference:
   - title: Indexing vectors by type
     contents:
     - band_pass_filters
+    - stacked_filters
   - title: Indexing vectors by use
     contents:
     - photography_filters

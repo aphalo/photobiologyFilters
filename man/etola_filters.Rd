@@ -3,7 +3,7 @@
 \docType{data}
 \name{etola_filters}
 \alias{etola_filters}
-\title{PE films supplied by Etola Oy}
+\title{Indexing of PE films supplied by Etola Oy}
 \format{
 A vector of character strings.
 }
@@ -11,23 +11,17 @@ A vector of character strings.
 etola_filters
 }
 \description{
-Dataset containing the wavelengths at a 1 nm interval and
-tabulated values spectral transmittance for different filters supplied by
+Vectors of names of member objects containing spectral transmittance data for polythene film supplied by
 Etola Oy (Finland).
 }
-\details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
-}
 \note{
-Idependent measurement of a single sample, not a specification.
+Individual measurements of single samples, not a specification.
 }
 \examples{
 etola_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

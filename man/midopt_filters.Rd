@@ -3,7 +3,7 @@
 \docType{data}
 \name{midopt_filters}
 \alias{midopt_filters}
-\title{Total transmittance for MidOpt filters}
+\title{Indexing of MidOpt filters}
 \format{
 A vector of character strings.
 }
@@ -11,18 +11,10 @@ A vector of character strings.
 midopt_filters
 }
 \description{
-Internal transmittance for MidOpt machine-vision optical glass, acrylic and
-interference filters. Data extracted from MidOpt's pdf data files with
-help of R package 'tabulizer'. MidOpt is a trade
-name of Midwest Optical Systems, Palatine, IL 60067 USA
-}
-\details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
+Vectors of names of member objects containing spectral data for MidOpt
+machine-vision optical glass, acrylic and interference filters. Data
+extracted from MidOpt's pdf data files with help of R package 'tabulizer'.
+MidOpt is a trade name of Midwest Optical Systems, Palatine, IL 60067 USA
 }
 \note{
 Data downloaded from \url{https://midopt.com/filters/} on 2017-12-26 and
@@ -39,5 +31,8 @@ plus/minus 10 nm. To interactively comparing filter spectra, please visit
 \examples{
 midopt_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

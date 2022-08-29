@@ -3,7 +3,7 @@
 \docType{data}
 \name{foiltek_filters}
 \alias{foiltek_filters}
-\title{Spectral Transmittance for Plastic Sheets Supplied by Foiltek}
+\title{Indexing of Plastic Sheets Supplied by Foiltek}
 \format{
 A vector of character strings.
 }
@@ -11,22 +11,16 @@ A vector of character strings.
 foiltek_filters
 }
 \description{
-Total transmittance for samples of clear plastic sheets. PC_UV is 3 mm thick
-Makrolife sheet manufactured by Arlaplast Ab (Sweden). PC is generic 3 mm
-thick polycarbonate, PS is 3 mm thick polystyrene PET_G is polyester approx 3
-mm thick and PVC is polyvinylchloride approximately 1.5--2 mm thick all from
-unknown manufacturers but stock product in Foiltek's catalogue. Data are to
-be used as "reference values only" as values may change in time and
-production batch.
+Vectors of names of member objects containing spectral transmittance data for
+samples of clear plastic sheets supplied by Foiltek. PC_UV is 3 mm thick
+Makrolife polycarbonate sheet manufactured by Arlaplast Ab (Sweden). PC is
+generic 3 mm thick polycarbonate, PS is 3 mm thick polystyrene, PET_G is
+polyester approx 3 mm thick and PVC is polyvinylchloride approximately 1.5--2
+mm thick. Except for Makrolife, from unknown manufacturers but stock product
+in Foiltek's catalogue. Data are to be used as "reference values only" as
+values may change in time and production batch.
 }
 \details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
-
 Sample chips supplied free of charge by Foiltek on 02.07.2014
 \url{https://foiltek.fi/}
 }
@@ -34,10 +28,13 @@ Sample chips supplied free of charge by Foiltek on 02.07.2014
 Data measured with an Agilent 8453 spectrophotometer (based on diode
   array).
 
-Idependent measurement of a single sample, not a specification.
+Individual measurements of single samples, not a specification.
 }
 \examples{
 foiltek_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

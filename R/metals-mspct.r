@@ -1,20 +1,23 @@
-#' Total reflectance of metals at 294 K
+#' Spectral reflectance of metals
 #'
-#' Total reflectance of metals at 294 K, measured using an integrating sphere.
-#' Data are to be used as "reference values only" as actual values will depend
-#' on the state of the metal surface and its polish.
-#'
-#' The variables for each spectrum are as follows:
-#'
-#' \itemize{
-#'   \item w.length (nm)
-#'   \item Rfr (fraction)
-#' }
+#' Total reflectance of metals at 294 K (21 C), measured using an integrating
+#' sphere. Data are to be used as "reference values only" as actual values will
+#' depend on the state of the metal surface and its polish.
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A reflector_mspct object containing a collection of reflector_spct
-#' each with 47 rows and 2 variables.
+#' @format A \code{reflector_mspct} object named \code{metals.mspct} containing
+#'   a collection of \code{reflector_spct} objects each with 47 rows and 2
+#'   variables.
+#'
+#' The variables for each spectrum are as follows:
+#' \itemize{
+#'   \item \code{w.length} (nm)
+#'   \item \code{Rfr} (fraction)
+#' }
+#'   These member objects contain metadata stored as R attributes. Accessors to
+#'   the metadata are available: \code{what_measured()}, \code{how_measured()},
+#'   \code{when_measured()}, and \code{comment()}.
 #'
 #' @note Data extracted from a published report by OCR.
 #'
@@ -24,11 +27,14 @@
 #' NASA TN D-5353, Technical Note, Washington DC, 22 pp. (Data from Table II (a))
 #'
 #' @examples
+#' metals.mspct$gold
+#' summary(metals.mspct$gold)
 #'
-#' library(ggspectra)
+#' what_measured(metals.mspct$gold)
+#' how_measured(metals.mspct$gold)
+#' cat(comment(metals.mspct$gold))
 #'
 #' names(metals.mspct)
-#' cat(comment(metals.mspct$gold))
-#' autoplot(metals.mspct$gold, annotations = c("+", "title:what"))
+#' summary(metals.mspct)
 #'
 "metals.mspct"

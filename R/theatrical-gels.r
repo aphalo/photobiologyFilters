@@ -1,29 +1,24 @@
-#' Filter spectra data for theatrical filter
+#' Indexing of theatrical "gels"
 #'
-#' Datasets containing the wavelengths at a 1 nm interval and
-#' tabulated values spectral transmittance for different filters used on
-#' light sources as spectral modifiers. Frequently called "theatrical gels".
-#'
-#' The variables are as follows:
-#'
-#' \itemize{
-#'   \item w.length (nm)
-#'   \item Tfr (fraction)
-#' }
+#' Vectors of names of member objects with spectral transmittance for different
+#' filters used on light sources in theatres, photo and video studios as
+#' spectral modifiers. Frequently called "theatrical gels".
 #'
 #' @references
 #' \url{https://www.leefilters.com/lighting/colour-details.html},
 #' \url{https://emea.rosco.com/en/products/family/filters-and-diffusions}
 #'
-#' @note Instruments used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
-#' Co. Ltd, China) equiped with an integrating sphere for Rosco filters except no. 299
-#' which was measured with an Agilent 8453 array spectrophotometer and while
-#' spectra for Lee gels have been digitized from the spectra in the Lee
-#' filters catalogue.
+#' @note Instruments used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments
+#'   Manufacturing Co. Ltd, China) equipped with an integrating sphere for Rosco
+#'   filters except no. 299 which was measured with an Agilent 8453 array
+#'   spectrophotometer. Spectra for Lee gels have been digitized from
+#'   the spectral plots in the Lee filters catalogue.
 #'
 #' @docType data
 #' @keywords datasets
 #' @format A vector of character strings.
+#'
+#' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
 #' theatrical_gels

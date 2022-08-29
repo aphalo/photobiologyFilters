@@ -22,8 +22,8 @@ rm(obj)
 
 filters.mspct <-
   c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, lee.mspct,
-  mcdermit.mspct, petri_dishes.mspct, purshee.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
-  xl_horticulture.mspct, zeiss.mspct, glass_windows.mspct, photography_filters.mspct,
+  mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
+  xl_horticulture.mspct, glass_windows.mspct, photography_filters.mspct,
   kolarivision.mspct)
 
 filters.mspct <- thin_wl(filters.mspct, max.wl.step = 5, max.slope.delta = 0.00025)
@@ -52,11 +52,13 @@ zeiss_filters <- grep("Zeiss", photography_filters, value = TRUE, ignore.case = 
 baader_filters <- grep("Baader", photography_filters, value = TRUE, ignore.case = TRUE)
 tangsinuo_filters <- grep("Tangsinuo", photography_filters, value = TRUE, ignore.case = TRUE)
 uvroptics_filters <- grep("StraightEdgeU", photography_filters, value = TRUE, ignore.case = TRUE)
+purshee_filters <- grep("Purshee", photography_filters, value = TRUE, ignore.case = TRUE)
 knightx_filters <- grep("Knight", photography_filters, value = TRUE, ignore.case = TRUE)
+kenfaith_filters <- grep("KenFaith", photography_filters, value = TRUE, ignore.case = TRUE)
 fake_unbranded_filters <- grep("unbranded|fake", photography_filters, value = TRUE, ignore.case = TRUE)
+stacked_filters <- grep("stack", photography_filters, value = TRUE, ignore.case = TRUE)
 photography_filters <-
-  unique(sort(c(photography_filters, zeiss_filters, kolarivision_filters,
-         fotga_filters, tangsinuo_filters, purshee_filters)))
+  unique(sort(c(photography_filters, kolarivision_filters)))
 
 courtaulds_filters <- courtaulds
 xl_horticulture_filters <- xl_horticulture
@@ -99,7 +101,7 @@ short_pass_filters <- grep("KG|SP", names(filters.mspct), value = TRUE)
 # all_accessors <- sort(setdiff(ls(pattern = "*"), ls(pattern = "*.mspct")))
 all_filter_selectors <- sort(grep("_filters$", ls(pattern = "*"), value = TRUE))
 
-save(filters.mspct, all_filter_selectors,
+save(filters.mspct, all_filter_selectors, stacked_filters,
      bpi_visqueen_filters, courtaulds_filters, etola_filters, evonik_filters, foiltek_filters,
      lee_filters, lee_gels, mcdermit_filters, petri_dishes, plexiglas_filters,
      rosco_filters, rosco_gels, schott_filters, xl_horticulture_filters, midopt_filters,
@@ -108,7 +110,7 @@ save(filters.mspct, all_filter_selectors,
      polystyrene_filters, polyester_filters, polyvynil_chloride_filters,
      photography_filters, hoya_filters, firecrest_filters, bw_filters, zomei_filters, fotga_filters,
      haida_filters, kenko_filters, tiffen_filters, baader_filters, uvroptics_filters, tangsinuo_filters,
-     heliopan_filters, rocolax_filters, zeiss_filters, kenko_filters, purshee_filters,
+     heliopan_filters, rocolax_filters, zeiss_filters, kenfaith_filters, kenko_filters, purshee_filters,
      knightx_filters, fake_unbranded_filters,
      uvir_cut_filters, theatrical_gels, optical_glass_filters,
      plastic_films, plastic_sheets, plastic_film_filters, plastic_sheet_filters,

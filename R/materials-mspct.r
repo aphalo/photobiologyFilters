@@ -1,16 +1,20 @@
-#' Total reflectance of materials
+#' Spectral reflectance of land surfaces
 #'
-#' Total reflectance of materials. Data are to be used as "reference values
-#' only" as actual values will vary.
-#'
-#' The variables for each spectrum are as follows:
-#'
-#' \itemize{ \item w.length (nm) \item Rfr (fraction) }
+#' Total reflectance of built, cultivated and natural land surfaces. Data are to
+#' be used as "reference values only" as actual values will vary.
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A reflector_mspct object containing a collection of reflector_spct
-#'   each with 491 rows and 2 variables.
+#' @format A \code{reflector_mspct} object named \code{materials.mspct}
+#'   containing a collection of \code{reflector_spct} objects each with 491 rows
+#'   and 2 variables.
+#'
+#'   The variables for each spectrum are as follows:#'
+#'   \itemize{ \item \code{w.length} (nm) \item \code{Rfr} (fraction) }
+#'
+#'   These member objects contain metadata stored as R attributes. Accessors to
+#'   the metadata are available: \code{what_measured()}, \code{how_measured()},
+#'   \code{when_measured()}, and \code{comment()}.
 #'
 #' @note This is a small selection from the ASTER database. See:
 #'   https://speclib.jpl.nasa.gov/. Reproduced from the ECOSTRESS Spectral
@@ -27,11 +31,14 @@
 #'   711-715.
 #'
 #' @examples
-#' library(ggspectra)
+#' materials.mspct$dry.grass
+#' summary(materials.mspct$dry.grass)
+#'
+#' what_measured(materials.mspct$dry.grass)
+#' how_measured(materials.mspct$dry.grass)
+#' cat(comment(materials.mspct$dry.grass))
 #'
 #' names(materials.mspct)
-#' cat(comment(materials.mspct$black.loam))
-#' autoplot(materials.mspct$black.loam, annotations = c("+", "title:what"),
-#'          range = c(NA, 800))
+#' summary(materials.mspct)
 #'
 "materials.mspct"

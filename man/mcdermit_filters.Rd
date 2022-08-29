@@ -3,7 +3,7 @@
 \docType{data}
 \name{mcdermit_filters}
 \alias{mcdermit_filters}
-\title{Filter spectra data for McDermit Autostat CT5 "polyester" filter}
+\title{Indexing of McDermit "polyester" films}
 \format{
 A vector of character strings.
 }
@@ -11,24 +11,18 @@ A vector of character strings.
 mcdermit_filters
 }
 \description{
-Datasets containing the wavelengths at a 1 nm interval and
-tabulated values spectral transmittance for filter.
-}
-\details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
-\url{http://autotype.macdermid.com/}
+Vector of names of member objects containing spectral transmittance data for
+plastic films produced by McDermit Autotype.
 }
 \note{
-Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
-Co. Ltd, China) equiped with an integrating sphere.
+Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments
+  Manufacturing Co. Ltd, China) equipped with an integrating sphere.
 }
 \examples{
 mcdermit_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

@@ -1,7 +1,11 @@
-#' Spectral data for filters of different 'colors'
+#' Indexing of filters of different 'colors'
 #'
 #' Names of datasets containing the wavelengths and tabulated values for
-#' fractional spectral trabsmittance for filters of given colours.
+#' fractional spectral transmittance for filters of given colours.
+#'
+#' @details The vectors can be used to extract subsets of spectra from the
+#'  collection in \code{filter.mspct}. Some spectra are included in more
+#'  than one vector.
 #'
 #' @docType data
 #' @keywords datasets
@@ -12,7 +16,7 @@
 #' @examples
 #' clear_filters
 #'
-#' # select filters of amber, yellow, orange color ("blue absorbing")
+#' # select filters of amber and yellow color ("blue absorbing")
 #' filters.mspct[yellow_filters]
 #'
 #' @seealso \code{\link{filters.mspct}}

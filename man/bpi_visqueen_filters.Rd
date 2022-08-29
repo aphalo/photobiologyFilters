@@ -3,7 +3,7 @@
 \docType{data}
 \name{bpi_visqueen_filters}
 \alias{bpi_visqueen_filters}
-\title{Filter spectra data for commercial grenhouse films from BPI Visqueen}
+\title{Indexing of greenhouse films from BPI Visqueen}
 \format{
 A vector of character strings.
 }
@@ -11,28 +11,23 @@ A vector of character strings.
 bpi_visqueen_filters
 }
 \description{
-Datasets containing the wavelengths at a 1 nm interval and
-tabulated values spectral transmittance for different films used as
-greenhouse cladding.
-}
-\details{
-The variables are as follows:
-
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
-
-\url{https://www.rpc-bpi.com/sector/horticultural-solutions/}
-
-Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments Manufacturing
-Co. Ltd, China) equiped with an integrating sphere.
+Vector of names of member objects containing spectral transmittance data for different films used as
+greenhouse cladding supplied by BPI Visqueen.
 }
 \note{
-Idependent measurement of a single sample, not a specification.
+Individual measurements of single samples, not a specification.
+  Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments
+  Manufacturing Co. Ltd, China) equipped with an integrating sphere. Some of
+  these film types are no longer produced.
 }
 \examples{
 bpi_visqueen_filters
 
+}
+\references{
+\url{https://www.rpc-bpi.com/sector/horticultural-solutions/}
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

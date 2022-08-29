@@ -3,7 +3,7 @@
 \docType{data}
 \name{courtaulds_filters}
 \alias{courtaulds_filters}
-\title{Filter spectra data for cellulose di-acetate film}
+\title{Indexing of cellulose di-acetate films from Courtaulds}
 \format{
 A vector of character strings.
 }
@@ -11,32 +11,28 @@ A vector of character strings.
 courtaulds_filters
 }
 \description{
-Datasets containing the wavelengths at a 1 nm interval and
-tabulated values spectral transmittance for Courtaulds di-acetate films.
-
-1) Films (0.115 mm thick) stretched 25 cm below lamps Q-Panel UVB313 and
-exposed to UV radiaition from different lengths of time per day. All films
-were installed and sampled at the same time. The digits give the number of
-minutes per day that the lamps were on.
-
-2) New films of different thicknesses.
+Vectors of names of member objects containing spectral transmittance data for
+Courtaulds di-acetate films of different thickness.
 }
 \details{
-For each spectrum in the collection the variables are as follows:
+1) Films (0.115 mm thick) stretched 25 cm below Q-Panel UVB313 lamps
+  and exposed to UV radiation from different lengths of time per day. All
+  films were installed and sampled at the same time inside a greenhouse. The
+  digits give the number of minutes per day that the lamps were on.
 
-\itemize{
-  \item w.length (nm)
-  \item Tfr (fraction)
-}
+  2) New films of different thickness.
 }
 \note{
-Instrument used: Hewlett-Packard 8453 diode array spectrophotometer
-  without an integrating sphere.
-
-Idependent measurement of a single sample, not a specification.
+Individual measurements of single samples, not a specification.
+  Instrument used: Hewlett-Packard 8453 diode array spectrophotometer without
+  an integrating sphere. These films are no longer available, but similar
+  material from other suppliers may be still available.
 }
 \examples{
 courtaulds_filters
 
+}
+\seealso{
+\code{\link{filters.mspct}}
 }
 \keyword{datasets}

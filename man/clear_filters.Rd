@@ -14,13 +14,13 @@
 \alias{red_nir_filters}
 \alias{heat_filters}
 \alias{uvir_cut_filters}
-\title{Spectral data for filters of different 'colors'}
+\title{Indexing of filters of different 'colors'}
 \format{
 A vector of character strings.
 
 An object of class \code{character} of length 30.
 
-An object of class \code{character} of length 45.
+An object of class \code{character} of length 44.
 
 An object of class \code{character} of length 9.
 
@@ -32,7 +32,7 @@ An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 24.
+An object of class \code{character} of length 28.
 
 An object of class \code{character} of length 4.
 
@@ -63,12 +63,17 @@ uvir_cut_filters
 }
 \description{
 Names of datasets containing the wavelengths and tabulated values for
-fractional spectral trabsmittance for filters of given colours.
+fractional spectral transmittance for filters of given colours.
+}
+\details{
+The vectors can be used to extract subsets of spectra from the
+ collection in \code{filter.mspct}. Some spectra are included in more
+ than one vector.
 }
 \examples{
 clear_filters
 
-# select filters of amber, yellow, orange color ("blue absorbing")
+# select filters of amber and yellow color ("blue absorbing")
 filters.mspct[yellow_filters]
 
 }

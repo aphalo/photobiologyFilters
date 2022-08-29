@@ -1,14 +1,17 @@
-#' Total transmittance for photography filters
+#' Indexing of photography filters
 #'
-#' Total transmittance for filters intended for use on camera lenses from
-#' various brands and suppliers: B+W, Formatt-Hitech (Hitech, Firecrest), Fotga,
-#' Haida, Heliopan, Hoya, KinghtX, KolariVision, Purshee, Rocolax, Tangsinuo,
-#' Tiffen, UVRoptics, Zeiss, and Zomei. Data are to be used as \emph{"reference
-#' values only"} as values may change in time and production batch or glass
-#' melt. The fine structure of the spectra depends on the wavelength resolution
-#' of the spectrometer used and post-processing applied to the data. In some
-#' cases spectra for multiple filters of the same brand are type are included
-#' and show such variation.
+#' Vectors of names of member objects with spectral data for filters intended to
+#' be used on camera lenses, grouped by supplier. Suppliers: B+W, Formatt-Hitech
+#' (Hitech, Firecrest), Fotga, Haida, Heliopan, Hoya, Ken & Faith Concept,
+#' KinghtX, KolariVision, Purshee, Rocolax, Tangsinuo, Tiffen, UVRoptics, Zeiss,
+#' and Zomei.
+#'
+#' @section Warning!: Data are to be used as \emph{"reference values only"} as
+#'   actual transmittance may change in time and with production batch or glass
+#'   melt. In some cases spectra for multiple filters of the same brand and type
+#'   are included and show such variation. In other words, these spectra are
+#'   measured in individual filters, other filters of the same type and brand
+#'   will almost surely differ to some extent in their spectra.
 #'
 #' The variables are as follows:
 #'
@@ -16,15 +19,20 @@
 #'
 #' @section Supplier's web sites, if known:
 #'   \url{https://www.baader-planetarium.com/en/},
-#'   \url{https://www.formatt-hitech.com/}, \url{https://www.fotga.com/},
-#'   \url{https://www.haidaphoto.com/en/}, \url{https://www.heliopan.de/},
-#'   \url{https://hoyafilter.com/}, \url{https://kenkoglobal.com/},
+#'   \url{https://www.formatt-hitech.com/},
+#'   \url{https://www.fotga.com/},
+#'   \url{https://www.haidaphoto.com/en/},
+#'   \url{https://www.heliopan.de/},
+#'   \url{https://hoyafilter.com/},
+#'   \url{https://kenkoglobal.com/},
+#'   \url{https://www.kentfaith.com/},
 #'   \url{https://knightx-photography.aliexpress.com/store/924165},
 #'   \url{https://kolarivision.com/},
 #'   \url{https://purshee.aliexpress.com/store/1996249},
 #'   \url{https://schneiderkreuznach.com/en/photo-optics},
 #'   \url{https://tangsinuo.aliexpress.com/store/4314008},
-#'   \url{https://tiffen.com/}, \url{https://www.uvroptics.com/},
+#'   \url{https://tiffen.com/},
+#'   \url{https://www.uvroptics.com/},
 #'   \url{https://www.zomei.com/}.
 #'
 #' @docType data
@@ -112,3 +120,7 @@
 #' @rdname photography_filters
 #'
 "knightx_filters"
+
+#' @rdname photography_filters
+#'
+"kenfaith_filters"
