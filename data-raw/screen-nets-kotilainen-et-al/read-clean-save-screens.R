@@ -17,6 +17,7 @@ rm(names_screens)
 names_companies <- screens.df$Company
 names_companies <- tolower(names_companies)
 names_companies <- gsub("_|-| ", "", names_companies)
+names_companies <- gsub("jiangsuhuachangyarns", "huachangyarns", names_companies)
 screens.df$supplier <- names_companies
 screen_suppliers <- unique(names_companies)
 rm(names_companies)
@@ -43,9 +44,8 @@ suppliers.map <- c(arrigoni = "Arrigoni",
                    svensson = "Svensson, Sweden",
                    criadolopez = "Criado Lopez",
                    howitec = "Howitec",
-                   jiangsuhuachangyarns = "Jiang Suhua Chang Yarns",
                    mallastextiles = "Mallas Textiles, Mexico",
-                   huachangyarns = "Hua Chang Yarns",
+                   huachangyarns = "Jiang Suhua Chang Yarns",
                    oerlemansplastics = "Oerleman Plastics")
 
 for (s in names(screens.mspct)) {

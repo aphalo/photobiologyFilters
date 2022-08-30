@@ -6,11 +6,10 @@
 \alias{criadolopez_screens}
 \alias{howitec_screens}
 \alias{huachangyarns_screens}
-\alias{jiangsuhuachangyarns_screens}
 \alias{mallastextiles_screens}
 \alias{oerlemansplastics_screens}
 \alias{svensson_screens}
-\title{Spectral data for filters made from different materials}
+\title{Indexing of Climate Screens by Supplier}
 \format{
 A vector of character strings.
 
@@ -18,9 +17,7 @@ An object of class \code{character} of length 17.
 
 An object of class \code{character} of length 40.
 
-An object of class \code{character} of length 5.
-
-An object of class \code{character} of length 10.
+An object of class \code{character} of length 15.
 
 An object of class \code{character} of length 45.
 
@@ -37,8 +34,6 @@ howitec_screens
 
 huachangyarns_screens
 
-jiangsuhuachangyarns_screens
-
 mallastextiles_screens
 
 oerlemansplastics_screens
@@ -46,8 +41,10 @@ oerlemansplastics_screens
 svensson_screens
 }
 \description{
-Names of datasets containing the wavelengths and tabulated values for
-fractional spectral transmittance grouped by supplier.
+Vectors of names of member objects containing spectral transmittance data for
+climate, shade and protection screens used in agriculture grouped by
+supplier. These can be used to extract subsets of spectra from the collection
+stored in the \code{filter_mspct} object named \code{screens.mspct}.
 }
 \examples{
 arrigoni_screens
@@ -55,6 +52,21 @@ arrigoni_screens
 # select filters supplied by Arrigoni
 screens.mspct[arrigoni_screens[1:5]]
 
+}
+\references{
+Catálogo de productos. Mallastextiles, Chimalhuacán, Edo. de México. \url{https://mallastextilesmx.com/}
+
+"Samples folder". Howitec Netting.Bolsward, The Netherlands. \url{https://www.howitec.com/}
+
+"Samples". Arrigoni Spa. Uggiate Trevano, Italia. \url{https://www.arrigoni.it}
+
+"Samples". Criado & Lopez. El Ejido (Almería) España. \url{https://www.criadoylopez.com}
+
+"Samples". oerlemans plastics BV. Genderen, The Netherlands. \url{https://www.oerlemansplastics.nl}
+
+"samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{https://www.hcpco.com}
+
+Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
 }
 \seealso{
 \code{\link{screens.mspct}}

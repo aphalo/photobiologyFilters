@@ -5,27 +5,28 @@
 #' films with spatially heterogeneous optical properties. We exclude "filters"
 #' including all semi-transparent and transparent sheets and films with
 #' homogeneous optical properties. Spectra for nearly 200 types of screens from
-#' nine suppliers measured consistently as described by Kotilainen et al.
+#' eight suppliers measured consistently as described by Kotilainen et al.
 #' (2018).
 #'
 #' The variables for each spectrum are as follows:
 #' \itemize{ \item w.length (nm) \item Tfr (fraction) }
 #'
-#' @details Spectral data for twenty four climate-screen samples (ten
-#'   Harmony-type, two Luxous-type, seven Solaro-type and six Tempa-type) and
-#'   four insect-screen samples provided by Svensson (AB Ludvig Svensson, KINNA,
-#'   Sweden, \url{https://www.ludvigsvensson.com/en/climate-screens}).
-#'   Twenty-six shade-net samples (16 Sombra-type and ten Sombra raschel-type
-#'   (patterned)) and 12 thrip, aphid, and insect -net samples (two
-#'   Anti-Trip-type, eight Anti-Afidos-type and two Anti-Insect types) were
-#'   provided by Mallas Textiles (Mallas Textiles Fabricantes, Chimalhuacán,
-#'   Mexico, \url{https://mallastextilesmx.com/}) were described by Kotilainen
-#'   et al. (2018). Additional spectra obtained by the same authors are also
-#'   included in this package. If you use these data in publications, please,
-#'   cite both Kotilainen et al. (2018) and this package.
-#'
-#'   The \code{"filter_mspct"} object named \code{screens.mspct} contains a collection of
-#'   \code{"filter_spct"} objects with spectral transmittance data for climate screens.
+#' @details Spectra were measured on new (never used) samples. Optical
+#'   properties can be expected to change with aging due to chemical changes
+#'   induced by solar UV radiation and by soiling during the usual life
+#'   expectancy of five or more years. Spectral data for twenty four
+#'   climate-screen samples (ten Harmony-type, two Luxous-type, seven
+#'   Solaro-type and six Tempa-type) and four insect-screen samples provided by
+#'   Svensson (AB Ludvig Svensson, KINNA, Sweden,
+#'   \url{https://www.ludvigsvensson.com/en/climate-screens}). Twenty-six
+#'   shade-net samples (16 Sombra-type and ten Sombra raschel-type (patterned))
+#'   and 12 thrip, aphid, and insect -net samples (two Anti-Trip-type, eight
+#'   Anti-Afidos-type and two Anti-Insect types) were provided by Mallas
+#'   Textiles (Mallas Textiles Fabricantes, Chimalhuacán, Mexico,
+#'   \url{https://mallastextilesmx.com/}) were described by Kotilainen et al.
+#'   (2018). Additional spectra obtained by the same authors are also included
+#'   in this package. If you use these data in publications, please, cite both
+#'   Kotilainen et al. (2018) and this package.
 #'
 #'   The variables in each member spectrum are as follows: \itemize{ \item
 #'   \code{w.length} (nm) \item \code{Tfr} (transmittance expressed as a
@@ -35,8 +36,7 @@
 #'   \code{filter_properties()} and \code{comment()}.
 #'
 #' @note Please see the help for the indexing vectors for specific details.
-#'
-#' @note The original data of Kotilainen et al. (2018) plus additional data are
+#'   The original data of Kotilainen et al. (2018) plus additional data are
 #'   available at Zenodo (Robson and Kotilainen, 2018). The data read from file
 #'   \code{ScreensNets_irrad_trans.xlsx}, worksheet \code{"database"}, have been
 #'   reprocessed to remove noise. The wavelength values have been "thinned" in
@@ -46,7 +46,7 @@
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A filter_mspct object containing a collection of \code{reflector_spct}
+#' @format A \code{filter_mspct} object named \code{screens.mspct} containing a collection of \code{filter_spct}
 #'   objects each with a variable number of rows and 2 variables.
 #'
 #' @references

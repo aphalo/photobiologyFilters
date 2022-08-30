@@ -11,7 +11,7 @@ A vector of character strings.
 foiltek_filters
 }
 \description{
-Vectors of names of member objects containing spectral transmittance data for
+Vector of names of member objects containing spectral transmittance data for
 samples of clear plastic sheets supplied by Foiltek. PC_UV is 3 mm thick
 Makrolife polycarbonate sheet manufactured by Arlaplast Ab (Sweden). PC is
 generic 3 mm thick polycarbonate, PS is 3 mm thick polystyrene, PET_G is
