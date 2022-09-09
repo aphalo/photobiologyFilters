@@ -21,7 +21,7 @@ Package **photobiologyFilters** is a collection of spectral transmittance data f
 
 ## Code breaking renaming of data objects
 
-In the update to version 0.5.0 several members of the collection of filter spectra were renamed to ensure consistency and clarity. As of version 0.5.0 all member names start with the name of the manufacturer or supplier. In addition, several of the vectors of names of member spectra were renamed to include the word "filters" to avoid possible name clashes with other packages and also to improve naming consistency.
+In the update to version 0.5.0 several members of the collection of filter spectra were renamed to ensure consistency and clarity. As of version 0.5.0 all member names start with the name of the manufacturer or supplier. In addition, several of the vectors of names of member spectra were renamed to include the word "filters" to avoid possible name clashes with other packages and also to improve naming consistency. In version 0.5.3 the names of spectra for photography filters were revised again as data for several copies of the same filter types are now included in some cases.
 
 ## Examples
 

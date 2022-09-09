@@ -20,7 +20,7 @@ A vector of character strings.
 
 An object of class \code{character} of length 30.
 
-An object of class \code{character} of length 44.
+An object of class \code{character} of length 51.
 
 An object of class \code{character} of length 9.
 
@@ -36,7 +36,7 @@ An object of class \code{character} of length 28.
 
 An object of class \code{character} of length 4.
 
-An object of class \code{character} of length 7.
+An object of class \code{character} of length 8.
 }
 \usage{
 clear_filters

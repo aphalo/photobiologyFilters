@@ -438,14 +438,14 @@ autoplot(thin_and_thick.mspct,
 To graphically assess filter stacks with air gaps.
 
 ```{r}
-stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro * filters.mspct$Firecrest_UVIR_Cut
+stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro_1.6mm_52mm * filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm
                     
 autoplot(stack.spct,
          range = c(NA, 1400),
          w.band = c(UV_bands(), IR_bands("CIE")),
          annotations = list(c("+", "boundaries"), c("-", "peaks")),
          span = 21) +
-  geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro, colour = "purple") +
+  geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro_1.6mm_52mm, colour = "purple") +
   geom_vline(xintercept = c(589, 589.6), linetype = "dotted") # Na emission lines
 ```
 
@@ -453,7 +453,7 @@ Package 'ggspectra' also defines specializations of method `ggplot()` for
 spectra that automatically maps the $x$ and $y$ _aesthetics_.
 
 ```{r}
-ggplot(filters.mspct$Firecrest_UVIR_Cut) +
+ggplot(filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm) +
   geom_line() +
   scale_x_wl_continuous() +
   scale_y_Tfr_total_continuous()
@@ -472,10 +472,10 @@ Here we use waveband defintions from package 'photobiologyWavebands' and
 summary functions from package 'photobiology'.
 
 ```{r}
-transmittance(filters.mspct$Firecrest_UVIR_Cut, UVA())
+transmittance(filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm, UVA())
 ```
 ```{r}
-absorbance(filters.mspct$Firecrest_UVIR_Cut, list(UVA(), NIR()))
+absorbance(filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm, list(UVA(), NIR()))
 ```
 
 ```{r}

@@ -17,7 +17,7 @@ different suppliers. We include under "screens" nets, cloths and perforated
 films with spatially heterogeneous optical properties. We exclude "filters"
 including all semi-transparent and transparent sheets and films with
 homogeneous optical properties. Spectra for nearly 200 types of screens from
-nine suppliers measured consistently as described by Kotilainen et al.
+eight suppliers measured consistently as described by Kotilainen et al.
 (2018).
 }
 \details{

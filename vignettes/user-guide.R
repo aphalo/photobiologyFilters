@@ -156,18 +156,18 @@ autoplot(thin_and_thick.mspct,
          span = 101)
 
 ## -----------------------------------------------------------------------------
-stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro * filters.mspct$Firecrest_UVIR_Cut
+stack.spct <- filters.mspct$Haida_Clear_Night_NanoPro_1.6mm_52mm * filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm
                     
 autoplot(stack.spct,
          range = c(NA, 1400),
          w.band = c(UV_bands(), IR_bands("CIE")),
          annotations = list(c("+", "boundaries"), c("-", "peaks")),
          span = 21) +
-  geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro, colour = "purple") +
+  geom_line(data = filters.mspct$Haida_Clear_Night_NanoPro_1.6mm_52mm, colour = "purple") +
   geom_vline(xintercept = c(589, 589.6), linetype = "dotted") # Na emission lines
 
 ## -----------------------------------------------------------------------------
-ggplot(filters.mspct$Firecrest_UVIR_Cut) +
+ggplot(filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm) +
   geom_line() +
   scale_x_wl_continuous() +
   scale_y_Tfr_total_continuous()
@@ -179,10 +179,10 @@ autoplot(metals.mspct$gold, range = c(NA, 800))
 autoplot(materials.mspct$grass, range = c(NA, 800))
 
 ## -----------------------------------------------------------------------------
-transmittance(filters.mspct$Firecrest_UVIR_Cut, UVA())
+transmittance(filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm, UVA())
 
 ## -----------------------------------------------------------------------------
-absorbance(filters.mspct$Firecrest_UVIR_Cut, list(UVA(), NIR()))
+absorbance(filters.mspct$Firecrest_UVIR_Cut_0.96mm_52mm, list(UVA(), NIR()))
 
 ## -----------------------------------------------------------------------------
 transmittance(filters.mspct[grep("UG", names(filters.mspct))], 

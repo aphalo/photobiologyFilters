@@ -66,6 +66,7 @@ for (file.name in file.list) {
   filter.suppliers <- c(filter.suppliers, filter.supplier)
 
   filter.size <- split.name[num.split.parts - 1L]
+  filter.size <- gsub("mm[A-Z]$", "mm", filter.size)
   if (!grepl("mm$", filter.size)) {
     num.split.parts <- num.split.parts - 1L
     filter.size <- split.name[num.split.parts - 1L]
@@ -82,7 +83,7 @@ for (file.name in file.list) {
   }
   # works but too specific regexp would be preferable
   if (grepl("2mm2mm", filter.thickness)) {
-    filter.thickness <- c("2mm", "2mm")
+    filter.thickness <- c("2.0mm", "2.0mm")
   }
   filter.thicknesses <- c(filter.thicknesses, filter.thickness)
 
@@ -134,10 +135,10 @@ names(photography_filters.mspct)
 
 # quality control
 unique(filter.modes)
-unique(filter.suppliers)
+unique(sort(filter.suppliers))
 unique(filter.sizes)
 unique(filter.thicknesses)
-unique(filter.types)
+unique(sort(filter.types))
 unique(filter.labels)
 
 save(photography_filters.mspct, file = "../rda/photography-filters.mspct.rda")

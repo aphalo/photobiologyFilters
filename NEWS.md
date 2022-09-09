@@ -8,11 +8,13 @@ editor_options:
 
 -   Add data for 197 climate screens as used in horticulture
     (contributed by T. K. Kotilainen, T. M. Robson and R. Hernández).
--   Add data for additional photography filters, including UV-pass
-    stacks.
--   Replace some spectra digitized from suppliers' plot bitmaps by
-    actual measurements.
+-   Add spectra for additional photography filters including several
+    copies of filters of the same type.
+-   Add spectra for UV-pass stacks filter stacks.
+-   Replace some spectra digitized from suppliers' spectral plot bitmaps
+    by actual measurements.
 -   Fill-in missing and correct wrong metadata for some photography
+    filters. This includes the thickness measured for individual
     filters.
 -   Rename photography filters to include thickness and size when
     available. *Code breaking!*.
