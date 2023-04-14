@@ -26,7 +26,7 @@ filters.mspct <-
   xl_horticulture.mspct, glass_windows.mspct, photography_filters.mspct,
   kolarivision.mspct)
 
-filters.mspct <- thin_wl(filters.mspct, max.wl.step = 5, max.slope.delta = 0.00025)
+filters.mspct <- thin_wl(filters.mspct, max.wl.step = 5, max.slope.delta = 0.00015)
 
 filters.mspct <- filters.mspct[sort(names(filters.mspct))]
 names(filters.mspct)

@@ -81,7 +81,7 @@ for (file.name in file.list) {
   if (grepl("TTmm$", filter.thickness)) {
     filter.thickness <- NA_character_
   }
-  # works but too specific regexp would be preferable
+  # works but less specific regexp would be preferable
   if (grepl("2mm2mm", filter.thickness)) {
     filter.thickness <- c("2.0mm", "2.0mm")
   }
