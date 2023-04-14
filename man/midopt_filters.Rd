@@ -30,6 +30,8 @@ plus/minus 10 nm. To interactively comparing filter spectra, please visit
 
 \examples{
 midopt_filters
+summary(filters.mspct[midopt_filters])
+summary(filters.mspct[midopt_filters[grep("TB", midopt_filters)]])
 
 }
 \seealso{

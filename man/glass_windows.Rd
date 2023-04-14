@@ -25,9 +25,10 @@ The spectral data for these glasses is taken from file
   attribute "what.measured".
 }
 \examples{
-glass_windows
 
-head(filters.mspct[glass_windows], 2)
+glass_windows
+summary(filters.mspct[glass_windows])
+summary(filters.mspct[glass_windows[grep("Pilkington", glass_windows)]])
 
 }
 \keyword{datasets}

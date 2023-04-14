@@ -39,5 +39,7 @@
 #'
 #' @examples
 #' schott_filters
+#' summary(filters.mspct[schott_filters])
+#' summary(filters.mspct[schott_filters[grep("UG", schott_filters)]])
 #'
 "schott_filters"

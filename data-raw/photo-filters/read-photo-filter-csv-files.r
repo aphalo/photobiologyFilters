@@ -130,7 +130,7 @@ for (file.name in file.list) {
   photo_filters.lst[[object.name]] <- tmp.df
 }
 photography_filters.mspct <- filter_mspct(photo_filters.lst)
-photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1020))
+photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1050))
 names(photography_filters.mspct)
 
 # quality control

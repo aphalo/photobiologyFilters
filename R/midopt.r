@@ -22,5 +22,7 @@
 #'
 #' @examples
 #' midopt_filters
+#' summary(filters.mspct[midopt_filters])
+#' summary(filters.mspct[midopt_filters[grep("TB", midopt_filters)]])
 #'
 "midopt_filters"

@@ -17,8 +17,9 @@
 #' @format A vector of character strings.
 #'
 #' @examples
-#' glass_windows
 #'
-#' head(filters.mspct[glass_windows], 2)
+#' glass_windows
+#' summary(filters.mspct[glass_windows])
+#' summary(filters.mspct[glass_windows[grep("Pilkington", glass_windows)]])
 #'
 "glass_windows"
