@@ -47,7 +47,7 @@ and all of them are homogeneous.
 
 ``` r
 length(filters.mspct)
-#> [1] 356
+#> [1] 369
 ```
 
 Nearly 200 spectra for different climate screens used in horticulture
@@ -93,8 +93,8 @@ output.
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "Baader_U_filter_1mm_48mm"         "BPI_Luminance"                   
-#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1_2mm_46mm"
+#>  [1] "Baader_U_filter_1.0mm_48mm"       "BPI_Luminance"                   
+#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
 #>  [5] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
 #>  [7] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"      
 #>  [9] "Courtaulds_CA_115um_age060"       "Courtaulds_CA_115um_age100"
@@ -176,32 +176,33 @@ all_filter_selectors
 #> [15] "foiltek_filters"            "fotga_filters"             
 #> [17] "green_filters"              "haida_filters"             
 #> [19] "heat_filters"               "heliopan_filters"          
-#> [21] "hoya_filters"               "kenko_filters"             
-#> [23] "knightx_filters"            "kolarivision_filters"      
-#> [25] "lee_filters"                "long_pass_filters"         
-#> [27] "mcdermit_filters"           "midopt_filters"            
-#> [29] "neutral_filters"            "old_schott_filters"        
-#> [31] "optical_glass_filters"      "orange_filters"            
-#> [33] "photography_filters"        "plastic_film_filters"      
-#> [35] "plastic_sheet_filters"      "plexiglas_filters"         
-#> [37] "polycarbonate_filters"      "polyester_filters"         
-#> [39] "polystyrene_filters"        "polyvynil_chloride_filters"
-#> [41] "purshee_filters"            "red_nir_filters"           
-#> [43] "rocolax_filters"            "rosco_filters"             
-#> [45] "schott_filters"             "short_pass_filters"        
-#> [47] "tangsinuo_filters"          "tiffen_filters"            
-#> [49] "uqg_filters"                "uv_filters"                
-#> [51] "uvir_cut_filters"           "uvroptics_filters"         
-#> [53] "xl_horticulture_filters"    "yellow_filters"            
-#> [55] "zeiss_filters"              "zomei_filters"
+#> [21] "hoya_filters"               "kenfaith_filters"          
+#> [23] "kenko_filters"              "knightx_filters"           
+#> [25] "kolarivision_filters"       "lee_filters"               
+#> [27] "long_pass_filters"          "mcdermit_filters"          
+#> [29] "midopt_filters"             "neutral_filters"           
+#> [31] "old_schott_filters"         "optical_glass_filters"     
+#> [33] "orange_filters"             "photography_filters"       
+#> [35] "plastic_film_filters"       "plastic_sheet_filters"     
+#> [37] "plexiglas_filters"          "polycarbonate_filters"     
+#> [39] "polyester_filters"          "polystyrene_filters"       
+#> [41] "polyvynil_chloride_filters" "purshee_filters"           
+#> [43] "red_nir_filters"            "rocolax_filters"           
+#> [45] "rosco_filters"              "schott_filters"            
+#> [47] "short_pass_filters"         "stacked_filters"           
+#> [49] "tangsinuo_filters"          "tiffen_filters"            
+#> [51] "uqg_filters"                "uv_filters"                
+#> [53] "uvir_cut_filters"           "uvroptics_filters"         
+#> [55] "xl_horticulture_filters"    "yellow_filters"            
+#> [57] "zeiss_filters"              "zomei_filters"
 ```
 
 ``` r
 all_screen_selectors
-#> [1] "arrigoni_screens"             "criadolopez_screens"         
-#> [3] "howitec_screens"              "huachangyarns_screens"       
-#> [5] "jiangsuhuachangyarns_screens" "mallastextiles_screens"      
-#> [7] "oerlemansplastics_screens"    "svensson_screens"
+#> [1] "arrigoni_screens"          "criadolopez_screens"      
+#> [3] "howitec_screens"           "huachangyarns_screens"    
+#> [5] "mallastextiles_screens"    "oerlemansplastics_screens"
+#> [7] "svensson_screens"
 ```
 
 Please, see the *User Guide* or help pages for the names of other

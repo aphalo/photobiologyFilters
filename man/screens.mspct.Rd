@@ -5,8 +5,9 @@
 \alias{screens.mspct}
 \title{Spectral transmittance of climate screens}
 \format{
-A \code{filter_mspct} object named \code{screens.mspct} containing a collection of \code{filter_spct}
-  objects each with a variable number of rows and 2 variables.
+A \code{filter_mspct} object named \code{screens.mspct} containing a
+  collection of \code{filter_spct} objects each with a variable number of
+  rows and 2 variables.
 }
 \usage{
 screens.mspct
@@ -56,7 +57,7 @@ Please see the help for the indexing vectors for specific details.
   reprocessed to remove noise. The wavelength values have been "thinned" in
   featureless regions using as criterion the lack of change in the local
   slope to significantly reduce the size of the data set as well as also
-  applying loss less compression of the R data file.
+  applying lossless compression of the R data file.
 }
 \section{Acknowledgements}{
  These data were acquired as part of research

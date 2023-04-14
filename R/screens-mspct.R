@@ -42,12 +42,13 @@
 #'   reprocessed to remove noise. The wavelength values have been "thinned" in
 #'   featureless regions using as criterion the lack of change in the local
 #'   slope to significantly reduce the size of the data set as well as also
-#'   applying loss less compression of the R data file.
+#'   applying lossless compression of the R data file.
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A \code{filter_mspct} object named \code{screens.mspct} containing a collection of \code{filter_spct}
-#'   objects each with a variable number of rows and 2 variables.
+#' @format A \code{filter_mspct} object named \code{screens.mspct} containing a
+#'   collection of \code{filter_spct} objects each with a variable number of
+#'   rows and 2 variables.
 #'
 #' @references
 #'  Kotilainen, Titta; Robson, T. Matthew; Hernández, Ricardo (2018) Light

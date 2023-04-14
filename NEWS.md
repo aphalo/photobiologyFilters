@@ -18,6 +18,10 @@ editor_options:
     filters.
 -   Rename photography filters to include thickness and size when
     available. *Code breaking!*.
+-   Update refractive index data with freshly downloaded spectra from the
+    refractive index database. Some materials added and a couple were
+    removed. The data may be slightly different. Same names changes, e.g.,
+    acrylic is now PMMA.
 -   Rebuild data objects with 'photobiology' (0.10.16).
 -   Compact the spectral data using `photobiology::thin_wl()`. *Can
     slightly change the result of computations and plot details*.

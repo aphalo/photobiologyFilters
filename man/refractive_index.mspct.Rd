@@ -31,12 +31,12 @@ Data labeled "for unrestricted use" originate from the Filmmetrics
 \examples{
 length(refractive_index.mspct)
 names(refractive_index.mspct)
-refractive_index.mspct$Acrylic
-refractive_index.mspct[["Acrylic"]]
+refractive_index.mspct$PMMA # acrylic or Plexiglas
+refractive_index.mspct[["PMMA"]]
 
 # Compute spectral reflectance for an interface between acrylic and air
-# incidence angle of colimated light 60 degrees.
-Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["Acrylic"]])
+# incidence angle of colimated light 60 degrees away from the normal.
+Rfr_from_n(angle_deg = 60, n = refractive_index.mspct[["PMMA"]])
 
 }
 \keyword{datasets}
