@@ -99,7 +99,7 @@ long_pass_filters <- c(grep("GG|WG|OG|RG|LP", names(filters.mspct), value = TRUE
 short_pass_filters <- grep("KG|SP", names(filters.mspct), value = TRUE)
 
 # all_accessors <- sort(setdiff(ls(pattern = "*"), ls(pattern = "*.mspct")))
-all_filter_selectors <- sort(grep("_filters$", ls(pattern = "*"), value = TRUE))
+all_filter_selectors <- sort(grep("_filters$|_gels$|_windows$", ls(pattern = "*"), value = TRUE))
 
 save(filters.mspct, all_filter_selectors, stacked_filters,
      bpi_visqueen_filters, courtaulds_filters, etola_filters, evonik_filters, foiltek_filters,
@@ -118,6 +118,7 @@ save(filters.mspct, all_filter_selectors, stacked_filters,
      blue_filters, red_nir_filters, uv_filters,
      neutral_filters, heat_filters,
      band_pass_filters, long_pass_filters, short_pass_filters,
+     all_filter_selectors,
      file = "data/filters-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")

@@ -1,4 +1,4 @@
-destination: ../photobiologyFilters-docs
+destination: ../docs/photobiologyFilters
 url: https://docs.r4photobiology.info/photobiologyFilters/
 
 template:
@@ -16,6 +16,7 @@ reference:
     - materials.mspct
     - refractive_index.mspct
     - screens.mspct
+    - water_n
   - title: Indexing vectors by color
     contents:
     - clear_filters
