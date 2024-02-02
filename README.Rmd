@@ -109,11 +109,18 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyFilters")
 ```
 
-Installation of the current unstable version from GitHub:
+Installation of the current unstable version from R-Universe CRAN-like repository:
 
 ```{r, eval=FALSE}
-# install.packages("devtools")
-devtools::install_github("aphalo/photobiologyfilters")
+install.packages('photobiologyFilters', 
+                 repos = c('https://aphalo.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Installation of the current unstable version from GitHub (no binaries available):
+
+```{r, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("aphalo/photobiologyfilters")
 ```
 
 ## Documentation
@@ -142,4 +149,4 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2023 Pedro J. Aphalo ([pedro.aphalo\@helsinki.fi](mailto:pedro.aphalo@helsinki.fi)). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2024 Pedro J. Aphalo ([pedro.aphalo\@helsinki.fi](mailto:pedro.aphalo@helsinki.fi)). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.

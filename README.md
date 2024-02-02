@@ -47,7 +47,7 @@ and all of them are homogeneous.
 
 ``` r
 length(filters.mspct)
-#> [1] 369
+#> [1] 375
 ```
 
 Nearly 200 spectra for different climate screens used in horticulture
@@ -84,7 +84,7 @@ materials varies weakly. This is a small set, serving as example.
 
 ``` r
 length(refractive_index.mspct)
-#> [1] 15
+#> [1] 17
 ```
 
 What are the names of available spectra? We use `head()` to limit the
@@ -116,13 +116,13 @@ We can use the vector to extract all these spectra as a collection.
 filters.mspct[polyester_filters]
 #> Object: filter_mspct [2 x 1]
 #> --- Member: Foiltek_Clear_PET_G ---
-#> Object: filter_spct [318 x 2]
+#> Object: filter_spct [339 x 2]
 #> Wavelength range 190-1100 nm, step 1-4 nm 
 #> Label: Polyethylene terephthalate (PET), 'polyester'; clear sheet; new 
 #> Transmittance of type 'total'
 #> Rfr (/1): 0.097, thickness (mm): 3.00, attenuation mode: absorption.
 #> 
-#> # A tibble: 318 × 2
+#> # A tibble: 339 × 2
 #>    w.length      Tfr
 #>       <dbl>    <dbl>
 #>  1      190 0.000105
@@ -135,28 +135,28 @@ filters.mspct[polyester_filters]
 #>  8      210 0.000100
 #>  9      214 0.000102
 #> 10      215 0.000102
-#> # ℹ 308 more rows
+#> # ℹ 329 more rows
 #> --- Member: McDermit_PET_Autostat_CT5_125um ---
-#> Object: filter_spct [283 x 2]
+#> Object: filter_spct [454 x 2]
 #> Wavelength range 240-800 nm, step 1-4 nm 
 #> Label: Polyester, clear film, 0.000125 m thick, Autostat CT5 from McDermit Autotype; new 
 #> Transmittance of type 'total'
 #> Rfr (/1): 0.074, thickness (mm): 0.125, attenuation mode: absorption.
 #> 
-#> # A tibble: 283 × 2
+#> # A tibble: 454 × 2
 #>    w.length     Tfr
 #>       <int>   <dbl>
 #>  1      240 0.00482
-#>  2      244 0.00414
-#>  3      248 0.004  
-#>  4      252 0.00386
-#>  5      256 0.00329
-#>  6      258 0.003  
-#>  7      259 0.003  
-#>  8      260 0.003  
-#>  9      264 0.00357
-#> 10      267 0.004  
-#> # ℹ 273 more rows
+#>  2      241 0.00464
+#>  3      242 0.00446
+#>  4      244 0.00414
+#>  5      246 0.004  
+#>  6      248 0.004  
+#>  7      252 0.00386
+#>  8      256 0.00329
+#>  9      258 0.003  
+#> 10      259 0.003  
+#> # ℹ 444 more rows
 #> 
 #> --- END ---
 ```
@@ -174,27 +174,30 @@ all_filter_selectors
 #> [11] "etola_filters"              "evonik_filters"            
 #> [13] "fake_unbranded_filters"     "firecrest_filters"         
 #> [15] "foiltek_filters"            "fotga_filters"             
-#> [17] "green_filters"              "haida_filters"             
-#> [19] "heat_filters"               "heliopan_filters"          
-#> [21] "hoya_filters"               "kenfaith_filters"          
-#> [23] "kenko_filters"              "knightx_filters"           
-#> [25] "kolarivision_filters"       "lee_filters"               
-#> [27] "long_pass_filters"          "mcdermit_filters"          
-#> [29] "midopt_filters"             "neutral_filters"           
-#> [31] "old_schott_filters"         "optical_glass_filters"     
-#> [33] "orange_filters"             "photography_filters"       
-#> [35] "plastic_film_filters"       "plastic_sheet_filters"     
-#> [37] "plexiglas_filters"          "polycarbonate_filters"     
-#> [39] "polyester_filters"          "polystyrene_filters"       
-#> [41] "polyvynil_chloride_filters" "purshee_filters"           
-#> [43] "red_nir_filters"            "rocolax_filters"           
-#> [45] "rosco_filters"              "schott_filters"            
-#> [47] "short_pass_filters"         "stacked_filters"           
-#> [49] "tangsinuo_filters"          "tiffen_filters"            
-#> [51] "uqg_filters"                "uv_filters"                
-#> [53] "uvir_cut_filters"           "uvroptics_filters"         
-#> [55] "xl_horticulture_filters"    "yellow_filters"            
-#> [57] "zeiss_filters"              "zomei_filters"
+#> [17] "glass_windows"              "green_filters"             
+#> [19] "haida_filters"              "heat_filters"              
+#> [21] "heliopan_filters"           "hoya_filters"              
+#> [23] "kenfaith_filters"           "kenko_filters"             
+#> [25] "knightx_filters"            "kolarivision_filters"      
+#> [27] "lee_filters"                "lee_gels"                  
+#> [29] "long_pass_filters"          "mcdermit_filters"          
+#> [31] "midopt_filters"             "neutral_filters"           
+#> [33] "old_schott_filters"         "optical_glass_filters"     
+#> [35] "orange_filters"             "photography_filters"       
+#> [37] "plastic_dome_filters"       "plastic_film_filters"      
+#> [39] "plastic_sheet_filters"      "plexiglas_filters"         
+#> [41] "polycarbonate_filters"      "polyester_filters"         
+#> [43] "polystyrene_filters"        "polyvynil_chloride_filters"
+#> [45] "purshee_filters"            "red_nir_filters"           
+#> [47] "rocolax_filters"            "rosco_filters"             
+#> [49] "rosco_gels"                 "schott_filters"            
+#> [51] "short_pass_filters"         "stacked_filters"           
+#> [53] "tangsinuo_filters"          "theatrical_gels"           
+#> [55] "tiffen_filters"             "uqg_filters"               
+#> [57] "uv_filters"                 "uvir_cut_filters"          
+#> [59] "uvroptics_filters"          "xl_horticulture_filters"   
+#> [61] "yellow_filters"             "zeiss_filters"             
+#> [63] "zomei_filters"
 ```
 
 ``` r
@@ -218,7 +221,7 @@ transmittance(filters.mspct[["Foiltek_Clear_PET_G"]],
 #> Tfr(wl)_range.250.315 Tfr(wl)_range.500.600 
 #>          0.0001886533          0.8759401279 
 #> attr(,"Tfr.type")
-#> [1] "unknown"
+#> [1] "total"
 #> attr(,"radiation.unit")
 #> [1] "transmittance average"
 ```
@@ -237,11 +240,20 @@ Installation of the most recent stable version from CRAN:
 install.packages("photobiologyFilters")
 ```
 
-Installation of the current unstable version from GitHub:
+Installation of the current unstable version from R-Universe CRAN-like
+repository:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("aphalo/photobiologyfilters")
+install.packages('photobiologyFilters', 
+                 repos = c('https://aphalo.r-universe.dev', 'https://cloud.r-project.org'))
+```
+
+Installation of the current unstable version from GitHub (no binaries
+available):
+
+``` r
+# install.packages("remotes")
+remotes::install_github("aphalo/photobiologyfilters")
 ```
 
 ## Documentation
@@ -286,7 +298,6 @@ that most data have been re-processed before inclussion in the package.
 
 ``` r
 citation("photobiologyFilters")
-#> 
 #> To cite package 'photobiologyFilters' in publications, please use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
@@ -308,6 +319,6 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2023 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.
