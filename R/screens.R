@@ -10,6 +10,15 @@
 #' @format A vector of character strings.
 #'
 #' @references
+#'  Kotilainen, Titta; Robson, T. Matthew; Hernández, Ricardo (2018) Light
+#'  quality characterization under climate screens and shade nets for
+#'  controlled-environment agriculture. PLOS ONE, Vol. 13, No. 6, p. e0199628.
+#'  \doi{10.1371/journal.pone.0199628}.
+#'
+#'  Robson, T. Matthew; Kotilainen, Titta (2018) Spectral transmittance of solar
+#'  radiation by screens and nets used in horticulture and agriculture. 1.1.1.
+#'  Data set. Zenodo. \doi{10.5281/zenodo.1561317}
+#'
 #' Catálogo de productos. Mallastextiles, Chimalhuacán, Edo. de México. \url{https://mallastextilesmx.com/}
 #'
 #' "Samples folder". Howitec Netting.Bolsward, The Netherlands. \url{https://www.howitec.com/}
@@ -23,6 +32,11 @@
 #' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{https://www.hcpco.com}
 #'
 #' Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
+#'
+#' @section Acknowledgements: These data were acquired as part of research
+#'   funded by the Academy of Finland (Decision No. 304653 and 304519 to T. M.
+#'   Robson) and USDA National Institute of Food and Agriculture (Decision No.
+#'   107454 to R. Hernández).
 #'
 #' @examples
 #' arrigoni_screens
