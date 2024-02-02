@@ -14,13 +14,15 @@
 \alias{plastic_films}
 \alias{plastic_sheet_filters}
 \alias{plastic_sheets}
+\alias{plastic_dome_filters}
+\alias{plastic_domes}
 \title{Indexing of filters made from different materials}
 \format{
 A vector of character strings.
 
 An object of class \code{character} of length 9.
 
-An object of class \code{character} of length 2.
+An object of class \code{character} of length 3.
 
 An object of class \code{character} of length 9.
 
@@ -39,6 +41,10 @@ An object of class \code{character} of length 31.
 An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 14.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
 }
 \usage{
 acetate_filters
@@ -64,6 +70,10 @@ plastic_films
 plastic_sheet_filters
 
 plastic_sheets
+
+plastic_dome_filters
+
+plastic_domes
 }
 \description{
 Vectors of names of member objects containing fractional spectral

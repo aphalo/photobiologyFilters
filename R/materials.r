@@ -67,3 +67,11 @@
 #' @rdname filter_materials
 #'
 "plastic_sheets"
+
+#' @rdname filter_materials
+#'
+"plastic_dome_filters"
+
+#' @rdname filter_materials
+#'
+"plastic_domes"

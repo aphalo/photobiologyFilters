@@ -63,12 +63,13 @@ for (file.name in file.list) {
   }
 
   tmp.spct %>%
-    as.tibble() %>%
+    as_tibble() %>%
     select("w.length" = .data$V1, "Tpc" = .data$V2) %>%
     filter(w.length != "") %>%
     mutate(w.length = as.numeric(w.length), Tpc = as.numeric(Tpc)) %>%
     arrange(w.length) %>%
-    as.filter_spct(Tfr.type = "total") -> tmp.spct
+    as.filter_spct(Tfr.type = "total") %>%
+    clean() -> tmp.spct
   tmp.spct <- setFilterProperties(tmp.spct)
   tmp.spct <- setWhatMeasured(tmp.spct,
                               paste("Machine vision ", type.name, " filter '",
@@ -92,6 +93,10 @@ midopt.mspct <- filter_mspct(midopt.lst)
 names(midopt.mspct) <- paste("MIDOPT", names(midopt.mspct), sep = "_")
 
 setwd("../..")
+
+length(midopt.mspct)
+
+autoplot(midopt.mspct)
 
 save(midopt.mspct, file = "data-raw/rda/midopt.mspct.rda")
 

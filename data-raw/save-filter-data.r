@@ -21,7 +21,7 @@ for (obj in objects) {
 rm(obj)
 
 filters.mspct <-
-  c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, lee.mspct,
+  c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, domes.mspct, lee.mspct,
   mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
   xl_horticulture.mspct, glass_windows.mspct, photography_filters.mspct,
   kolarivision.mspct)
@@ -80,6 +80,7 @@ plastic_film_filters <- plastic_films <-
            mcdermit_filters, lee_filters,
            bpi_visqueen_filters, xl_horticulture_filters))
 plastic_sheet_filters <- plastic_sheets <- union(evonik_filters, foiltek_filters)
+plastic_dome_filters <- plastic_domes <- grep("dome", names(filters.mspct), value = TRUE)
 
 clear_filters <- grep("clear|Clear|protector|Protector", names(filters.mspct), value = TRUE)
 yellow_filters <- grep("yellow|Yellow|GG|Canary|K2", names(filters.mspct), value = TRUE)
@@ -113,7 +114,8 @@ save(filters.mspct, all_filter_selectors, stacked_filters,
      heliopan_filters, rocolax_filters, zeiss_filters, kenfaith_filters, kenko_filters, purshee_filters,
      knightx_filters, fake_unbranded_filters,
      uvir_cut_filters, theatrical_gels, optical_glass_filters,
-     plastic_films, plastic_sheets, plastic_film_filters, plastic_sheet_filters,
+     plastic_films, plastic_sheets, plastic_domes,
+     plastic_film_filters, plastic_sheet_filters, plastic_dome_filters,
      clear_filters, yellow_filters, orange_filters, green_filters, blue_green_filters,
      blue_filters, red_nir_filters, uv_filters,
      neutral_filters, heat_filters,

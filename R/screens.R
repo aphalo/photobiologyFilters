@@ -27,7 +27,7 @@
 #' @examples
 #' arrigoni_screens
 #'
-#' # select filters supplied by Arrigoni
+#' # select screens supplied by Arrigoni
 #' screens.mspct[arrigoni_screens[1:5]]
 #'
 #' @seealso \code{\link{screens.mspct}}

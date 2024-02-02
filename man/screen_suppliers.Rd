@@ -49,7 +49,7 @@ stored in the \code{filter_mspct} object named \code{screens.mspct}.
 \examples{
 arrigoni_screens
 
-# select filters supplied by Arrigoni
+# select screens supplied by Arrigoni
 screens.mspct[arrigoni_screens[1:5]]
 
 }
