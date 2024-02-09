@@ -8,7 +8,7 @@ editor_options:
 
 -   Add function `water_n()` returning the refractive index of seawater and
     freshwater as a function of wavelength and temperature.
--   Add data for 197 climate screens as used in horticulture
+-   Add data for 197 climate screens and shade nets used in horticulture
     (contributed by T. K. Kotilainen, T. M. Robson and R. Hernández).
 -   Add spectra for additional photography filters including several
     copies of filters of the same type.
@@ -20,6 +20,10 @@ editor_options:
     filters.
 -   Rename photography filters to include thickness and size when
     available. *Code breaking!*.
+-   Trim the wavelength range of photography filters to 200 nm to 1020 nm, 
+    because outside this range data were heavily affected by instrument noise.
+    The noise was very noticeable when the data are re-expressed as absorbance
+    or optical density (O.D.). *Code breaking!*.
 -   Update refractive index data with freshly downloaded spectra from
     the refractive index database. Some materials added and a couple
     were removed. The data may be slightly different. Some names

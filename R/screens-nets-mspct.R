@@ -1,18 +1,18 @@
-#' Spectral transmittance of climate screens
+#' Spectral transmittance of climate screens and shade nets
 #'
-#' A collection of transmittance spectra for climate screens and nets from
-#' different suppliers. We include under "screens" nets, cloths and perforated
-#' films with spatially heterogeneous optical properties. We exclude "filters"
-#' including all semi-transparent and transparent sheets and films with
-#' homogeneous optical properties. Spectra for nearly 200 types of screens from
-#' eight suppliers measured consistently as described by Kotilainen et al.
-#' (2018).
+#' A collection of transmittance spectra for climate screens and shade nets from
+#' different suppliers. We include under "screens and nets", nets, cloths and
+#' laminated and perforated films with spatially heterogeneous optical
+#' properties. We exclude "filters" including all semi-transparent and
+#' transparent sheets and films with spatially homogeneous optical properties.
+#' Spectra for nearly 200 types of screens and nets from eight suppliers were
+#' measured consistently as described by Kotilainen et al. (2018).
 #'
 #' The variables for each spectrum are as follows:
 #' \itemize{ \item w.length (nm) \item Tfr (fraction) }
 #'
 #' @details Spectra were measured on new (never used) samples. Optical
-#'   properties can be expected to change with aging due to chemical changes
+#'   properties can be expected to change with ageing due to chemical changes
 #'   induced by solar UV radiation and by soiling during the usual life
 #'   expectancy of five or more years. Spectral data for twenty four
 #'   climate-screen samples (ten Harmony-type, two Luxous-type, seven
@@ -41,12 +41,12 @@
 #'   \code{ScreensNets_irrad_trans.xlsx}, worksheet \code{"database"}, have been
 #'   reprocessed to remove noise. The wavelength values have been "thinned" in
 #'   featureless regions using as criterion the lack of change in the local
-#'   slope to significantly reduce the size of the data set as well as also
-#'   applying lossless compression of the R data file.
+#'   slope to significantly reduce the size of the data set. Lossless
+#'   compression was applied to the R data file were data are stored.
 #'
 #' @docType data
 #' @keywords datasets
-#' @format A \code{filter_mspct} object named \code{screens.mspct} containing a
+#' @format A \code{filter_mspct} object named \code{screens_nets.mspct} containing a
 #'   collection of \code{filter_spct} objects each with a variable number of
 #'   rows and 2 variables.
 #'
@@ -80,13 +80,13 @@
 #'   107454 to R. Hernández).
 #'
 #' @examples
-#' screens.mspct$arrigoni_X2210WO.Iride.Black.Green
+#' screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green
 #'
-#' what_measured(screens.mspct$arrigoni_X2210WO.Iride.Black.Green)
-#' how_measured(screens.mspct$arrigoni_X2210WO.Iride.Black.Green)
-#' filter_properties(screens.mspct$arrigoni_X2210WO.Iride.Black.Green)
-#' cat(comment(screens.mspct$arrigoni_X2210WO.Iride.Black.Green))
+#' what_measured(screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green)
+#' how_measured(screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green)
+#' filter_properties(screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green)
+#' cat(comment(screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green))
 #'
-#' names(screens.mspct)
+#' names(screens_nets.mspct)
 #'
-"screens.mspct"
+"screens_nets.mspct"

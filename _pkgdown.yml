@@ -15,7 +15,7 @@ reference:
     - metals.mspct
     - materials.mspct
     - refractive_index.mspct
-    - screens.mspct
+    - screens_nets.mspct
     - water_n
   - title: Indexing vectors by color
     contents:

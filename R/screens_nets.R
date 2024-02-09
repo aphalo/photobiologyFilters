@@ -1,9 +1,10 @@
-#' Indexing of Climate Screens by Supplier
+#' Indexing of Climate Screens and shade nets by Supplier
 #'
 #' Vectors of names of member objects containing spectral transmittance data for
 #' climate, shade and protection screens used in agriculture grouped by
 #' supplier. These can be used to extract subsets of spectra from the collection
-#' stored in the \code{filter_mspct} object named \code{screens.mspct}.
+#' stored in the object named \code{screens_nets.mspct}, belonging to class
+#' \code{filter_mspct}.
 #'
 #' @docType data
 #' @keywords datasets
@@ -42,9 +43,9 @@
 #' arrigoni_screens
 #'
 #' # select screens supplied by Arrigoni
-#' screens.mspct[arrigoni_screens[1:5]]
+#' screens_nets.mspct[arrigoni_screens[1:5]]
 #'
-#' @seealso \code{\link{screens.mspct}}
+#' @seealso \code{\link{screens_nets.mspct}}
 #'
 #' @rdname screen_suppliers
 #'
@@ -64,7 +65,7 @@
 
 #' @rdname screen_suppliers
 #'
-"mallastextiles_screens"
+"mallastextiles_nets"
 
 #' @rdname screen_suppliers
 #'

@@ -19,7 +19,7 @@ names_companies <- tolower(names_companies)
 names_companies <- gsub("_|-| ", "", names_companies)
 names_companies <- gsub("jiangsuhuachangyarns", "huachangyarns", names_companies)
 screens.df$supplier <- names_companies
-screen_suppliers <- unique(names_companies)
+screens_nets_suppliers <- unique(names_companies)
 rm(names_companies)
 
 colnames(screens.df)
@@ -29,16 +29,16 @@ screens.df %>%
   transmute(w.length = Wavelength,
             Tfr = FilterFactor,
             Type = factor(paste(supplier, screen.name, sep = "_"))) %>%
-  subset2mspct(member.class = "filter_spct", idx.var = "Type") -> screens.mspct
+  subset2mspct(member.class = "filter_spct", idx.var = "Type") -> screens_nets.mspct
 
-screens.mspct %>%
+screens_nets.mspct %>%
    trim_wl(c(310, 885)) %>%
    msmsply(.fun = smooth_spct, method = "supsmu", strength = 2) %>%
-   interpolate_mspct(w.length.out = seq(from = 310, to = 885, by = 2)) -> screens.mspct
+   interpolate_mspct(w.length.out = seq(from = 310, to = 885, by = 2)) -> screens_nets.mspct
 
-screens.mspct <- clean(screens.mspct)
+screens_nets.mspct <- clean(screens_nets.mspct)
 
-screens.mspct <- thin_wl(screens.mspct)
+screens_nets.mspct <- thin_wl(screens_nets.mspct)
 
 suppliers.map <- c(arrigoni = "Arrigoni",
                    svensson = "Svensson, Sweden",
@@ -48,32 +48,37 @@ suppliers.map <- c(arrigoni = "Arrigoni",
                    huachangyarns = "Jiang Suhua Chang Yarns",
                    oerlemansplastics = "Oerleman Plastics")
 
-for (s in names(screens.mspct)) {
+for (s in names(screens_nets.mspct)) {
   s_splt <- str_split(s, pattern = "_", n = 2)[[1]]
-  what_measured(screens.mspct[[s]]) <- sprintf("Climate screen type '%s' supplied by '%s'.",
-                                              gsub("\\.", " ", s_splt[2]), suppliers.map[s_splt[1]])
-  how_measured(screens.mspct[[s]]) <- "Measured with an Ocean Optics Maya 2000Pro spectrometer in sunlight."
-  comment(screens.mspct[[s]]) <-
+  if (grepl("Mallas", suppliers.map[s_splt[1]])) {
+    what_measured(screens_nets.mspct[[s]]) <- sprintf("Shade net type '%s' supplied by '%s'.",
+                                                 gsub("\\.", " ", s_splt[2]), suppliers.map[s_splt[1]])
+  } else {
+    what_measured(screens_nets.mspct[[s]]) <- sprintf("Climate screen type '%s' supplied by '%s'.",
+                                                 gsub("\\.", " ", s_splt[2]), suppliers.map[s_splt[1]])
+  }
+  how_measured(screens_nets.mspct[[s]]) <- "Measured with an Ocean Optics Maya 2000Pro spectrometer in sunlight."
+  comment(screens_nets.mspct[[s]]) <-
     paste("Source: Zenodo doi:10.5281/zenodo.1561317, file 'ScreensNets_irrad_trans.xlsx', worksheet 'database'.",
-          comment(screens.mspct[[s]]), sep = "\n")
-  filter_properties(screens.mspct[[s]]) <- list(Rfr.constant = NA_real_,
+          comment(screens_nets.mspct[[s]]), sep = "\n")
+  filter_properties(screens_nets.mspct[[s]]) <- list(Rfr.constant = NA_real_,
                                                 thickness = NA_real_,
                                                 attenuation.mode = "mixed")
 }
 
-for (supplier in screen_suppliers) {
-  assign(paste(supplier, "screens", sep = "_"),
-         grep(paste("^", supplier, sep=""), names(screens.mspct), ignore.case = TRUE, value = TRUE))
+for (supplier in screens_nets_suppliers) {
+  assign(paste(supplier, ifelse(grepl("[Mm]allas", supplier), "nets", "screens"), sep = "_"),
+         grep(paste("^", supplier, sep=""), names(screens_nets.mspct), ignore.case = TRUE, value = TRUE))
 }
 
-all_screen_selectors <- ls(pattern = "_screens$")
+all_screen_selectors <- ls(pattern = "_screens$|_nets$")
 
-save(list = c("screens.mspct", "all_screen_selectors", ls(pattern = "_screens$")),
+save(list = c("screens_nets.mspct", "all_screen_selectors", ls(pattern = "_screens$|_nets$")),
     file = "data/screens-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")
 print(tools::checkRdaFiles("data"))
 
 # library(ggspectra)
-# autoplot(screens.mspct[191:197], annotations = c("-", "peaks*"))
+# autoplot(screens_nets.mspct[191:197], annotations = c("-", "peaks*"))
 
