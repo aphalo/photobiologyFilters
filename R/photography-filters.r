@@ -13,6 +13,14 @@
 #'   measured in individual filters, other filters of the same type and brand
 #'   will almost surely differ to some extent in their spectra.
 #'
+#'   The dynamic range of the data depends on the instrument used for the
+#'   measurements. Most of the photography filters have been measured with an
+#'   Agilent 8453 array spectrophotometer. The noise floor is at approximately
+#'   3.5 to 4.0 absorbance units within the range of wavelengths included in the
+#'   data. Some small apparent "leaks" maybe only noise. A blank and a dark
+#'   measurement obtained using this instrument are also included in the data
+#'   set for comparison.
+#'
 #' The variables are as follows:
 #'
 #' \itemize{ \item w.length (nm) \item Tfr (fraction) }
@@ -124,3 +132,7 @@
 #' @rdname photography_filters
 #'
 "kenfaith_filters"
+
+#' @rdname photography_filters
+#'
+"nisi_filters"

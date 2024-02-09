@@ -38,6 +38,8 @@ for (file.name in file.list) {
     smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df, paste(material, "; new; clear dome with 2\" diameter sold for surveilance camera", sep = ""))
   setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
+  comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
+                           comment(tmp.df))
   tmp.df <- clean(tmp.df)
   domes.lst[[name]] <- tmp.df
 }

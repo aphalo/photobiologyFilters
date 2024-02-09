@@ -22,6 +22,7 @@
 \alias{purshee_filters}
 \alias{knightx_filters}
 \alias{kenfaith_filters}
+\alias{nisi_filters}
 \title{Indexing of photography filters}
 \format{
 A vector of character strings.
@@ -54,13 +55,15 @@ An object of class \code{character} of length 3.
 
 An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 1.
+An object of class \code{character} of length 2.
 
-An object of class \code{character} of length 18.
+An object of class \code{character} of length 20.
 
 An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 4.
+
+An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
 }
@@ -104,6 +107,8 @@ purshee_filters
 knightx_filters
 
 kenfaith_filters
+
+nisi_filters
 }
 \description{
 Vectors of names of member objects with spectral data for filters intended to
@@ -125,6 +130,14 @@ Idependent measurement of a single sample, not a specification.
   are included and show such variation. In other words, these spectra are
   measured in individual filters, other filters of the same type and brand
   will almost surely differ to some extent in their spectra.
+
+  The dynamic range of the data depends on the instrument used for the
+  measurements. Most of the photography filters have been measured with an
+  Agilent 8453 array spectrophotometer. The noise floor is at approximately
+  3.5 to 4.0 absorbance units within the range of wavelengths included in the
+  data. Some small apparent "leaks" maybe only noise. A blank and a dark
+  measurement obtained using this instrument are also included in the data
+  set for comparison.
 
 The variables are as follows:
 

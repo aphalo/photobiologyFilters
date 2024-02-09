@@ -35,7 +35,8 @@ modes.map <- c(RFL = "reflection",
                LYR = "absorption.layer",
                MIX = "mixed",
                ABS = "absorption",
-               STK = "stack")
+               STK = "stack",
+               DIF = "scattering")
 
 for (file.name in file.list) {
   cat(file.name, ", ")
@@ -43,19 +44,20 @@ for (file.name in file.list) {
                      sep = ";",
                      col.names = c("w.length", "Tpc", "sd_Tpc"),
                      colClasses = c("integer", "double", "NULL"))
-  tmp.df[["Tfr"]] <- tmp.df[["Tpc"]] / 100
+  tmp.df[["Tfr"]] <- round(tmp.df[["Tpc"]], 3) / 100
   tmp.df[["Tpc"]] <- NULL
   setFilterSpct(tmp.df, Tfr.type = "total")
-  tmp.df <-
+   tmp.df <-
     clean(tmp.df,
           range.s.data = c(0, 1))
+  tmp.df <- clip_wl(tmp.df, range = c(199.5, 1020.5))
 
   raw.name <- sub(pattern = ".CSV|.csv", replacement = "", x = file.name)
   split.name <- str_split(raw.name, pattern = "-")[[1]]
   num.split.parts <- length(split.name)
 
 
-  if (!grepl("ABS|LYR|MIX|RFL|STK", split.name[num.split.parts])) {
+  if (!grepl("ABS|LYR|MIX|RFL|STK|DIF", split.name[num.split.parts])) {
     filter.mode <- NA_character_
   } else {
     filter.mode <- modes.map[split.name[num.split.parts]]
@@ -93,7 +95,7 @@ for (file.name in file.list) {
   object.name <- paste(filter.supplier, gsub(" ", "_", filter.type),
                        filter.thickness.raw, filter.size, sep = "_")
 
-  if (grepl("Baader", object.name)) {
+  if (grepl("Baader|Venus", object.name)) {
     filter.label <- "Astrophotography filter:"
   } else if (grepl("stack", object.name)) {
     filter.label <- "Filter stack (air gap):"
@@ -111,7 +113,8 @@ for (file.name in file.list) {
 
   tmp.df <-
     setFilterProperties(tmp.df,
-                        Rfr.constant = ifelse(grepl("UV|Protector|Skylight|IR-[6-8]|R72|Haze|RG|Night|Clear", filter.type),
+                        Rfr.constant = ifelse(grepl("UV|Protector|Skylight|IR-[6-8]|R72|Haze|RG|Night|Clear|QB|JB|HB|BG|PMC|IR6|IR7|25A|82A|K2|TSN575|ZB[12]",
+                                                    filter.type),
                                               max(1 - max(tmp.df[["Tfr"]]), 0),
                                               NA_real_),
                         thickness = as.numeric(gsub("mm$", "", filter.thickness)) * 1e-3,
@@ -130,7 +133,7 @@ for (file.name in file.list) {
   photo_filters.lst[[object.name]] <- tmp.df
 }
 photography_filters.mspct <- filter_mspct(photo_filters.lst)
-photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1050))
+# photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1050))
 names(photography_filters.mspct)
 
 # quality control

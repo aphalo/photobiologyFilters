@@ -57,6 +57,8 @@ for (file.name in file.list) {
     smooth_spct(method = "supsmu", strength = 0.5)
   setWhatMeasured(tmp.df, paste(material, "; clear sheet; new", sep = ""))
   setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
+  comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer.",
+                           comment(tmp.df))
   tmp.df <- clean(tmp.df)
   foiltek.lst[[name]] <- tmp.df
 }

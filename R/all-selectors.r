@@ -10,7 +10,7 @@
 #' @keywords datasets
 #' @format A vector of character strings.
 #'
-#' @seealso \code{\link{filters.mspct}} and \code{\link{screens.mspct}}
+#' @seealso \code{\link{filters.mspct}} and \code{\link{screens_nets.mspct}}
 #'
 #' @examples
 #' all_screen_selectors

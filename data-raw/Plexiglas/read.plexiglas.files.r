@@ -26,6 +26,8 @@ for (file.name in file.list) {
                                 gsub("_", " ", name), "'; 0.002 m thick; new; from Evonik Industries, Germany",
                   sep = ""))
   setHowMeasured(tmp.df, "Measured with an array spectrophotometer without an integrating sphere.")
+  comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
+                           comment(tmp.df))
   clean(tmp.df)
   plexiglas.lst[[name]] <- tmp.df
 }

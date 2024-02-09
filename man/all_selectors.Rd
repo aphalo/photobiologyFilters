@@ -28,6 +28,6 @@ all_screen_selectors
 
 }
 \seealso{
-\code{\link{filters.mspct}} and \code{\link{screens.mspct}}
+\code{\link{filters.mspct}} and \code{\link{screens_nets.mspct}}
 }
 \keyword{datasets}

@@ -31,6 +31,10 @@ for (file.name in file.list) {
   setFilterSpct(tmp.df, Tfr.type = "total")
   setWhatMeasured(tmp.df, paste("Courtaulds cellulose (di-)acetate (CA); ", thickness, " m thick; ",
                                 ifelse(used, "used", "new"), sep = ""))
+  setHowMeasured(tmp.df,
+                 "Filters measured with an array spectrophotometer without an integrating sphere.")
+  comment(tmp.df) <- paste("Measured with a Hwelett-Packard 8453 array spectrophotometer.",
+                           comment(tmp.df))
   setFilterProperties(tmp.df,
                       Rfr.constant = 0.069,
                       thickness = thickness,
