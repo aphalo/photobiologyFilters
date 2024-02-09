@@ -5,6 +5,8 @@
 version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters)
 [![cran
 checks](https://badges.cranchecks.info/worst/photobiologyFilters.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html)
+[![R Universe
+vwersion](https://aphalo.r-universe.dev/badges/photobiologyFilters)](https://aphalo.r-universe.dev/photobiologyFilters)
 [![R build
 status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 
@@ -47,7 +49,7 @@ and all of them are homogeneous.
 
 ``` r
 length(filters.mspct)
-#> [1] 375
+#> [1] 381
 ```
 
 Nearly 200 spectra for different climate screens used in horticulture
@@ -58,7 +60,7 @@ an opaque yarn with holes or a partly clear matrix with embedded opaque
 or partly opaque elements.
 
 ``` r
-length(screens.mspct)
+length(screens_nets.mspct)
 #> [1] 197
 ```
 
@@ -93,11 +95,11 @@ output.
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "Baader_U_filter_1.0mm_48mm"       "BPI_Luminance"                   
-#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
-#>  [5] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
-#>  [7] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"      
-#>  [9] "Courtaulds_CA_115um_age060"       "Courtaulds_CA_115um_age100"
+#>  [1] "Agilent_blank_0mm_0mm"            "Agilent_dark_0mm_0mm"            
+#>  [3] "Baader_U_filter_1.0mm_48mm"       "BPI_Luminance"                   
+#>  [5] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
+#>  [7] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
+#>  [9] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"
 ```
 
 To subset based on different criteria we can use predefined character
@@ -182,29 +184,29 @@ all_filter_selectors
 #> [27] "lee_filters"                "lee_gels"                  
 #> [29] "long_pass_filters"          "mcdermit_filters"          
 #> [31] "midopt_filters"             "neutral_filters"           
-#> [33] "old_schott_filters"         "optical_glass_filters"     
-#> [35] "orange_filters"             "photography_filters"       
-#> [37] "plastic_dome_filters"       "plastic_film_filters"      
-#> [39] "plastic_sheet_filters"      "plexiglas_filters"         
-#> [41] "polycarbonate_filters"      "polyester_filters"         
-#> [43] "polystyrene_filters"        "polyvynil_chloride_filters"
-#> [45] "purshee_filters"            "red_nir_filters"           
-#> [47] "rocolax_filters"            "rosco_filters"             
-#> [49] "rosco_gels"                 "schott_filters"            
-#> [51] "short_pass_filters"         "stacked_filters"           
-#> [53] "tangsinuo_filters"          "theatrical_gels"           
-#> [55] "tiffen_filters"             "uqg_filters"               
-#> [57] "uv_filters"                 "uvir_cut_filters"          
-#> [59] "uvroptics_filters"          "xl_horticulture_filters"   
-#> [61] "yellow_filters"             "zeiss_filters"             
-#> [63] "zomei_filters"
+#> [33] "nisi_filters"               "old_schott_filters"        
+#> [35] "optical_glass_filters"      "orange_filters"            
+#> [37] "photography_filters"        "plastic_dome_filters"      
+#> [39] "plastic_film_filters"       "plastic_sheet_filters"     
+#> [41] "plexiglas_filters"          "polycarbonate_filters"     
+#> [43] "polyester_filters"          "polystyrene_filters"       
+#> [45] "polyvynil_chloride_filters" "purshee_filters"           
+#> [47] "red_nir_filters"            "rocolax_filters"           
+#> [49] "rosco_filters"              "rosco_gels"                
+#> [51] "schott_filters"             "short_pass_filters"        
+#> [53] "stacked_filters"            "tangsinuo_filters"         
+#> [55] "theatrical_gels"            "tiffen_filters"            
+#> [57] "uqg_filters"                "uv_filters"                
+#> [59] "uvir_cut_filters"           "uvroptics_filters"         
+#> [61] "xl_horticulture_filters"    "yellow_filters"            
+#> [63] "zeiss_filters"              "zomei_filters"
 ```
 
 ``` r
 all_screen_selectors
 #> [1] "arrigoni_screens"          "criadolopez_screens"      
 #> [3] "howitec_screens"           "huachangyarns_screens"    
-#> [5] "mallastextiles_screens"    "oerlemansplastics_screens"
+#> [5] "mallastextiles_nets"       "oerlemansplastics_screens"
 #> [7] "svensson_screens"
 ```
 

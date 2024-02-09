@@ -15,7 +15,9 @@ knitr::opts_chunk$set(
 
 # photobiologyFilters <img src="man/figures/logo.png" align="right" width="120"/>
 
-[![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://badges.cranchecks.info/worst/photobiologyFilters.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html) [![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
+[![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://badges.cranchecks.info/worst/photobiologyFilters.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html) 
+[![R Universe vwersion](https://aphalo.r-universe.dev/badges/photobiologyFilters)](https://aphalo.r-universe.dev/photobiologyFilters)
+[![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 
 Package **photobiologyFilters** is a collection of spectral transmittance data for more than 500 transparent and partially transparent materials measured in our lab, by collaborators and contributors including data have made available by the suppliers for inclusion in this package. The package also contains spectral reflectance data and spectral refraction index data for some materials and spectral reflectance data for some man-made and natural land surfaces.
 
@@ -40,7 +42,7 @@ length(filters.mspct)
 Nearly 200 spectra for different climate screens used in horticulture and agriculture. All these materials scatter light and have a heterogeneous surface, as they are nets, yarns or composites in which part of the surface has different transmittance than the matrix: either an opaque yarn with holes or a partly clear matrix with embedded opaque or partly opaque elements.
 
 ```{r example-03a}
-length(screens.mspct)
+length(screens_nets.mspct)
 ```
 
 Reflectance spectra for a few metals are included.
