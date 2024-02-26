@@ -67,14 +67,14 @@ for (s in names(screens_nets.mspct)) {
 }
 
 for (supplier in screens_nets_suppliers) {
-  assign(paste(supplier, ifelse(grepl("[Mm]allas", supplier), "nets", "screens"), sep = "_"),
+  assign(paste(supplier, "screens", "nets", sep = "_"),
          grep(paste("^", supplier, sep=""), names(screens_nets.mspct), ignore.case = TRUE, value = TRUE))
 }
 
-all_screen_selectors <- ls(pattern = "_screens$|_nets$")
+all_screen_net_selectors <- ls(pattern = "_screens_nets$")
 
-save(list = c("screens_nets.mspct", "all_screen_selectors", ls(pattern = "_screens$|_nets$")),
-    file = "data/screens-mspct.rda")
+save(list = c("screens_nets.mspct", "all_screen_net_selectors", ls(pattern = "_screens_nets$")),
+    file = "data/screens-nets-mspct.rda")
 
 tools::resaveRdaFiles("data", compress="auto")
 print(tools::checkRdaFiles("data"))

@@ -30,7 +30,7 @@
 #'
 #' "Samples". oerlemans plastics BV. Genderen, The Netherlands. \url{https://www.oerlemansplastics.nl}
 #'
-#' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{https://www.hcpco.com}
+#' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{http://www.hcpco.com}
 #'
 #' Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
 #'
@@ -39,38 +39,41 @@
 #'   Robson) and USDA National Institute of Food and Agriculture (Decision No.
 #'   107454 to R. Hernández).
 #'
+#' @seealso \code{\link{screens_nets.mspct}}
+#'
 #' @examples
-#' arrigoni_screens
+#' arrigoni_screens_nets
 #'
 #' # select screens supplied by Arrigoni
-#' screens_nets.mspct[arrigoni_screens[1:5]]
+#' screens_nets.mspct[arrigoni_screens_nets[1:5]]
 #'
 #' @seealso \code{\link{screens_nets.mspct}}
 #'
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
+#' @aliases screens_nets_suppliers
 #'
-"arrigoni_screens"
+"arrigoni_screens_nets"
 
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
 #'
-"criadolopez_screens"
+"criadolopez_screens_nets"
 
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
 #'
-"howitec_screens"
+"howitec_screens_nets"
 
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
 #'
-"huachangyarns_screens"
+"huachangyarns_screens_nets"
 
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
 #'
-"mallastextiles_nets"
+"mallastextiles_screens_nets"
 
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
 #'
-"oerlemansplastics_screens"
+"oerlemansplastics_screens_nets"
 
-#' @rdname screen_suppliers
+#' @rdname screens_nets_suppliers
 #'
-"svensson_screens"
+"svensson_screens_nets"

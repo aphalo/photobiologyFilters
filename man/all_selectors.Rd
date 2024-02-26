@@ -4,7 +4,7 @@
 \name{all_filter_selectors}
 \alias{all_filter_selectors}
 \alias{selectors}
-\alias{all_screen_selectors}
+\alias{all_screen_net_selectors}
 \title{Names of different indexing vectors}
 \format{
 A vector of character strings.
@@ -14,7 +14,7 @@ An object of class \code{character} of length 7.
 \usage{
 all_filter_selectors
 
-all_screen_selectors
+all_screen_net_selectors
 }
 \description{
 The package makes available character vectors that can be used to extract
@@ -24,7 +24,8 @@ uses. The data objects described here list the names of all these vectors
 of names grouped by the collection of spectra they index.
 }
 \examples{
-all_screen_selectors
+all_screen_net_selectors
+all_filter_selectors
 
 }
 \seealso{

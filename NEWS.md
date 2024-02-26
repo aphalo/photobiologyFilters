@@ -8,8 +8,9 @@ editor_options:
 
 -   Add function `water_n()` returning the refractive index of seawater and
     freshwater as a function of wavelength and temperature.
--   Add data for 197 climate screens and shade nets used in horticulture
-    (contributed by T. K. Kotilainen, T. M. Robson and R. Hernández).
+-   Add data for 197 climate screens, shade nets and other covers used in 
+    horticulture (contributed by T. K. Kotilainen, T. M. Robson and R. 
+    Hernández).
 -   Add spectra for additional photography filters including several
     copies of filters of the same type.
 -   Add spectra for UV-pass filter stacks.
@@ -27,8 +28,8 @@ editor_options:
 -   Update refractive index data with freshly downloaded spectra from
     the refractive index database. Some materials added and a couple
     were removed. The data may be slightly different. Some names
-    changes, e.g., acrylic is now PMMA.
--   Rebuild data objects with 'photobiology' (0.11.0).
+    changed, e.g., acrylic is now PMMA.
+-   Rebuild data objects with 'photobiology' (0.11.1).
 -   Compact the spectral data using `photobiology::thin_wl()`. *Can
     slightly change the result of computations and plot details*.
 -   **Move Git repository from *Bitbucket* to *GitHub*.**

@@ -120,9 +120,6 @@ autoplot(filters.mspct$Evonik_Sky_Blue_5C01_GT)
 transmittance(filters.mspct$Evonik_Sky_Blue_5C01_GT, Orange())
 transmittance(filters.mspct$Evonik_Sky_Blue_5C01_GT, NIR())
 
-# Gold
-autoplot(metals.mspct$gold, range = NIR(), w.band = NULL)
-
 # Asphalt
 autoplot(materials.mspct$construction.asphalt, range = NIR(), w.band = NULL)
 

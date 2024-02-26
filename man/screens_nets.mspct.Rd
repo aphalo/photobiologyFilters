@@ -3,7 +3,7 @@
 \docType{data}
 \name{screens_nets.mspct}
 \alias{screens_nets.mspct}
-\title{Spectral transmittance of climate screens and shade nets}
+\title{Spectral transmittance of plastic covers, climate screens and shade nets}
 \format{
 A \code{filter_mspct} object named \code{screens_nets.mspct} containing a
   collection of \code{filter_spct} objects each with a variable number of
@@ -13,13 +13,14 @@ A \code{filter_mspct} object named \code{screens_nets.mspct} containing a
 screens_nets.mspct
 }
 \description{
-A collection of transmittance spectra for climate screens and shade nets from
-different suppliers. We include under "screens and nets", nets, cloths and
-laminated and perforated films with spatially heterogeneous optical
-properties. We exclude "filters" including all semi-transparent and
-transparent sheets and films with spatially homogeneous optical properties.
-Spectra for nearly 200 types of screens and nets from eight suppliers were
-measured consistently as described by Kotilainen et al. (2018).
+A collection of transmittance spectra for plastic covers, climate screens and
+shade nets used in horticulture. We include under "plastic covers, climate
+screens and shade nets", nets, cloths and laminated and perforated films with
+spatially heterogeneous optical properties. We exclude "filters" including
+all semi-transparent and transparent sheets and films with spatially
+homogeneous optical properties. Spectra for nearly 200 types of covers,
+screens, and nets from eight suppliers were measured consistently as
+described by Kotilainen et al. (2018).
 }
 \details{
 The variables for each spectrum are as follows:
@@ -50,14 +51,14 @@ Spectra were measured on new (never used) samples. Optical
   \code{filter_properties()} and \code{comment()}.
 }
 \note{
-Please see the help for the indexing vectors for specific details.
-  The original data of Kotilainen et al. (2018) plus additional data are
+Please see the help for the indexing vectors for specific details. The
+  original data of Kotilainen et al. (2018) plus additional spectral data are
   available at Zenodo (Robson and Kotilainen, 2018). The data read from file
   \code{ScreensNets_irrad_trans.xlsx}, worksheet \code{"database"}, have been
   reprocessed to remove noise. The wavelength values have been "thinned" in
   featureless regions using as criterion the lack of change in the local
   slope to significantly reduce the size of the data set. Lossless
-  compression was applied to the R data file were data are stored.
+  compression was applied to the R data file containing the data set.
 }
 \section{Acknowledgements}{
  These data were acquired as part of research
@@ -97,8 +98,11 @@ Catálogo de productos. Mallastextiles, Chimalhuacán, Edo. de México. \url{htt
 
 "Samples". oerlemans plastics BV. Genderen, The Netherlands. \url{https://www.oerlemansplastics.nl}
 
-"samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{https://www.hcpco.com}
+"samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{http://www.hcpco.com}
 
 Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
+}
+\seealso{
+\code{\link{screens_nets_suppliers}}
 }
 \keyword{datasets}

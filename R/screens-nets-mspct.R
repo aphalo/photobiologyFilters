@@ -1,12 +1,13 @@
-#' Spectral transmittance of climate screens and shade nets
+#' Spectral transmittance of plastic covers, climate screens and shade nets
 #'
-#' A collection of transmittance spectra for climate screens and shade nets from
-#' different suppliers. We include under "screens and nets", nets, cloths and
-#' laminated and perforated films with spatially heterogeneous optical
-#' properties. We exclude "filters" including all semi-transparent and
-#' transparent sheets and films with spatially homogeneous optical properties.
-#' Spectra for nearly 200 types of screens and nets from eight suppliers were
-#' measured consistently as described by Kotilainen et al. (2018).
+#' A collection of transmittance spectra for plastic covers, climate screens and
+#' shade nets used in horticulture. We include under "plastic covers, climate
+#' screens and shade nets", nets, cloths and laminated and perforated films with
+#' spatially heterogeneous optical properties. We exclude "filters" including
+#' all semi-transparent and transparent sheets and films with spatially
+#' homogeneous optical properties. Spectra for nearly 200 types of covers,
+#' screens, and nets from eight suppliers were measured consistently as
+#' described by Kotilainen et al. (2018).
 #'
 #' The variables for each spectrum are as follows:
 #' \itemize{ \item w.length (nm) \item Tfr (fraction) }
@@ -35,14 +36,14 @@
 #'   \code{what_measured()}, \code{how_measured()}, \code{when_measured()},
 #'   \code{filter_properties()} and \code{comment()}.
 #'
-#' @note Please see the help for the indexing vectors for specific details.
-#'   The original data of Kotilainen et al. (2018) plus additional data are
+#' @note Please see the help for the indexing vectors for specific details. The
+#'   original data of Kotilainen et al. (2018) plus additional spectral data are
 #'   available at Zenodo (Robson and Kotilainen, 2018). The data read from file
 #'   \code{ScreensNets_irrad_trans.xlsx}, worksheet \code{"database"}, have been
 #'   reprocessed to remove noise. The wavelength values have been "thinned" in
 #'   featureless regions using as criterion the lack of change in the local
 #'   slope to significantly reduce the size of the data set. Lossless
-#'   compression was applied to the R data file were data are stored.
+#'   compression was applied to the R data file containing the data set.
 #'
 #' @docType data
 #' @keywords datasets
@@ -70,7 +71,7 @@
 #'
 #' "Samples". oerlemans plastics BV. Genderen, The Netherlands. \url{https://www.oerlemansplastics.nl}
 #'
-#' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{https://www.hcpco.com}
+#' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{http://www.hcpco.com}
 #'
 #' Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
 #'
@@ -78,6 +79,8 @@
 #'   funded by the Academy of Finland (Decision No. 304653 and 304519 to T. M.
 #'   Robson) and USDA National Institute of Food and Agriculture (Decision No.
 #'   107454 to R. Hernández).
+#'
+#' @seealso \code{\link{screens_nets_suppliers}}
 #'
 #' @examples
 #' screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green

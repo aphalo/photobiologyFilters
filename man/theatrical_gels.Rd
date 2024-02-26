@@ -47,7 +47,7 @@ theatrical_gels
 
 }
 \references{
-\url{https://www.leefilters.com/lighting/colour-details.html},
+\url{https://leefilters.com/lighting/colour-effect-lighting-filters/},
 \url{https://emea.rosco.com/en/products/family/filters-and-diffusions}
 }
 \seealso{
