@@ -66,6 +66,18 @@ class(filters.mspct)
 ```{r}
 class(filters.mspct[[1]])
 ```
+
+`filters_UVIVIF.mspct` contains UV-A1-induced spectral fluorescence data for 
+`r length(filters_UVIVIF.mspct)` optical filters.
+
+```{r}
+class(filters_UVIVIF.mspct)
+```
+
+```{r}
+class(filters_UVIVIF.mspct[[1]])
+```
+
 `metals.mspct` contains spectral reflectance data for `r length(metals.mspct)`
 metals.
 
