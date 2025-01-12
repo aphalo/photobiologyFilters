@@ -12,6 +12,7 @@ reference:
   - title: Spectral data
     contents:
     - filters.mspct
+    - filters_UVIVIF.mspct
     - metals.mspct
     - materials.mspct
     - refractive_index.mspct
@@ -55,6 +56,7 @@ navbar:
     intro:
       icon: fas fa-home fa-lg
       href: index.html
+      aria-label: Home
     reference:
       text: Reference
       href: reference/index.html

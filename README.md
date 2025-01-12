@@ -9,6 +9,8 @@ checks](https://badges.cranchecks.info/worst/photobiologyFilters.svg)](https://c
 vwersion](https://aphalo.r-universe.dev/badges/photobiologyFilters)](https://aphalo.r-universe.dev/photobiologyFilters)
 [![R build
 status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyFilters-informational.svg)](https://docs.r4photobiology.info/photobiologyFilters/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyFilters-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyFilters)
 
 Package **photobiologyFilters** is a collection of spectral
 transmittance data for more than 500 transparent and partially
@@ -49,7 +51,7 @@ and all of them are homogeneous.
 
 ``` r
 length(filters.mspct)
-#> [1] 381
+#> [1] 379
 ```
 
 Nearly 200 spectra for different climate screens used in horticulture
@@ -95,11 +97,11 @@ output.
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "Agilent_blank_0mm_0mm"            "Agilent_dark_0mm_0mm"            
-#>  [3] "Baader_U_filter_1.0mm_48mm"       "BPI_Luminance"                   
-#>  [5] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
-#>  [7] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
-#>  [9] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"
+#>  [1] "Baader_U_filter_1.0mm_48mm"       "BPI_Luminance"                   
+#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
+#>  [5] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
+#>  [7] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"      
+#>  [9] "Courtaulds_CA_115um_age060"       "Courtaulds_CA_115um_age100"
 ```
 
 To subset based on different criteria we can use predefined character
@@ -121,9 +123,11 @@ filters.mspct[polyester_filters]
 #> Object: filter_spct [339 x 2]
 #> Wavelength range 190-1100 nm, step 1-4 nm 
 #> Label: Polyethylene terephthalate (PET), 'polyester'; clear sheet; new 
-#> Transmittance of type 'total'
 #> Rfr (/1): 0.097, thickness (mm): 3.00, attenuation mode: absorption.
-#> 
+#> Variables:
+#>  w.length: Wavelength [nm]
+#>  Tfr: Total spectral transmittance [/1] 
+#> --
 #> # A tibble: 339 × 2
 #>    w.length      Tfr
 #>       <dbl>    <dbl>
@@ -142,9 +146,11 @@ filters.mspct[polyester_filters]
 #> Object: filter_spct [454 x 2]
 #> Wavelength range 240-800 nm, step 1-4 nm 
 #> Label: Polyester, clear film, 0.000125 m thick, Autostat CT5 from McDermit Autotype; new 
-#> Transmittance of type 'total'
 #> Rfr (/1): 0.074, thickness (mm): 0.125, attenuation mode: absorption.
-#> 
+#> Variables:
+#>  w.length: Wavelength [nm]
+#>  Tfr: Total spectral transmittance [/1] 
+#> --
 #> # A tibble: 454 × 2
 #>    w.length     Tfr
 #>       <int>   <dbl>
@@ -203,11 +209,11 @@ all_filter_selectors
 ```
 
 ``` r
-all_screen_selectors
-#> [1] "arrigoni_screens"          "criadolopez_screens"      
-#> [3] "howitec_screens"           "huachangyarns_screens"    
-#> [5] "mallastextiles_nets"       "oerlemansplastics_screens"
-#> [7] "svensson_screens"
+all_screen_net_selectors
+#> [1] "arrigoni_screens_nets"          "criadolopez_screens_nets"      
+#> [3] "howitec_screens_nets"           "huachangyarns_screens_nets"    
+#> [5] "mallastextiles_screens_nets"    "oerlemansplastics_screens_nets"
+#> [7] "svensson_screens_nets"
 ```
 
 Please, see the *User Guide* or help pages for the names of other
@@ -300,7 +306,7 @@ that most data have been re-processed before inclussion in the package.
 
 ``` r
 citation("photobiologyFilters")
-#> To cite package 'photobiologyFilters' in publications, please use:
+#> To cite package ‘photobiologyFilters’ in publications use:
 #> 
 #>   Aphalo, Pedro J. (2015) The r4photobiology suite. UV4Plants Bulletin,
 #>   2015:1, 21-29. DOI:10.19232/uv4pb.2015.1.14
@@ -321,6 +327,6 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2024 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
+© 2012-2025 Pedro J. Aphalo (<pedro.aphalo@helsinki.fi>). Released under
 the GPL, version 2 or greater. This software carries no warranty of any
 kind.

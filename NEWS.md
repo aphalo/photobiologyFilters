@@ -4,6 +4,10 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyFilters 0.6.1
+
+-   Add fluorescence spectra for seven glass photography filters. 
+
 # photobiologyFilters 0.6.0
 
 -   Add function `water_n()` returning the refractive index of seawater and
