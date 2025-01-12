@@ -13,9 +13,10 @@ library(dplyr)
 library(stringr)
 
 rm(list = ls())
-setwd("data-raw/photo-filters/")
+setwd("./data-raw/photo-filters/")
 
-file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
+file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE) |>
+  grep(pattern = "^Agilent", x = _, value = TRUE, invert = TRUE)
 
 full_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
 length(full_names)
@@ -124,7 +125,7 @@ for (file.name in file.list) {
     smooth_spct(tmp.df, method = "supsmu", strength = 0.5)
 
   setWhatMeasured(tmp.df,
-                  paste(filter.label, filter.type))
+                  paste(filter.label, filter.supplier, filter.type))
   setHowMeasured(tmp.df,
                  "Filters measured with an array spectrophotometer without an integrating sphere.")
   comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
@@ -132,6 +133,9 @@ for (file.name in file.list) {
 
   photo_filters.lst[[object.name]] <- tmp.df
 }
+
+setwd("../..")
+
 photography_filters.mspct <- filter_mspct(photo_filters.lst)
 # photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1050))
 names(photography_filters.mspct)
@@ -144,8 +148,9 @@ unique(filter.thicknesses)
 unique(sort(filter.types))
 unique(filter.labels)
 
-save(photography_filters.mspct, file = "../rda/photography-filters.mspct.rda")
+save(photography_filters.mspct, file = "./data-raw/rda/photography-filters.mspct.rda")
 
-setwd("../..")
+summary(photography_filters.mspct)
+what_measured(photography_filters.mspct)$what.measured
 
 

@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://badges.cranchecks.info/worst/photobiologyFilters.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html) 
 [![R Universe vwersion](https://aphalo.r-universe.dev/badges/photobiologyFilters)](https://aphalo.r-universe.dev/photobiologyFilters)
 [![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
+[![Documentation](https://img.shields.io/badge/documentation-photobiologyFilters-informational.svg)](https://docs.r4photobiology.info/photobiologyFilters/)
+[![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyFilters-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyFilters)
 
 Package **photobiologyFilters** is a collection of spectral transmittance data for more than 500 transparent and partially transparent materials measured in our lab, by collaborators and contributors including data have made available by the suppliers for inclusion in this package. The package also contains spectral reflectance data and spectral refraction index data for some materials and spectral reflectance data for some man-made and natural land surfaces.
 
@@ -89,7 +91,7 @@ all_filter_selectors
 ```
 
 ```{r example-05c}
-all_screen_selectors
+all_screen_net_selectors
 ```
 
 Please, see the *User Guide* or help pages for the names of other vectors of names for materials, suppliers, and regions of the spectrum.
@@ -151,4 +153,4 @@ citation("photobiologyFilters")
 
 ## License
 
-© 2012-2024 Pedro J. Aphalo ([pedro.aphalo\@helsinki.fi](mailto:pedro.aphalo@helsinki.fi)). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
+© 2012-2025 Pedro J. Aphalo ([pedro.aphalo\@helsinki.fi](mailto:pedro.aphalo@helsinki.fi)). Released under the GPL, version 2 or greater. This software carries no warranty of any kind.
