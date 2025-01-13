@@ -7,6 +7,8 @@ editor_options:
 # photobiologyFilters 0.6.1
 
 -   Add fluorescence spectra for seven glass photography filters. 
+-   Add missing metadata to spectra of Rosco gels.
+-   Rebuild data objects with 'photobiology' (0.12.0).
 
 # photobiologyFilters 0.6.0
 

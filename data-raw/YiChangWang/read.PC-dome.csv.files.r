@@ -7,7 +7,9 @@
 # 2) read .txt files
 # 3) save all the data.frames created into a single Rda file in data folder
 library(photobiology)
+library(ggspectra)
 library(dplyr)
+
 rm(list = ls())
 setwd("data-raw/YiChangWang/")
 file.list <- list.files(pattern = "*.CSV$")

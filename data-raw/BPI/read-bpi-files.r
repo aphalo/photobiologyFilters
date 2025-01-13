@@ -25,7 +25,7 @@ for (file.name in file.list) {
   setFilterSpct(tmp.df, Tfr.type = "total")
   tmp.df <- setFilterProperties(tmp.df,
                                 Rfr.constant = NA_real_,
-                                thickness = thickness[name],
+                                thickness = unname(thickness[name]),
                                 attenuation.mode = "mixed")
   setWhatMeasured(tmp.df, paste(name, ", special greenhouse cladding film from BPI Agri", sep = ""))
   clean(tmp.df)
