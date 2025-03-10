@@ -24,7 +24,7 @@ filters.mspct <-
   c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, domes.mspct, lee.mspct,
   mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
   xl_horticulture.mspct, glass_windows.mspct, photography_filters.mspct,
-  kolarivision.mspct)
+  kolarivision.mspct, hoya_photo_digitised.mspct)
 
 filters.mspct <- thin_wl(filters.mspct, max.wl.step = 5, max.slope.delta = 0.00015)
 
@@ -38,6 +38,8 @@ theatrical_gels <- c(lee_gels, rosco_gels)
 schott_filters <- schott
 uqg_filters <- uqg
 kolarivision_filters <- kolarivision
+photography_filters <-
+  unique(sort(c(photography_filters, kolarivision_filters, hoya_photo_digitised)))
 hoya_filters <- grep("Hoya", photography_filters, value = TRUE, ignore.case = TRUE)
 firecrest_filters <- grep("Firecrest", photography_filters, value = TRUE, ignore.case = TRUE)
 heliopan_filters <- grep("Heliopan", photography_filters, value = TRUE, ignore.case = TRUE)
@@ -58,8 +60,6 @@ knightx_filters <- grep("Knight", photography_filters, value = TRUE, ignore.case
 kenfaith_filters <- grep("KenFaith", photography_filters, value = TRUE, ignore.case = TRUE)
 fake_unbranded_filters <- grep("unbranded|fake", photography_filters, value = TRUE, ignore.case = TRUE)
 stacked_filters <- grep("stack", photography_filters, value = TRUE, ignore.case = TRUE)
-photography_filters <-
-  unique(sort(c(photography_filters, kolarivision_filters)))
 
 courtaulds_filters <- courtaulds
 xl_horticulture_filters <- xl_horticulture

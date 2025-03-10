@@ -27,7 +27,7 @@
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 12.
+An object of class \code{character} of length 22.
 
 An object of class \code{character} of length 14.
 
