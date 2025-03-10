@@ -6,8 +6,11 @@ editor_options:
 
 # photobiologyFilters 0.6.1
 
--   Add fluorescence spectra for seven glass photography filters. 
+-   Add UV-A-radiation-induced fluorescence spectra for seven glass photography 
+    filters. 
 -   Add missing metadata to spectra of Rosco gels.
+-   Add spectra for four Cooling (C), four Warming (W) and two "fluorescent" 
+    (FL) colour correction photography filters from Hoya Tokina.
 -   Rebuild data objects with 'photobiology' (0.12.0).
 
 # photobiologyFilters 0.6.0
