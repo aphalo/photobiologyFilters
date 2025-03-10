@@ -349,7 +349,7 @@ how_measured(filters.mspct$Schott_UG11)
 ```
 
 ```{r}
-is_normalized(filters.mspct$Schoot_UG11)
+is_normalized(filters.mspct$Schott_UG11)
 ```
 
 ```{r}

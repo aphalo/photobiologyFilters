@@ -111,7 +111,7 @@ what_measured(filters.mspct$Schott_UG11)
 how_measured(filters.mspct$Schott_UG11)
 
 ## -----------------------------------------------------------------------------
-is_normalized(filters.mspct$Schoot_UG11)
+is_normalized(filters.mspct$Schott_UG11)
 
 ## -----------------------------------------------------------------------------
 cat(comment(filters.mspct$Schott_UG11), "\n")
