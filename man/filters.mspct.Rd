@@ -19,14 +19,21 @@ properties. We exclude "screens" such as nets, cloths and perforated films
 with heterogeneous optical properties.
 }
 \details{
-The \code{"filter_mspct"} object named \code{filters.mspct} contains a collection of
-  \code{"filter_spct"} objects with spectral transmittance data for filters.
+The \code{"filter_mspct"} object named \code{filters.mspct} contains
+  a collection of \code{"filter_spct"} objects with spectral transmittance
+  data for filters and other optical sheet materials such as glass and
+  plastic sheets and films.
 
   The variables in each member spectrum are as follows: \itemize{ \item
-  \code{w.length} (nm) \item \code{Tfr} (transmittance expressed as a fraction of one) }
+  \code{w.length} (nm) \item \code{Tfr} (transmittance expressed as a
+  fraction of one) }
+
   These member objects contain metadata stored as R attributes. Accessors are
-  available to the metadata: \code{what_measured()}, \code{how_measured()},
-  \code{when_measured()}, \code{filter_properties()} and \code{comment()}.
+  available to the metadata: \code{\link[photobiology]{what_measured}()},
+  \code{\link[photobiology]{how_measured}()},
+  \code{\link[photobiology]{when_measured}()},
+  \code{\link[photobiology]{filter_properties}()} and
+  \code{\link[base]{comment}()}.
 }
 \note{
 Please see the help for the indexing vectors for specific details.

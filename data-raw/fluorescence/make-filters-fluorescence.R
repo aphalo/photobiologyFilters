@@ -55,7 +55,7 @@ for (i in names(filters_UVIVIF.mspct)) {
 
 filters_UVIVIF.mspct <-
   trim_mspct(filters_UVIVIF.mspct, range = c(400, NA)) |>
-  thin_wl()
+  thin_wl(max.wl.step = 6, max.slope.delta = 0.0005, span = 15)
 
 summary(filters_UVIVIF.mspct)
 what_measured(filters_UVIVIF.mspct)
