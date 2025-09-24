@@ -1,8 +1,8 @@
 Package: photobiologyFilters
 Type: Package
 Title: Spectral Transmittance and Spectral Reflectance Data
-Version: 0.6.0.9000
-Date: 2025-03-10
+Version: 0.6.1
+Date: 2025-09-23
 Authors@R:
    c(
     person("Pedro J.", "Aphalo", email = "pedro.aphalo@helsinki.fi", role = c("aut", "cre"), comment = c(ORCID = "https://orcid.org/0000-0003-3385-972X")),
@@ -25,14 +25,14 @@ Description: Spectral 'transmittance' data for frequently used filters and
 License: GPL (>= 2)
 VignetteBuilder: knitr
 Depends:
-    R (>= 4.0.0),
-    photobiology (>= 0.11.4)
+    R (>= 4.1.0),
+    photobiology (>= 0.13.2)
 Suggests:
-    knitr (>= 1.30),
-    rmarkdown (>= 2.3),
-    ggplot2 (>= 3.4.0),
-    ggspectra (>= 0.3.11),
-    photobiologyWavebands (>= 0.4.4)
+    knitr (>= 1.50),
+    rmarkdown (>= 2.29),
+    ggplot2 (>= 3.5.0),
+    ggspectra (>= 0.3.16),
+    photobiologyWavebands (>= 0.5.4)
 LazyLoad: no
 LazyData: yes
 ByteCompile: no
@@ -40,4 +40,4 @@ Encoding: UTF-8
 URL: https://docs.r4photobiology.info/photobiologyFilters/, 
    https://github.com/aphalo/photobiologyfilters
 BugReports: https://github.com/aphalo/photobiologyfilters/issues
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3

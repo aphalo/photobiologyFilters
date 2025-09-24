@@ -12,24 +12,33 @@ A \code{"source_mspct"} object containing several
 filters_UVIVIF.mspct
 }
 \description{
-A collection of ultraviolet-induced visible and near infrared fluorescence
+A collection of ultraviolet-A-induced visible and near infrared fluorescence
 spectra for optical filters.
 }
 \details{
-The \code{"source_mspct"} object named \code{filters_UVIVIF.mspct} contains a collection of
-  \code{"source_spct"} objects with spectral fluorescence emission data for filters illuminated with
-  ultraviolet radiation.
+The \code{"source_mspct"} object named \code{filters_UVIVIF.mspct}
+  contains a collection of \code{"source_spct"} objects with spectral
+  fluorescence emission data for filters illuminated with ultraviolet-A
+  radiation at 365 nm.
 
   The variables in each member spectrum are as follows: \itemize{ \item
   \code{w.length} (nm) \item \code{s.q.irrad} photon irradiance (mol m-2 s-1)}
   These member objects contain metadata stored as R attributes. Accessors are
   available to the metadata: \code{what_measured()}, \code{how_measured()},
   \code{when_measured()}, \code{filter_properties()} and \code{comment()}.
+
+  The member spectra are
+  named consistently with the transmittance spectra in the collection
+  \code{\link{filters.mspct}}. Currently all members of
+  \code{filters_UVIVIF.mspct} are ionic glass photography filters.
 }
 \note{
-Please see the help for the indexing vectors for specific details. The
-  member spectra are named consistently with \code{filters.mspct}. Currently
-  all members are photography filters.
+Please see the metadata for specific details. Accessors are
+  available to the metadata: \code{\link[photobiology]{what_measured}()},
+  \code{\link[photobiology]{how_measured}()},
+  \code{\link[photobiology]{when_measured}()},
+  \code{\link[photobiology]{filter_properties}()} and
+  \code{\link[base]{comment}()}.
 }
 \examples{
 names(filters_UVIVIF.mspct)
