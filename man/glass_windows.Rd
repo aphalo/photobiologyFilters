@@ -19,7 +19,7 @@ A character vector of names of members of the collection of spectra.
 }
 \note{
 The spectral data for these glasses is taken from file
-  \url{http://files.cie.co.at/206.xls}, downloaded 2017-06-25. Abbreviated
+  \verb{https://files.cie.co.at/206.xls}, downloaded 2017-06-25. Abbreviated
   names from the original .xls file used as member names. Full glass names,
   thickness and manufacturers names, retained and stored as metadata in
   attribute "what.measured".
@@ -30,5 +30,8 @@ glass_windows
 summary(filters.mspct[glass_windows])
 summary(filters.mspct[glass_windows[grep("Pilkington", glass_windows)]])
 
+}
+\references{
+\url{https://cie.co.at/}
 }
 \keyword{datasets}

@@ -22,7 +22,7 @@
 #'
 #' Catálogo de productos. Mallastextiles, Chimalhuacán, Edo. de México. \url{https://mallastextilesmx.com/}
 #'
-#' "Samples folder". Howitec Netting.Bolsward, The Netherlands. \url{https://www.howitec.com/}
+#' "Samples folder". Howitec Netting.Bolsward, The Netherlands. \url{https://www.howitec.nl/}
 #'
 #' "Samples". Arrigoni Spa. Uggiate Trevano, Italia. \url{https://www.arrigoni.it}
 #'

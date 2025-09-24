@@ -147,7 +147,7 @@ The variables are as follows:
 \section{Supplier's web sites, if known}{
 
   \url{https://www.baader-planetarium.com/en/},
-  \url{https://www.formatt-hitech.com/},
+  \url{https://formatt-hitech.com/},
   \url{https://www.fotga.com/},
   \url{https://www.haidaphoto.com/en/},
   \url{http://www.heliopan.de/},
@@ -160,7 +160,7 @@ The variables are as follows:
   \url{https://schneiderkreuznach.com/en/photo-optics/b-w-filters/filtertypes},
   \url{https://tangsinuo.aliexpress.com/store/4314008},
   \url{https://tiffen.com/},
-  \url{https://www.uvroptics.com/},
+  \verb{https://www.uvroptics.com/} (off-line),
   \url{https://www.zomei.com/}.
 }
 

@@ -24,7 +24,7 @@
 #'   and 12 thrip, aphid, and insect -net samples (two Anti-Trip-type, eight
 #'   Anti-Afidos-type and two Anti-Insect types) were provided by Mallas
 #'   Textiles (Mallas Textiles Fabricantes, Chimalhuacán, Mexico,
-#'   \url{https://mallastextilesmx.com/}) were described by Kotilainen et al.
+#'   \verb{https://mallastextilesmx.com/}) were described by Kotilainen et al.
 #'   (2018). Additional spectra obtained by the same authors are also included
 #'   in this package. If you use these data in publications, please, cite both
 #'   Kotilainen et al. (2018) and this package.
@@ -63,7 +63,7 @@
 #'
 #' Catálogo de productos. Mallastextiles, Chimalhuacán, Edo. de México. \url{https://mallastextilesmx.com/}
 #'
-#' "Samples folder". Howitec Netting.Bolsward, The Netherlands. \url{https://www.howitec.com/}
+#' "Samples folder". Howitec Netting.Bolsward, The Netherlands. \url{https://www.howitec.nl/}
 #'
 #' "Samples". Arrigoni Spa. Uggiate Trevano, Italia. \url{https://www.arrigoni.it}
 #'
@@ -71,7 +71,7 @@
 #'
 #' "Samples". oerlemans plastics BV. Genderen, The Netherlands. \url{https://www.oerlemansplastics.nl}
 #'
-#' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \url{http://www.hcpco.com}
+#' "samples". Jiangsu Huachang Yarns & Fabrics Co. Ltd. Jurong, Jiangsu, China. \verb{http://www.hcpco.com}
 #'
 #' Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
 #'

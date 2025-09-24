@@ -17,7 +17,7 @@ Data from manufacturer-provided excel filter tool.
 \note{
 Data supplied by the manufacturer for inclusion in this package.
 Version	1 st June 2015. Reproduced with permission.
-\url{https://www.schott.com/advanced_optics}
+\url{https://www.schott.com/en-gb/advanced-optics}
 }
 \section{DISCLAIMER from Schott}{
 

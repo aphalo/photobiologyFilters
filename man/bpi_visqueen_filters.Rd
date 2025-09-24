@@ -25,7 +25,7 @@ bpi_visqueen_filters
 
 }
 \references{
-\url{https://www.rpc-bpi.com/sector/horticultural-solutions/}
+\verb{https://www.rpc-bpi.com/sector/horticultural-solutions/} (redirected)
 }
 \seealso{
 \code{\link{filters.mspct}}

@@ -9,7 +9,7 @@
 #'   these film types are no longer produced.
 #'
 #' @references
-#' \url{https://www.rpc-bpi.com/sector/horticultural-solutions/}
+#' \verb{https://www.rpc-bpi.com/sector/horticultural-solutions/} (redirected)
 #'
 #'
 #' @docType data

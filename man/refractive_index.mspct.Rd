@@ -24,7 +24,7 @@ The \code{"generic_mspct"} object contains \code{"generic_spct"}
 \note{
 Data labeled "for unrestricted use" originate from the Filmmetrics
    Refractive Index Database at
-   \url{https://www.filmetrics.com/refractive-index-database} where
+   \url{https://www.kla.com/products/instruments/refractive-index-database} where
    primary sources are provided. The names in \code{refractive_index.mspct}
    are the same as in the downloaded files, except for the `.txt` tag.
 }
