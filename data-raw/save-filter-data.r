@@ -24,7 +24,7 @@ filters.mspct <-
   c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, domes.mspct, lee.mspct,
   mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
   xl_horticulture.mspct, glass_windows.mspct, photography_filters.mspct,
-  kolarivision.mspct, hoya_photo_digitised.mspct)
+  kolarivision.mspct, hoya_photo_digitised.mspct, thorlabs.mspct)
 
 filters.mspct <- thin_wl(filters.mspct, max.wl.step = 5, max.slope.delta = 0.00015, span = 15)
 
@@ -96,7 +96,7 @@ neutral_filters <- grep("NG|ND|neutral|Neutral", names(filters.mspct), value = T
 heat_filters <- grep("KG|heat|Heat", names(filters.mspct), value = TRUE)
 uvir_cut_filters <- grep("UVIR|UV-IR", names(filters.mspct), value = TRUE)
 
-band_pass_filters <- grep("UG|BG|BP|Bi|BN|AB|PE|DB|TB", names(filters.mspct), value = TRUE)
+band_pass_filters <- grep("UG|BG|BP|Bi|BN|AB|PE|DB|TB|FBH", names(filters.mspct), value = TRUE)
 long_pass_filters <- c(grep("GG|WG|OG|RG|LP", names(filters.mspct), value = TRUE), "UV_T")
 short_pass_filters <- grep("KG|SP", names(filters.mspct), value = TRUE)
 
@@ -107,7 +107,7 @@ save(filters.mspct, all_filter_selectors, stacked_filters,
      bpi_visqueen_filters, courtaulds_filters, etola_filters, evonik_filters, foiltek_filters,
      lee_filters, lee_gels, mcdermit_filters, petri_dishes, plexiglas_filters,
      rosco_filters, rosco_gels, schott_filters, xl_horticulture_filters, midopt_filters,
-     glass_windows, uqg_filters, kolarivision_filters,
+     glass_windows, uqg_filters, kolarivision_filters, thorlabs_filters,
      acetate_filters, acrylic_filters, polycarbonate_filters,
      polystyrene_filters, polyester_filters, polyvynil_chloride_filters,
      photography_filters, hoya_filters, firecrest_filters, bw_filters, zomei_filters, fotga_filters,

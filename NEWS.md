@@ -4,6 +4,11 @@ editor_options:
     wrap: 72
 ---
 
+# photobiologyFilters 0.6.2
+
+-   Add spectral transmittance data for 24 hard-coated band-pass filters from
+    Thorlabs.
+
 # photobiologyFilters 0.6.1
 
 -   Add UV-A-radiation-induced fluorescence spectra for seven glass photography 
