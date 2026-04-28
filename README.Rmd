@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # photobiologyFilters <img src="man/figures/logo.png" align="right" width="120"/>
 
 [![CRAN version](https://www.r-pkg.org/badges/version-last-release/photobiologyFilters)](https://cran.r-project.org/package=photobiologyFilters) [![cran checks](https://badges.cranchecks.info/worst/photobiologyFilters.svg)](https://cran.r-project.org/web/checks/check_results_photobiologyFilters.html) 
-[![R Universe vwersion](https://aphalo.r-universe.dev/badges/photobiologyFilters)](https://aphalo.r-universe.dev/photobiologyFilters)
+[![R Universe version](https://aphalo.r-universe.dev/badges/photobiologyFilters)](https://aphalo.r-universe.dev/photobiologyFilters)
 [![R build status](https://github.com/aphalo/photobiologyfilters/workflows/R-CMD-check/badge.svg)](https://github.com/aphalo/photobiologyfilters/actions)
 [![Documentation](https://img.shields.io/badge/documentation-photobiologyFilters-informational.svg)](https://docs.r4photobiology.info/photobiologyFilters/)
 [![doi](https://img.shields.io/badge/doi-10.32614/CRAN.package.photobiologyFilters-blue.svg)](https://doi.org/10.32614/CRAN.package.photobiologyFilters)
