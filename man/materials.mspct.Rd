@@ -17,7 +17,7 @@ A \code{reflector_mspct} object named \code{materials.mspct}
   \code{when_measured()}, and \code{comment()}.
 }
 \usage{
-materials.mspct
+data(materials.mspct)
 }
 \description{
 Total reflectance of built, cultivated and natural land surfaces. Data are to

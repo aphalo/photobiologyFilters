@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-mcdermit_filters
+data(mcdermit_filters)
 }
 \description{
 Vector of names of member objects containing spectral transmittance data for

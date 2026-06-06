@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-bpi_visqueen_filters
+data(bpi_visqueen_filters)
 }
 \description{
 Vector of names of member objects containing spectral transmittance data for different films used as

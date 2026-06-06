@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-thorlabs_filters
+data(thorlabs_filters)
 }
 \description{
 Vectors of names of member objects containing spectral data for Thorlab

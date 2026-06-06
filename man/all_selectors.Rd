@@ -12,9 +12,9 @@ A vector of character strings.
 An object of class \code{character} of length 7.
 }
 \usage{
-all_filter_selectors
+data(all_filter_selectors)
 
-all_screen_net_selectors
+data(all_screen_net_selectors)
 }
 \description{
 The package makes available character vectors that can be used to extract

@@ -19,7 +19,7 @@ The variables for each spectrum are as follows:
   \code{when_measured()}, and \code{comment()}.
 }
 \usage{
-metals.mspct
+data(metals.mspct)
 }
 \description{
 Total reflectance of metals at 294 K (21 C), measured using an integrating

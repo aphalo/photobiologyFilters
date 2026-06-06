@@ -20,15 +20,15 @@ An object of class \code{character} of length 8.
 An object of class \code{character} of length 8.
 }
 \usage{
-theatrical_gels
+data(theatrical_gels)
 
-lee_filters
+data(lee_filters)
 
-lee_gels
+data(lee_gels)
 
-rosco_filters
+data(rosco_filters)
 
-rosco_gels
+data(rosco_gels)
 }
 \description{
 Vectors of names of member objects with spectral transmittance for different

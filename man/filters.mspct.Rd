@@ -9,7 +9,7 @@ A \code{"filter_mspct"} object containing several
   \code{"filter_spct"}.
 }
 \usage{
-filters.mspct
+data(filters.mspct)
 }
 \description{
 A collection of transmittance spectra for optical filters and similar

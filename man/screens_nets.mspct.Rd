@@ -10,7 +10,7 @@ A \code{filter_mspct} object named \code{screens_nets.mspct} containing a
   rows and 2 variables.
 }
 \usage{
-screens_nets.mspct
+data(screens_nets.mspct)
 }
 \description{
 A collection of transmittance spectra for plastic covers, climate screens and

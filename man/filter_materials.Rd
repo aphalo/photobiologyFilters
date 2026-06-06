@@ -47,33 +47,33 @@ An object of class \code{character} of length 1.
 An object of class \code{character} of length 1.
 }
 \usage{
-acetate_filters
+data(acetate_filters)
 
-acrylic_filters
+data(acrylic_filters)
 
-polycarbonate_filters
+data(polycarbonate_filters)
 
-plexiglas_filters
+data(plexiglas_filters)
 
-polystyrene_filters
+data(polystyrene_filters)
 
-polyester_filters
+data(polyester_filters)
 
-polyvynil_chloride_filters
+data(polyvynil_chloride_filters)
 
-optical_glass_filters
+data(optical_glass_filters)
 
-plastic_film_filters
+data(plastic_film_filters)
 
-plastic_films
+data(plastic_films)
 
-plastic_sheet_filters
+data(plastic_sheet_filters)
 
-plastic_sheets
+data(plastic_sheets)
 
-plastic_dome_filters
+data(plastic_dome_filters)
 
-plastic_domes
+data(plastic_domes)
 }
 \description{
 Vectors of names of member objects containing fractional spectral

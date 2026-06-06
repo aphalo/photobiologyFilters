@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-foiltek_filters
+data(foiltek_filters)
 }
 \description{
 Vector of names of member objects containing spectral transmittance data for

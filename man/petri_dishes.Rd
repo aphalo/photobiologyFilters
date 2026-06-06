@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-petri_dishes
+data(petri_dishes)
 }
 \description{
 Vectors of names of member objects with spectral data for the covers of Petri

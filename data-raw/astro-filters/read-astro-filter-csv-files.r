@@ -6,11 +6,12 @@
 # 3) collect all the filter_spct objects into a filter_mspct object
 # 4) save the filter_mscpt object into a single Rda file in the data-raw/rda folder
 
-# Now thickness and size information are extracted from file names
+# thickness and size information are extracted from file names
 
 library(photobiology)
 library(dplyr)
 library(stringr)
+library(ggspectra)
 
 rm(list = ls())
 setwd("./data-raw/astro-filters/")
@@ -20,7 +21,7 @@ file.list <- list.files(pattern = '*.CSV$', ignore.case = TRUE)
 full_names <- sub(pattern = ".CSV|.csv", replacement = "", x = file.list)
 length(full_names)
 
-photo_filters.lst <- list()
+astro_filters.lst <- list()
 stacked_filters.lst <- list()
 
 # for quality control
@@ -44,18 +45,22 @@ for (file.name in file.list) {
                      sep = ",",
                      col.names = c("w.length", "Tpc"),
                      colClasses = c("double", "double"))
-  tmp.df[["Tfr"]] <- signif(tmp.df[["Tpc"]], 5) / 100
+  # data digitized from bitmaps can contain duplicate rows!
   # select unique w.length values
+  tmp.df <- distinct(tmp.df)
+  tmp.df[["Tfr"]] <- signif(tmp.df[["Tpc"]], 5) / 100
+
   setFilterSpct(tmp.df, Tfr.type = "total")
-   tmp.df <-
-    clean(tmp.df,
-          range.s.data = c(0, 1))
-  tmp.df <- clip_wl(tmp.df, range = c(199.5, 1020.5))
+
+  tmp.df <-  clean(tmp.df, range.s.data = c(0, 1))
+  if (wl_stepsize(tmp.df)[2] > 1) {
+    tmp.df <- interpolate_spct(tmp.df, 200:1100)
+  }
+  tmp.df <- trim_wl(tmp.df, range = c(200, 1050))
 
   raw.name <- sub(pattern = ".CSV|.csv", replacement = "", x = file.name)
   split.name <- str_split(raw.name, pattern = "-")[[1]]
   num.split.parts <- length(split.name)
-
 
   if (!grepl("ABS|LYR|MIX|RFL|STK|DIF", split.name[num.split.parts])) {
     filter.mode <- NA_character_
@@ -73,7 +78,7 @@ for (file.name in file.list) {
     num.split.parts <- num.split.parts - 1L
     filter.size <- split.name[num.split.parts - 1L]
   }
-  if (grepl("DDmm$", filter.size)) {
+  if (grepl("DDinch$", filter.size)) {
     filter.size <- NA_character_
   }
   filter.sizes <- c(filter.sizes, filter.size)
@@ -82,10 +87,6 @@ for (file.name in file.list) {
   filter.thickness <- filter.thickness.raw
   if (grepl("TTmm$", filter.thickness)) {
     filter.thickness <- NA_character_
-  }
-  # works but less specific regexp would be preferable
-  if (grepl("2mm2mm", filter.thickness)) {
-    filter.thickness <- c("2.0mm", "2.0mm")
   }
   filter.thicknesses <- c(filter.thicknesses, filter.thickness)
 
@@ -127,14 +128,14 @@ for (file.name in file.list) {
   comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
                            comment(tmp.df))
 
-  photo_filters.lst[[object.name]] <- tmp.df
+  astro_filters.lst[[object.name]] <- tmp.df
 }
 
 setwd("../..")
 
-photography_filters.mspct <- filter_mspct(photo_filters.lst)
-# photography_filters.mspct <- trim_wl(photography_filters.mspct, range = c(NA, 1050))
-names(photography_filters.mspct)
+astro_filters.mspct <- filter_mspct(astro_filters.lst)
+# astro_filters.mspct <- trim_wl(astro_filters.mspct, range = c(NA, 1050))
+names(astro_filters.mspct)
 
 # quality control
 unique(filter.modes)
@@ -144,9 +145,10 @@ unique(filter.thicknesses)
 unique(sort(filter.types))
 unique(filter.labels)
 
-save(photography_filters.mspct, file = "./data-raw/rda/photography-filters.mspct.rda")
+save(astro_filters.mspct, file = "./data-raw/rda/astro-filters.mspct.rda")
 
-summary(photography_filters.mspct)
-what_measured(photography_filters.mspct)$what.measured
+summary(astro_filters.mspct)
+autoplot(astro_filters.mspct)
+what_measured(astro_filters.mspct)$what.measured
 
 

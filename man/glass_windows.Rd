@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-glass_windows
+data(glass_windows)
 }
 \description{
 Indexing vector for extracting transmittance spectra for

@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-stacked_filters
+data(stacked_filters)
 }
 \description{
 Indexing vector for selecting transmittance spectra for stacks

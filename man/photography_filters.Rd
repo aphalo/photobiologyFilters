@@ -3,125 +3,137 @@
 \docType{data}
 \name{photography_filters}
 \alias{photography_filters}
-\alias{hoya_filters}
-\alias{firecrest_filters}
-\alias{haida_filters}
-\alias{zomei_filters}
-\alias{fake_unbranded_filters}
+\alias{angeleyes_filters}
 \alias{baader_filters}
-\alias{uvroptics_filters}
-\alias{tiffen_filters}
 \alias{bw_filters}
-\alias{heliopan_filters}
-\alias{zeiss_filters}
-\alias{kenko_filters}
-\alias{rocolax_filters}
-\alias{kolarivision_filters}
+\alias{fake_unbranded_filters}
+\alias{firecrest_filters}
 \alias{fotga_filters}
-\alias{tangsinuo_filters}
-\alias{purshee_filters}
-\alias{knightx_filters}
+\alias{haida_filters}
+\alias{heliopan_filters}
+\alias{hoya_filters}
 \alias{kenfaith_filters}
+\alias{kenko_filters}
+\alias{knightx_filters}
+\alias{kolarivision_filters}
 \alias{nisi_filters}
+\alias{purshee_filters}
+\alias{rocolax_filters}
+\alias{svbony_filters}
+\alias{tangsinuo_filters}
+\alias{tiffen_filters}
+\alias{uvroptics_filters}
+\alias{zeiss_filters}
+\alias{zomei_filters}
 \title{Indexing of photography filters}
 \format{
 A vector of character strings.
 
-An object of class \code{character} of length 22.
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 2.
 
-An object of class \code{character} of length 11.
-
 An object of class \code{character} of length 2.
-
-An object of class \code{character} of length 1.
-
-An object of class \code{character} of length 1.
-
-An object of class \code{character} of length 3.
-
-An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 10.
 
-An object of class \code{character} of length 1.
+An object of class \code{character} of length 22.
 
 An object of class \code{character} of length 1.
 
-An object of class \code{character} of length 3.
-
 An object of class \code{character} of length 1.
-
-An object of class \code{character} of length 2.
-
-An object of class \code{character} of length 20.
-
-An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 1.
 
 An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 2.
+
+An object of class \code{character} of length 3.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 20.
+
+An object of class \code{character} of length 3.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 1.
+
+An object of class \code{character} of length 11.
 }
 \usage{
-photography_filters
+data(photography_filters)
 
-hoya_filters
+data(angeleyes_filters)
 
-firecrest_filters
+data(baader_filters)
 
-haida_filters
+data(bw_filters)
 
-zomei_filters
+data(fake_unbranded_filters)
 
-fake_unbranded_filters
+data(firecrest_filters)
 
-baader_filters
+data(fotga_filters)
 
-uvroptics_filters
+data(haida_filters)
 
-tiffen_filters
+data(heliopan_filters)
 
-bw_filters
+data(hoya_filters)
 
-heliopan_filters
+data(kenfaith_filters)
 
-zeiss_filters
+data(kenko_filters)
 
-kenko_filters
+data(knightx_filters)
 
-rocolax_filters
+data(kolarivision_filters)
 
-kolarivision_filters
+data(nisi_filters)
 
-fotga_filters
+data(purshee_filters)
 
-tangsinuo_filters
+data(rocolax_filters)
 
-purshee_filters
+data(svbony_filters)
 
-knightx_filters
+data(tangsinuo_filters)
 
-kenfaith_filters
+data(tiffen_filters)
 
-nisi_filters
+data(uvroptics_filters)
+
+data(zeiss_filters)
+
+data(zomei_filters)
 }
 \description{
 Vectors of names of member objects with spectral data for filters intended to
-be used on camera lenses, grouped by supplier. Suppliers: B+W, Formatt-Hitech
-(Hitech, Firecrest), Fotga, Haida, Heliopan, Hoya, Ken & Faith Concept,
-KinghtX, KolariVision, Purshee, Rocolax, Tangsinuo, Tiffen, UVRoptics, Zeiss,
-and Zomei.
+be used for terrestrial- and/or astrophotography, grouped by supplier.
+Suppliers: Angeleyes, B+W, Baader planetarium, Formatt-Hitech (Hitech,
+Firecrest), Fotga, Haida, Heliopan, Hoya, Ken & Faith Concept, KinghtX,
+KolariVision, Nisi, Purshee, Rocolax, SVBONY, Tangsinuo, Thingyfy, Tiffen,
+UVRoptics, Zeiss, and Zomei.
 }
 \note{
 Data measured with an Agilent 8453 spectrophotometer (based on diode
   array).
 
-Idependent measurement of a single sample, not a specification.
+These are independent measurement each of a single sample, not a
+  specification or typical values.
 }
 \section{Warning!}{
  Data are to be used as \emph{"reference values only"} as
@@ -135,9 +147,9 @@ Idependent measurement of a single sample, not a specification.
   measurements. Most of the photography filters have been measured with an
   Agilent 8453 array spectrophotometer. The noise floor is at approximately
   3.5 to 4.0 absorbance units within the range of wavelengths included in the
-  data. Some small apparent "leaks" maybe only noise. A blank and a dark
-  measurement obtained using this instrument are also included in the data
-  set for comparison.
+  data. Some small apparent "leaks" maybe only spectrometer noise. A blank
+  and a dark measurement obtained using this instrument are also included in
+  the data set for comparison.
 
 The variables are as follows:
 
@@ -147,7 +159,7 @@ The variables are as follows:
 \section{Supplier's web sites, if known}{
 
   \url{https://www.baader-planetarium.com/en/},
-  \url{https://formatt-hitech.com/},
+  \verb{https://formatt-hitech.com/} (out-of-business),
   \url{https://www.fotga.com/},
   \url{https://www.haidaphoto.com/en/},
   \url{http://www.heliopan.de/},
@@ -158,9 +170,11 @@ The variables are as follows:
   \url{https://kolarivision.com/},
   \url{https://purshee.aliexpress.com/store/1996249},
   \url{https://schneiderkreuznach.com/en/photo-optics/b-w-filters/filtertypes},
+  \url{https://www.svbony.com/}
   \url{https://tangsinuo.aliexpress.com/store/4314008},
+  \url{https://thingyfy.com/}
   \url{https://tiffen.com/},
-  \verb{https://www.uvroptics.com/} (off-line),
+  \verb{https://www.uvroptics.com/} (out-of-business),
   \url{https://www.zomei.com/}.
 }
 

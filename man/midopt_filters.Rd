@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-midopt_filters
+data(midopt_filters)
 }
 \description{
 Vectors of names of member objects containing spectral data for MidOpt

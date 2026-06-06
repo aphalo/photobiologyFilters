@@ -9,7 +9,7 @@ A \code{"generic_mspct"} object containing multiple
   \code{"generic_spct"} objects.
 }
 \usage{
-refractive_index.mspct
+data(refractive_index.mspct)
 }
 \description{
 A collection of refractive-index spectra for some materials.

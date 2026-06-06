@@ -1,11 +1,15 @@
-library(tabulizer)
 library(tibble)
 library(dplyr)
 library(photobiology)
 library(ggspectra)
 library(stringr)
+# 'tabulapdf' replaces 'tabulizer' is no longer maintained
+# but not quite work with newer PDFs from MIDOPT
+library(tabulapdf)
+
 rm(list = ls())
-setwd("data-raw/Midopt")
+old.wd <- setwd("data-raw/Midopt")
+on.exit(setwd(old.wd))
 
 file.list <- list.files(pattern = "*.pdf")
 midopt.lst <- list()
@@ -14,6 +18,7 @@ for (file.name in file.list) {
   name <- sub(pattern = "_Transmission_MidOpt.pdf", replacement = "", x = file.name)
   name <- gsub("-", "_", name)
   name <- enc2native(name)
+  cat(file.name, "->", name, "\n")
   type <- str_match(name, "BP|Bi|BN|PE|AB|AC|LP|NF|SP|TB|DB|Ni|ND")
   type.name <- switch(type,
                       BP = "band-pass",
@@ -44,29 +49,21 @@ for (file.name in file.list) {
     failed <- c(failed, name)
     next()
   }
-  tmp.spct <- tmp.mt[-1, 1:2]
+  tmp.spct <- tmp.mt[ , 1:2]
+  names(tmp.spct) <- c("w.length", "Tpc")
 
   if (num_slices > 1) {
     for (i in 2:num_slices) {
             ii <- 2L * i
+      temp.slice <- tmp.mt[ , (ii-1):ii]
+      names(temp.slice) <- c("w.length", "Tpc")
       tmp.spct <-
-        rbind(tmp.spct,
-              tmp.mt[-1, (ii-1):ii])
+        rbind(tmp.spct, temp.slice)
     }
   }
-
-  NonASCII <- tools::showNonASCII(tmp.spct)
-  if (length(NonASCII) > 0L) {
-    cat("\nNon ASCII characters in ", file.name, ": ", NonASCII, "\n")
-  } else {
-    cat(".")
-  }
+  rm(temp.slice)
 
   tmp.spct %>%
-    as_tibble() %>%
-    select("w.length" = .data$V1, "Tpc" = .data$V2) %>%
-    filter(w.length != "") %>%
-    mutate(w.length = as.numeric(w.length), Tpc = as.numeric(Tpc)) %>%
     arrange(w.length) %>%
     as.filter_spct(Tfr.type = "total") %>%
     clean() -> tmp.spct
@@ -82,7 +79,7 @@ for (file.name in file.list) {
   comment(tmp.spct) <- paste("MIDOPT Machine vision ", type.name, " filter '",
                              name,
                              "', ", material,
-                    "\n(c) Midwest Optical Systems, Inc. (MidOpt), reproduced with permission.",
+                    "\n(c) Midwest Optical Systems, Inc. (MIDOPT), reproduced with permission.",
                     sep = "")
 
   midopt.lst[[name]] <- tmp.spct

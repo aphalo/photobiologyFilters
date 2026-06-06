@@ -9,7 +9,7 @@ A \code{"source_mspct"} object containing several
   \code{"source_spct"}.
 }
 \usage{
-filters_UVIVIF.mspct
+data(filters_UVIVIF.mspct)
 }
 \description{
 A collection of ultraviolet-A-induced visible and near infrared fluorescence

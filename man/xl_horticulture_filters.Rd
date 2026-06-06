@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-xl_horticulture_filters
+data(xl_horticulture_filters)
 }
 \description{
 Datasets containing the wavelengths at a 1 nm interval and

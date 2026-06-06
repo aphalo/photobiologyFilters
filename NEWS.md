@@ -7,7 +7,9 @@ editor_options:
 # photobiologyFilters 0.6.2
 
 -   Add spectral transmittance data for 24 hard-coated band-pass filters from
-    Thorlabs.
+    Thorlabs from specifications.
+-   Add measured spectral transmittance data for 2 astrophotography filters,
+    from SVBONY and Angeleyes.
 
 # photobiologyFilters 0.6.1
 

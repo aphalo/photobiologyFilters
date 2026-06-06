@@ -16,11 +16,11 @@ An object of class \code{character} of length 60.
 An object of class \code{character} of length 17.
 }
 \usage{
-band_pass_filters
+data(band_pass_filters)
 
-long_pass_filters
+data(long_pass_filters)
 
-short_pass_filters
+data(short_pass_filters)
 }
 \description{
 Vectors of names of member objects grouped according to their type or optical

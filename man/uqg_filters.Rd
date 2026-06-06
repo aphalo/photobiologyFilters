@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-uqg_filters
+data(uqg_filters)
 }
 \description{
 Vectors of names of member objects containing spectral data for for UQG

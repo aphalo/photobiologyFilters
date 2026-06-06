@@ -32,34 +32,34 @@ An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 28.
+An object of class \code{character} of length 29.
 
 An object of class \code{character} of length 4.
 
 An object of class \code{character} of length 9.
 }
 \usage{
-clear_filters
+data(clear_filters)
 
-neutral_filters
+data(neutral_filters)
 
-uv_filters
+data(uv_filters)
 
-blue_filters
+data(blue_filters)
 
-blue_green_filters
+data(blue_green_filters)
 
-green_filters
+data(green_filters)
 
-yellow_filters
+data(yellow_filters)
 
-orange_filters
+data(orange_filters)
 
-red_nir_filters
+data(red_nir_filters)
 
-heat_filters
+data(heat_filters)
 
-uvir_cut_filters
+data(uvir_cut_filters)
 }
 \description{
 Names of datasets containing the wavelengths and tabulated values for

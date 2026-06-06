@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-evonik_filters
+data(evonik_filters)
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for

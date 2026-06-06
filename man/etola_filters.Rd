@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-etola_filters
+data(etola_filters)
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for polythene film supplied by

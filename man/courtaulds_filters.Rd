@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-courtaulds_filters
+data(courtaulds_filters)
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for

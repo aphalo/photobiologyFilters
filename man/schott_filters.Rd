@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-schott_filters
+data(schott_filters)
 }
 \description{
 Vectors of names of member objects containing spectral dara for Schott optical glass filters.

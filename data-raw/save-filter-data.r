@@ -2,6 +2,7 @@ library(photobiology)
 library(dplyr)
 
 rm(list = ls())
+
 in.path <- "data-raw/rda/"
 filter.files <- list.files(in.path, "*.rda")
 
@@ -21,10 +22,12 @@ for (obj in objects) {
 rm(obj)
 
 filters.mspct <-
-  c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct, foiltek.mspct, domes.mspct, lee.mspct,
-  mcdermit.mspct, petri_dishes.mspct, evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
-  xl_horticulture.mspct, glass_windows.mspct, photography_filters.mspct,
-  kolarivision.mspct, hoya_photo_digitised.mspct, thorlabs.mspct)
+  c(schott.mspct, courtaulds.mspct, bpi_visqueen.mspct, etola.mspct,
+    foiltek.mspct, domes.mspct, lee.mspct, mcdermit.mspct, petri_dishes.mspct,
+    evonik.mspct, rosco.mspct, midopt.mspct, uqg.mspct,
+    xl_horticulture.mspct, glass_windows.mspct,
+    photography_filters.mspct, astro_filters.mspct,
+    kolarivision.mspct, hoya_photo_digitised.mspct, thorlabs.mspct)
 
 filters.mspct <- thin_wl(filters.mspct, max.wl.step = 5, max.slope.delta = 0.00015, span = 15)
 
@@ -39,7 +42,9 @@ schott_filters <- schott
 uqg_filters <- uqg
 kolarivision_filters <- kolarivision
 photography_filters <-
-  unique(sort(c(photography_filters, kolarivision_filters, hoya_photo_digitised)))
+  grepv("Rosco",
+        unique(sort(c(photography_filters, kolarivision_filters, hoya_photo_digitised, astro_filters))),
+        invert = TRUE)
 hoya_filters <- grep("Hoya", photography_filters, value = TRUE, ignore.case = TRUE)
 firecrest_filters <- grep("Firecrest", photography_filters, value = TRUE, ignore.case = TRUE)
 heliopan_filters <- grep("Heliopan", photography_filters, value = TRUE, ignore.case = TRUE)
@@ -58,6 +63,8 @@ uvroptics_filters <- grep("StraightEdgeU", photography_filters, value = TRUE, ig
 purshee_filters <- grep("Purshee", photography_filters, value = TRUE, ignore.case = TRUE)
 knightx_filters <- grep("Knight", photography_filters, value = TRUE, ignore.case = TRUE)
 kenfaith_filters <- grep("KenFaith", photography_filters, value = TRUE, ignore.case = TRUE)
+svbony_filters <- grep("SVBONY", photography_filters, value = TRUE, ignore.case = TRUE)
+angeleyes_filters <- grep("Angeleyes", photography_filters, value = TRUE, ignore.case = TRUE)
 fake_unbranded_filters <- grep("unbranded|fake", photography_filters, value = TRUE, ignore.case = TRUE)
 stacked_filters <- grep("stack", photography_filters, value = TRUE, ignore.case = TRUE)
 
@@ -89,7 +96,7 @@ orange_filters <- grep("orange|Orange|OG", names(filters.mspct), value = TRUE)
 green_filters <- grep("VG|green|Green", names(filters.mspct), value = TRUE)
 blue_filters <- grep("GG|82A", names(filters.mspct), value = TRUE)
 blue_green_filters <- grep("BG", names(filters.mspct), value = TRUE)
-red_nir_filters <- grep("Cherry|red|Red|RG|Zomei_IR|25A", names(filters.mspct), value = TRUE)
+red_nir_filters <- grep("Cherry|red|Red|RG|Zomei_IR|25A|SV183", names(filters.mspct), value = TRUE)
 uv_filters <- unique(c(grep("UG|UV|WG", names(filters.mspct), value = TRUE),
                    polycarbonate_filters, polyester_filters, acetate_filters))
 neutral_filters <- grep("NG|ND|neutral|Neutral", names(filters.mspct), value = TRUE)
@@ -108,6 +115,7 @@ save(filters.mspct, all_filter_selectors, stacked_filters,
      lee_filters, lee_gels, mcdermit_filters, petri_dishes, plexiglas_filters,
      rosco_filters, rosco_gels, schott_filters, xl_horticulture_filters, midopt_filters,
      glass_windows, uqg_filters, kolarivision_filters, thorlabs_filters,
+     svbony_filters, angeleyes_filters,
      acetate_filters, acrylic_filters, polycarbonate_filters,
      polystyrene_filters, polyester_filters, polyvynil_chloride_filters,
      photography_filters, hoya_filters, firecrest_filters, bw_filters, zomei_filters, fotga_filters,
