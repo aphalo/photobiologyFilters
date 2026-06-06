@@ -25,6 +25,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' thorlabs_filters
 #' summary(filters.mspct[thorlabs_filters])
 #' summary(filters.mspct[thorlabs_filters[grep("-40$", thorlabs_filters)]])

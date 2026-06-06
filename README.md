@@ -51,7 +51,7 @@ and all of them are homogeneous.
 
 ``` r
 length(filters.mspct)
-#> [1] 415
+#> [1] 413
 ```
 
 Nearly 200 spectra for different climate screens used in horticulture
@@ -88,7 +88,7 @@ materials varies weakly. This is a small set, serving as example.
 
 ``` r
 length(refractive_index.mspct)
-#> [1] 15
+#> [1] 17
 ```
 
 What are the names of available spectra? We use `head()` to limit the
@@ -97,16 +97,11 @@ output.
 ``` r
 # list names of the first 10 filters
 head(names(filters.mspct), 10)
-#>  [1] "Angeleyes_IRCUT_650nm_1.5mm_1.25inch"
-#>  [2] "Baader_U_filter_1.0mm_48mm"          
-#>  [3] "BPI_Luminance"                       
-#>  [4] "BPI_Solatrol"                        
-#>  [5] "BW_007_Clear_MRC_nano_1.2mm_46mm"    
-#>  [6] "Courtaulds_CA_115um"                 
-#>  [7] "Courtaulds_CA_115um_age000"          
-#>  [8] "Courtaulds_CA_115um_age020"          
-#>  [9] "Courtaulds_CA_115um_age030"          
-#> [10] "Courtaulds_CA_115um_age060"
+#>  [1] "Baader_U_filter_1.0mm_48mm"       "BPI_Luminance"                   
+#>  [3] "BPI_Solatrol"                     "BW_007_Clear_MRC_nano_1.2mm_46mm"
+#>  [5] "Courtaulds_CA_115um"              "Courtaulds_CA_115um_age000"      
+#>  [7] "Courtaulds_CA_115um_age020"       "Courtaulds_CA_115um_age030"      
+#>  [9] "Courtaulds_CA_115um_age060"       "Courtaulds_CA_115um_age100"
 ```
 
 To subset based on different criteria we can use predefined character
@@ -180,39 +175,38 @@ of names that are available for filters and screens.
 ``` r
 all_filter_selectors
 #>  [1] "acetate_filters"            "acrylic_filters"           
-#>  [3] "angeleyes_filters"          "astro_filters"             
-#>  [5] "baader_filters"             "band_pass_filters"         
-#>  [7] "blue_filters"               "blue_green_filters"        
-#>  [9] "bpi_visqueen_filters"       "bw_filters"                
-#> [11] "clear_filters"              "courtaulds_filters"        
-#> [13] "etola_filters"              "evonik_filters"            
-#> [15] "fake_unbranded_filters"     "firecrest_filters"         
-#> [17] "foiltek_filters"            "fotga_filters"             
-#> [19] "glass_windows"              "green_filters"             
-#> [21] "haida_filters"              "heat_filters"              
-#> [23] "heliopan_filters"           "hoya_filters"              
-#> [25] "kenfaith_filters"           "kenko_filters"             
-#> [27] "knightx_filters"            "kolarivision_filters"      
-#> [29] "lee_filters"                "lee_gels"                  
-#> [31] "long_pass_filters"          "mcdermit_filters"          
-#> [33] "midopt_filters"             "neutral_filters"           
-#> [35] "nisi_filters"               "old_schott_filters"        
-#> [37] "optical_glass_filters"      "orange_filters"            
-#> [39] "photography_filters"        "plastic_dome_filters"      
-#> [41] "plastic_film_filters"       "plastic_sheet_filters"     
-#> [43] "plexiglas_filters"          "polycarbonate_filters"     
-#> [45] "polyester_filters"          "polystyrene_filters"       
-#> [47] "polyvynil_chloride_filters" "purshee_filters"           
-#> [49] "red_nir_filters"            "rocolax_filters"           
-#> [51] "rosco_filters"              "rosco_gels"                
-#> [53] "schott_filters"             "short_pass_filters"        
-#> [55] "stacked_filters"            "svbony_filters"            
-#> [57] "tangsinuo_filters"          "theatrical_gels"           
-#> [59] "thorlabs_filters"           "tiffen_filters"            
-#> [61] "uqg_filters"                "uv_filters"                
-#> [63] "uvir_cut_filters"           "uvroptics_filters"         
-#> [65] "xl_horticulture_filters"    "yellow_filters"            
-#> [67] "zeiss_filters"              "zomei_filters"
+#>  [3] "baader_filters"             "band_pass_filters"         
+#>  [5] "blue_filters"               "blue_green_filters"        
+#>  [7] "bpi_visqueen_filters"       "bw_filters"                
+#>  [9] "clear_filters"              "courtaulds_filters"        
+#> [11] "etola_filters"              "evonik_filters"            
+#> [13] "fake_unbranded_filters"     "firecrest_filters"         
+#> [15] "foiltek_filters"            "fotga_filters"             
+#> [17] "glass_windows"              "green_filters"             
+#> [19] "haida_filters"              "heat_filters"              
+#> [21] "heliopan_filters"           "hoya_filters"              
+#> [23] "kenfaith_filters"           "kenko_filters"             
+#> [25] "knightx_filters"            "kolarivision_filters"      
+#> [27] "lee_filters"                "lee_gels"                  
+#> [29] "long_pass_filters"          "mcdermit_filters"          
+#> [31] "midopt_filters"             "neutral_filters"           
+#> [33] "nisi_filters"               "old_schott_filters"        
+#> [35] "optical_glass_filters"      "orange_filters"            
+#> [37] "photography_filters"        "plastic_dome_filters"      
+#> [39] "plastic_film_filters"       "plastic_sheet_filters"     
+#> [41] "plexiglas_filters"          "polycarbonate_filters"     
+#> [43] "polyester_filters"          "polystyrene_filters"       
+#> [45] "polyvynil_chloride_filters" "purshee_filters"           
+#> [47] "red_nir_filters"            "rocolax_filters"           
+#> [49] "rosco_filters"              "rosco_gels"                
+#> [51] "schott_filters"             "short_pass_filters"        
+#> [53] "stacked_filters"            "tangsinuo_filters"         
+#> [55] "theatrical_gels"            "thorlabs_filters"          
+#> [57] "tiffen_filters"             "uqg_filters"               
+#> [59] "uv_filters"                 "uvir_cut_filters"          
+#> [61] "uvroptics_filters"          "xl_horticulture_filters"   
+#> [63] "yellow_filters"             "zeiss_filters"             
+#> [65] "zomei_filters"
 ```
 
 ``` r

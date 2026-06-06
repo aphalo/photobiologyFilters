@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(uqg_filters)
+uqg_filters
 }
 \description{
 Vectors of names of member objects containing spectral data for for UQG
@@ -33,6 +33,7 @@ Filter supplier: UQG Ltd. The Norman Industrial Estate, Milton,
 }
 
 \examples{
+
 uqg_filters
 
 }

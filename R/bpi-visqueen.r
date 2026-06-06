@@ -19,6 +19,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
-#' print(bpi_visqueen_filters)
+#'
+#' bpi_visqueen_filters
 #'
 "bpi_visqueen_filters"

@@ -16,6 +16,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' petri_dishes
 #'
 #' filters.mspct[petri_dishes]

@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(evonik_filters)
+evonik_filters
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for
@@ -25,6 +25,7 @@ Data measured with an Agilent~8453 spectrophotometer (based on diode array).
 Individual measurements of single samples, not a specification.
 }
 \examples{
+
 evonik_filters
 
 }

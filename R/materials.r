@@ -13,6 +13,7 @@
 #' @format A vector of character strings.
 #'
 #' @examples
+#'
 #' acrylic_filters
 #'
 #' # extract spectral data for filters made from acrylic

@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(stacked_filters)
+stacked_filters
 }
 \description{
 Indexing vector for selecting transmittance spectra for stacks
@@ -23,6 +23,7 @@ A character vector of names of spectra in object \code{filter.mspct}
   convolution between the spectra corresponding to the individual filters.
 }
 \examples{
+
 stacked_filters
 
 filters.mspct[stacked_filters]

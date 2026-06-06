@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(schott_filters)
+schott_filters
 }
 \description{
 Vectors of names of member objects containing spectral dara for Schott optical glass filters.
@@ -46,6 +46,7 @@ Version	1 st June 2015. Reproduced with permission.
 }
 
 \examples{
+
 schott_filters
 summary(filters.mspct[schott_filters])
 summary(filters.mspct[schott_filters[grep("UG", schott_filters)]])

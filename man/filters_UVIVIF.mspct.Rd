@@ -9,7 +9,7 @@ A \code{"source_mspct"} object containing several
   \code{"source_spct"}.
 }
 \usage{
-data(filters_UVIVIF.mspct)
+filters_UVIVIF.mspct
 }
 \description{
 A collection of ultraviolet-A-induced visible and near infrared fluorescence
@@ -41,6 +41,7 @@ Please see the metadata for specific details. Accessors are
   \code{\link[base]{comment}()}.
 }
 \examples{
+
 names(filters_UVIVIF.mspct)
 filters_UVIVIF.mspct$Hoya_25A_HMC_2.3mm_52mm
 

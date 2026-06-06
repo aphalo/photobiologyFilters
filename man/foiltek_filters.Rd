@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(foiltek_filters)
+foiltek_filters
 }
 \description{
 Vector of names of member objects containing spectral transmittance data for
@@ -31,6 +31,7 @@ Data measured with an Agilent 8453 spectrophotometer (based on diode
 Individual measurements of single samples, not a specification.
 }
 \examples{
+
 foiltek_filters
 
 }

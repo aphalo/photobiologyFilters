@@ -16,6 +16,7 @@
 #' @aliases 'filter types'
 #'
 #' @examples
+#'
 #' band_pass_filters
 #'
 #' # select band-pass filters

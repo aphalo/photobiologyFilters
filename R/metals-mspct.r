@@ -27,6 +27,7 @@
 #' NASA TN D-5353, Technical Note, Washington DC, 22 pp. (Data from Table II (a))
 #'
 #' @examples
+#'
 #' metals.mspct$gold
 #' summary(metals.mspct$gold)
 #'

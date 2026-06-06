@@ -14,6 +14,7 @@
 #' @aliases colors
 #'
 #' @examples
+#'
 #' clear_filters
 #'
 #' # select filters of amber and yellow color ("blue absorbing")

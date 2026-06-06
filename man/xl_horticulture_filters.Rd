@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(xl_horticulture_filters)
+xl_horticulture_filters
 }
 \description{
 Datasets containing the wavelengths at a 1 nm interval and
@@ -32,6 +32,7 @@ Co. Ltd, China) equiped with an integrating sphere.
 Idependent measurement of a single sample, not a specification.
 }
 \examples{
+
 xl_horticulture_filters
 
 }

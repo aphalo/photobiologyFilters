@@ -17,7 +17,7 @@ A \code{reflector_mspct} object named \code{materials.mspct}
   \code{when_measured()}, and \code{comment()}.
 }
 \usage{
-data(materials.mspct)
+materials.mspct
 }
 \description{
 Total reflectance of built, cultivated and natural land surfaces. Data are to
@@ -31,6 +31,7 @@ This is a small selection from the ASTER database. See:
   Institute of Technology. ALL RIGHTS RESERVED.
 }
 \examples{
+
 materials.mspct$dry.grass
 summary(materials.mspct$dry.grass)
 

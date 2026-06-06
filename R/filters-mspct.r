@@ -76,6 +76,7 @@
 #'   \code{"source_spct"}.
 #'
 #' @examples
+#'
 #' names(filters_UVIVIF.mspct)
 #' filters_UVIVIF.mspct$Hoya_25A_HMC_2.3mm_52mm
 #'

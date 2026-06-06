@@ -10,7 +10,7 @@ A \code{filter_mspct} object named \code{screens_nets.mspct} containing a
   rows and 2 variables.
 }
 \usage{
-data(screens_nets.mspct)
+screens_nets.mspct
 }
 \description{
 A collection of transmittance spectra for plastic covers, climate screens and
@@ -68,6 +68,7 @@ Please see the help for the indexing vectors for specific details. The
 }
 
 \examples{
+
 screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green
 
 what_measured(screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green)

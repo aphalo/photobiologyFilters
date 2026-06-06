@@ -12,6 +12,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' etola_filters
 #'
 "etola_filters"

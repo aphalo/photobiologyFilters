@@ -24,6 +24,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' foiltek_filters
 #'
 "foiltek_filters"

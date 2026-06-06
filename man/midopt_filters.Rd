@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(midopt_filters)
+midopt_filters
 }
 \description{
 Vectors of names of member objects containing spectral data for MidOpt
@@ -29,6 +29,7 @@ plus/minus 10 nm. To interactively comparing filter spectra, please visit
 }
 
 \examples{
+
 midopt_filters
 summary(filters.mspct[midopt_filters])
 summary(filters.mspct[midopt_filters[grep("TB", midopt_filters)]])

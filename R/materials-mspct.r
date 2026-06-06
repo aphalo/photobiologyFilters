@@ -31,6 +31,7 @@
 #'   711-715.
 #'
 #' @examples
+#'
 #' materials.mspct$dry.grass
 #' summary(materials.mspct$dry.grass)
 #'

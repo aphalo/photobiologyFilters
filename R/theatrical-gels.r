@@ -21,6 +21,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' theatrical_gels
 #'
 "theatrical_gels"

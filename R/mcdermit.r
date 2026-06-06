@@ -13,6 +13,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' mcdermit_filters
 #'
 "mcdermit_filters"

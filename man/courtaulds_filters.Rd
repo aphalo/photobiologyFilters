@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(courtaulds_filters)
+courtaulds_filters
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for
@@ -29,6 +29,7 @@ Individual measurements of single samples, not a specification.
   material from other suppliers may be still available.
 }
 \examples{
+
 courtaulds_filters
 
 }

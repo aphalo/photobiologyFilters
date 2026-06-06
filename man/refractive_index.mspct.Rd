@@ -9,7 +9,7 @@ A \code{"generic_mspct"} object containing multiple
   \code{"generic_spct"} objects.
 }
 \usage{
-data(refractive_index.mspct)
+refractive_index.mspct
 }
 \description{
 A collection of refractive-index spectra for some materials.
@@ -29,6 +29,7 @@ Data labeled "for unrestricted use" originate from the Filmmetrics
    are the same as in the downloaded files, except for the `.txt` tag.
 }
 \examples{
+
 length(refractive_index.mspct)
 names(refractive_index.mspct)
 refractive_index.mspct$PMMA # acrylic or Plexiglas

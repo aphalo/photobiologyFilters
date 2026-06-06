@@ -27,19 +27,19 @@ An object of class \code{character} of length 3.
 An object of class \code{character} of length 32.
 }
 \usage{
-data(arrigoni_screens_nets)
+arrigoni_screens_nets
 
-data(criadolopez_screens_nets)
+criadolopez_screens_nets
 
-data(howitec_screens_nets)
+howitec_screens_nets
 
-data(huachangyarns_screens_nets)
+huachangyarns_screens_nets
 
-data(mallastextiles_screens_nets)
+mallastextiles_screens_nets
 
-data(oerlemansplastics_screens_nets)
+oerlemansplastics_screens_nets
 
-data(svensson_screens_nets)
+svensson_screens_nets
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for
@@ -56,6 +56,7 @@ stored in the object named \code{screens_nets.mspct}, belonging to class
 }
 
 \examples{
+
 arrigoni_screens_nets
 
 # select screens supplied by Arrigoni

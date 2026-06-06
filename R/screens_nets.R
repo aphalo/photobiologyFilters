@@ -42,6 +42,7 @@
 #' @seealso \code{\link{screens_nets.mspct}}
 #'
 #' @examples
+#'
 #' arrigoni_screens_nets
 #'
 #' # select screens supplied by Arrigoni

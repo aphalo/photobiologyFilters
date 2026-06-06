@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(thorlabs_filters)
+thorlabs_filters
 }
 \description{
 Vectors of names of member objects containing spectral data for Thorlab
@@ -35,6 +35,7 @@ However, please cite Thorlabs as the source.
 }
 
 \examples{
+
 thorlabs_filters
 summary(filters.mspct[thorlabs_filters])
 summary(filters.mspct[thorlabs_filters[grep("-40$", thorlabs_filters)]])

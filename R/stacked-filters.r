@@ -18,6 +18,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' stacked_filters
 #'
 #' filters.mspct[stacked_filters]

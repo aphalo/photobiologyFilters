@@ -18,6 +18,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' evonik_filters
 #'
 "evonik_filters"

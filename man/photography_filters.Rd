@@ -74,51 +74,51 @@ An object of class \code{character} of length 1.
 An object of class \code{character} of length 11.
 }
 \usage{
-data(photography_filters)
+photography_filters
 
-data(angeleyes_filters)
+angeleyes_filters
 
-data(baader_filters)
+baader_filters
 
-data(bw_filters)
+bw_filters
 
-data(fake_unbranded_filters)
+fake_unbranded_filters
 
-data(firecrest_filters)
+firecrest_filters
 
-data(fotga_filters)
+fotga_filters
 
-data(haida_filters)
+haida_filters
 
-data(heliopan_filters)
+heliopan_filters
 
-data(hoya_filters)
+hoya_filters
 
-data(kenfaith_filters)
+kenfaith_filters
 
-data(kenko_filters)
+kenko_filters
 
-data(knightx_filters)
+knightx_filters
 
-data(kolarivision_filters)
+kolarivision_filters
 
-data(nisi_filters)
+nisi_filters
 
-data(purshee_filters)
+purshee_filters
 
-data(rocolax_filters)
+rocolax_filters
 
-data(svbony_filters)
+svbony_filters
 
-data(tangsinuo_filters)
+tangsinuo_filters
 
-data(tiffen_filters)
+tiffen_filters
 
-data(uvroptics_filters)
+uvroptics_filters
 
-data(zeiss_filters)
+zeiss_filters
 
-data(zomei_filters)
+zomei_filters
 }
 \description{
 Vectors of names of member objects with spectral data for filters intended to

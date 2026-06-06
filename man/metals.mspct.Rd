@@ -19,7 +19,7 @@ The variables for each spectrum are as follows:
   \code{when_measured()}, and \code{comment()}.
 }
 \usage{
-data(metals.mspct)
+metals.mspct
 }
 \description{
 Total reflectance of metals at 294 K (21 C), measured using an integrating
@@ -30,6 +30,7 @@ depend on the state of the metal surface and its polish.
 Data extracted from a published report by OCR.
 }
 \examples{
+
 metals.mspct$gold
 summary(metals.mspct$gold)
 

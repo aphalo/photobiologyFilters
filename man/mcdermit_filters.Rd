@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(mcdermit_filters)
+mcdermit_filters
 }
 \description{
 Vector of names of member objects containing spectral transmittance data for
@@ -19,6 +19,7 @@ Instrument used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments
   Manufacturing Co. Ltd, China) equipped with an integrating sphere.
 }
 \examples{
+
 mcdermit_filters
 
 }

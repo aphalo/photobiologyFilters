@@ -12,9 +12,9 @@ A vector of character strings.
 An object of class \code{character} of length 7.
 }
 \usage{
-data(all_filter_selectors)
+all_filter_selectors
 
-data(all_screen_net_selectors)
+all_screen_net_selectors
 }
 \description{
 The package makes available character vectors that can be used to extract
@@ -24,8 +24,9 @@ uses. The data objects described here list the names of all these vectors
 of names grouped by the collection of spectra they index.
 }
 \examples{
-print(all_screen_net_selectors)
-print(all_filter_selectors)
+
+all_screen_net_selectors
+all_filter_selectors
 
 }
 \seealso{

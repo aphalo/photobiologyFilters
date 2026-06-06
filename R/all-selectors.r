@@ -13,8 +13,9 @@
 #' @seealso \code{\link{filters.mspct}} and \code{\link{screens_nets.mspct}}
 #'
 #' @examples
-#' print(all_screen_net_selectors)
-#' print(all_filter_selectors)
+#'
+#' all_screen_net_selectors
+#' all_filter_selectors
 #'
 #' @rdname all_selectors
 #' @aliases selectors

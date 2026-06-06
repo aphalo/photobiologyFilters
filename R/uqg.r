@@ -25,6 +25,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' uqg_filters
 #'
 "uqg_filters"

@@ -83,6 +83,7 @@
 #' @seealso \code{\link{screens_nets_suppliers}}
 #'
 #' @examples
+#'
 #' screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green
 #'
 #' what_measured(screens_nets.mspct$arrigoni_X2210WO.Iride.Black.Green)

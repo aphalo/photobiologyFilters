@@ -39,27 +39,27 @@ An object of class \code{character} of length 4.
 An object of class \code{character} of length 9.
 }
 \usage{
-data(clear_filters)
+clear_filters
 
-data(neutral_filters)
+neutral_filters
 
-data(uv_filters)
+uv_filters
 
-data(blue_filters)
+blue_filters
 
-data(blue_green_filters)
+blue_green_filters
 
-data(green_filters)
+green_filters
 
-data(yellow_filters)
+yellow_filters
 
-data(orange_filters)
+orange_filters
 
-data(red_nir_filters)
+red_nir_filters
 
-data(heat_filters)
+heat_filters
 
-data(uvir_cut_filters)
+uvir_cut_filters
 }
 \description{
 Names of datasets containing the wavelengths and tabulated values for
@@ -71,6 +71,7 @@ The vectors can be used to extract subsets of spectra from the
  than one vector.
 }
 \examples{
+
 clear_filters
 
 # select filters of amber and yellow color ("blue absorbing")

@@ -20,15 +20,15 @@ An object of class \code{character} of length 8.
 An object of class \code{character} of length 8.
 }
 \usage{
-data(theatrical_gels)
+theatrical_gels
 
-data(lee_filters)
+lee_filters
 
-data(lee_gels)
+lee_gels
 
-data(rosco_filters)
+rosco_filters
 
-data(rosco_gels)
+rosco_gels
 }
 \description{
 Vectors of names of member objects with spectral transmittance for different
@@ -43,6 +43,7 @@ Instruments used: Shimadzu UV-2501 PC (Shimadzu Suzhou Instruments
   the spectral plots in the Lee filters catalogue.
 }
 \examples{
+
 theatrical_gels
 
 }

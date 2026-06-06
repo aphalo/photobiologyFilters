@@ -20,6 +20,7 @@
 #'   \code{"generic_spct"} objects.
 #'
 #' @examples
+#'
 #' length(refractive_index.mspct)
 #' names(refractive_index.mspct)
 #' refractive_index.mspct$PMMA # acrylic or Plexiglas

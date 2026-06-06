@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(etola_filters)
+etola_filters
 }
 \description{
 Vectors of names of member objects containing spectral transmittance data for polythene film supplied by
@@ -18,6 +18,7 @@ Etola Oy (Finland).
 Individual measurements of single samples, not a specification.
 }
 \examples{
+
 etola_filters
 
 }

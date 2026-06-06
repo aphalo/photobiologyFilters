@@ -23,6 +23,7 @@
 #' @seealso \code{\link{filters.mspct}}
 #'
 #' @examples
+#'
 #' courtaulds_filters
 #'
 "courtaulds_filters"

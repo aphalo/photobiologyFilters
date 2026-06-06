@@ -8,7 +8,7 @@
 A vector of character strings.
 }
 \usage{
-data(petri_dishes)
+petri_dishes
 }
 \description{
 Vectors of names of member objects with spectral data for the covers of Petri
@@ -22,6 +22,7 @@ Data measured with an Agilent 8453 spectrophotometer (based on diode
 Individual measurement of a single sample, not a specification.
 }
 \examples{
+
 petri_dishes
 
 filters.mspct[petri_dishes]
