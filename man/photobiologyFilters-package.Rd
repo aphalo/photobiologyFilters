@@ -6,8 +6,6 @@
 \alias{photobiologyFilters-package}
 \title{photobiologyFilters: Spectral Transmittance and Spectral Reflectance Data}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
-
 Spectral 'transmittance' data for frequently used filters and similar materials. Plastic sheets and films; photography filters; theatrical gels; machine-vision filters; various types of window glass; optical glass and some laboratory plastics and glassware. Spectral reflectance data for frequently encountered materials. Part of the 'r4photobiology' suite, Aphalo P. J. (2015) \doi{10.19232/uv4pb.2015.1.14}.
 }
 \details{
@@ -139,6 +137,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Pedro J. Aphalo \email{pedro.aphalo@helsinki.fi} (\href{https://orcid.org/0000-0003-3385-972X}{ORCID})
+
+Authors:
+\itemize{
+  \item Pedro J. Aphalo \email{pedro.aphalo@helsinki.fi} (\href{https://orcid.org/0000-0003-3385-972X}{ORCID})
+}
 
 Other contributors:
 \itemize{

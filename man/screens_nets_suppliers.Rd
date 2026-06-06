@@ -88,7 +88,5 @@ Samples folder. Kinna, Sweden. \url{https://www.ludvigsvensson.com/}
 }
 \seealso{
 \code{\link{screens_nets.mspct}}
-
-\code{\link{screens_nets.mspct}}
 }
 \keyword{datasets}

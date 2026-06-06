@@ -24,8 +24,8 @@ uses. The data objects described here list the names of all these vectors
 of names grouped by the collection of spectra they index.
 }
 \examples{
-all_screen_net_selectors
-all_filter_selectors
+print(all_screen_net_selectors)
+print(all_filter_selectors)
 
 }
 \seealso{
