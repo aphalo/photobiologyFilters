@@ -44,7 +44,7 @@ packages that are part of the R for photobiology suite recognize these classes,
 which allows automation of some computations and validation of the data values
 returned by operations on the data.
 
-Individual spectra are stored in clases are derived from tibbles, which in turn
+Individual spectra are stored in classes are derived from tibbles, which in turn
 is derived from data frames with additional metadata stored as attributes of the
 objects. Being the objects derived from `data.frame` means that the data can be
 used with native R functions and operators and with other R packages. As package
@@ -166,7 +166,7 @@ the case of filters sold assembled in frames for use in photography and
 industrial automation the thickness is rarely disclosed by suppliers, but in 
 some cases we have been able to measure it.
 
-For absortive filters with no coatings reflectance was
+For absorptive filters with no coatings reflectance was
 computed from the spectral refraction index if available, or copied from
 manufacturer's specifications or for some standard materials based on published
 sources. In the case of filters with anti-reflection coatings, in most cases the
@@ -179,7 +179,7 @@ examples).
 The difference in resolution and slit function among instruments can give, for
 the same filter, measured spectra with "apparent" peaks and valleys of slightly
 different width, and slopes of slightly different steepness. This is an
-inevitable artifact of spectral measurements, which has little effect on the
+inevitable artefact of spectral measurements, which has little effect on the
 spectra from absorptive filters (with gradual slopes and bell-shaped peaks) but
 can be more significant for dichroic (= interference) filters with very steep
 cut-on and cut-off slopes.
@@ -195,7 +195,7 @@ an integrating sphere.
 Glass-filter properties vary to some extent among melt batches. Variation can
 also be expected among batches of plastic filters. Furthermore, filters age
 upon exposure to light and UV radiation, and in some cases even upon
-exposure to air. Aging is not limited to plastic filters and can also affect
+exposure to air. Ageing is not limited to plastic filters and can also affect
 optical glass. Manufacturers occasionally may update the specifications
 for filters while maintaining the product code.
 
@@ -223,7 +223,7 @@ Help pages give additional information.
 help(schott_filters)
 ```
 
-In addition to these data for filters, the package contains spectral reflectance data for both metal surfaces and various man-made and natural surfaces. All spectral reflectance data in the package are for normally incident radiation and _total_ values, that is including both especular reflection and scattering. 
+In addition to these data for filters, the package contains spectral reflectance data for both metal surfaces and various man-made and natural surfaces. All spectral reflectance data in the package are for normally incident radiation and _total_ values, that is including both specular reflection and scattering. 
 
 These collections are small, so we list the names of all members.
 
@@ -246,7 +246,7 @@ head(names(filters.mspct), 20)
 
 To obtain metadata in a tabular form, we can use function `spct_metadata()`. This
 function is available in package 'photobiology' version 0.10.5 or later. (This
-example is run only if a supported version is loaded.) The limit the number of
+example is run only if a supported version is loaded.) To limit the number of
 columns we select two of them by name.
 
 ```{r}
@@ -368,7 +368,7 @@ getTfrType(filters.mspct$Schott_UG11)
 ```
 ## Conversions
 
-When metatdata are available and the mode of attenuation is `"absorption"` it is
+When metadata are available and the mode of attenuation is `"absorption"` it is
 possible to compute the expected transmittance for a different thickness of the
 material. In the example we compute transmittance for a thickness of 4 mm.
 
@@ -434,7 +434,7 @@ autoplot(filters.mspct[c("Schott_UG1", "Schott_UG11")],
          span = 11)
 ```
 
-To graphichaly compare filter thicknesses we can pass a collection of spectral objects.
+To graphically compare filter thicknesses we can pass a collection of spectral objects.
 
 ```{r}
 thin_and_thick.mspct <- 
@@ -480,7 +480,7 @@ autoplot(materials.mspct$grass, range = c(NA, 800))
 
 ## Calculating summaries
 
-Here we use waveband defintions from package 'photobiologyWavebands' and 
+Here we use waveband definitions from package 'photobiologyWavebands' and 
 summary functions from package 'photobiology'.
 
 ```{r}

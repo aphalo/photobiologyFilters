@@ -44,6 +44,7 @@ reference:
     - mcdermit_filters
     - midopt_filters
     - schott_filters
+    - thorlabs_filters
     - uqg_filters
     - xl_horticulture_filters
     - screens_nets_suppliers
