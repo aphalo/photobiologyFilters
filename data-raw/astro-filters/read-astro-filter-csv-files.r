@@ -43,12 +43,12 @@ for (file.name in file.list) {
   cat(file.name, ", ")
   tmp.df <- read.csv(file.name, skip = 1, header = FALSE,
                      sep = ",",
-                     col.names = c("w.length", "Tpc"),
+                     col.names = c("w.length", "Tfr"),
                      colClasses = c("double", "double"))
   # data digitized from bitmaps can contain duplicate rows!
   # select unique w.length values
-  tmp.df <- distinct(tmp.df)
-  tmp.df[["Tfr"]] <- signif(tmp.df[["Tpc"]], 5) / 100
+  tmp.df[["Tfr"]] <- signif(tmp.df[["Tfr"]], 5)
+  tmp.df <- distinct(tmp.df, w.length, .keep_all = TRUE)
 
   setFilterSpct(tmp.df, Tfr.type = "total")
 
@@ -74,7 +74,7 @@ for (file.name in file.list) {
 
   filter.size <- split.name[num.split.parts - 1L]
   filter.size <- gsub("inch[A-Z]$", "inch", filter.size)
-  if (!grepl("inch$", filter.size)) {
+  if (!grepl("inch$|mm$", filter.size)) {
     num.split.parts <- num.split.parts - 1L
     filter.size <- split.name[num.split.parts - 1L]
   }
@@ -112,9 +112,11 @@ for (file.name in file.list) {
   #                          make.names(gsub("-ABS|-LYR|-MIX|-RFL|-STK", "", raw.name))))
   # we convert decimal markers back into dots (there should be a better way...)
 
+  computed.Rfr.constant <- max(1 - max(tmp.df[["Tfr"]]), 0)
+  computed.Rfr.constant <- min(computed.Rfr.constant, 0.092) # from Schott UG11 approx for ZWB1
   tmp.df <-
     setFilterProperties(tmp.df,
-                        Rfr.constant = max(1 - max(tmp.df[["Tfr"]]), 0),
+                        Rfr.constant = computed.Rfr.constant,
                         thickness = as.numeric(gsub("mm$", "", filter.thickness)) * 1e-3,
                         attenuation.mode = filter.mode)
 
@@ -123,9 +125,15 @@ for (file.name in file.list) {
 
   setWhatMeasured(tmp.df,
                   paste(filter.label, filter.supplier, filter.type))
-  setHowMeasured(tmp.df,
-                 "Filters measured with an array spectrophotometer without an integrating sphere.")
-  comment(tmp.df) <- paste("Measured with an Agilent 8453 array spectrophotometer by P. J. Aphalo.",
+  if (grepl("30deg", filter.type)) {
+    setHowMeasured(tmp.df,
+                   "Measured with an Agilent 8453 array spectrophotometer without an integrating sphere; beam at 30 degrees away from normal to filter.")
+  } else {
+    setHowMeasured(tmp.df,
+                   "Measured with an Agilent 8453 array spectrophotometer without an integrating sphere; beam normal to filter.")
+  }
+
+  comment(tmp.df) <- paste("Measured by P. J. Aphalo. Filter acquired in 2026.",
                            comment(tmp.df))
 
   astro_filters.lst[[object.name]] <- tmp.df
@@ -150,5 +158,3 @@ save(astro_filters.mspct, file = "./data-raw/rda/astro-filters.mspct.rda")
 summary(astro_filters.mspct)
 autoplot(astro_filters.mspct)
 what_measured(astro_filters.mspct)$what.measured
-
-

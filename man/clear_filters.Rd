@@ -32,7 +32,7 @@ An object of class \code{character} of length 14.
 
 An object of class \code{character} of length 8.
 
-An object of class \code{character} of length 29.
+An object of class \code{character} of length 30.
 
 An object of class \code{character} of length 4.
 

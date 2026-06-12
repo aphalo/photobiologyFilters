@@ -12,7 +12,7 @@
 
 <meta name="author" content="Pedro J. Aphalo" />
 
-<meta name="date" content="2026-06-06" />
+<meta name="date" content="2026-06-11" />
 
 <title>User Guide 1: The data and how to use them</title>
 
@@ -343,7 +343,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 them</h1>
 <h3 class="subtitle">Package ‘photobiologyFilters’ 0.6.1.9001</h3>
 <h4 class="author">Pedro J. Aphalo</h4>
-<h4 class="date">2026-06-06</h4>
+<h4 class="date">2026-06-11</h4>
 
 
 <div id="TOC">
@@ -403,7 +403,7 @@ data in these package can also be easily used with them.</p>
 <p>The individual spectra are stored in collections as objects of
 classes derived from R’s list class.</p>
 <p><code>filters.mspct</code> contains spectral transmittance data for
-415 optical filters and other similar transparent and semitransparent
+417 optical filters and other similar transparent and semitransparent
 sheets and films.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">class</span>(filters.mspct)</span></code></pre></div>
 <pre><code>## [1] &quot;filter_mspct&quot;  &quot;generic_mspct&quot; &quot;list&quot;</code></pre>
@@ -439,7 +439,7 @@ reflectance at different angles of incidence.</p>
 <p>Spectral reflectance and transmittance values are stored as fractions
 of one, and wavelengths expressed in nanometres (nm).</p>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="fu">colnames</span>(filters.mspct[[<span class="dv">1</span>]])</span></code></pre></div>
-<pre><code>## [1] &quot;w.length&quot; &quot;Tpc&quot;      &quot;Tfr&quot;</code></pre>
+<pre><code>## [1] &quot;w.length&quot; &quot;Tfr&quot;</code></pre>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a><span class="fu">colnames</span>(metals.mspct[[<span class="dv">1</span>]])</span></code></pre></div>
 <pre><code>## [1] &quot;w.length&quot; &quot;Rfr&quot;</code></pre>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="fu">colnames</span>(materials.mspct[[<span class="dv">1</span>]])</span></code></pre></div>

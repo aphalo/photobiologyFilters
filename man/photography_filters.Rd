@@ -61,9 +61,9 @@ An object of class \code{character} of length 2.
 
 An object of class \code{character} of length 3.
 
-An object of class \code{character} of length 1.
+An object of class \code{character} of length 2.
 
-An object of class \code{character} of length 20.
+An object of class \code{character} of length 21.
 
 An object of class \code{character} of length 3.
 

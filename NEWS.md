@@ -10,6 +10,8 @@ editor_options:
     Thorlabs from specifications.
 -   Add measured spectral transmittance data for 2 astrophotography filters,
     from SVBONY and Angeleyes.
+-   Add measured spectral transmittance for a UV-band-pass filter from 
+    Tangsinuo.
 
 # photobiologyFilters 0.6.1
 
