@@ -1,5 +1,6 @@
 destination: ../docs/photobiologyFilters
 url: https://docs.r4photobiology.info/photobiologyFilters/
+llm-docs: false
 
 template:
   bootstrap: 5
