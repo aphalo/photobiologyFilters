@@ -51,7 +51,7 @@ and all of them are homogeneous.
 
 ``` r
 length(filters.mspct)
-#> [1] 417
+#> [1] 418
 ```
 
 Nearly 200 spectra for different climate screens used in horticulture
