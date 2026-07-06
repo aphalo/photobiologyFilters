@@ -1,3 +1,5 @@
+print("NO LONGER USED! Use script that redas CSV files!")
+
 # read all available filter data
 # assumes that all files with ".txt" are filter-data files
 # 1) clear the workspace
@@ -29,5 +31,5 @@ names(refractive_index.mspct)
 
 setwd("../..")
 
-save(refractive_index.mspct, file = "data/refractive-index.rda")
+# save(refractive_index.mspct, file = "data/refractive-index.rda")
 
